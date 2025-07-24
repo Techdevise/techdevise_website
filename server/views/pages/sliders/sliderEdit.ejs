@@ -1,0 +1,134 @@
+<%- include('../../layouts/common/header.ejs') %>
+
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Edit Slider</h4>
+
+              <form
+                class="forms-sample"
+                method="POST"
+                action="/admin/slider/<%= slider.id %>/update"
+                enctype="multipart/form-data"
+              >
+                <!-- Title -->
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="title"
+                    id="title"
+                    value="<%= slider.title %>"
+                    placeholder="Title"
+                  />
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <label for="sub_title">Message</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    value="<%= slider.message %>"
+                    placeholder="Message"
+                  />
+                </div>
+
+                <!-- Type -->
+                <div class="form-group">
+                  <label for="type_name">Type Name</label>
+                  <select class="form-control" name="type" id="type">
+                    <option value="1" <%= slider.type == 1 ? 'selected' : '' %>>React Native</option>
+                    <option value="2" <%= slider.type == 2 ? 'selected' : '' %>>Ai Integrated</option>
+                    <option value="3" <%= slider.type == 3 ? 'selected' : '' %>>Blockchain</option>
+                    <option value="4" <%= slider.type == 4 ? 'selected' : '' %>>Seamless Vision</option>
+                    <option value="5" <%= slider.type == 5 ? 'selected' : '' %>>Blockchain Consulting</option>
+                    <option value="6" <%= slider.type == 6 ? 'selected' : '' %>>AI Services</option>
+                  </select>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image"
+                    id="image"
+                    accept="image/*"
+                    onchange="swapImagePreview(event)"
+                  />
+
+                  <% if (slider.image) { %>
+                    <div id="oldImageContainer">
+                      <img
+                        src="/images<%= slider.image %>"
+                        id="oldImage"
+                        alt="Old Slider Image"
+                        style="max-width: 200px; margin-bottom: 10px"
+                      />
+                    </div>
+                  <% } %>
+
+                  <div
+                    id="previewContainer"
+                    style="display: none; margin-top: 10px"
+                  >
+                    <img
+                      id="previewImage"
+                      src="#"
+                      alt="New Image Preview"
+                      style="max-width: 200px"
+                    />
+                  </div>
+                </div>
+
+                <!-- Submit & Cancel -->
+                <button
+                  type="submit"
+                  class="btn text-white me-2"
+                  style="background-color: #157b6c"
+                >
+                  Update
+                </button>
+                <a href="/admin/slider" class="btn btn-light">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../../layouts/common/footer.ejs") %>
+
+<!-- JS: Image Preview -->
+<script>
+  function swapImagePreview(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const previewImage = document.getElementById("previewImage");
+      const previewContainer = document.getElementById("previewContainer");
+      const oldImageContainer = document.getElementById("oldImageContainer");
+
+      if (oldImageContainer) {
+        oldImageContainer.style.display = "none";
+      }
+
+      previewImage.src = URL.createObjectURL(file);
+      previewContainer.style.display = "block";
+    }
+  }
+</script>

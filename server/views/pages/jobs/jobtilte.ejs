@@ -1,0 +1,113 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <!-- <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div> -->
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Jobs</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Sr.No</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% jobs.forEach((job, index) => { %>
+                      <tr id="job-<%= job.id %>">
+                        <td><%= index + 1 %></td>
+                        <td><%= job.title %></td>
+                        <td>
+                          <button
+                            class="btn <%= job.status == 1 ? 'btn-success' : 'btn-danger' %> btn-sm toggle-status"
+                            data-id="<%= job.id %>"
+                            data-status="<%= job.status == 1 ? '1' : '0' %>"
+                            title="Toggle Status"
+                          >
+                            <%= job.status == 1 ? 'Active' : 'Inactive' %>
+                          </button>
+                        </td>
+
+                        <td>
+                          <a
+                            href="/admin/jobsliting/<%= job.id %>"
+                            title="View"
+                          >
+                            <i class="fas fa-eye text-primary fa-lg"></i>
+                          </a>
+                          <a
+                            href="/admin/jobsubliting/<%= job.id %>"
+                            title="Add"
+                            class="btn text-black"
+                          >
+                            <i class="fas fa-plus text-black fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../../layouts/common/footer.ejs') %>
+
+<script>
+  $(document).on("click", ".toggle-status", function () {
+    const jobId = $(this).data("id");
+    const currentStatus = $(this).data("status");
+    const newStatus = currentStatus === "1" ? "0" : "1";
+
+    // Send an AJAX request to update the status in the database
+    $.ajax({
+      url: "/admin/jobsliting/" + jobId + "/status",
+      type: "PUT",
+      data: {
+        status: newStatus,
+      },
+      success: function (response) {
+        if (response.success) {
+          const button = $('.toggle-status[data-id="' + jobId + '"]');
+          if (newStatus === "1") {
+            button
+              .text("Active")
+              .removeClass("btn-danger")
+              .addClass("btn-success");
+          } else {
+            button
+              .text("Inactive")
+              .removeClass("btn-success")
+              .addClass("btn-danger");
+          }
+          button.data("status", newStatus);
+        }
+      },
+      error: function () {
+        console.error("Error while updating the spaCenter's status");
+      },
+    });
+  });
+</script>

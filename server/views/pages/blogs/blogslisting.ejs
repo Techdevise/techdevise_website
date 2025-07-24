@@ -1,0 +1,174 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <!-- <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div> -->
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h4 class="card-title mb-0">Blogs</h4>
+                  <a
+                    href="/admin/blog_Create"
+                    class="btn text-white"
+                    style="background-color: #157b6c"
+                  >
+                    <i class="fas fa-plus"></i> Create Blogs
+                  </a>
+                </div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Sr.No</th>
+                        <th>Job Title</th>
+                        <th>Title</th>
+                        <th>Sub Title</th>
+                        <th>Date</th>
+                        <!-- <th>Is Read</th> -->
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% blog.forEach((blog, index) => { %>
+                      <tr id="blog-<%= blog.id %>">
+                        <td><%= index + 1 %></td>
+                        <td><%= blog.job_title %></td>
+                        <td><%= blog.title %></td>
+                        <td><%= blog.sub_title %></td>
+                        <td><%= blog.date %></td>
+                        <!-- <td><%= blog.is_read %></td> -->
+                        <td>
+                          <% if (blog.image) { %>
+                          <img
+                            src="/images<%= blog.image %>"
+                            alt="Uploaded Image"
+                            style="width: 50px; height: 50px"
+                          />
+                          <% } else { %> No file <% } %>
+                        </td>
+                        <td>
+                          <button
+                            class="btn <%= blog.status == 1 ? 'btn-success' : 'btn-danger' %> btn-sm toggle-status"
+                            data-id="<%= blog.id %>"
+                            data-status="<%= blog.status == 1 ? '1' : '0' %>"
+                            title="Toggle Status"
+                          >
+                            <%= blog.status == 1 ? 'Active' : 'Inactive' %>
+                          </button>
+                        </td>
+                        <td>
+                          <a href="/admin/blogs/<%= blog.id %>" title="View">
+                            <i class="fas fa-edit text-primary fa-lg"></i>
+                          </a>
+                             <a
+                            href="javascript:void(0);"
+                            title="Delete"
+                            onclick="confirmDelete('<%= blog.id %>')"
+                          >
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../../layouts/common/footer.ejs') %>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmDelete(blogId) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`/admin/blogs/${blogId}/delete`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Network error");
+            return response.json();
+          })
+          .then((data) => {
+            document.getElementById(`blog-${blogId}`).remove();
+            Swal.fire("Deleted!", "The blog has been deleted.", "success");
+          })
+          .catch((err) => {
+            Swal.fire(
+              "Error!",
+              "There was a problem deleting the blogs.",
+              "error"
+            );
+            console.error("Delete error:", err);
+          });
+      }
+    });
+  }
+</script>
+<script>
+  $(document).on("click", ".toggle-status", function () {
+    const jobId = $(this).data("id");
+    const currentStatus = $(this).data("status");
+    const newStatus = currentStatus === "1" ? "0" : "1";
+
+    // Send an AJAX request to update the status in the database
+    $.ajax({
+      url: "/admin/blogs/" + jobId + "/status",
+      type: "PUT",
+      data: {
+        status: newStatus,
+      },
+      success: function (response) {
+        if (response.success) {
+          const button = $('.toggle-status[data-id="' + jobId + '"]');
+          if (newStatus === "1") {
+            button
+              .text("Active")
+              .removeClass("btn-danger")
+              .addClass("btn-success");
+          } else {
+            button
+              .text("Inactive")
+              .removeClass("btn-success")
+              .addClass("btn-danger");
+          }
+          button.data("status", newStatus);
+        }
+      },
+      error: function () {
+        console.error("Error while updating the spaCenter's status");
+      },
+    });
+  });
+</script>

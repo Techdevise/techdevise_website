@@ -1,0 +1,118 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Edit Techdevise Team</h4>
+
+              <form
+                class="forms-sample"
+                method="POST"
+                action="/admin/team/<%= team.id %>/update"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    value="<%= team.name %>"
+                    placeholder="Name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="position">position</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="position"
+                    id="position"
+                    value="<%= team.position %>"
+                    placeholder="Position"
+                  />
+                </div>
+
+                <!-- Image Section -->
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <!-- Old Image -->
+
+                  <!-- New Image Upload -->
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image"
+                    id="image"
+                    accept="image/*"
+                    onchange="swapImagePreview(event)"
+                  />
+                  <% if (team.image) { %>
+                  <div id="oldImageContainer">
+                    <img
+                      src="/images<%= team.image %>"
+                      id="oldImage"
+                      alt="Old Blog Image"
+                      style="max-width: 200px; margin-bottom: 10px"
+                    />
+                  </div>
+                  <% } %>
+                  <!-- New Preview -->
+                  <div
+                    id="previewContainer"
+                    style="display: none; margin-top: 10px"
+                  >
+                    <img
+                      id="previewImage"
+                      src="#"
+                      alt="New Image Preview"
+                      style="max-width: 200px"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn text-white me-2"
+                  style="background-color: #157b6c"
+                >
+                  Update
+                </button>
+                <a href="/admin/team" class="btn btn-light">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("../../layouts/common/footer.ejs") %>
+
+<!-- Script: Swap Old Image with New Preview -->
+<script>
+  function swapImagePreview(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const previewImage = document.getElementById("previewImage");
+      const previewContainer = document.getElementById("previewContainer");
+      const oldImageContainer = document.getElementById("oldImageContainer");
+
+      // Hide old image
+      if (oldImageContainer) {
+        oldImageContainer.style.display = "none";
+      }
+
+      // Show new image preview
+      previewImage.src = URL.createObjectURL(file);
+      previewContainer.style.display = "block";
+    }
+  }
+</script>

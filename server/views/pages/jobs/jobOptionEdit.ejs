@@ -1,0 +1,60 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Edit Job Option</h4>
+
+              <form class="forms-sample" method="POST" action="/admin/joboption/<%= job.id %>/update">
+                <div class="form-group">
+                  <label for="job_id">Job Title</label>
+                  <select class="form-control" name="job_id" id="job_id">
+                    <option value="" disabled>Select</option>
+                    <% jobtitle.forEach(j => { %>
+                      <option value="<%= j.id %>" <%= j.id === job.job_id ? 'selected' : '' %>>
+                        <%= j.title %>
+                      </option>
+                    <% }); %>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input type="text" class="form-control" name="location" id="location"
+                         value="<%= job.location %>" placeholder="Location">
+                </div>
+
+                <div class="form-group">
+                  <label for="responsibilities">Responsibilities</label>
+                  <input type="text" class="form-control" name="responsibilities" id="responsibilities"
+                         value="<%= job.responsibilities %>" placeholder="Responsibilities">
+                </div>
+
+                <div class="form-group">
+                  <label for="requirements">Requirements</label>
+                  <input type="text" class="form-control" name="requirements" id="requirements"
+                         value="<%= job.requirements %>" placeholder="Requirements">
+                </div>
+
+                <div class="form-group">
+                  <label for="experience">Experience</label>
+                  <input type="text" class="form-control" name="experience" id="experience"
+                         value="<%= job.experience %>" placeholder="Experience">
+                </div>
+
+                <button type="submit" class="btn text-white me-2" style='background-color: #157B6C;'>Update</button>
+                <a href="/admin/joboption" class="btn btn-light">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("../../layouts/common/footer.ejs") %>

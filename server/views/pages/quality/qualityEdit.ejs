@@ -1,0 +1,130 @@
+<%- include('../../layouts/common/header.ejs') %>
+
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Edit Quality</h4>
+
+              <form
+                class="forms-sample"
+                method="POST"
+                action="/admin/quality/<%= quality.id %>/update"
+                enctype="multipart/form-data"
+              >
+                <!-- Title -->
+                <div class="form-group">
+                  <label for="title">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    value="<%= quality.name %>"
+                    placeholder="Name"
+                  />
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <label for="sub_title">Message</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    value="<%= quality.message %>"
+                    placeholder="Message"
+                  />
+                </div>
+
+                <!-- Type -->
+                <div class="form-group">
+                  <label for="type_name">Type Name</label>
+                  <select class="form-control" name="type" id="type">
+                    <option value="1" <%= quality.type == 1 ? 'selected' : '' %>>Digital Assurance</option>
+                    <option value="2" <%= quality.type == 2 ? 'selected' : '' %>>Digital Engineering</option>
+                  </select>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image"
+                    id="image"
+                    accept="image/*"
+                    onchange="swapImagePreview(event)"
+                  />
+
+                  <% if (quality.image) { %>
+                    <div id="oldImageContainer">
+                      <img
+                        src="/images<%= quality.image %>"
+                        id="oldImage"
+                        alt="Old Quality Image"
+                        style="max-width: 200px; margin-bottom: 10px"
+                      />
+                    </div>
+                  <% } %>
+
+                  <div
+                    id="previewContainer"
+                    style="display: none; margin-top: 10px"
+                  >
+                    <img
+                      id="previewImage"
+                      src="#"
+                      alt="New Image Preview"
+                      style="max-width: 200px"
+                    />
+                  </div>
+                </div>
+
+                <!-- Submit & Cancel -->
+                <button
+                  type="submit"
+                  class="btn text-white me-2"
+                  style="background-color: #157b6c"
+                >
+                  Update
+                </button>
+                <a href="/admin/quality" class="btn btn-light">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../../layouts/common/footer.ejs") %>
+
+<!-- JS: Image Preview -->
+<script>
+  function swapImagePreview(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const previewImage = document.getElementById("previewImage");
+      const previewContainer = document.getElementById("previewContainer");
+      const oldImageContainer = document.getElementById("oldImageContainer");
+
+      if (oldImageContainer) {
+        oldImageContainer.style.display = "none";
+      }
+
+      previewImage.src = URL.createObjectURL(file);
+      previewContainer.style.display = "block";
+    }
+  }
+</script>

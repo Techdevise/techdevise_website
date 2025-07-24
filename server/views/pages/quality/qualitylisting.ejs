@@ -1,0 +1,188 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h4 class="card-title mb-0">Quality</h4>
+                  <a href="/admin/quality" class="btn btn-info">All</a>
+                  <a href="/admin/quality/1" class="btn btn-danger"
+                    >Digital Assurance</a
+                  >
+                  <a href="/admin/quality/2" class="btn btn-warning"
+                    >Digital Engineering</a
+                  >
+                  
+                  <a
+                    href="/admin/quality_add"
+                    class="btn text-white"
+                    style="background-color: #157b6c"
+                  >
+                    <i class="fas fa-plus"></i> Create Quality
+                  </a>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Sr.No</th>
+                        <th>Name</th>
+                        <th>Message</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% quality.forEach((quality, index) => { %>
+                      <tr id="quality-<%= quality.id %>">
+                        <td><%= index + 1 %></td>
+                        <td title="<%= quality.name %>">
+                          <%= quality.name.length > 20 ?
+                          quality.name.substring(0, 25) + "..." : quality.name
+                          %>
+                        </td>
+                        <td title="<%= quality.message %>">
+                          <%= quality.message.length > 20 ?
+                          quality.message.substring(0, 25) + "..." :
+                          quality.message %>
+                        </td>
+                        <td>
+                          <% if (quality.image) { %>
+                          <img
+                            src="/images<%= quality.image %>"
+                            alt="Uploaded Image"
+                            style="width: 50px; height: 50px"
+                          />
+                          <% } else { %> No file <% } %>
+                        </td>
+                        <td>
+                          <button
+                            class="btn <%= quality.status == 1 ? 'btn-success' : 'btn-danger' %> btn-sm toggle-status"
+                            data-id="<%= quality.id %>"
+                            data-status="<%= quality.status %>"
+                            title="Toggle Status"
+                          >
+                            <%= quality.status == 1 ? 'Active' : 'Inactive' %>
+                          </button>
+                        </td>
+                        <td>
+                          <a
+                            href="/admin/quality_View/<%= quality.id %>"
+                            title="View"
+                          >
+                            <i class="fas fa-eye text-primary fa-lg me-3"></i>
+                          </a>
+
+                          <a
+                            href="/admin/quality_Edit/<%= quality.id %>"
+                            title="Edit"
+                          >
+                            <i class="fas fa-pen text-warning fa-lg me-3"></i>
+                          </a>
+
+                          <a
+                            href="javascript:void(0);"
+                            title="Delete"
+                            onclick="confirmDelete('<%= quality.id %>')"
+                          >
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../../layouts/common/footer.ejs') %>
+
+<!-- SweetAlert and Script for Delete -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmDelete(sliderId) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`/admin/quality/${sliderId}/delete`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Network error");
+            return response.json();
+          })
+          .then((data) => {
+            document.getElementById(`slider-${sliderId}`).remove();
+            Swal.fire("Deleted!", "The slider has been deleted.", "success");
+          })
+          .catch((err) => {
+            Swal.fire(
+              "Error!",
+              "There was a problem deleting the slider.",
+              "error"
+            );
+            console.error("Delete error:", err);
+          });
+      }
+    });
+  }
+</script>
+
+<!-- Toggle Status -->
+<script>
+  $(document).on("click", ".toggle-status", function () {
+    const sliderId = $(this).data("id");
+    const currentStatus = $(this).data("status");
+    const newStatus = currentStatus === 1 || currentStatus === "1" ? 0 : 1;
+
+    $.ajax({
+      url: "/admin/quality/" + sliderId + "/status",
+      type: "PUT",
+      data: { status: newStatus },
+      success: function (response) {
+        if (response.success) {
+          const button = $('.toggle-status[data-id="' + sliderId + '"]');
+          if (newStatus === 1) {
+            button
+              .text("Active")
+              .removeClass("btn-danger")
+              .addClass("btn-success");
+          } else {
+            button
+              .text("Inactive")
+              .removeClass("btn-success")
+              .addClass("btn-danger");
+          }
+          button.data("status", newStatus);
+        }
+      },
+      error: function () {
+        console.error("Error while toggling slider status");
+      },
+    });
+  });
+</script>

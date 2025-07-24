@@ -1,0 +1,69 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Add Techdevise Team</h4>
+
+              <form
+                class="forms-sample"
+                method="POST"
+                action="/admin/team/create" enctype="multipart/form-data"
+              >
+                
+              
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    placeholder="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="position"> Team Position</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="position"
+                    id="position"
+                    placeholder="position"
+                  />
+                </div>
+                
+                
+                 <div class="form-group">
+                  <label for="image">Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image"
+                    id="image"
+                    accept="image/*"
+                    placeholder="image"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn text-white me-2"
+                  style="background-color: #157b6c"
+                >
+                  Submit
+                </button>
+                <a href="/admin/team" class="btn btn-light">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include("../../layouts/common/footer.ejs") %>
+</div>

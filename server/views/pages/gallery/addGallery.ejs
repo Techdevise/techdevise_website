@@ -1,0 +1,94 @@
+<%- include('../../layouts/common/header.ejs') %>
+
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+
+  <div class="container-fluid page-body-wrapper">
+    <%- include('../../layouts/common/main.ejs') %>
+
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Add Gallery</h4>
+
+              <form
+                class="forms-sample"
+                method="POST"
+                action="/admin/gallery/create"
+                enctype="multipart/form-data"
+              >
+             
+                <!-- Type -->
+                <div class="form-group">
+                  <label for="type">Type Name</label>
+                  <select class="form-control" name="type" id="type" required>
+                    <option value="">Select Type</option>
+                    <option value="1">Team Work</option>
+                    <option value="2">Office Activity Time</option>
+                  </select>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image"
+                    id="image"
+                    accept="image/*"
+                    onchange="previewImage(event)"
+                    multiple
+                    required
+                  />
+                  <div id="preview-container" style="margin-top: 10px">
+                    <img
+                      id="image-preview"
+                      src="#"
+                      alt="Selected Image"
+                      style="display: none; max-width: 300px; max-height: 200px"
+                    />
+                  </div>
+                </div>
+
+                <!-- Submit / Cancel Buttons -->
+                <button
+                  type="submit"
+                  class="btn text-white me-2"
+                  style="background-color: #157b6c"
+                >
+                  Submit
+                </button>
+                <a href="/admin/gallery" class="btn btn-light">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../../layouts/common/footer.ejs') %>
+</div>
+
+<!-- Image Preview Script -->
+<script>
+  function previewImage(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById("image-preview");
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.src = e.target.result;
+        preview.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "#";
+      preview.style.display = "none";
+    }
+  }
+</script>

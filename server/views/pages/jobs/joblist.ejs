@@ -1,0 +1,121 @@
+<%- include('../../layouts/common/header.ejs') %>
+<div class="container-scroller">
+  <%- include('../../layouts/common/navbar.ejs') %>
+  <div class="container-fluid page-body-wrapper">
+    <%- include("../../layouts/common/main.ejs") %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <!-- <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div> -->
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Jobs Request</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Sr.No</th>
+                        <th>Job</th>
+                        <!-- <th> Sub Job </th> -->
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>Pdf File</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% jobs.forEach((job, index) => { %>
+                      <tr id="job-<%= job.id %>">
+                        <td><%= index + 1 %></td>
+                        <td><%= job.joboption?.jobtitle?.title %></td>
+                        <!-- <td><%= job.joboption?.jobSub_title?.name %></td> -->
+                        <td><%= job.first_name %></td>
+                        <td><%= job.last_name %></td>
+                        <td><%= job.email %></td>
+                        <td><%= job.phone %></td>
+                        <td>
+                          <% if (job.pdf_file) { %>
+                          <a href="<%= job.pdf_file %>" target="_blank">
+                            <img
+                              src="/assets/images/pdf-file.png"
+                              alt="PDF Preview"
+                              style="width: 50px; height: auto"
+                            />
+                          </a>
+                          <% } else { %> No file <% } %>
+                        </td>
+                        <td>
+                          <a href="/admin/jobs/<%= job.id %>" title="View">
+                            <i class="fas fa-eye text-primary fa-lg"></i>
+                          </a>
+                             <a
+                            href="javascript:void(0);"
+                            title="Delete"
+                            onclick="confirmDelete('<%= job.id %>')"
+                          >
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../../layouts/common/footer.ejs') %>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmDelete(jobId) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`/admin/jobs/${jobId}/delete`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Network error");
+            return response.json();
+          })
+          .then((data) => {
+            document.getElementById(`job-${jobId}`).remove();
+            Swal.fire("Deleted!", "The job has been deleted.", "success");
+          })
+          .catch((err) => {
+            Swal.fire(
+              "Error!",
+              "There was a problem deleting the job.",
+              "error"
+            );
+            console.error("Delete error:", err);
+          });
+      }
+    });
+  }
+</script>
