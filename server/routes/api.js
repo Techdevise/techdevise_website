@@ -11,6 +11,7 @@ var apiRouter = express.Router();
  apiRouter.post('/job_position' ,jobValidationRules,job_positionController.addJobPosition)
  apiRouter.get('/jobs' ,job_positionController.job_listing)
  apiRouter.get('/careers' ,job_positionController.Carreer_listing)
+ apiRouter.post('/jobs_Options' ,job_positionController.addCareer)
  apiRouter.get('/sub_jobs/:job_id' ,job_positionController.jobSub_listing)
  apiRouter.get('/jobs_Options/:job_id' ,job_positionController.job_Option_Listing)
  apiRouter.post('/contact_us' ,contactUsController.add_Contact)

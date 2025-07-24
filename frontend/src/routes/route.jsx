@@ -48,11 +48,11 @@ export default createBrowserRouter([
                 element: <CareerOne />
             },
             {
-                path: '/career-two',
+                path: '/career-two/:jobId',
                 element: <CareerTwo />
             },
             {
-                path: '/career-three',
+                path: '/career-three/:jobId',
                 element: <CareerThree />
             },
             {
