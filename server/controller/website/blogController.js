@@ -37,7 +37,7 @@ module.exports = {
 
             return res.status(200).json({
                 success: true,
-                message: "Get all blogs  successfully",
+                message: "Get  blogs  successfully",
                 data: blog,
             });
         } catch (error) {
