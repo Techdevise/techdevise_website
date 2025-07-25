@@ -11,7 +11,7 @@ import CareerTwo from "../pages/career/CareerTwo";
 import CareerThree from "../pages/career/CareerThree";
 import ContactUs from "../pages/ContactUs";
 import ItStaff from "../pages/ItStaff";
-import Portfolio from "../pages/portfolio";
+import Portfolio from "../pages/Portfolio";
 import DigitalMarketingOne from "../pages/DigitalMarketingPages/DigitalMarketingOne";
 
 export default createBrowserRouter([
