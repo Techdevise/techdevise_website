@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // Images
 import video from "/Homevideo1-BHIh2a86.mp4";
 import lightOne from "/lightOne.svg";
@@ -18,56 +20,41 @@ import GoogleAnalytics from "/GoogleAnalytics.svg";
 import cardOne from "/cardOne.webp";
 import layerOne from "/layerOne.webp";
 
-import icon1 from '/langicon/icon1.svg'
-import icon2 from '/langicon/icon2.svg'
-import icon3 from '/langicon/icon3.svg'
-import icon4 from '/langicon/icon4.svg'
-import icon5 from '/langicon/icon5.svg'
-import icon6 from '/langicon/icon6.svg'
-import icon7 from '/langicon/icon7.svg'
-import icon8 from '/langicon/icon8.svg'
-import icon9 from '/langicon/icon9.svg'
-import icon10 from '/langicon/icon10.svg'
-import icon11 from '/langicon/icon11.svg'
-import icon12 from '/langicon/icon12.svg'
-import icon13 from '/langicon/icon13.svg'
-import icon14 from '/langicon/icon14.svg'
-import icon15 from '/langicon/icon15.svg'
-import icon16 from '/langicon/icon16.svg'
-import icon17 from '/langicon/icon17.svg'
-import icon18 from '/langicon/icon18.svg'
-import icon19 from '/langicon/icon19.svg'
-import icon20 from '/langicon/icon20.svg'
-import icon21 from '/langicon/icon21.svg'
-import icon22 from '/langicon/icon22.svg'
-import icon23 from '/langicon/icon23.svg'
-import icon24 from '/langicon/icon24.svg'
-import icon25 from '/langicon/icon25.svg'
-import icon26 from '/langicon/icon26.svg'
-import icon27 from '/langicon/icon27.svg'
-import icon28 from '/langicon/icon28.svg'
+import icon1 from "/langicon/icon1.svg";
+import icon2 from "/langicon/icon2.svg";
+import icon3 from "/langicon/icon3.svg";
+import icon4 from "/langicon/icon4.svg";
+import icon5 from "/langicon/icon5.svg";
+import icon6 from "/langicon/icon6.svg";
+import icon7 from "/langicon/icon7.svg";
+import icon8 from "/langicon/icon8.svg";
+import icon9 from "/langicon/icon9.svg";
+import icon10 from "/langicon/icon10.svg";
+import icon11 from "/langicon/icon11.svg";
+import icon12 from "/langicon/icon12.svg";
+import icon13 from "/langicon/icon13.svg";
+import icon14 from "/langicon/icon14.svg";
+import icon15 from "/langicon/icon15.svg";
+import icon16 from "/langicon/icon16.svg";
+import icon17 from "/langicon/icon17.svg";
+import icon18 from "/langicon/icon18.svg";
+import icon19 from "/langicon/icon19.svg";
+import icon20 from "/langicon/icon20.svg";
+import icon21 from "/langicon/icon21.svg";
+import icon22 from "/langicon/icon22.svg";
+import icon23 from "/langicon/icon23.svg";
+import icon24 from "/langicon/icon24.svg";
+import icon25 from "/langicon/icon25.svg";
+import icon26 from "/langicon/icon26.svg";
+import icon27 from "/langicon/icon27.svg";
+import icon28 from "/langicon/icon28.svg";
 // Images
 
-
-// minigrid images
-import minigrid1 from '/minigrid1.webp'
-import minigrid2 from '/minigrid2.webp'
-import minigrid3 from '/minigrid3.webp'
-import minigrid4 from '/minigrid4.webp'
-import minigrid5 from '/minigrid5.webp'
-import minigrid6 from '/minigrid6.webp'
-import minigrid7 from '/minigrid7.webp'
-import minigrid8 from '/minigrid8.webp'
-import minigrid9 from '/minigrid9.webp'
-import minigrid10 from '/minigrid10.webp'
-import minigrid11 from '/minigrid11.webp'
-import minigrid12 from '/minigrid12.webp'
-
 // social icons
-import linkedin from '/linkedin.svg'
-import upwork from '/upwork.svg'
-import clutch from '/clutch.svg'
-import trustpilot from '/trustpilot.svg'
+import linkedin from "/linkedin.svg";
+import upwork from "/upwork.svg";
+import clutch from "/clutch.svg";
+import trustpilot from "/trustpilot.svg";
 
 // slider images
 import testimg1 from "/cardTen.jpg";
@@ -91,18 +78,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import AutoCounter from "../components/counter";
-// swiper 
+// swiper
 
 // state images
-import state1 from '/state1.webp'
-import state2 from '/state2.webp'
-import state3 from '/state3.webp'
-import flag1 from '/flag1.svg'
-import flag2 from '/flag2.svg'
-import flag3 from '/flag3.svg'
-import map from '/map.svg'
+import state1 from "/state1.webp";
+import state2 from "/state2.webp";
+import state3 from "/state3.webp";
+import flag1 from "/flag1.svg";
+import flag2 from "/flag2.svg";
+import flag3 from "/flag3.svg";
+import map from "/map.svg";
 import CustomRangeSlider from "../components/CustomRangeSlider";
-
 
 import clogo1 from "/clogo1.svg";
 import clogo2 from "/clogo2.svg";
@@ -120,148 +106,144 @@ import clogo13 from "/clogo13.svg";
 import clogo14 from "/clogo14.svg";
 import clogo15 from "/clogo15.svg";
 // clock images
-import dashGreen from '/dashGreen.webp'
-import dashWhite from '/dashWhite.webp'
+import dashGreen from "/dashGreen.webp";
+import dashWhite from "/dashWhite.webp";
 import Clock from "../components/clock";
-
 
 const Home = () => {
   const sectionRef = useRef(null);
   const [activeStep, setActiveStep] = useState(1);
-
+  const [industries, setIndustries] = useState([]);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
 
   const prev2Ref = useRef(null);
   const next2Ref = useRef(null);
 
   const [budget, setBudget] = useState(10000);
-  const formatCurrency = (value) => {
-    return `$${value.toLocaleString()}`;
-  };
 
   const langlistOne = [
     {
-      langName: 'React JS',
+      langName: "React JS",
       icon: icon1,
     },
     {
-      langName: 'Vue JS',
+      langName: "Vue JS",
       icon: icon2,
     },
     {
-      langName: 'JavaScript',
+      langName: "JavaScript",
       icon: icon3,
     },
     {
-      langName: 'CSS',
+      langName: "CSS",
       icon: icon4,
     },
     {
-      langName: 'HTML',
+      langName: "HTML",
       icon: icon5,
     },
     {
-      langName: 'Next JS',
+      langName: "Next JS",
       icon: icon6,
     },
     {
-      langName: 'Ember',
+      langName: "Ember",
       icon: icon7,
     },
     {
-      langName: 'Meteor',
+      langName: "Meteor",
       icon: icon8,
     },
-  ]
+  ];
   const langlistTwo = [
     {
-      langName: 'Java',
+      langName: "Java",
       icon: icon9,
     },
     {
-      langName: 'Node JS',
+      langName: "Node JS",
       icon: icon10,
     },
     {
-      langName: 'PHP',
+      langName: "PHP",
       icon: icon11,
     },
     {
-      langName: 'Python',
+      langName: "Python",
       icon: icon12,
     },
     {
-      langName: 'Go',
+      langName: "Go",
       icon: icon13,
     },
     {
-      langName: '.Net',
+      langName: ".Net",
       icon: icon14,
     },
-  ]
+  ];
   const langlistThree = [
     {
-      langName: 'Android',
+      langName: "Android",
       icon: icon15,
     },
     {
-      langName: 'Flutter',
+      langName: "Flutter",
       icon: icon16,
     },
     {
-      langName: 'Cordova',
+      langName: "Cordova",
       icon: icon17,
     },
     {
-      langName: 'IOS',
+      langName: "IOS",
       icon: icon18,
     },
     {
-      langName: 'Xamarin',
+      langName: "Xamarin",
       icon: icon19,
     },
     {
-      langName: 'PWA',
+      langName: "PWA",
       icon: icon20,
     },
     {
-      langName: 'Ionic',
+      langName: "Ionic",
       icon: icon21,
     },
     {
-      langName: 'React Native',
+      langName: "React Native",
       icon: icon22,
     },
-  ]
+  ];
 
   const langlistFour = [
     {
-      langName: 'Figma',
+      langName: "Figma",
       icon: icon23,
     },
     {
-      langName: 'Sketch',
+      langName: "Sketch",
       icon: icon24,
     },
     {
-      langName: 'Adobe XD',
+      langName: "Adobe XD",
       icon: icon25,
     },
     {
-      langName: 'CorelDRAW',
+      langName: "CorelDRAW",
       icon: icon26,
     },
     {
-      langName: 'Photoshop',
+      langName: "Photoshop",
       icon: icon27,
     },
     {
-      langName: 'Illustrator',
+      langName: "Illustrator",
       icon: icon28,
     },
-  ]
+  ];
   const companyLogos = [
     {
       image: testimg1,
@@ -305,34 +287,150 @@ const Home = () => {
     },
   ];
 
-  const miniGridLoop = [
-    { id: 1, image: minigrid1, title: "Healthcare" },
-    { id: 2, image: minigrid2, title: "Fitness" },
-    { id: 3, image: minigrid3, title: "Real Estate" },
-    { id: 4, image: minigrid4, title: "Social Media" },
-    { id: 5, image: minigrid5, title: "E-commerce" },
-    { id: 6, image: minigrid6, title: "Education" },
-    { id: 7, image: minigrid7, title: "Entertainment" },
-    { id: 8, image: minigrid8, title: "Food Delivery" },
-    { id: 9, image: minigrid9, title: "Beauty & Salon Booking" },
-    { id: 10, image: minigrid10, title: "Dating App Development" },
-    { id: 11, image: minigrid11, title: "Laundry Services" },
-    { id: 12, image: minigrid12, title: "Taxi  Booking" },
-  ]
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    phone: "",
+    company_name: "",
+    job_title: "",
+    launch_timeline: "",
+    budget: "20000",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const payload = {
+        ...formData,
+        budget: budget.toString(),
+      };
+
+      console.log("Submitting payload:", payload);
+
+      const response = await axios.post(
+        `${API_BASE_URL}/api/experts`,
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            // Add any additional headers if needed
+            // 'Authorization': `Bearer ${token}`,
+            // 'X-Custom-Header': 'value'
+          },
+        }
+      );
+
+      console.log("API Response:", response.data);
+
+      if (response.data.success) {
+        toast.success(response.data.message || "Form submitted successfully!");
+
+        // Reset form
+        setFormData({
+          fullname: "",
+          email: "",
+          phone: "",
+          company_name: "",
+          job_title: "",
+          launch_timeline: "",
+          budget: "20000",
+          message: "",
+        });
+        setBudget(20000);
+      } else {
+        throw new Error(response.data.message || "Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error(
+        error.response?.data?.message ||
+          "Error submitting form. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  useEffect(() => {
+    const fetchIndustries = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/api/seamless`);
+        if (res.data.success) {
+          setIndustries(res.data.data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch seamless vision data:", err);
+      }
+    };
+
+    fetchIndustries();
+  }, []);
 
   const addressList = [
-    { bgimage: state1, flag: flag1, countryName: "India", address: "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071" },
-    { bgimage: state2, flag: flag2, countryName: "United States", address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA" },
-    { bgimage: state3, flag: flag3, countryName: "Netherland", address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands" },
-  ]
+    {
+      bgimage: state1,
+      flag: flag1,
+      countryName: "India",
+      address:
+        "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071",
+    },
+    {
+      bgimage: state2,
+      flag: flag2,
+      countryName: "United States",
+      address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
+    },
+    {
+      bgimage: state3,
+      flag: flag3,
+      countryName: "Netherland",
+      address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
+    },
+  ];
   const offshore = [
-    { image: dashGreen, title: "Share your Requirements", discription: "Define your project needs and skills required" },
-    { image: dashWhite, title: "Get Vetted Profile", discription: "Define your project needs and skills required" },
-    { image: dashGreen, title: "Conduct Interview", discription: "Define your project needs and skills required" },
-    { image: dashWhite, title: "Hire & Get Started", discription: "Define your project needs and skills required" },
-  ]
+    {
+      image: dashGreen,
+      title: "Share your Requirements",
+      discription: "Define your project needs and skills required",
+    },
+    {
+      image: dashWhite,
+      title: "Get Vetted Profile",
+      discription: "Define your project needs and skills required",
+    },
+    {
+      image: dashGreen,
+      title: "Conduct Interview",
+      discription: "Define your project needs and skills required",
+    },
+    {
+      image: dashWhite,
+      title: "Hire & Get Started",
+      discription: "Define your project needs and skills required",
+    },
+  ];
 
-   const coLogos = [
+  const coLogos = [
     {
       image: clogo1,
       alt: "company logo 1",
@@ -353,7 +451,7 @@ const Home = () => {
       image: clogo5,
       alt: "company logo 5",
     },
-        {
+    {
       image: clogo6,
       alt: "company logo 6",
     },
@@ -373,7 +471,7 @@ const Home = () => {
       image: clogo10,
       alt: "company logo 10",
     },
-        {
+    {
       image: clogo11,
       alt: "company logo 11",
     },
@@ -490,8 +588,6 @@ const Home = () => {
                           data-aos-delay="200"
                         />
                       </div>
-
-
                     </div>
                     <div className="vectorOne h-[350px] mt-[3.25rem]">
                       <img
@@ -581,48 +677,109 @@ const Home = () => {
             <div className="flex-1">
               <div className="grid lg:grid-cols-4 min-[480px]:grid-cols-3 grid-cols-2 lg:gap-[1.875rem] gap-[.9375rem]">
                 <div className="lg:col-span-2 min-[480px]:col-span-3 col-span-2 max-lg:text-center mb-3">
-                  <h3 data-aos="fade-down" data-aos-delay="200" className="text-[3rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700">Experience</h3>
-                  <p data-aos="fade-down" className="text-[1.125rem] leading-[2.125rem] font-normal text-white lg:max-w-xl">With years of experience in the IT industry, we have successfully delivered cutting-edge software solutions, web and mobile applications, and enterprise-grade systems. Our expertise spans various technologies, ensuring innovative, scalable, and secure digital solutions tailored to your business needs.</p>
+                  <h3
+                    data-aos="fade-down"
+                    data-aos-delay="200"
+                    className="text-[3rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700"
+                  >
+                    Experience
+                  </h3>
+                  <p
+                    data-aos="fade-down"
+                    className="text-[1.125rem] leading-[2.125rem] font-normal text-white lg:max-w-xl"
+                  >
+                    With years of experience in the IT industry, we have
+                    successfully delivered cutting-edge software solutions, web
+                    and mobile applications, and enterprise-grade systems. Our
+                    expertise spans various technologies, ensuring innovative,
+                    scalable, and secure digital solutions tailored to your
+                    business needs.
+                  </p>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#67c792]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={10} speed={750} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Years of Experience</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={10}
+                      speed={750}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Years of Experience
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#deea99]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Clients</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={500}
+                      speed={12}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Clients
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#99eae0]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Years of Experience</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={500}
+                      speed={12}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Years of Experience
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#99cbea]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={20} speed={375} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={20}
+                      speed={375}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Client
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#ea99b9]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={500}
+                      speed={12}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Client
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#ea9c99]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={20} speed={375} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={20}
+                      speed={375}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Client
+                    </h4>
                   </div>
                 </div>
               </div>
             </div>
-            <div data-aos="zoom-in" className="flex-[0_1_7.3125rem] max-w-[7.3125rem] max-xl:hidden overflow-hidden">
+            <div
+              data-aos="zoom-in"
+              className="flex-[0_1_7.3125rem] max-w-[7.3125rem] max-xl:hidden overflow-hidden"
+            >
               <h2 className="2xl:text-[5.5rem] text-[5rem] inline-block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1f2d29] to-[#08211b] rotate-90 origin-[10%_50%]">
                 Experience
               </h2>
@@ -634,17 +791,23 @@ const Home = () => {
         {/* Our Tech section start */}
         <section className="OurTech overflow-hidden max-lg:hidden">
           <div className="main-container">
-
             <div className="flex justify-between items-center mb-5">
               <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.5rem] text-[2.2rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 max-w-6xl max-lg:mx-auto max-lg:text-center mb-[1.75rem]">
-                Our Tech Offerings - Tailored to Your Time Zone and Business Needs</h2>
+                Our Tech Offerings - Tailored to Your Time Zone and Business
+                Needs
+              </h2>
 
               <div className="flex gap-3">
-
-                <button ref={prevRef} className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer">
+                <button
+                  ref={prevRef}
+                  className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
+                >
                   <GoArrowLeft className="size-6" />
                 </button>
-                <button ref={nextRef} className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer">
+                <button
+                  ref={nextRef}
+                  className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
+                >
                   <GoArrowRight className="size-6" />
                 </button>
               </div>
@@ -667,59 +830,99 @@ const Home = () => {
                 }}
                 navigation={{
                   prevEl: prevRef.current,
-                  nextEl: nextRef.current
-                }} breakpoints={{
+                  nextEl: nextRef.current,
+                }}
+                breakpoints={{
                   1440: {
                     slidesPerView: 1.2,
                   },
                 }}
               >
-                <SwiperSlide
-                  className="flex"
-                >
+                <SwiperSlide className="flex">
                   <div className="flex justify-between items-stretch 2xlp-[2.625rem] p-9 rounded-[3rem] bg-pine-600 ">
                     <div className="flex-[22rem] max-w-[22rem] aspect-square bg-pine-700 rounded-full p-3 shrink-0 self-center">
                       <div className="h-full w-full text-white text-center rounded-full  border-white/80 dashed-lg flex justify-center items-center flex-col px-1">
-                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">Staff Augmentation</h4>
-                        <p className="text-[1.105rem] leading-[1.75rem] font-medium">Hire pre-vetted developers skilled in the latest technologies, ready to work around the clock to meet your project needs.</p>
+                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
+                          Staff Augmentation
+                        </h4>
+                        <p className="text-[1.105rem] leading-[1.75rem] font-medium">
+                          Hire pre-vetted developers skilled in the latest
+                          technologies, ready to work around the clock to meet
+                          your project needs.
+                        </p>
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
-                        <Clock countryName="USA" bgColor="#FDE3DA" pinColor="#646E82" innerShadowColor="#FDE3DA" />
+                        <Clock
+                          countryName="USA"
+                          bgColor="#FDE3DA"
+                          pinColor="#646E82"
+                          innerShadowColor="#FDE3DA"
+                        />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-start items-center flex-col">
                       <div className="clock1 w-[10rem]">
-                        <Clock countryName="India" bgColor="#B9CFEC" pinColor="#646E82" innerShadowColor="#B9CFEC" />
+                        <Clock
+                          countryName="India"
+                          bgColor="#B9CFEC"
+                          pinColor="#646E82"
+                          innerShadowColor="#B9CFEC"
+                        />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[10rem]">
-                        <Clock countryName="Netherlands" bgColor="#719E91" pinColor="#646E82" innerShadowColor="#2A6C59" />
+                        <Clock
+                          countryName="Netherlands"
+                          bgColor="#719E91"
+                          pinColor="#646E82"
+                          innerShadowColor="#2A6C59"
+                        />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-start items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
-                        <Clock countryName="Canada" bgColor="#EA99B9" pinColor="#646E82" innerShadowColor="#EA99B9" />
+                        <Clock
+                          countryName="Canada"
+                          bgColor="#EA99B9"
+                          pinColor="#646E82"
+                          innerShadowColor="#EA99B9"
+                        />
                       </div>
                     </div>
                   </div>
                 </SwiperSlide>
 
-                <SwiperSlide
-                  className="flex"
-                >
+                <SwiperSlide className="flex">
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem]  ">
-                    <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
-                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.</p>
+                    <h4 className="text-[1.625rem] mb-2 font-bold">
+                      Build your offshore development team
+                    </h4>
+                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">
+                      At TechDevise, setting up dedicated software development
+                      team is quick and hassle-free, completed in just four
+                      simple steps.
+                    </p>
                     <div className="grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-[2.8125rem]">
                       {offshore.map((item, index) => (
-                        <div key={index} className="relative py-[.9375rem] pl-[1.0625rem] pr-[2.4375rem] group">
-                          <img src={item.image} alt="dash green" className='w-full absolute bottom-0 left-0 group-even:top-0' />
+                        <div
+                          key={index}
+                          className="relative py-[.9375rem] pl-[1.0625rem] pr-[2.4375rem] group"
+                        >
+                          <img
+                            src={item.image}
+                            alt="dash green"
+                            className="w-full absolute bottom-0 left-0 group-even:top-0"
+                          />
                           <div className="bg-pine-700 h-[13.125rem] rounded-[.8125rem] pb-[1.0625rem] pl-[1.5625rem] pr-3 flex flex-col justify-end group-even:bg-white group-even:text-pine-700">
-                            <h5 className='text-lg font-semibold leading-[1.5rem] mb-1.5'>{item.title}</h5>
-                            <p className='text-lg leading-[1.5rem]'>{item.discription}</p>
+                            <h5 className="text-lg font-semibold leading-[1.5rem] mb-1.5">
+                              {item.title}
+                            </h5>
+                            <p className="text-lg leading-[1.5rem]">
+                              {item.discription}
+                            </p>
                           </div>
                         </div>
                       ))}
@@ -739,37 +942,82 @@ const Home = () => {
               <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-1 order-2">
                 <div className="card h-full bg-[#67C792] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">Website Development</h4>
-                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                    <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Website Development
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                      Enhance your brand's presence with our creative digital
+                      marketing tools! Engage your audience and see your
+                      business grow.
+                    </p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
                       <span>More information</span>
-                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
                     </Link>
                   </div>
                   <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#3aad6e] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
-                    <img src={vectorTwo} alt="vector two" className="mx-auto max-md:h-full" />
+                    <img
+                      src={vectorTwo}
+                      alt="vector two"
+                      className="mx-auto max-md:h-full"
+                    />
                   </div>
                 </div>
               </div>
               <div className="xl:flex-1 flex justify-center items-stretch xl:flex-wrap max-md:flex-wrap  gap-[2.125rem] xl:order-2 order-1">
                 <div className="lg:w-full w-full overflow-hidden p-[1px] rounded-[1.625rem] bg-gradient-to-b from-[#1f443c] via-[#123b32] to-[#0a3a31]">
                   <div className="h-full w-full bg-pine-999 rounded-[1.5625rem] py-5 sm:px-[1.875rem] px-4 text-center">
-                    <h2 data-aos="fade-down" data-aos-delay="200" className="text-transparent 2xl:text-[3rem] text-[2.7rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3">Our Services</h2>
-                    <p data-aos="fade-down" className="2xl:text-[1.25rem] text-[1.1rem] leading-[1.875rem] font-normal text-white">At Tech Devise, we provide cutting-edge IT solutions designed to drive innovation, efficiency, and security for businesses of all sizes. Our expertise spans across multiple domains, ensuring that your technology needs are met with precision and excellence.</p>
+                    <h2
+                      data-aos="fade-down"
+                      data-aos-delay="200"
+                      className="text-transparent 2xl:text-[3rem] text-[2.7rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3"
+                    >
+                      Our Services
+                    </h2>
+                    <p
+                      data-aos="fade-down"
+                      className="2xl:text-[1.25rem] text-[1.1rem] leading-[1.875rem] font-normal text-white"
+                    >
+                      At Tech Devise, we provide cutting-edge IT solutions
+                      designed to drive innovation, efficiency, and security for
+                      businesses of all sizes. Our expertise spans across
+                      multiple domains, ensuring that your technology needs are
+                      met with precision and excellence.
+                    </p>
                   </div>
                 </div>
                 <div className="max-xl:hidden xl:w-full w-full">
                   <div className="card h-full bg-[#99eae0] overflow-hidden rounded-[1.625rem] flex justify-between items-stretch xl:gap-5 max-xl:flex-row-reverse">
                     <div className="p-[1.4375rem] xl:w-[65%] flex-[2_1_0%]">
-                      <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">E-commerce Website</h4>
-                      <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                      <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                      <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                        E-commerce Website
+                      </h4>
+                      <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                        Enhance your brand's presence with our creative digital
+                        marketing tools! Engage your audience and see your
+                        business grow.
+                      </p>
+                      <Link
+                        to="/"
+                        className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                      >
                         <span>More information</span>
-                        <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                        <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                          <FiArrowUpRight className="size-4" />
+                        </span>
                       </Link>
                     </div>
                     <div className="image xl:w-[35%] flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#5dc6b9] max-xl:before:rounded-[1.625rem] before:h-full sm:before:w-[62%] before:w-[82%]">
-                      <img src={vectorThree} alt="vector Three" className="xl:h-[178px] xl:w-[179px] max-md:h-full" />
+                      <img
+                        src={vectorThree}
+                        alt="vector Three"
+                        className="xl:h-[178px] xl:w-[179px] max-md:h-full"
+                      />
                     </div>
                   </div>
                 </div>
@@ -777,45 +1025,90 @@ const Home = () => {
               <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-1 order-2 xl:hidden">
                 <div className="card h-full bg-[#99eae0] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">E-commerce Website</h4>
-                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                    <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      E-commerce Website
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                      Enhance your brand's presence with our creative digital
+                      marketing tools! Engage your audience and see your
+                      business grow.
+                    </p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
                       <span>More information</span>
-                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
                     </Link>
                   </div>
                   <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#5dc6b9] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
-                    <img src={vectorThree} alt="vector two" className="mx-auto max-md:h-full" />
+                    <img
+                      src={vectorThree}
+                      alt="vector two"
+                      className="mx-auto max-md:h-full"
+                    />
                   </div>
                 </div>
               </div>
               <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
                 <div className="card h-full bg-[#deea99] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">Digital Marketing</h4>
-                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                    <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Digital Marketing
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                      Enhance your brand's presence with our creative digital
+                      marketing tools! Engage your audience and see your
+                      business grow.
+                    </p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
                       <span>More information</span>
-                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
                     </Link>
                   </div>
                   <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#b1bf62] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
-                    <img src={vectorFour} alt="vector Four" className="mx-auto max-md:h-full" />
+                    <img
+                      src={vectorFour}
+                      alt="vector Four"
+                      className="mx-auto max-md:h-full"
+                    />
                   </div>
                 </div>
               </div>
               <div className="xl:w-[calc(100%_/_3_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
                 <div className="card h-full bg-[#99cbea] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">Quality Analysis</h4>
-                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                    <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Quality Analysis
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                      Enhance your brand's presence with our creative digital
+                      marketing tools! Engage your audience and see your
+                      business grow.
+                    </p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
                       <span>More information</span>
-                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
                     </Link>
                   </div>
                   <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#76b6de] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
-                    <img src={vectorFive} alt="vector Five" className="mx-auto max-md:h-full" />
+                    <img
+                      src={vectorFive}
+                      alt="vector Five"
+                      className="mx-auto max-md:h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -823,15 +1116,30 @@ const Home = () => {
               <div className="xl:w-[calc(100%_/_3_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
                 <div className="card h-full bg-[#ea99b9] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">Mobile Application development</h4>
-                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                    <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Mobile Application development
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                      Enhance your brand's presence with our creative digital
+                      marketing tools! Engage your audience and see your
+                      business grow.
+                    </p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
                       <span>More information</span>
-                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
                     </Link>
                   </div>
                   <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#dd7aa2] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
-                    <img src={vectorSix} alt="vector Six" className="mx-auto max-md:h-full" />
+                    <img
+                      src={vectorSix}
+                      alt="vector Six"
+                      className="mx-auto max-md:h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -839,15 +1147,30 @@ const Home = () => {
               <div className="xl:w-[calc(100%_/_3_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
                 <div className="card h-full bg-[#ea9c99] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">UI/UX Design</h4>
-                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.</p>
-                    <Link to="/" className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      UI/UX Design
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                      Enhance your brand's presence with our creative digital
+                      marketing tools! Engage your audience and see your
+                      business grow.
+                    </p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
                       <span>More information</span>
-                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200"><FiArrowUpRight className="size-4" /></span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
                     </Link>
                   </div>
                   <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#d67f7c] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
-                    <img src={vectorSeven} alt="vector Seven" className="mx-auto max-md:h-full" />
+                    <img
+                      src={vectorSeven}
+                      alt="vector Seven"
+                      className="mx-auto max-md:h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -857,65 +1180,134 @@ const Home = () => {
         {/* Our Services section end */}
 
         {/* Our Blockchain Development Services section start */}
-        <section ref={sectionRef} className="development-services my-[6.0625rem] relative z-0">
-
+        <section
+          ref={sectionRef}
+          className="development-services my-[6.0625rem] relative z-0"
+        >
           <div className=" main-container">
             <div className="w-fit  ">
               <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.5rem] text-[2.2rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3 max-w-xl max-lg:mx-auto max-lg:text-center">
-                Our Blockchain
-                Development Services</h2>
-              <p className="2xl:text-[1.25rem] text-[1rem] leading-[1.875rem] font-normal text-white max-w-4xl max-lg:mx-auto max-lg:text-center pe-10"><strong>Tech Devise</strong> provides a full suite of blockchain development services to help businesses harness the full potential of the technology and stay ahead in today’s competitive web3 era.</p>
+                Our Blockchain Development Services
+              </h2>
+              <p className="2xl:text-[1.25rem] text-[1rem] leading-[1.875rem] font-normal text-white max-w-4xl max-lg:mx-auto max-lg:text-center pe-10">
+                <strong>Tech Devise</strong> provides a full suite of blockchain
+                development services to help businesses harness the full
+                potential of the technology and stay ahead in today’s
+                competitive web3 era.
+              </p>
             </div>
           </div>
           <div className="max-xl:hidden floatImage max-h-[33rem] max-w-[45.8125rem]  absolute -top-14 right-0 -z-[1] bg-pine-999 pe-[7.5rem]">
-            <img src={vectorEight} alt="vector eight" className="h-full w-full object-contain filter mix-blend-luminosity" />
+            <img
+              src={vectorEight}
+              alt="vector eight"
+              className="h-full w-full object-contain filter mix-blend-luminosity"
+            />
           </div>
           {/* slider */}
 
           <BlockchainSlider triggerRef={sectionRef} />
-
         </section>
         {/* Our Blockchain Development Services section end */}
 
         {/* Innovative Technology Solutions section start */}
         <section className="innovativeTech  my-[6.0625rem]">
           <div className="main-container">
-            <div style={{ backgroundImage: `url(${layerOne})` }} className="border-[.0625rem] border-white/40 rounded-[1.625rem] 2xl:p-[3.5625rem] xl:p-10 p-8 bg-center bg-no-repeat bg-cover">
+            <div
+              style={{ backgroundImage: `url(${layerOne})` }}
+              className="border-[.0625rem] border-white/40 rounded-[1.625rem] 2xl:p-[3.5625rem] xl:p-10 p-8 bg-center bg-no-repeat bg-cover"
+            >
               <div className="flex justify-between items-center lg:flex-row flex-col mb-[4rem] gap-5">
                 <h3 className="flex-1 2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
                   Innovative Technology <br /> Solutions
                 </h3>
                 <p
                   data-aos-delay="400"
-                  className="flex-1 2xl:text-[1.25rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center">
-                  Empowering businesses with cutting-edge IT solutions, including cloud computing, cybersecurity, AI, automation, and software development to drive efficiency, security, and growth.
+                  className="flex-1 2xl:text-[1.25rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                >
+                  Empowering businesses with cutting-edge IT solutions,
+                  including cloud computing, cybersecurity, AI, automation, and
+                  software development to drive efficiency, security, and
+                  growth.
                 </p>
               </div>
               <div className="flex lg:flex-row flex-col justify-center items-start gap-y-6">
                 <div className="xl:flex-[1_1_250px] xl:max-w-[250px] lg:flex-[1_1_200px] w-full lg:max-w-fit xl:pe-0 lg:pe-12 lg:border-r-[0.0625rem] max-lg:border-[0.0625rem] max-lg:rounded-[10px] max-lg:px-5 border-white/20">
                   <ul className="lg:block flex gap-4 justify-start items-center overflow-x-scroll hide-scroll flex-nowrap whitespace-nowrap">
-                    <li className="lg:pb-[2rem]  cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto] group/list" onClick={() => setActiveStep(1)}>
-                      <span className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${activeStep == 1 ? 'text-pine-700 before:w-full before:bg-pine-700 gap-3' : 'text-white before:w-0 before:bg-white gap-1'}`}>
+                    <li
+                      className="lg:pb-[2rem]  cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto] group/list"
+                      onClick={() => setActiveStep(1)}
+                    >
+                      <span
+                        className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${
+                          activeStep == 1
+                            ? "text-pine-700 before:w-full before:bg-pine-700 gap-3"
+                            : "text-white before:w-0 before:bg-white gap-1"
+                        }`}
+                      >
                         <span>Frontend</span>
-                        <HiArrowLongRight className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${activeStep == 1 ? 'mb-0' : '-mb-12'}`} />
+                        <HiArrowLongRight
+                          className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${
+                            activeStep == 1 ? "mb-0" : "-mb-12"
+                          }`}
+                        />
                       </span>
                     </li>
-                    <li className="lg:pb-[2rem]  cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto] group/list" onClick={() => setActiveStep(2)}>
-                      <span className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${activeStep == 2 ? 'text-pine-700 before:w-full before:bg-pine-700 gap-3' : 'text-white before:w-0 before:bg-white gap-1'}`}>
+                    <li
+                      className="lg:pb-[2rem]  cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto] group/list"
+                      onClick={() => setActiveStep(2)}
+                    >
+                      <span
+                        className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${
+                          activeStep == 2
+                            ? "text-pine-700 before:w-full before:bg-pine-700 gap-3"
+                            : "text-white before:w-0 before:bg-white gap-1"
+                        }`}
+                      >
                         <span>Backend</span>
-                        <HiArrowLongRight className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${activeStep == 2 ? 'mb-0' : '-mb-12'}`} />
+                        <HiArrowLongRight
+                          className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${
+                            activeStep == 2 ? "mb-0" : "-mb-12"
+                          }`}
+                        />
                       </span>
                     </li>
-                    <li className="lg:pb-[2rem]  cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto] group/list" onClick={() => setActiveStep(3)}>
-                      <span className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${activeStep == 3 ? 'text-pine-700 before:w-full before:bg-pine-700 gap-3' : 'text-white before:w-0 before:bg-white gap-1'}`}>
+                    <li
+                      className="lg:pb-[2rem]  cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto] group/list"
+                      onClick={() => setActiveStep(3)}
+                    >
+                      <span
+                        className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${
+                          activeStep == 3
+                            ? "text-pine-700 before:w-full before:bg-pine-700 gap-3"
+                            : "text-white before:w-0 before:bg-white gap-1"
+                        }`}
+                      >
                         <span>Mobile</span>
-                        <HiArrowLongRight className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${activeStep == 3 ? 'mb-0' : '-mb-12'}`} />
+                        <HiArrowLongRight
+                          className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${
+                            activeStep == 3 ? "mb-0" : "-mb-12"
+                          }`}
+                        />
                       </span>
                     </li>
-                    <li className="lg:pb-[0.4rem] cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto]  group/list" onClick={() => setActiveStep(4)}>
-                      <span className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${activeStep == 4 ? 'text-pine-700 before:w-full before:bg-pine-700 gap-3' : 'text-white before:w-0 before:bg-white gap-1'}`}>
+                    <li
+                      className="lg:pb-[0.4rem] cursor-pointer max-lg:py-3 max-lg:flex-[0_0_auto]  group/list"
+                      onClick={() => setActiveStep(4)}
+                    >
+                      <span
+                        className={`w-fit overflow-hidden flex justify-between items-center cursor-pointer text-nowrap  text-[1.125rem] leading-[1.8125rem] font-bold relative before:absolute before:h-[.0625rem] before:transition-all before:duration-300 before:bottom-[0.0625rem] pb-1 before:left-0 before:max-lg:hidden ${
+                          activeStep == 4
+                            ? "text-pine-700 before:w-full before:bg-pine-700 gap-3"
+                            : "text-white before:w-0 before:bg-white gap-1"
+                        }`}
+                      >
                         <span>UI/UX Desing</span>
-                        <HiArrowLongRight className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${activeStep == 4 ? 'mb-0' : '-mb-12'}`} />
+                        <HiArrowLongRight
+                          className={`group-hover/list:mb-0 transition-all duration-300 size-[3] max-lg:hidden ${
+                            activeStep == 4 ? "mb-0" : "-mb-12"
+                          }`}
+                        />
                       </span>
                     </li>
                   </ul>
@@ -924,35 +1316,79 @@ const Home = () => {
                   {activeStep === 1 && (
                     <div className="lg:grid lg:grid-cols-4 flex flex-wrap justify-start items-center md:gap-[1.5625rem] gap-2">
                       {langlistOne.map((item, index) => (
-                        <div key={index} className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2">
-                          <img src={item.icon} alt="lang icon" className=" lg:size-[3rem] sm:size-[30px] size-[18px]" /> <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">{item.langName}</span>
+                        <div
+                          key={index}
+                          className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2"
+                        >
+                          <img
+                            src={item.icon}
+                            alt="lang icon"
+                            className=" lg:size-[3rem] sm:size-[30px] size-[18px]"
+                          />{" "}
+                          <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">
+                            {item.langName}
+                          </span>
                         </div>
                       ))}
-                    </div>)}
+                    </div>
+                  )}
                   {activeStep === 2 && (
                     <div className="lg:grid lg:grid-cols-4 flex flex-wrap justify-start items-center md:gap-[1.5625rem] gap-2">
                       {langlistTwo.map((item, index) => (
-                        <div key={index} className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2">
-                          <img src={item.icon} alt="lang icon" className=" lg:size-[3rem] sm:size-[30px] size-[18px]" /> <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">{item.langName}</span>
+                        <div
+                          key={index}
+                          className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2"
+                        >
+                          <img
+                            src={item.icon}
+                            alt="lang icon"
+                            className=" lg:size-[3rem] sm:size-[30px] size-[18px]"
+                          />{" "}
+                          <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">
+                            {item.langName}
+                          </span>
                         </div>
                       ))}
-                    </div>)}
+                    </div>
+                  )}
                   {activeStep === 3 && (
                     <div className="lg:grid lg:grid-cols-4 flex flex-wrap justify-start items-center md:gap-[1.5625rem] gap-2">
                       {langlistThree.map((item, index) => (
-                        <div key={index} className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2">
-                          <img src={item.icon} alt="lang icon" className=" lg:size-[3rem] sm:size-[30px] size-[18px]" /> <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">{item.langName}</span>
+                        <div
+                          key={index}
+                          className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2"
+                        >
+                          <img
+                            src={item.icon}
+                            alt="lang icon"
+                            className=" lg:size-[3rem] sm:size-[30px] size-[18px]"
+                          />{" "}
+                          <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">
+                            {item.langName}
+                          </span>
                         </div>
                       ))}
-                    </div>)}
+                    </div>
+                  )}
                   {activeStep === 4 && (
                     <div className="lg:grid lg:grid-cols-4 flex flex-wrap justify-start items-center md:gap-[1.5625rem] gap-2">
                       {langlistFour.map((item, index) => (
-                        <div key={index} className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2">
-                          <img src={item.icon} alt="lang icon" className=" lg:size-[3rem] sm:size-[30px] size-[18px]" /> <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">{item.langName}</span>
+                        <div
+                          key={index}
+                          className="max-lg:flex-[1_1_150px] max-sm:flex-[1_0_100px] sm:border-[.0625rem] sm:px-2 px-[2] border-white/40 rounded-[.625rem] bg-pine-600 lg:max-w-[16.5rem] lg:min-h-[6rem] max-lg:py-3 lg:w-full flex justify-center items-center md:gap-4 gap-2"
+                        >
+                          <img
+                            src={item.icon}
+                            alt="lang icon"
+                            className=" lg:size-[3rem] sm:size-[30px] size-[18px]"
+                          />{" "}
+                          <span className="text-white text-[1.25rem] leading-[1.8125rem] font-normal text-nowrap">
+                            {item.langName}
+                          </span>
                         </div>
                       ))}
-                    </div>)}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -965,8 +1401,14 @@ const Home = () => {
           <div className="main-container">
             <div className="flex justify-center items-center gap-5 lg:flex-row flex-col rounded-[1.625rem] p-6 bg-pine-600">
               <div className="flex-1 flex justify-start items-center gap-x-16">
-                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">You can Find <br /> Us on</h4>
-                <img src={vectorNine} alt="vector nine" className="max-lg:hidden max-xl:h-[5.125rem]" />
+                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
+                  You can Find <br /> Us on
+                </h4>
+                <img
+                  src={vectorNine}
+                  alt="vector nine"
+                  className="max-lg:hidden max-xl:h-[5.125rem]"
+                />
               </div>
               <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[.875rem] overflow-hidden">
                 <div className="sm:h-[8.25rem] bg-[#0077b5] flex justify-between items-center gap-2 lg:px-12 px-3 group/link">
@@ -990,13 +1432,15 @@ const Home = () => {
           </div>
         </section>
         {/* socialLink section end */}
+
         {/* Seamless Vision start */}
         <section className="my-[6.0625rem]">
           <div className="main-container">
             <div className="md:border-[.0625rem] border-white/20 rounded-3xl flex max-lg:flex-wrap items-center lg:justify-between justify-center 2xl:p-14 gap-12 lg:p-12 md:p-10">
-              <div className="lg:pb-[3.3125rem] lg:w-1/2 w-full ">
+              <div className="lg:pb-[3.3125rem] lg:w-1/2 w-full">
                 <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
-                  A Seamless Vision that Adapts to Every Industry<span>&apos;</span>s Demands
+                  A Seamless Vision that Adapts to Every Industry
+                  <span>&apos;</span>s Demands
                 </h4>
                 <p className="text-white font-medium text-[1.25rem] leading-[1.875rem] lg:mb-16 mb-7 max-lg:text-center">
                   We deliver flexible and innovative IT solutions tailored to
@@ -1004,24 +1448,35 @@ const Home = () => {
                   efficiency, scalability, and long-term success.
                 </p>
                 <div className="p-6 bg-gradient-to-b from-pine-600/70 to-pine-600 rounded-3xl md:flex max-xl:flex-wrap items-center xl:justify-between justify-center lg:gap-3 gap-5">
-
                   <div className="gallerySlider md:hidden py-10">
-                    <VisionSlider />.
+                    <VisionSlider industries={industries} />
                   </div>
 
-
                   <p className="text-white text-[1.25rem] 2xl:text-balance leading-[2.25rem] max-xl:text-center max-lg:mb-4">
-                    Fuel Success in a Digital- First World with <span className="text-2xl">300+</span>
+                    Fuel Success in a Digital-First World with{" "}
+                    <span className="text-2xl">300+</span>
                     Visionaries.
                   </p>
-                  <button className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">Let’s Innovate Together <BsArrowRight className="size-[1.875rem]" /></button>
+                  <button className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">
+                    Let's Innovate Together{" "}
+                    <BsArrowRight className="size-[1.875rem]" />
+                  </button>
                 </div>
               </div>
-              <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden">
-                {miniGridLoop.map((minigrid, index) => (
-                  <div key={index} className="relative rounded-xl overflow-hidden">
-                    <img src={minigrid.image} alt="mini grid image" className="w-full aspect-square object-cover" />
-                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85  p-3 text-sm text-white font-semibold">{minigrid.title}</div>
+              <div className="lg:w-1/2 w-full grid grid-cols-4 gap-[.625rem] max-md:hidden">
+                {industries.map((industry, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-xl overflow-hidden"
+                  >
+                    <img
+                      src={`${API_BASE_URL}/images${industry.image}`}
+                      alt={industry.title}
+                      className="w-full aspect-square object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85 p-3 text-sm text-white font-semibold">
+                      {industry.title}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1039,14 +1494,19 @@ const Home = () => {
               </h4>
 
               <div className="flex gap-3">
-                <button ref={prev2Ref} className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer">
+                <button
+                  ref={prev2Ref}
+                  className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
+                >
                   <GoArrowLeft className="size-6" />
                 </button>
-                <button ref={next2Ref} className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer">
+                <button
+                  ref={next2Ref}
+                  className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
+                >
                   <GoArrowRight className="size-6" />
                 </button>
               </div>
-
             </div>
 
             <div className="">
@@ -1075,7 +1535,7 @@ const Home = () => {
                 }}
                 navigation={{
                   prevEl: prev2Ref.current,
-                  nextEl: next2Ref.current
+                  nextEl: next2Ref.current,
                 }}
               >
                 {companyLogos.map((item, index) => {
@@ -1088,7 +1548,7 @@ const Home = () => {
                         image={item.image}
                         title={item.name}
                         discription={item.dis}
-                      // className={"group-[.swiper-slide-active]:scale-x-100 scale-x-0 origin-left transition-all"}
+                        // className={"group-[.swiper-slide-active]:scale-x-100 scale-x-0 origin-left transition-all"}
                       />
                     </SwiperSlide>
                   );
@@ -1101,81 +1561,109 @@ const Home = () => {
 
         {/* Let’s Talk start */}
         <section className="pb-[6.0625rem]">
+          <ToastContainer position="top-right" autoClose={5000} />
           <div className="main-container">
             <div className="border-[.0625rem] border-white/40 rounded-3xl flex flex-wrap items-start relative">
-              <img src={formBlur} alt="formBlur" className="absolute top-1/2 left-1/2 -translate-1/2 pointer-events-none w-1/2" />
+              <img
+                src={formBlur}
+                alt="formBlur"
+                className="absolute top-1/2 left-1/2 -translate-1/2 pointer-events-none w-1/2"
+              />
               <div className="p-14 pb-0 lg:w-[45%] w-full relative before:w-[1px] before:h-[calc(100%_-_100px)] before:absolute before:right-0 before:top-1/2 before:-translate-1/2 before:bg-[#FFFFFF14] before:z-10 lg:text-start text-center">
                 <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-5">
                   Let<span>&apos;</span>s Talk
                 </h4>
-                <h5 className=" lg:text-[2.375rem] text-[2rem] font-medium text-white lg:w-fit mb-6 lg:text-start text-center">
+                <h5 className="lg:text-[2.375rem] text-[2rem] font-medium text-white lg:w-fit mb-6 lg:text-start text-center">
                   Partner with tech catalysts who transform ideas into impact.
                 </h5>
                 <p className="text-white font-medium text-2xl mb-16 mt-3">
                   Book your free consultation with us.
                 </p>
-                <img src={vector13} alt="form image" className="w-full max-w-[28.9375rem] max-h-[25.625rem] object-contain lg:object-left max-lg:mx-auto" />
+                <img
+                  src={vector13}
+                  alt="form image"
+                  className="w-full max-w-[28.9375rem] max-h-[25.625rem] object-contain lg:object-left max-lg:mx-auto"
+                />
               </div>
               <div className="lg:w-[55%] w-full 2xl:p-14 lg:p-10 md:p-8 sm:p-5 p-3 max-sm:pb-5">
                 <h4 className="text-[2rem] text-white font-bold mb-[2.0625rem]">
                   Speak with our Experts
                 </h4>
-                <form action="#">
+                <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap justify-between">
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
                         type="text"
+                        name="fullname"
                         className="inputControl"
                         placeholder="Full Name"
+                        value={formData.fullname}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
                         type="email"
+                        name="email"
                         className="inputControl"
                         placeholder="Business Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
                         type="number"
+                        name="phone"
                         className="inputControl"
                         placeholder="Mobile Number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
                         type="text"
+                        name="company_name"
                         className="inputControl"
                         placeholder="Company name"
+                        value={formData.company_name}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <select
                         className="inputControl"
-                        name="JabTitle"
-                        id="title"
+                        name="job_title"
+                        value={formData.job_title}
+                        onChange={handleChange}
+                        required
                       >
-                        <option value="JabTitle">Jab Title</option>
-                        <option value="JabTitle">Jab Title</option>
-                        <option value="JabTitle">Jab Title</option>
+                        <option value="">Job Title</option>
+                        <option value="1">Entrepreneur</option>
+                        <option value="2">Manager</option>
+                        <option value="3">Director</option>
+                        <option value="4">C-Level</option>
+                        <option value="5">Student</option>
+                        <option value="6">Other</option>
                       </select>
                     </div>
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <select
                         className="inputControl"
-                        name="Launchtimeline"
-                        id="title"
+                        name="launch_timeline"
+                        value={formData.launch_timeline}
+                        onChange={handleChange}
+                        required
                       >
-                        <option value="Launchtimeline?">
-                          Launch timeline?
-                        </option>
-                        <option value="Launchtimeline?">
-                          Launch timeline?
-                        </option>
-                        <option value="Launchtimeline?">
-                          Launch timeline?
-                        </option>
+                        <option value="">Launch timeline?</option>
+                        <option value="1">Immediately</option>
+                        <option value="2">1-3 months</option>
+                        <option value="3">3-6 months</option>
+                        <option value="4">6+ months</option>
                       </select>
                     </div>
                     <div className="w-full">
@@ -1184,25 +1672,36 @@ const Home = () => {
                         max={20000}
                         step={100}
                         value={budget}
-                        onChange={setBudget}
+                        onChange={(value) => {
+                          setBudget(value);
+                          setFormData((prev) => ({
+                            ...prev,
+                            budget: value.toString(),
+                          }));
+                        }}
                         label="Budget"
                         formatValue={formatCurrency}
                         formatCurrency={formatCurrency(budget)}
                       />
-                      {/* <div className="mt-8 text-center text-lg">
-                        <p>
-                          Selected Budget:
-                          <span className="font-semibold text-teal-300">
-                            {formatCurrency(budget)}
-                          </span>
-                        </p>
-                      </div> */}
                     </div>
                     <div className="w-full">
-                      <textarea name="write" className="inputControl resize-none" rows={6} placeholder='About Project'></textarea>
+                      <textarea
+                        name="message"
+                        className="inputControl resize-none"
+                        rows={6}
+                        placeholder="About Project"
+                        value={formData.message}
+                        onChange={handleChange}
+                      ></textarea>
                     </div>
                     <div className="w-full">
-                      <button className="bg-white rounded-[.625rem] py-2.5 px-5 border-0 outline-0 text-xl font-bold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4">Submit</button>
+                      <button
+                        type="submit"
+                        className="bg-white rounded-[.625rem] py-2.5 px-5 border-0 outline-0 text-xl font-bold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Submitting..." : "Submit"}
+                      </button>
                     </div>
                   </div>
                 </form>
@@ -1216,21 +1715,51 @@ const Home = () => {
         <section className="pb-[1.0625rem]">
           <div className="main-container text-white">
             <div className="text-center mb-[3.9375rem]">
-              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">Location</h4>
-              <h3 className='text-[3.4375rem] font-extrabold leading-none mb-5'>We&apos;d love to here from you</h3>
-              <p className='text-lg font-medium leading-[1.8125rem] inline-block relative'>We have offices and teams all around the world. <img src={vector12} alt="vector12" className='w-[5.6875rem] absolute top-full lg:left-full left-1/2 -translate-x-1/2' /></p>
+              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
+                Location
+              </h4>
+              <h3 className="text-[3.4375rem] font-extrabold leading-none mb-5">
+                We&apos;d love to here from you
+              </h3>
+              <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
+                We have offices and teams all around the world.{" "}
+                <img
+                  src={vector12}
+                  alt="vector12"
+                  className="w-[5.6875rem] absolute top-full lg:left-full left-1/2 -translate-x-1/2"
+                />
+              </p>
             </div>
             <div className="grid gap-[1.375rem] xl:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-[4.1875rem] pb-[7rem] relative z-0">
-              <img src={map} alt="map" className='max-w-full h-full object-contain absolute top-0 left-1/2 -translate-x-1/2 -z-[1]' />
+              <img
+                src={map}
+                alt="map"
+                className="max-w-full h-full object-contain absolute top-0 left-1/2 -translate-x-1/2 -z-[1]"
+              />
               {addressList.map((listitem, index) => (
-                <div key={index} className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]">
-                  <img src={listitem.bgimage} alt="indai bg" className='2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover' />
+                <div
+                  key={index}
+                  className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]"
+                >
+                  <img
+                    src={listitem.bgimage}
+                    alt="indai bg"
+                    className="2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover"
+                  />
                   <div className="grow">
                     <div className="flex gap-[.9375rem] items-center mb-[1.375rem]">
-                      <img src={listitem.flag} alt="indaiFlag" className="w-[3.1875rem] h-[2.125rem]" />
-                      <span className='font-bold capitalize'>{listitem.countryName}</span>
+                      <img
+                        src={listitem.flag}
+                        alt="indaiFlag"
+                        className="w-[3.1875rem] h-[2.125rem]"
+                      />
+                      <span className="font-bold capitalize">
+                        {listitem.countryName}
+                      </span>
                     </div>
-                    <p className='2xl:text-lg text-base font-medium leading-[1.8125rem]'>{listitem.address}</p>
+                    <p className="2xl:text-lg text-base font-medium leading-[1.8125rem]">
+                      {listitem.address}
+                    </p>
                   </div>
                 </div>
               ))}

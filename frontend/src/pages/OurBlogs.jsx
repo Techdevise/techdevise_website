@@ -1,14 +1,7 @@
 import SearchAlt from "/Search_alt.svg";
-import wordpress from "/wordpress.svg";
 import blog from "/blog.webp";
-import blog1 from "/blog1.webp";
-import blog2 from "/blog2.webp";
-import blog3 from "/blog3.webp";
-import blog4 from "/blog4.webp";
-import blog5 from "/blog5.webp";
-import blog6 from "/blog6.webp";
 import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import axios from "axios";
 
 // Location section data
@@ -20,8 +13,6 @@ import state3 from "/state3.webp";
 import flag1 from "/flag1.svg";
 import flag2 from "/flag2.svg";
 import flag3 from "/flag3.svg";
-import map from "/map.svg";
-import mapWhite from "/mapWhite.svg";
 import CustomRangeSlider from "../components/CustomRangeSlider";
 import Location from "../components/Location";
 
@@ -125,39 +116,29 @@ const OurBlogs = () => {
               </p>
             </div>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[2.0625rem]">
-            {blogs.map((item, index) => (
-              <div key={item._id || index} className="group">
-                <div className="relative">
-                  <img
-                    src={`${BASE_URL}/${item.image}`}
-                    alt="blog"
-                    className="w-full rounded-[1.25rem] object-cover aspect-[1.6/1] block mb-[1.6875rem]"
-                  />
-                  {/* <img
-                    src={wordpress}
-                    alt="wordpress"
-                    className="absolute z-10 top-1/2 left-1/2 -translate-1/2 mix-blend-plus-lighter opacity-0 group-hover:opacity-100 transition-all"
-                  /> */}
-                </div>
-                <h6 className="text-[#157B6C] text-xl flex gap-[1.125rem] items-center font-semibold mb-4">
-                  <span>{item.title}</span>
-                  {/* <i className='w-2 h-2 rounded-2xl bg-[#157B6C] '></i> */}
-                  <span>{item.readTime}</span>
-                </h6>
-                <h5 className="text-xl font-bold text-black mb-1.5">
-                  {item.heading}
-                </h5>
-                <p className="text-xl mb-3.5">{item.description}</p>
-                <Link
-                  to={item.link || "#"}
-                  className="text-[#9F9F9F] text-xl font-medium underline"
-                >
-                  {formatDate(item.date)}
-                </Link>
-              </div>
-            ))}
-          </div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[2.0625rem]">
+  {blogs.map((item) => (
+    <div key={item.id} className="group">
+      <Link to={`/blog-detail/${item.id}`} className="block">
+        <div className="relative">
+          <img
+            src={`${BASE_URL}/${item.image}`}
+            alt="blog"
+            className="w-full rounded-[1.25rem] object-cover aspect-[1.6/1] block mb-[1.6875rem]"
+          />
+        </div>
+        <h6 className="text-[#157B6C] text-xl flex gap-[1.125rem] items-center font-semibold mb-4">
+          <span>{item.title}</span>
+          <span>{item.readTime}</span>
+        </h6>
+        <p className="text-xl mb-3.5">{item.sub_title}</p>
+        <div className="text-[#9F9F9F] text-xl font-medium">
+          {formatDate(item.date)}
+        </div>
+      </Link>
+    </div>
+  ))}
+</div>
         </div>
       </section>
       {/* Plugins section end */}
@@ -172,6 +153,7 @@ const OurBlogs = () => {
               (item, index) =>
                 index < 3 && (
                   <div key={index} className="group">
+                    <Link to={`/blog-detail/${item.id}`} className="block">
                     <div className="relative">
                       <img
                         src={`${BASE_URL}/${item.image}`}
@@ -187,16 +169,17 @@ const OurBlogs = () => {
                     <h6 className="text-[#157B6C] text-xl flex gap-[1.125rem] items-center font-semibold mb-4">
                       <span>{item.title}</span> <span>{item.readTime}</span>
                     </h6>
-                    <h5 className="text-xl font-bold text-black mb-1.5 ">
+                    {/* <h5 className="text-xl font-bold text-black mb-1.5 ">
                       {item.heading}
-                    </h5>
-                    <p className="text-xl mb-3.5 ">{item.discription}</p>
+                    </h5> */}
+                    <p className="text-xl mb-3.5 ">{item.sub_title}</p>
                     <Link
                       to={item.link}
                       className="text-[#9F9F9F] text-xl font-medium underline"
                     >
                       {item.tiem}
                     </Link>
+                  </Link>
                   </div>
                 )
             )}

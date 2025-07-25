@@ -32,7 +32,7 @@ export default createBrowserRouter([
                 element: <OurBlogs />,
             },
             {
-                path: '/blog-detail',
+                path: '/blog-detail/:id',
                 element: <BlogDetail />
             },
             {

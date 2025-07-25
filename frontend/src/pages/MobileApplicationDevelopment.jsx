@@ -1,16 +1,15 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState ,useEffect} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import 'swiper/css/navigation';
-
+import axios from "axios";
 // images
 import serviceBgPhone from '/serviceBgPhone.webp'
 import playVector from '/playVector.svg'
 import vector14 from '/vector14.svg'
-import card11 from '/card11.webp'
 import mapWhite from '/mapWhite.svg'
 
 import ios from '/ios.svg'
@@ -89,16 +88,19 @@ import { HiOutlineArrowLongRight } from 'react-icons/hi2'
 
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 const MobileApplicationDevelopment = () => {
-
+ const [slides, setSlides] = useState([]);
+ const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [isTab, setIsTab] = useState(1)
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
+ const swiperRef = useRef(null);
   const prevRef2 = useRef(null);
   const nextRef2 = useRef(null);
   const prevRefLang = useRef(null);
   const nextRefLang = useRef(null);
+
   const tab = [
     { tabTitle: 'iOS App Development Ideation' },
     { tabTitle: 'iOS Application Design and Strategy' },
@@ -139,6 +141,25 @@ const MobileApplicationDevelopment = () => {
       para: 'Tech Devise believes in achieving complete customer satisfaction. This is the primary force that drives our company. Our expert team of professionals incorporates only the best programming practices that are duly backed up with updated technology. This factor helps us to develop and create user-friendly and robust iOS applications. Our team also provides assistance by offering additional testing and support services during the pre and post-application development stages. The final app delivered is highly optimized and is bug-free allowing users to relish a smooth interactive app on iOS devices. Get in touch with our team to get immediate results.',
     },
   ]
+
+   
+ useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/api/react_native`);
+        if (response.data.success) {
+          setSlides(response.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching slides:", error.message);
+      }
+    };
+    fetchSlides();
+  }, []);
+
+  const handleSlideChange = (swiper) => {
+    setCurrentSlideIndex(swiper.activeIndex);
+  };
 
   const native = [
     {
@@ -235,75 +256,87 @@ const MobileApplicationDevelopment = () => {
       {/* Solutions section end */}
 
       {/* Building ios app section start */}
-      <section className="Building ios my-[4.6875rem] py-[4.875rem] bg-gradient-to-r from-[#FCFFEE] to-[#DEEA99]">
-        <div className="main-container">
-          <div className="flex justify-center items-start lg:flex-row flex-col 2xl:gap-[6.25rem] lg:gap-[4.375rem] gap-10">
-            <img src={card11} alt=" card 11" className='lg:max-w-[32.875rem] lg:max-h-[29.3125rem] w-full h-full lg:object-contain object-cover' />
-            <div className="lg:w-[calc(100%_-_32.875rem)] w-full flex flex-col">
+     <section className="Building ios my-[4.6875rem] py-[4.875rem] bg-gradient-to-r from-[#FCFFEE] to-[#DEEA99]">
+      <div className="main-container">
+        <div className="flex justify-center items-start lg:flex-row flex-col 2xl:gap-[6.25rem] lg:gap-[4.375rem] gap-10">
+          {/* Dynamic image that syncs with active slide */}
+          {slides.length > 0 && (
+            <img 
+              src={`${API_BASE_URL}/images${slides[currentSlideIndex]?.image}`} 
+              alt={slides[currentSlideIndex]?.title || 'Slide image'} 
+              className='lg:max-w-[32.875rem] lg:max-h-[29.3125rem] w-full h-full lg:object-contain object-cover transition-opacity duration-500' 
+            />
+          )}
 
-              <div className="flex justify-between items-center gap-5 order-2">
-                <Link to="/mobile-application-development" className='flex w-fit gap-3 justify-center items-center py-3 px-5 rounded-[10px] border border-black bg-[#F7FBDF] text-base font-semibold text-black' >
-                  More Information  <HiOutlineArrowLongRight className='size-10' />
-                </Link>
+          <div className="lg:w-[calc(100%_-_32.875rem)] w-full flex flex-col">
+            <div className="flex justify-between items-center gap-5 order-2">
+              <Link to="/mobile-application-development" className='flex w-fit gap-3 justify-center items-center py-3 px-5 rounded-[10px] border border-black bg-[#F7FBDF] text-base font-semibold text-black'>
+                More Information <HiOutlineArrowLongRight className='size-10' />
+              </Link>
 
-                <div className="flex gap-2.5 justify-between items-stretch  order-1">
-                  <button ref={prevRef} className="cursor-pointer">
-                    <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowLeft className="size-7" />
-                    </div>
-                  </button>
+              <div className="flex gap-2.5 justify-between items-stretch order-1">
+                <button ref={prevRef} className="cursor-pointer">
+                  <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
+                    <GoArrowLeft className="size-7" />
+                  </div>
+                </button>
 
-                  <button ref={nextRef} className="cursor-pointer order-2">
-                    <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowRight className="size-7" />
-                    </div>
-                  </button>
-                </div>
+                <button ref={nextRef} className="cursor-pointer order-2">
+                  <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
+                    <GoArrowRight className="size-7" />
+                  </div>
+                </button>
               </div>
+            </div>
 
+            {slides.length > 0 ? (
               <Swiper
                 className="mySwiper w-full order-1"
                 spaceBetween={30}
                 slidesPerView={1}
                 speed={1000}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ 
+                  delay: 5000,
+                  disableOnInteraction: false 
+                }}
                 grabCursor={true}
                 modules={[Autoplay, Navigation]}
-                onInit={(swiper) => {
-                  // Re-assign custom buttons after swiper is initialized
+                onSwiper={(swiper) => {
+                  swiperRef.current = swiper;
                   swiper.params.navigation.prevEl = prevRef.current;
                   swiper.params.navigation.nextEl = nextRef.current;
                   swiper.navigation.init();
                   swiper.navigation.update();
                 }}
+                onSlideChange={handleSlideChange}
                 navigation={{
                   prevEl: prevRef.current,
                   nextEl: nextRef.current
                 }}
               >
-                {buildIos.map((item, index) => {
-                  return (
-                    <SwiperSlide
-                      key={index}
-                      className="flex justify-center items-center "
-                    >
-                      <h2 className='text-black lg:text-[3rem] md:text-[2.5rem] sm:text-[2.3rem] text-[2rem] font-bold'>
-                        {item.title}
-                      </h2>
-                      <p className='my-6 text-[1.125rem] leading-[2.125rem] font-semibold text-blacj'>
-                        {item.para}
-                      </p>
-
-                    </SwiperSlide>
-                  );
-                })}
+                {slides.map((item, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className="flex flex-col justify-center items-start"
+                  >
+                    <h2 className='text-black lg:text-[3rem] md:text-[2.5rem] sm:text-[2.3rem] text-[2rem] font-bold'>
+                      {item.title}
+                    </h2>
+                    <p className='my-6 text-[1.125rem] leading-[2.125rem] font-semibold text-black'>
+                      {item.message}
+                    </p>
+                  </SwiperSlide>
+                ))}
               </Swiper>
-
-
-            </div>
+            ) : (
+              <div className="w-full order-1 flex justify-center items-center min-h-[200px]">
+                <p>Loading slides...</p>
+              </div>
+            )}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
       {/* Building ios app section end */}
 
       {/* Comprehensive section start*/}

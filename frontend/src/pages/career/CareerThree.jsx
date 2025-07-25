@@ -7,7 +7,7 @@ import FlagInput from '../../components/FlagInput';
 import { Link } from 'react-router-dom';
 import { PiPlus, PiMinus } from 'react-icons/pi';
 import { toast,ToastContainer } from 'react-toastify';
-
+import "react-toastify/dist/ReactToastify.css";
 // Images
 import career1 from '/career1.webp';
 import modal1 from '/modal1.webp';

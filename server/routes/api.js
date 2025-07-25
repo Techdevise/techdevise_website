@@ -21,6 +21,7 @@ var apiRouter = express.Router();
   apiRouter.post('/roles/create' ,itRolesController.createRole)
 
     apiRouter.get('/blogs' ,blogController.listing_blogs)
+    apiRouter.get('/blogs/:id' ,blogController.view_blogs)
      apiRouter.get('/teams' ,blogController.listing_Team)
      apiRouter.get('/techTeam' ,blogController.listing_TechTeam)
       apiRouter.get('/officeActivity' ,blogController.listing_Office_Activity)
