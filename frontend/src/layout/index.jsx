@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import { MdOutlineWhatsapp } from "react-icons/md";
 
 import AOS from "aos";
