@@ -13,6 +13,9 @@ import ContactUs from "../pages/ContactUs";
 import ItStaff from "../pages/ItStaff";
 import Portfolio from "../pages/Portfolio";
 import DigitalMarketingOne from "../pages/DigitalMarketingPages/DigitalMarketingOne";
+import AiDevelopment from "../pages/AiDevelopment";
+import QualityAnalysis from "../pages/QualityAnalysis";
+import Blockchain from "../pages/Blockchain";
 
 export default createBrowserRouter([
     {
@@ -72,7 +75,19 @@ export default createBrowserRouter([
                 path: '/digital-marketing-one',
                 element: <DigitalMarketingOne />
             },
-            
+              {
+                path: '/blockchain',
+                element: <Blockchain />
+            },
+            {
+                path: '/ai-development',
+                element: <AiDevelopment />
+            },
+
+            {
+                path: '/quality-analysis',
+                element: <QualityAnalysis />
+            },
         ]
     }
 ])

@@ -31,7 +31,7 @@ const index = () => {
         </div>
       </div>
       {/* <div
-  onClick={() => window.open('https://wa.me/9050714376', '_blank')}
+  onClick={() => window.open('https://wa.me/', '_blank')}
   className="cursor-pointer whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] right-[2.5rem] aspect-square rounded-full bg-white"
 >
   <div className="h-full w-full rounded-full flex justify-center items-center relative">
