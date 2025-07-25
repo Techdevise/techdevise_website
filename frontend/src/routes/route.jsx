@@ -6,7 +6,7 @@ import OurBlogs from "../pages/OurBlogs";
 import BlogDetail from "../pages/BlogDetail";
 import MobileApplicationDevelopment from "../pages/MobileApplicationDevelopment";
 import WebApplicationDevelopment from "../pages/WebApplicationDevelopment";
-import CareerOne from "../pages/career/careerOne";
+import CareerOne from "../pages/career/CareerOne";
 import CareerTwo from "../pages/career/CareerTwo";
 import CareerThree from "../pages/career/CareerThree";
 import ContactUs from "../pages/ContactUs";
