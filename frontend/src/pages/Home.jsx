@@ -71,7 +71,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import BlockchainSlider from "../components/BlockchainSlider";
 import { PiArrowCircleUpRightLight } from "react-icons/pi";
 import { BsArrowRight } from "react-icons/bs";
-import VisionSlider from "../components/visionSlider";
+import VisionSlider from "../components/VisionSlider";
 import TestimonialCard from "../components/TestimonialCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
