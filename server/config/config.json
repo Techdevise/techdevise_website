@@ -7,16 +7,16 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root1",
+    "username": "root2",
     "password": "root12345",
-    "database": "techdeviseweb",
+    "database": "techdeviseweb1",
     "host": "147.93.102.161",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root1",
+    "username": "root2",
     "password": "root12345",
-    "database": "techdeviseweb",
+    "database": "techdeviseweb1",
     "host": "147.93.102.161",
     "dialect": "mysql"
   }
