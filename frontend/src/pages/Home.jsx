@@ -1448,9 +1448,9 @@ const Home = () => {
                   efficiency, scalability, and long-term success.
                 </p>
                 <div className="p-6 bg-gradient-to-b from-pine-600/70 to-pine-600 rounded-3xl md:flex max-xl:flex-wrap items-center xl:justify-between justify-center lg:gap-3 gap-5">
-                  <div className="gallerySlider md:hidden py-10">
+                  {/* <div className="gallerySlider md:hidden py-10">
                     <VisionSlider industries={industries} />
-                  </div>
+                  </div> */}
 
                   <p className="text-white text-[1.25rem] 2xl:text-balance leading-[2.25rem] max-xl:text-center max-lg:mb-4">
                     Fuel Success in a Digital-First World with{" "}
