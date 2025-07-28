@@ -39,7 +39,7 @@ try {
                 req.session.admin = findemail;
                 return res.redirect("/admin/dashboard");
             } else {
-                const errorMessage = error.message || 'Something went wrong, please try again later.';
+                const errorMessage = 'Something went wrong, please try again later.';
                 req.flash("error", errorMessage);
                 return res.redirect("/admin/login");
             }
