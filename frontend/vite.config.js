@@ -7,6 +7,7 @@ export default defineConfig({
    server: {
   host: '0.0.0.0',
   port: 3003,
+   allowedHosts: ['website.techdevise.com'],
   strictPort: true,
 },
   plugins: [react(), tailwindcss()],
