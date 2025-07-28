@@ -38,6 +38,13 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve React static files
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Catch-all to handle React routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
