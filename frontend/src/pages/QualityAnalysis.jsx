@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -47,7 +48,8 @@ const QualityAnalysis = () => {
     const [isActiveTab, setActiveTab] = useState(1);
 
     const [isOpen, setOpen] = useState(1);
-
+ const [activeService, setActiveService] = useState('digitalAssurance');
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const coLogos = [
         {
             image: quailtySlideLogo1,
@@ -111,55 +113,51 @@ const QualityAnalysis = () => {
         },
     ];
 
-    const businessCards = [
-        {
-            icon: busi1,
-            title: 'QA Advisory',
-            para: 'Guiding your digital assurance journey to excellence..',
-        },
+  
+  const [services, setServices] = useState({
+    digitalAssurance: {
+      title: "Digital Assurance",
+      description: "Coupling your digital assurance journey to quality",
+      items: []
+    },
+    digitalEngineering: {
+      title: "Digital Engineering",
+      description: "Driving quality in enterprise platforms",
+      items: []
+    }
+  });
 
-        {
-            icon: busi2,
-            title: 'AI Powered Testing',
-            para: 'Smarter, faster, more reliable.',
-        },
+  const BASE_URL = `${API_BASE_URL}/images`; 
 
-        {
-            icon: busi3,
-            title: 'Quality Engineering',
-            para: 'Quality assured through our comprehensive services.',
-        },
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const [assuranceRes, engineeringRes] = await Promise.all([
+          axios.get(`${API_BASE_URL}/api/digital_As`),
+          axios.get(`${API_BASE_URL}/api/digital_Eng`)
+        ]);
 
-        {
-            icon: busi4,
-            title: 'Next Gen Applications Testing',
-            para: 'Assuring tomorrow’s solutions, today.',
-        },
+        if (assuranceRes.data.success && engineeringRes.data.success) {
+          setServices({
+            digitalAssurance: {
+              title: "Digital Assurance",
+              description: "Coupling your digital assurance journey to quality",
+              items: assuranceRes.data.data
+            },
+            digitalEngineering: {
+              title: "Digital Engineering",
+              description: "Driving quality in enterprise platforms",
+              items: engineeringRes.data.data
+            }
+          });
+        }
+      } catch (error) {
+        console.error("Failed to fetch service data:", error);
+      }
+    };
 
-        {
-            icon: busi5,
-            title: 'Enterprise Applications Testing',
-            para: 'Driving quality in enterprise platforms.',
-        },
-
-        {
-            icon: busi6,
-            title: 'Data & Analytics Testing.',
-            para: 'Smarter, faster, more reliable.',
-        },
-
-        {
-            icon: busi7,
-            title: 'Automation Testing',
-            para: 'Scale with speed, express with quality.',
-        },
-
-        {
-            icon: busi8,
-            title: 'QA for AI Systems',
-            para: 'Reliable AI systems with comprehensive QA.',
-        },
-    ]
+    fetchServices();
+  }, []);
     const tabBtn = ["100% Cloud Based", "TechDevice Explorer", "Cross-Functional", "TestAgent powered by Copado AI Platform", "Complete End-to-End Testing", "Tackle Defects Faster"]
 
     const tabContent = [
@@ -281,36 +279,51 @@ const QualityAnalysis = () => {
 
 
             {/* Business section start */}
-            <section className="business my-[4.6875rem]">
-                <div className="main-container">
-                    <div className="section-header text-center mb-[5.375rem] max-w-5xl mx-auto">
-                        <h5 className='text-base font-medium text-white w-fit mx-auto mb-5 py-[1.125rem] px-[3.4375rem] rounded-full bg-gradient-to-b from-[#0B6F4F] via-[#021811] to-[#000000] '>What we do</h5>
-                        <h3 className="text-[3rem] font-extrabold  text-black mb-[1.625rem]">Accelerate your business</h3>
-                        <p className="text-[1.125rem] leading-[1.625rem] font-medium">With an emphasis on digital business transformation, we consult and implement programs aimed at
-                            strengthening enterprises in the present while ensuring preparedness for the future.</p>
-                    </div>
+             <section className="business my-[4.6875rem]">
+      <div className="main-container">
+        <div className="section-header text-center mb-[5.375rem] max-w-5xl mx-auto">
+          <h5 className='text-base font-medium text-white w-fit mx-auto mb-5 py-[1.125rem] px-[3.4375rem] rounded-full bg-gradient-to-b from-[#0B6F4F] via-[#021811] to-[#000000]'>What we do</h5>
+          <h3 className="text-[3rem] font-extrabold text-black mb-[1.625rem]">Accelerate your business</h3>
+          <p className="text-[1.125rem] leading-[1.625rem] font-medium">
+            With an emphasis on digital business transformation, we consult and implement programs aimed at
+            strengthening enterprises in the present while ensuring preparedness for the future.
+          </p>
+        </div>
 
-                    <div className="tabButtons flex justify-center items-center gap-[3.8125rem] my-12">
-                        <button className={`text-xl leading-[1.75rem] font-bold text-[#014DA2]`}>Digital Assurance</button>
-                        <button className={`text-xl leading-[1.75rem] font-bold text-black`}>Digital Engineering</button>
-                    </div>
+        <div className="tabButtons flex justify-center items-center gap-[3.8125rem] my-12">
+          <button 
+            onClick={() => setActiveService('digitalAssurance')}
+            className={`text-xl leading-[1.75rem] font-bold ${activeService === 'digitalAssurance' ? 'text-[#014DA2]' : 'text-black'}`}
+          >
+            Digital Assurance
+          </button>
+          <button 
+            onClick={() => setActiveService('digitalEngineering')}
+            className={`text-xl leading-[1.75rem] font-bold ${activeService === 'digitalEngineering' ? 'text-[#014DA2]' : 'text-black'}`}
+          >
+            Digital Engineering
+          </button>
+        </div>
 
-                    <div className="flex justify-center items-stretch flex-wrap gap-5">
-                        {businessCards.map((item, index) => (
-                            <div className="flex-[1_1_400px]">
-                                <div className="h-full w-full">
-                                    <div style={{ backgroundImage: `url(${item.icon})` }} className='bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end'>
-                                        <div className="cardBody text-white">
-                                            <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>{item.title}</h4>
-                                            <p className="text-base leading-[1.8125rem] font-normal">{item.para}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+        <div className="flex justify-center items-stretch flex-wrap gap-5">
+          {services[activeService]?.items.map((item, index) => (
+            <div key={index} className="flex-[1_1_400px]">
+              <div className="h-full w-full">
+                <div 
+                  style={{ backgroundImage: `url(${BASE_URL}/${item.image})` }} 
+                  className='bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end'
+                >
+                  <div className="cardBody text-white">
+                    <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>{item.name}</h4>
+                    <p className="text-base leading-[1.8125rem] font-normal">{item.message}</p>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
             {/* Business section end */}
 
             {/* Gain Insights into our Services start */}
