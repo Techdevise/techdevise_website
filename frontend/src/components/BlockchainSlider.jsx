@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -27,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlockchainSlider = ({ triggerRef }) => {
     const swiperRef = useRef(null);
-
+const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const slideContent = [
         {
             title: "Blockchain Consultation & Integration",
@@ -85,10 +85,23 @@ const BlockchainSlider = ({ triggerRef }) => {
         },
     ];
 
+    const brackpoint = 992;
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup: Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
     useEffect(() => {
         const swiperInstance = swiperRef.current.swiper;
         const totalSlides = slideContent.length;
-
+       if (windowWidth > brackpoint) {
         gsap.to({}, {
             scrollTrigger: {
                 trigger: triggerRef.current,
@@ -105,6 +118,9 @@ const BlockchainSlider = ({ triggerRef }) => {
                 },
             }
         });
+         } else {
+      console.log(`GSAP disabled below ${brackpoint + 1}px.`);
+    }
 
         return () => {
             ScrollTrigger.killAll();
@@ -118,20 +134,19 @@ const BlockchainSlider = ({ triggerRef }) => {
                 className="mySwiper blockChain w-full justify-between"
                 slidesPerView={1}
                 spaceBetween={30}
-                speed={400}
+                speed={2000}
                 grabCursor={true}
-                centeredSlides={false}
+                centeredSlides={true}
                 parallax={true}
                 pagination={{ clickable: true }}
                 modules={[Pagination, Parallax]}
                 breakpoints={{
                     710: {
-                        slidesPerView: 2,
-                        centeredSlides: false, 
+                        slidesPerView: 1.4,
+                        spaceBetween: 90
                     },
-                    1024: {
-                        slidesPerView: 1.6,
-                        centeredSlides: true, 
+                    1500: {
+                        slidesPerView: 1.9,
                     },
                 }}
 

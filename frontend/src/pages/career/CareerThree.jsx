@@ -125,7 +125,7 @@ const CareerThree = () => {
       <section style={{ backgroundImage: `url(${career1})` }} className='h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
         <h1 className='text-[2.5rem] font-bold text-white'>Careers</h1>
       </section>
-<ToastContainer/>
+ <ToastContainer position="top-right" autoClose={5000} />
       {/* Application Form Section */}
       <section className="open-positions my-[4.6875rem] pb-[3rem]">
         <div className="main-container">
@@ -172,15 +172,15 @@ const CareerThree = () => {
               </div>
 
               <div className='col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]'>
-                {/* <FlagInput 
+                <FlagInput 
                   type="tel" 
                   value={formData.phone}
                  name="phone"
                  onChange={handleChange}
                   countryCode={countryCode}
                   setCountryCode={setCountryCode}
-                /> */}
-                <input 
+                />
+                {/* <input 
                   type="tel" 
                   name="phone"
                   value={formData.phone}
@@ -188,7 +188,7 @@ const CareerThree = () => {
                   placeholder='Phone No' 
                   className='h-[4.375rem] bg-[#fafafa] w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none' 
                   required
-                />
+                /> */}
               </div>
 
               {/* Message */}

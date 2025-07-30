@@ -49,7 +49,9 @@ import icon26 from "/langicon/icon26.svg";
 import icon27 from "/langicon/icon27.svg";
 import icon28 from "/langicon/icon28.svg";
 // Images
+import halfDotCirleGreen from '/halfDotCirleGreen.svg'
 
+import halfDotCircleWhite from '/halfDotCircleWhite.svg'
 // social icons
 import linkedin from "/linkedin.svg";
 import upwork from "/upwork.svg";
@@ -71,7 +73,6 @@ import { FiArrowUpRight } from "react-icons/fi";
 import BlockchainSlider from "../components/BlockchainSlider";
 import { PiArrowCircleUpRightLight } from "react-icons/pi";
 import { BsArrowRight } from "react-icons/bs";
-import VisionSlider from "../components/VisionSlider";
 import TestimonialCard from "../components/TestimonialCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -109,11 +110,14 @@ import clogo15 from "/clogo15.svg";
 import dashGreen from "/dashGreen.webp";
 import dashWhite from "/dashWhite.webp";
 import Clock from "../components/clock";
+import GetInTouch from "../components/GetInTouch";
+import TextShuffling from "../components/TextShuffling";
 
 const Home = () => {
   const sectionRef = useRef(null);
   const [activeStep, setActiveStep] = useState(1);
   const [industries, setIndustries] = useState([]);
+  const [showModal, setShowModal] = useState(false);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -122,6 +126,53 @@ const Home = () => {
   const next2Ref = useRef(null);
 
   const [budget, setBudget] = useState(10000);
+    const clockThirSlideCircles = [
+    {
+      bordeColor: 'border-pine-700',
+      bgColor: 'bg-pine-700',
+      textColor: 'text-white',
+      arrow: halfDotCirleGreen,
+      title: 'Sprint Backlog',
+    },
+    {
+      bordeColor: 'border-white',
+      bgColor: 'bg-white',
+      textColor: 'text-pine-700',
+      arrow: halfDotCircleWhite,
+      title: 'Planning',
+    },
+
+    {
+      bordeColor: 'border-pine-700',
+      bgColor: 'bg-pine-700',
+      textColor: 'text-white',
+      arrow: halfDotCirleGreen,
+      title: 'Implementation',
+    },
+    {
+      bordeColor: 'border-white',
+      bgColor: 'bg-white',
+      textColor: 'text-pine-700',
+      arrow: halfDotCircleWhite,
+      title: 'Review',
+    },
+
+    {
+      bordeColor: 'border-pine-700',
+      bgColor: 'bg-pine-700',
+      textColor: 'text-white',
+      arrow: halfDotCirleGreen,
+      title: 'Retrospective',
+    },
+    {
+      bordeColor: 'border-white',
+      bgColor: 'bg-white',
+      textColor: 'text-pine-700',
+      arrow: halfDotCircleWhite,
+      title: 'Definition of Done',
+    },
+
+  ]
 
   const langlistOne = [
     {
@@ -298,6 +349,7 @@ const Home = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const formatCurrency = (value) => {
     return new Intl.NumberFormat("en-US", {
@@ -308,16 +360,66 @@ const Home = () => {
     }).format(value);
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Name validation
+    if (!formData.fullname.trim()) {
+      newErrors.fullname = "Full name is required";
+    } else if (!/^[A-Za-z\s]+$/.test(formData.fullname)) {
+      newErrors.fullname = "Name should contain only letters and spaces";
+    } else if (formData.fullname.length < 3) {
+      newErrors.fullname = "Name should be at least 3 characters";
+    }
+
+    // Email validation
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    // Phone validation
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10,15}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number should be 10-15 digits";
+    }
+
+    // Job title validation
+    if (!formData.job_title) {
+      newErrors.job_title = "Job title is required";
+    }
+
+    // Launch timeline validation
+    if (!formData.launch_timeline) {
+      newErrors.launch_timeline = "Launch timeline is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -334,9 +436,6 @@ const Home = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            // Add any additional headers if needed
-            // 'Authorization': `Bearer ${token}`,
-            // 'X-Custom-Header': 'value'
           },
         }
       );
@@ -358,6 +457,7 @@ const Home = () => {
           message: "",
         });
         setBudget(20000);
+        setErrors({});
       } else {
         throw new Error(response.data.message || "Failed to submit form");
       }
@@ -549,13 +649,14 @@ const Home = () => {
                         >
                           Expert Development Services for you
                         </h3>
-                        <h1
+                        <TextShuffling />
+                        {/* <h1
                           data-aos="fade-up"
                           data-aos-delay="800"
                           className="2xl:text-[6rem] xl:text-[5rem] lg:text-[4.375rem] md:text-[3.125rem] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mt-3"
                         >
                           Digital marketing
-                        </h1>
+                        </h1> */}
                       </div>
                     </div>
                     <div className="flex-[0_1_0%]">
@@ -563,6 +664,7 @@ const Home = () => {
                         data-aos="fade-right"
                         data-aos-delay="1000"
                         className="bg-transparent border border-white/40 rounded-[.625rem] text-[1.25rem] py-4 px-5 text-white font-semibold flex justify-center items-center gap-[.75rem] w-fit max-lg:mx-auto shine-effect"
+                        onClick={() => setShowModal(true)}
                       >
                         <span>Consult Our Experts</span>
                         <HiOutlineArrowLongRight className="size-10" />
@@ -677,109 +779,48 @@ const Home = () => {
             <div className="flex-1">
               <div className="grid lg:grid-cols-4 min-[480px]:grid-cols-3 grid-cols-2 lg:gap-[1.875rem] gap-[.9375rem]">
                 <div className="lg:col-span-2 min-[480px]:col-span-3 col-span-2 max-lg:text-center mb-3">
-                  <h3
-                    data-aos="fade-down"
-                    data-aos-delay="200"
-                    className="text-[3rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700"
-                  >
-                    Experience
-                  </h3>
-                  <p
-                    data-aos="fade-down"
-                    className="text-[1.125rem] leading-[2.125rem] font-normal text-white lg:max-w-xl"
-                  >
-                    With years of experience in the IT industry, we have
-                    successfully delivered cutting-edge software solutions, web
-                    and mobile applications, and enterprise-grade systems. Our
-                    expertise spans various technologies, ensuring innovative,
-                    scalable, and secure digital solutions tailored to your
-                    business needs.
-                  </p>
+                  <h3 data-aos="fade-down" data-aos-delay="200" className="text-[3rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700">Experience</h3>
+                  <p data-aos="fade-down" className="text-[1.125rem] leading-[2.125rem] font-normal text-white lg:max-w-2xl">With years of experience in the IT industry, we have successfully delivered cutting-edge software solutions, web and mobile applications, and enterprise-grade systems. Our expertise spans various technologies, ensuring innovative, scalable, and secure digital solutions tailored to your business needs.</p>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#67c792]">
-                    <AutoCounter
-                      sectionRef={countRef}
-                      label="Visitors Today"
-                      maxValue={10}
-                      speed={750}
-                    />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Years of Experience
-                    </h4>
+                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={10} speed={752} />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Years of Experience</h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#deea99]">
-                    <AutoCounter
-                      sectionRef={countRef}
-                      label="Visitors Today"
-                      maxValue={500}
-                      speed={12}
-                    />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Clients
-                    </h4>
+                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Clients</h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#99eae0]">
-                    <AutoCounter
-                      sectionRef={countRef}
-                      label="Visitors Today"
-                      maxValue={500}
-                      speed={12}
-                    />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Years of Experience
-                    </h4>
+                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Clients</h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#99cbea]">
-                    <AutoCounter
-                      sectionRef={countRef}
-                      label="Visitors Today"
-                      maxValue={20}
-                      speed={375}
-                    />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Client
-                    </h4>
+                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={20} speed={376} />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#ea99b9]">
-                    <AutoCounter
-                      sectionRef={countRef}
-                      label="Visitors Today"
-                      maxValue={500}
-                      speed={12}
-                    />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Client
-                    </h4>
+                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#ea9c99]">
-                    <AutoCounter
-                      sectionRef={countRef}
-                      label="Visitors Today"
-                      maxValue={20}
-                      speed={375}
-                    />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Client
-                    </h4>
+                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={20} speed={376} />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              data-aos="zoom-in"
-              className="flex-[0_1_7.3125rem] max-w-[7.3125rem] max-xl:hidden overflow-hidden"
-            >
+            <div data-aos="zoom-in" className="flex-[0_1_7.3125rem] max-w-[7.3125rem] max-xl:hidden overflow-hidden">
               <h2 className="2xl:text-[5.5rem] text-[5rem] inline-block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1f2d29] to-[#08211b] rotate-90 origin-[10%_50%]">
                 Experience
               </h2>
@@ -789,25 +830,19 @@ const Home = () => {
         {/* Experience section end */}
 
         {/* Our Tech section start */}
-        <section className="OurTech overflow-hidden max-lg:hidden">
+       <section className="OurTech overflow-hidden max-lg:hidden">
           <div className="main-container">
+
             <div className="flex justify-between items-center mb-5">
               <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.5rem] text-[2.2rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 max-w-6xl max-lg:mx-auto max-lg:text-center mb-[1.75rem]">
-                Our Tech Offerings - Tailored to Your Time Zone and Business
-                Needs
-              </h2>
+                Our Tech Offerings - Tailored to Your Time Zone and Business Needs</h2>
 
               <div className="flex gap-3">
-                <button
-                  ref={prevRef}
-                  className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
-                >
+
+                <button ref={prevRef} className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer">
                   <GoArrowLeft className="size-6" />
                 </button>
-                <button
-                  ref={nextRef}
-                  className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
-                >
+                <button ref={nextRef} className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer">
                   <GoArrowRight className="size-6" />
                 </button>
               </div>
@@ -818,8 +853,9 @@ const Home = () => {
                 spaceBetween={30}
                 slidesPerView={1}
                 speed={1000}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 1000 }}
                 grabCursor={true}
+                loop={true}
                 modules={[Autoplay, Navigation]}
                 onInit={(swiper) => {
                   // Re-assign custom buttons after swiper is initialized
@@ -830,103 +866,83 @@ const Home = () => {
                 }}
                 navigation={{
                   prevEl: prevRef.current,
-                  nextEl: nextRef.current,
-                }}
-                breakpoints={{
+                  nextEl: nextRef.current
+                }} breakpoints={{
                   1440: {
                     slidesPerView: 1.2,
                   },
                 }}
               >
-                <SwiperSlide className="flex">
+                <SwiperSlide
+                  className="flex"
+                >
                   <div className="flex justify-between items-stretch 2xlp-[2.625rem] p-9 rounded-[3rem] bg-pine-600 ">
                     <div className="flex-[22rem] max-w-[22rem] aspect-square bg-pine-700 rounded-full p-3 shrink-0 self-center">
                       <div className="h-full w-full text-white text-center rounded-full  border-white/80 dashed-lg flex justify-center items-center flex-col px-1">
-                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
-                          Staff Augmentation
-                        </h4>
-                        <p className="text-[1.105rem] leading-[1.75rem] font-medium">
-                          Hire pre-vetted developers skilled in the latest
-                          technologies, ready to work around the clock to meet
-                          your project needs.
-                        </p>
+                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">Staff Augmentation</h4>
+                        <p className="text-[1.105rem] leading-[1.75rem] font-medium">Hire pre-vetted developers skilled in the latest technologies, ready to work around the clock to meet your project needs.</p>
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
-                        <Clock
-                          countryName="USA"
-                          bgColor="#FDE3DA"
-                          pinColor="#646E82"
-                          innerShadowColor="#FDE3DA"
-                        />
+                        <Clock countryName="USA" bgColor="#FDE3DA" pinColor="#646E82" innerShadowColor="#FDE3DA" />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-start items-center flex-col">
                       <div className="clock1 w-[10rem]">
-                        <Clock
-                          countryName="India"
-                          bgColor="#B9CFEC"
-                          pinColor="#646E82"
-                          innerShadowColor="#B9CFEC"
-                        />
+                        <Clock countryName="India" bgColor="#B9CFEC" pinColor="#646E82" innerShadowColor="#B9CFEC" />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[10rem]">
-                        <Clock
-                          countryName="Netherlands"
-                          bgColor="#719E91"
-                          pinColor="#646E82"
-                          innerShadowColor="#2A6C59"
-                        />
+                        <Clock countryName="Netherlands" bgColor="#719E91" pinColor="#646E82" innerShadowColor="#2A6C59" />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-start items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
-                        <Clock
-                          countryName="Canada"
-                          bgColor="#EA99B9"
-                          pinColor="#646E82"
-                          innerShadowColor="#EA99B9"
-                        />
+                        <Clock countryName="Canada" bgColor="#EA99B9" pinColor="#646E82" innerShadowColor="#EA99B9" />
                       </div>
                     </div>
                   </div>
                 </SwiperSlide>
 
-                <SwiperSlide className="flex">
+                <SwiperSlide
+                  className="flex"
+                >
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem]  ">
-                    <h4 className="text-[1.625rem] mb-2 font-bold">
-                      Build your offshore development team
-                    </h4>
-                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">
-                      At TechDevise, setting up dedicated software development
-                      team is quick and hassle-free, completed in just four
-                      simple steps.
-                    </p>
+                    <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
+                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.</p>
                     <div className="grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-[2.8125rem]">
                       {offshore.map((item, index) => (
-                        <div
-                          key={index}
-                          className="relative py-[.9375rem] pl-[1.0625rem] pr-[2.4375rem] group"
-                        >
-                          <img
-                            src={item.image}
-                            alt="dash green"
-                            className="w-full absolute bottom-0 left-0 group-even:top-0"
-                          />
+                        <div key={index} className="relative py-[.9375rem] pl-[1.0625rem] pr-[2.4375rem] group">
+                          <img src={item.image} alt="dash green" className='w-full absolute bottom-0 left-0 group-even:top-0' />
                           <div className="bg-pine-700 h-[13.125rem] rounded-[.8125rem] pb-[1.0625rem] pl-[1.5625rem] pr-3 flex flex-col justify-end group-even:bg-white group-even:text-pine-700">
-                            <h5 className="text-lg font-semibold leading-[1.5rem] mb-1.5">
-                              {item.title}
-                            </h5>
-                            <p className="text-lg leading-[1.5rem]">
-                              {item.discription}
-                            </p>
+                            <h5 className='text-lg font-semibold leading-[1.5rem] mb-1.5'>{item.title}</h5>
+                            <p className='text-lg leading-[1.5rem]'>{item.discription}</p>
                           </div>
                         </div>
                       ))}
                     </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="flex">
+                  <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem] w-full pb-[5.3125rem]">
+                    <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
+                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.</p>
+
+                    <div className="mt-[4.1875rem] flex justify-start items-center gap-[2.85rem]">
+                      {clockThirSlideCircles.map((item, index) => (
+                        <div key={index} className="size-[10.5625rem]  rounded-full flex justify-center items-center aspect-square relative">
+                          <div className={`absolute inset-0 bg-transparent rounded-full border-2 ${item.bordeColor} border-solid scale-[100.6%] border-r-transparent border-t-transparent rotate-45`}></div>
+                          <div className={`absolute inset-0 bg-transparent rounded-full border-2 ${item.bordeColor} border-dashed scale-[100.6%] border-l-transparent border-b-transparent rotate-45`}></div>
+                          <img src={item.arrow} alt="GreenArrow" className="arrow absolute left-full top-1/2 -translate-y-1/2" />
+                          <div className={`size-[8.6875rem] ${item.bgColor} rounded-full px-4 flex justify-center items-center`}>
+                            <span className={`${item.textColor} text-sm leading-[1.5rem] font-bold text-center`}>{item.title}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -1411,22 +1427,43 @@ const Home = () => {
                 />
               </div>
               <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[.875rem] overflow-hidden">
-                <div className="sm:h-[8.25rem] bg-[#0077b5] flex justify-between items-center gap-2 lg:px-12 px-3 group/link">
+                <a
+                  href="https://www.linkedin.com/company/techdevise"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sm:h-[8.25rem] bg-[#0077b5] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
+                >
                   <img src={linkedin} alt="linkedin" className="h-[2rem]" />
                   <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
-                </div>
-                <div className="sm:h-[8.25rem] bg-[#14a800] flex justify-between items-center gap-2 lg:px-12 px-3 group/link">
-                  <img src={upwork} alt="linkedin" className="h-[2rem]" />
+                </a>
+                <a
+                  href="https://www.upwork.com/agencies/techdevise/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sm:h-[8.25rem] bg-[#14a800] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
+                >
+                  <img src={upwork} alt="upwork" className="h-[2rem]" />
                   <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
-                </div>
-                <div className="sm:h-[8.25rem] bg-[#17313b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link">
-                  <img src={clutch} alt="linkedin" className="h-[2rem]" />
+                </a>
+                <a
+                  href="https://clutch.co/profile/tech-devise"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sm:h-[8.25rem] bg-[#17313b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
+                >
+                  <img src={clutch} alt="clutch" className="h-[2rem]" />
                   <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
-                </div>
-                <div className="sm:h-[8.25rem] bg-[#0ab67b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link">
-                  <img src={trustpilot} alt="linkedin" className="h-[2rem]" />
+                </a>
+
+                <a
+                  href="https://www.trustpilot.com/review/techdevise.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sm:h-[8.25rem] bg-[#0ab67b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
+                >
+                  <img src={trustpilot} alt="trustpilot" className="h-[2rem]" />
                   <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -1767,6 +1804,7 @@ const Home = () => {
           </div>
         </section>
         {/* Location end */}
+        <GetInTouch showModal={showModal} setShowModal={setShowModal} />
       </main>
     </>
   );

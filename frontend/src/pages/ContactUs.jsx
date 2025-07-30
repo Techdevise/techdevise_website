@@ -31,57 +31,81 @@ const ContactUs = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Format time: HH:mm -> HH:mm:00
-    const formattedTime = formData.time ? `${formData.time}:00` : "";
+  // Basic validation
+  const errors = [];
+  if (!formData.first_name.trim()) errors.push("First name is required.");
+  if (!formData.last_name.trim()) errors.push("Last name is required.");
+  if (!formData.email.trim()) {
+    errors.push("Email is required.");
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    errors.push("Email is not valid.");
+  }
+  if (!formData.phone.trim()) {
+    errors.push("Phone number is required.");
+  } else if (!/^\d{10}$/.test(formData.phone)) {
+    errors.push("Phone number must be 10 digits.");
+  }
+  if (!formData.date) errors.push("Date is required.");
+  if (!formData.time) errors.push("Time is required.");
+  if (!formData.job_title.trim()) errors.push("Job title is required.");
+  if (!formData.launch_timeline.trim()) errors.push("Launch timeline is required.");
+  if (!formData.message.trim()) errors.push("Message is required.");
 
-    // Format date: YYYY-MM-DD -> DD-MM-YYYY
-    let formattedDate = "";
-    if (formData.date) {
-      const [year, month, day] = formData.date.split("-");
-      formattedDate = `${day}-${month}-${year}`;
-    }
+  if (errors.length > 0) {
+    errors.forEach((err) => toast.error(err));
+    return;
+  }
 
-    const payload = {
-      ...formData,
-      date: `${formattedTime}, ${formattedDate}`,
-    };
+  // Format time: HH:mm -> HH:mm:00
+  const formattedTime = formData.time ? `${formData.time}:00` : "";
 
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/contact_us`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+  // Format date: YYYY-MM-DD -> DD-MM-YYYY
+  let formattedDate = "";
+  if (formData.date) {
+    const [year, month, day] = formData.date.split("-");
+    formattedDate = `${day}-${month}-${year}`;
+  }
 
-      const data = await res.json();
-
-      if (data.success) {
-        toast.success("Form submitted successfully!");
-
-        setFormData({
-          first_name: "",
-          last_name: "",
-          email: "",
-          phone: "",
-          date: "",
-          time: "",
-          job_title: "",
-          launch_timeline: "",
-          message: "",
-        });
-      } else {
-        toast.error("Error: " + data.message);
-      }
-    } catch (err) {
-      console.error("Form submit error:", err);
-      toast.error("Something went wrong.");
-    }
+  const payload = {
+    ...formData,
+    date: `${formattedTime}, ${formattedDate}`,
   };
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/contact_us`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      toast.success("Form submitted successfully!");
+      setFormData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
+        date: "",
+        time: "",
+        job_title: "",
+        launch_timeline: "",
+        message: "",
+      });
+    } else {
+      toast.error("Error: " + data.message);
+    }
+  } catch (err) {
+    console.error("Form submit error:", err);
+    toast.error("Something went wrong.");
+  }
+};
 
   return (
     <>
@@ -154,6 +178,7 @@ const ContactUs = () => {
                     name="first_name"
                     value={formData.first_name}
                     onChange={handleChange}
+                    required
                     placeholder="First Name"
                     className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
@@ -163,6 +188,7 @@ const ContactUs = () => {
                     type="text"
                     name="last_name"
                     value={formData.last_name}
+                    required
                     onChange={handleChange}
                     placeholder="Last Name"
                     className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
@@ -174,6 +200,7 @@ const ContactUs = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                     placeholder="Email"
                     className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
@@ -185,20 +212,16 @@ const ContactUs = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Phone No"
+                    required
                     className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
-                <div className="xl:col-span-1 max-sm:col-span-full ">
-                  {/* <CustomSelector
-                    options={natureOfWorkOptions}
-                    id={"natureOfWorkOptions"}
-                    placeholder={"Nature of Work"}
-                  /> */}
+                <div className="xl:col-span-1 max-sm:col-span-full relative">
                   <select
                     name="job_title"
                     value={formData.job_title}
                     onChange={handleChange}
-                  className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
+                    className="appearance-none h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] p-5 pr-12 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                     style={customInputStyle}
                     required
                   >
@@ -210,18 +233,29 @@ const ContactUs = () => {
                     <option value="5">Student</option>
                     <option value="6">Others</option>
                   </select>
+
+                  {/* Dropdown Arrow Icon */}
+                  <div className="pointer-events-none absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      className="w-4 h-4 text-black/50"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.127l3.71-3.897a.75.75 0 011.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <div className="xl:col-span-1 max-sm:col-span-full  bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] ">
-                  {/* <CustomSelector
-                    options={Purpose}
-                    id={"Purpose"}
-                    placeholder={"Purpose"}
-                  /> */}
+
+                <div className="xl:col-span-1 max-sm:col-span-full relative bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]">
                   <select
                     name="launch_timeline"
                     value={formData.launch_timeline}
                     onChange={handleChange}
-                  className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
+                    className="appearance-none h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] p-5 pr-12 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                     style={customInputStyle}
                     required
                   >
@@ -231,29 +265,42 @@ const ContactUs = () => {
                     <option value="3">4-6 Months</option>
                     <option value="4">After 6 Months</option>
                   </select>
+
+                  {/* Dropdown Arrow Icon */}
+                  <div className="pointer-events-none absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      className="w-4 h-4 text-black/50"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.127l3.71-3.897a.75.75 0 011.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
                 </div>
 
-                <div className="xl:col-span-1 max-sm:col-span-full  bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] ">
-                  {/* <CustomSelector options={date} id={'Date'} placeholder={'Date'} /> */}
+                <div className="xl:col-span-1 max-sm:col-span-full bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]">
                   <input
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
                     type="date"
-                   className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
+                    className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] px-5  placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                     style={customInputStyle}
                     required
                   />
                 </div>
 
-                <div className="xl:col-span-1 max-sm:col-span-full  bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] ">
-                  {/* <CustomSelector options={time} id={'Time'} placeholder={'Time'} /> */}
+                <div className="xl:col-span-1 max-sm:col-span-full bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]">
                   <input
                     name="time"
                     value={formData.time}
                     onChange={handleChange}
                     type="time"
-                  className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
+                    className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] px-5  placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                     style={customInputStyle}
                     required
                   />

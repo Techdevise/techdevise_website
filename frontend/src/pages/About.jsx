@@ -6,7 +6,7 @@ import axios from "axios";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // images
 import bg1 from "/bg1.webp";
@@ -87,7 +87,7 @@ const About = () => {
     try {
       await axios.post(`${API_BASE_URL}/api/job_position`, form);
       toast.success("Application submitted successfully!");
-  setShowFormModal(false);
+      setShowFormModal(false);
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error(
@@ -235,7 +235,7 @@ const About = () => {
         style={{ backgroundImage: `url(${bg1})` }}
         className="aboutLanding bg-cover bg-center bg-no-repeat mb-[4.6875rem]"
       >
-        <ToastContainer/>
+        <ToastContainer />
         <div className="min-h-[90dvh]"></div>
         <div className="sectionBottomContent">
           <div className="bg-black/60">
@@ -657,6 +657,7 @@ const About = () => {
                 placeholder="First Name"
                 value={formData.firstName}
                 onChange={handleChange}
+                required
                 className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
               />
             </div>
@@ -666,6 +667,7 @@ const About = () => {
                 placeholder="Last Name"
                 name="lastName"
                 value={formData.lastName}
+                required
                 onChange={handleChange}
                 className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
               />
@@ -676,6 +678,7 @@ const About = () => {
                 placeholder="Email Address"
                 name="email"
                 value={formData.email}
+                required
                 onChange={handleChange}
                 className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
               />
@@ -686,6 +689,7 @@ const About = () => {
                 placeholder="Phone No"
                 name="phone"
                 value={formData.phone}
+                required
                 onChange={handleChange}
                 className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
               />
@@ -694,6 +698,7 @@ const About = () => {
               <textarea
                 placeholder="Message"
                 name="message"
+                required
                 value={formData.message}
                 onChange={handleChange}
                 className="h-[6.875rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
@@ -704,6 +709,7 @@ const About = () => {
                 type="text"
                 placeholder="Linkedin Profile"
                 name="linkedinProfile"
+                required
                 value={formData.linkedinProfile}
                 onChange={handleChange}
                 className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
@@ -714,6 +720,7 @@ const About = () => {
                 type="text"
                 placeholder="How did you  FInd out about us?"
                 name="source"
+                required
                 value={formData.source}
                 onChange={handleChange}
                 className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"

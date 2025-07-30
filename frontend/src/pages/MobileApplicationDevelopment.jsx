@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import axios from "axios";
 // images
 import serviceBgPhone from '/serviceBgPhone.webp'
-import playVector from '/playVector.svg'
+import play from "/play.svg";
 import vector14 from '/vector14.svg'
 import mapWhite from '/mapWhite.svg'
 
@@ -35,6 +35,14 @@ import native6 from '/native6.svg'
 
 import bglayerdevices from '/bglayerdevices.webp'
 
+import langlogo1 from '/logoIcons0/lang1.svg'
+import langlogo2 from '/logoIcons0/lang2.svg'
+import langlogo3 from '/logoIcons0/lang3.svg'
+import langlogo4 from '/logoIcons0/lang4.svg'
+import langlogo5 from '/logoIcons0/lang5.svg'
+import langlogo6 from '/logoIcons0/lang6.svg'
+import langlogo7 from '/logoIcons0/lang7.svg'
+import langlogo8 from '/logoIcons0/lang8.svg'
 // lang icons 1 to 5 start
 import langlogo11 from '/logoIcons1/lang1.svg'
 import langlogo12 from '/logoIcons1/lang2.svg'
@@ -89,7 +97,9 @@ import { HiOutlineArrowLongRight } from 'react-icons/hi2'
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 const MobileApplicationDevelopment = () => {
  const [slides, setSlides] = useState([]);
+   const [isActiveSlide, setActiveSlide] = useState(1);
  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+ const [isQualityActive, setQualityActive] = useState(1);
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [isTab, setIsTab] = useState(1)
 
@@ -131,17 +141,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     },
   ]
 
-  const buildIos = [
-    {
-      title: 'Building Interactive and out of the box iOS app',
-      para: 'Tech Devise believes in achieving complete customer satisfaction. This is the primary force that drives our company. Our expert team of professionals incorporates only the best programming practices that are duly backed up with updated technology. This factor helps us to develop and create user-friendly and robust iOS applications. Our team also provides assistance by offering additional testing and support services during the pre and post-application development stages. The final app delivered is highly optimized and is bug-free allowing users to relish a smooth interactive app on iOS devices. Get in touch with our team to get immediate results.',
-    },
-    {
-      title: 'Building Interactive and out of the box iOS application',
-      para: 'Tech Devise believes in achieving complete customer satisfaction. This is the primary force that drives our company. Our expert team of professionals incorporates only the best programming practices that are duly backed up with updated technology. This factor helps us to develop and create user-friendly and robust iOS applications. Our team also provides assistance by offering additional testing and support services during the pre and post-application development stages. The final app delivered is highly optimized and is bug-free allowing users to relish a smooth interactive app on iOS devices. Get in touch with our team to get immediate results.',
-    },
-  ]
-
+const qualityContent = [1, 2, 3, 4, 5, 6]
    
  useEffect(() => {
     const fetchSlides = async () => {
@@ -198,13 +198,21 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       para: 'If you are looking for quality React Native Support & Maintenance, then we have the best engineers to look after your projects. Our team expertise in various React Native Support & Maintenance services and we assure you that all your projects will run smoothly with our maintenance and support services.',
     },
   ]
-
+  const logoIcon0 = [langlogo1, langlogo2, langlogo3, langlogo4, langlogo5, langlogo6, langlogo7, langlogo8]
   const logoIcon1 = [langlogo11, langlogo12, langlogo13, langlogo14, langlogo15, langlogo16]
   const logoIcon2 = [langlogo21, langlogo22, langlogo23, langlogo24, langlogo25, langlogo26, langlogo27, langlogo28, langlogo29]
   const logoIcon3 = [langlogo31, langlogo32, langlogo33, langlogo34, langlogo35, langlogo36, langlogo37, langlogo38, langlogo39]
   const logoIcon4 = [langlogo41, langlogo42, langlogo43, langlogo44, langlogo45]
   const logoIcon5 = [langlogo51, langlogo52, langlogo53, langlogo54]
+ const slide1 = [
 
+    { item: logoIcon0 },
+    { item: logoIcon1 },
+    { item: logoIcon2 },
+    { item: logoIcon3 },
+    { item: logoIcon4 },
+    { item: logoIcon5 },
+  ]
   // const logoSliders = [logoIcon1, logoIcon2, logoIcon3, logoIcon4, logoIcon5]
   const stackTab = ['Programming Languages', 'Frameworks', 'Databases', 'Devops', 'Payment Gateways', 'Clouds']
   return (
@@ -212,7 +220,11 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       {/*landing area of Mobile Application Development start  */}
       <section style={{ backgroundImage: `url(${serviceBgPhone})` }} className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex justify-center items-center relative z-0 before:absolute before:inset-0 before:bg-pine-999/70 before:-z-10">
         <div className="w-full max-w-[64.1875rem] m-auto text-center">
-          <img src={playVector} alt="play icon" className='mx-auto mb-7' />
+           <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
+            <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+            <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+            <img src={play} alt="play icon" className="mx-auto h-full w-full aspect-square " />
+          </div>
           <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
             Custom Mobile App <br />
             Development Services
@@ -225,15 +237,15 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       {/*landing area of Mobile Application Development end  */}
 
       {/* Solutions section start */}
-      <section className="solutions my-[4.6875rem]">
+       <section className="solutions my-[4.6875rem]">
         <div className="main-container">
           <div className="relative">
             <h4 className="texto absolute -top-3 left-5 max-lg:hidden rotate-180 text-nowrap sm:text-[2.375rem] text-[2rem] leading-[4.375rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Solutions to Explore</h4>
             <div className="flex-1 lg:ps-[7.125rem]">
               <ul className="tabs flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-3 mb-9">
                 {tab.map((tbs, index) => (
-                  <li key={index} onClick={() => setIsTab(index + 1)} className={`${isTab == index + 1 ? 'border-pine-300 bg-pine-300 text-white' : 'border-black bg-transparent text-black'} text-base text-nowrap font-semibold border py-3 px-5 rounded-[.625rem] flex justify-center items-center gap-3`}>
-                    {tbs.tabTitle} <HiOutlineArrowLongRight className='size-10' />
+                  <li key={index} onClick={() => setIsTab(index + 1)} className={`${isTab == index + 1 ? 'border-pine-300 bg-pine-300 text-white' : 'border-black bg-transparent text-black'} text-base text-nowrap font-semibold border py-3 px-3 rounded-[.625rem] flex justify-center items-center gap-3`}>
+                    {tbs.tabTitle} <HiOutlineArrowLongRight className='size-5' />
                   </li>
                 ))}
 
@@ -379,41 +391,57 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       {/* Comprehensive section end*/}
 
       {/* Develop Top-Quality section start */}
-      <section className="topQuality my-[4.6875rem]">
+       <section className="topQuality my-[4.6875rem]">
         <div className="main-container">
           <div className="relative z-0 py-24 lg:px-20 px-5 text-center before:absolute before:w-full before:h-3/4 before:top-0 before:left-0 before:bg-white before:-z-10">
             <h3 className='mb-11 2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-balance leading-[3.5rem]'>Develop Top-Quality Applications to dominate the Android Play Store</h3>
 
             <ul className="flex flex-wrap justify-center items-center gap-5 mb-[3.4375rem]">
-              <li className='w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black bg-gradient-to-r from-[#F4D8D8] to-[#EE94B8]'>
+              <li onClick={() => setQualityActive(1)} className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 ${isQualityActive == 1 ? 'bg-gradient-to-r from-[#F4D8D8] to-[#EE94B8]' : 'bg-white'}`}>
                 <span>Android Application Ideation</span>
-                <img src={quality1} alt="" />
+                <div className={`size-[3.3125rem] aspect-square flex justify-center items-center rounded-full transition-all duration-300 ${isQualityActive == 1 ? 'bg-white' : 'bg-[#EE94B8]'}`}>
+                  <img src={quality1} alt="" />
+                </div>
               </li>
-              <li className='w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black bg-gradient-to-r from-white to-white'>
+              <li onClick={() => setQualityActive(2)} className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 ${isQualityActive == 2 ? 'bg-gradient-to-r from-[#FFEEED] to-[#EA9C99]' : 'bg-white'}`}>
                 <span>UI/UX Design For Android Development</span>
-                <img src={quality2} alt="" />
+
+                <div className={`size-[3.3125rem] aspect-square flex justify-center items-center rounded-full transition-all duration-300 ${isQualityActive == 2 ? 'bg-white' : 'bg-[#EA9C99]'}`}>
+                  <img src={quality2} alt="" />
+                </div>
               </li>
-              <li className='w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black bg-gradient-to-r from-white to-white'>
+              <li onClick={() => setQualityActive(3)} className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 ${isQualityActive == 3 ? 'bg-gradient-to-r from-[#F1FFF7] to-[#67C792]' : 'bg-white'}`}>
                 <span>Tech Stack and Android Application Architecture</span>
-                <img src={quality3} alt="" />
+                <div className={`size-[3.3125rem] aspect-square flex justify-center items-center rounded-full transition-all duration-300 ${isQualityActive == 3 ? 'bg-white' : 'bg-[#67C792]'}`}>
+                  <img src={quality3} alt="" />
+                </div>
               </li>
-              <li className='w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black bg-gradient-to-r from-white to-white'>
+              <li onClick={() => setQualityActive(4)} className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 ${isQualityActive == 4 ? 'bg-gradient-to-r from-[#FDF9DF] to-[#FFE74E]' : 'bg-white'}`}>
                 <span>Android App Development</span>
-                <img src={quality4} alt="" />
+                <div className={`size-[3.3125rem] aspect-square flex justify-center items-center rounded-full transition-all duration-300 ${isQualityActive == 4 ? 'bg-white' : 'bg-[#FFE74E]'}`}>
+                  <img src={quality4} alt="" />
+                </div>
               </li>
-              <li className='w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black bg-gradient-to-r from-white to-white'>
+              <li onClick={() => setQualityActive(5)} className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 ${isQualityActive == 5 ? 'bg-gradient-to-r from-[#F0DCFF] to-[#C897EB]' : 'bg-white'}`}>
                 <span>Analyzing Android Solutions</span>
-                <img src={quality5} alt="" />
+                <div className={`size-[3.3125rem] aspect-square flex justify-center items-center rounded-full transition-all duration-300 ${isQualityActive == 5 ? 'bg-white' : 'bg-[#C897EB]'}`}>
+                  <img src={quality5} alt="" />
+                </div>
               </li>
-              <li className='w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black bg-gradient-to-r from-white to-white'>
+              <li onClick={() => setQualityActive(6)} className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 ${isQualityActive == 6 ? 'bg-gradient-to-r from-[#FFFCDD] to-[#DAD07A]' : 'bg-white'}`}>
                 <span>Maintenance</span>
-                <img src={quality6} alt="" />
+                <div className={`size-[3.3125rem] aspect-square flex justify-center items-center rounded-full transition-all duration-300 ${isQualityActive == 6 ? 'bg-white' : 'bg-[#DAD07A]'}`}>
+                  <img src={quality6} alt="" />
+                </div>
               </li>
             </ul>
+            {qualityContent.map((item) => (
+              <div key={item} className={`${isQualityActive == item ? 'block' : 'hidden'}`}>
 
-            <p className='text-[1.125rem] leading-[2.125rem] font-semibold max-w-5xl mx-auto mb-[3.4375rem]'>Android Application Ideation is a critical factor that must be considered in order to reach your desired goal. Our team is prepared to research and brainstorm allowing us to formulate strategies before initiating the coding process. The Ideation process will help you to achieve long term objectives.</p>
-
-            <img src={quality7} alt="banner quality" className='w-full lg:h-[39.625rem] ms:h-[31.25rem] h-[25rem] object-cover' />
+                <p className='text-[1.125rem] leading-[2.125rem] font-semibold max-w-5xl mx-auto mb-[3.4375rem]'>     {item} Android Application Ideation is a critical factor that must be considered in order to reach your desired goal. Our team is prepared to research and brainstorm allowing us to formulate strategies before initiating the coding process. The Ideation process will help you to achieve long term objectives.</p>
+                <img src={quality7} alt="banner quality" className='w-full lg:h-[39.625rem] ms:h-[31.25rem] h-[25rem] object-cover' />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -507,7 +535,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
       {/* Tech Stack We Use section start */}
-      <section style={{ backgroundImage: `url(${bglayerdevices})` }} className="py-[4.687rem] mb-[3rem] bg-bottom bg-cover bg-no-repeat">
+       <section style={{ backgroundImage: `url(${bglayerdevices})` }} className="py-[4.687rem] mb-[3rem] bg-bottom bg-cover bg-no-repeat">
         <div className="main-container">
           <h3 className='2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-black mb-[2.5625rem]'>Tech Stack We Use</h3>
           <div className="lg:pe-[4.8125rem] relative">
@@ -516,7 +544,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
             <div className="bg-white py-[2.1875rem] px-[3.125rem] rounded-[.625rem] ">
               <ul className='flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-[4.5rem] mb-10'>
                 {stackTab.map((item, index) => (
-                  <li key={index} className='text-[1.5rem] leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:w-full before:h-[.125rem] before:bg-black before:bottom-0 before:left-0'>
+                  <li onClick={() => setActiveSlide(index + 1)} key={index} className={`text-[1.5rem] cursor-pointer leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-black before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
                     {item}
                   </li>
                 ))}
@@ -537,42 +565,47 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
                     </div>
                   </button>
                 </div>
-                <Swiper
-                  className="mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1"
-                  slidesPerView={'auto'}
-                  spaceBetween={30}
-                  speed={500}
-                  loop={true}
-                  // autoplay={{ delay: 1, disableOnInteraction: false }}
-                  grabCursor={true}
-                  modules={[Navigation]}
-                  onInit={(swiper) => {
-                    // Re-assign custom buttons after swiper is initialized
-                    swiper.params.navigation.prevEl = prevRefLang.current;
-                    swiper.params.navigation.nextEl = nextRefLang.current;
-                    swiper.navigation.init();
-                    swiper.navigation.update();
-                  }}
-                  navigation={{
-                    prevEl: prevRefLang.current,
-                    nextEl: nextRefLang.current
-                  }}
-                >
-                  {logoIcon2.map((item, index) => {
-                    return (
-                      <SwiperSlide
-                        key={index}
-                        className="flex justify-center items-center !w-[10rem]"
-                      >
-                        <img
-                          src={item}
-                          alt='logo'
-                          className="block object-contain h-[9.375rem] w-[10.5rem] mx-auto"
-                        />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
+
+                {slide1.map((slide, index) => (
+
+                  <Swiper
+                    key={index}
+                    className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1 ${isActiveSlide == index + 1 ? 'flex' : '!hidden'}`}
+                    slidesPerView={'auto'}
+                    spaceBetween={30}
+                    speed={500}
+                    loop={true}
+                    autoplay={{ delay: 1, disableOnInteraction: false }}
+                    grabCursor={true}
+                    modules={[Navigation, Autoplay]}
+                    onInit={(swiper) => {
+                      // Re-assign custom buttons after swiper is initialized
+                      swiper.params.navigation.prevEl = prevRefLang.current;
+                      swiper.params.navigation.nextEl = nextRefLang.current;
+                      swiper.navigation.init();
+                      swiper.navigation.update();
+                    }}
+                    navigation={{
+                      prevEl: prevRefLang.current,
+                      nextEl: nextRefLang.current
+                    }}
+                  >
+                    {slide.item.map((itm, index) => {
+                      return (
+                        <SwiperSlide
+                          key={index}
+                          className="flex justify-center items-center !w-[10rem]"
+                        >
+                          <img
+                            src={itm}
+                            alt='logo'
+                            className="block object-contain h-[9.375rem] w-[10.5rem] mx-auto"
+                          />
+                        </SwiperSlide>
+                      );
+                    })}
+                  </Swiper>
+                ))}
               </div>
             </div>
           </div>

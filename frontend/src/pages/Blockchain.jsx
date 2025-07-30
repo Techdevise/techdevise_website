@@ -5,7 +5,7 @@ import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-
+import play from "/play.svg"
 import { Link } from "react-router-dom";
 
 // images
@@ -44,10 +44,12 @@ import platform10 from "/Platform10.svg";
 import expertise1 from "/expertise1.png";
 import expertise2 from "/expertise2.png";
 import expertise3 from "/expertise3.png";
+import GetInTouch from "../components/GetInTouch";
 
 const Blockchain = () => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const BASE_URL = `${API_BASE_URL}/images`;
+  const [showModal, setShowModal] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const prevRef2 = useRef(null);
@@ -164,7 +166,11 @@ const Blockchain = () => {
         className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex justify-center items-center "
       >
         <div className="w-full max-w-[64.1875rem] m-auto text-center">
-          <img src={playVector} alt="play icon" className="mx-auto mb-7" />
+          <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
+                    <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+                    <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+                    <img src={play} alt="play icon" className="mx-auto h-full w-full aspect-square " />
+                  </div>
           <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
             Blockchain Development Company
           </h1>
@@ -173,15 +179,15 @@ const Blockchain = () => {
             charge toward the web3 future with our advanced blockchain
             development services.
           </p>
-          <Link
-            to="/"
+          <button
+            onClick={() => setShowModal(true)}
             className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
           >
             Consult Our Experts{" "}
             <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
               <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
             </span>
-          </Link>
+          </button>
         </div>
       </section>
       {/*landing area of BlockChain Development sections end  */}
@@ -568,15 +574,15 @@ const Blockchain = () => {
             </div>
           </div>
           <div className="flex justify-center items-center mt-[4.625rem]">
-            <Link
-              to="/"
+            <button
+              onClick={() => setShowModal(true)}
               className="bg-pine-999 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
             >
               Consult Our Experts{" "}
               <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
                 <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
               </span>
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -616,15 +622,15 @@ const Blockchain = () => {
             ))}
           </div>
           <div className="flex justify-center items-center mt-[4.625rem]">
-            <Link
-              to="/"
+            <button
+              onClick={() => setShowModal(true)}
               className="bg-pine-999 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
             >
               Consult Our Experts{" "}
               <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
                 <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
               </span>
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -747,6 +753,7 @@ const Blockchain = () => {
         </div>
       </section>
       {/* Expertise section end */}
+      <GetInTouch showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };

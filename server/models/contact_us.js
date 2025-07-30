@@ -48,7 +48,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     time: {
       type: DataTypes.TIME,
-      allowNull: false,
+      allowNull: true,
     },
   }, {
     sequelize,

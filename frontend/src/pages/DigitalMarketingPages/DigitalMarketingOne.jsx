@@ -16,6 +16,7 @@ import AdwordsIcon3 from "/AdwordsIcon3.svg"
 import AdwordsIcon4 from "/AdwordsIcon4.svg"
 import AdwordsIcon5 from "/AdwordsIcon5.svg"
 import AdwordsIcon6 from "/AdwordsIcon6.svg"
+import play from "/play.svg"
 import line from "/line.svg"
 import { HiOutlineArrowLongRight } from 'react-icons/hi2'
 import { FaCaretRight } from "react-icons/fa6";
@@ -23,10 +24,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from 'swiper/modules'
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { MdOutlinePlayCircleFilled } from "react-icons/md";
-import { GoArrowUpRight } from "react-icons/go";
-import { IoCheckmark } from 'react-icons/io5'
-import { LuMoveUpRight } from 'react-icons/lu'
 import { PiArrowUpRightBold } from 'react-icons/pi'
+import GetInTouch from '../../components/GetInTouch'
 const imageData = [
     {
         number: '01',
@@ -148,6 +147,7 @@ const services = [
     }
 ];
 const DigitalMarketingOne = () => {
+    const [showModal, setShowModal] = useState(false);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const prevRef2 = useRef(null);
@@ -167,9 +167,13 @@ const DigitalMarketingOne = () => {
                             </h1>
                             <p className='text-xl leading-[2.125rem] text-white mb-[2.125rem]'>At Tech Devise we have one of the most promising and talented SEO experts who strive to deliver results. Our resulted oriented SEO strategies will ensure that your website ranking is boosted in no time. Contact us today to know more!</p>
                             <div className="flex max-sm:flex-col sm:items-center justify-start gap-12">
-                                <button className="border-pine-300 bg-pine-300 text-white text-base text-nowrap font-semibold border py-3 px-5 rounded-[.625rem] flex justify-center items-center gap-3">Explore more <HiOutlineArrowLongRight className='size-10' /></button>
+                                <button onClick={() => setShowModal(true)} className="border-pine-300 bg-pine-300 text-white text-base text-nowrap font-semibold border py-3 px-5 rounded-[.625rem] flex justify-center items-center gap-3">Consult Our Experts <HiOutlineArrowLongRight className='size-10' /></button>
                                 <button className='flex items-center justify-center gap-12'>
-                                    <i className='w-[2.8125rem] h-[2.8125rem] rounded-full flex items-center justify-center bg-white text-pine-700 text-xl relative borderBink'><FaCaretRight /></i>
+                                    <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
+                                        <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+                                        <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+                                        <img src={play} alt="play icon" className="mx-auto h-full w-full aspect-square " />
+                                    </div>
                                     <span className='font-bold text-xl text-white'>Play Video</span>
                                 </button>
                             </div>
@@ -493,7 +497,7 @@ const DigitalMarketingOne = () => {
                 </div>
             </section>
             {/*Our PPC Expert section end*/}
-
+<GetInTouch showModal={showModal} setShowModal={setShowModal} />
         </>
     )
 }

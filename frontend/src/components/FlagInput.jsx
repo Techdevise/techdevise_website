@@ -73,6 +73,7 @@ function FlagInput() {
                         className='h-[4.375rem] bg-white flex-1 rounded-e-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 ps-3 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none'
                         placeholder="Phone Number"
                         value={phoneNumber}
+                        name="phone"
                         onChange={handlePhoneNumberChange}
                         aria-label="Phone Number"
                     />

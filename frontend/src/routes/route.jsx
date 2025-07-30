@@ -16,11 +16,17 @@ import DigitalMarketingOne from "../pages/DigitalMarketingPages/DigitalMarketing
 import AiDevelopment from "../pages/AiDevelopment";
 import QualityAnalysis from "../pages/QualityAnalysis";
 import Blockchain from "../pages/Blockchain";
+import ScrollToTop from "../ScrollToTop";
 
 export default createBrowserRouter([
     {
         path: '/',
-        element: <Applayouts />,
+         element: (
+            <>
+                <ScrollToTop />
+                <Applayouts />
+            </>
+        ),
         children: [
             {
                 path: '/',
@@ -72,7 +78,7 @@ export default createBrowserRouter([
             },
 
             {
-                path: '/digital-marketing-one',
+                path: '/digital-marketing',
                 element: <DigitalMarketingOne />
             },
               {

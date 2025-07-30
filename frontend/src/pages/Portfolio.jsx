@@ -28,7 +28,7 @@ const Portfolio = () => {
             siteImage: portfolio1,
             logo: portfolioLogo1,
             dis: 'AVB Marketing can help your business dominate the industry with marketing and technology solutions that secure independent retail success.',
-            website: 'www.avbmarketing.com',
+            website: 'https://www.avbmarketing.com/',
             platform: 'Wordpress',
             bg: 'bg-transparent',
             rowPosition: 'lg:flex-row'
@@ -38,7 +38,7 @@ const Portfolio = () => {
             siteImage: portfolio2,
             logo: portfolioLogo2,
             dis: 'Eureka Telecom was incorporated to bring innovation in the telecommunication industry by offering modernized telecom services.',
-            website: 'www.bubbleswholesale.com',
+            website: 'https://www.bubbleswholesale.com/',
             platform: 'PHP, React.js',
             bg: 'bg-gradient-to-b from-[#F8FFEE] to-[#C4F67B]',
             rowPosition: 'lg:flex-row-reverse'
@@ -58,7 +58,7 @@ const Portfolio = () => {
             siteImage: portfolio4,
             logo: portfolioLogo4,
             dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
-            website: 'www.sterlingforever.com',
+            website: 'https://www.sterlingforever.com/',
             platform: 'Shopify',
             bg: 'bg-gradient-to-b from-[#F6D083] to-[#FFF8EA]',
             rowPosition: 'lg:flex-row-reverse'
@@ -78,7 +78,7 @@ const Portfolio = () => {
             siteImage: portfolio6,
             logo: portfolioLogo6,
             dis: 'Pediatric Therapy Associates is a kids focused therapy place. We are a multi-disciplinary group with the singular focus of developing your child to the fullest.',
-            website: 'www.therapypediatric.com',
+            website: 'https://therapypediatric.com/',
             platform: 'Wordpress',
             bg: 'bg-gradient-to-b from-[#FCFFFF] to-[##A9F2F2]',
             rowPosition: 'lg:flex-row-reverse'

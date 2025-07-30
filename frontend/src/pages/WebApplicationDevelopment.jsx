@@ -24,10 +24,11 @@ import why2 from '/why2.svg'
 // Import Swiper styles
 import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import GetInTouch from "../components/GetInTouch";
 const WebApplicationDevelopment = () => {
-
+  const [showModal, setShowModal] = useState(false);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
@@ -119,7 +120,7 @@ const WebApplicationDevelopment = () => {
                         Services
                     </h1>
                     <p className="text-xl font-normal max-w-[64.1875rem] mx-auto text-white mb-[1.375rem]"><b className="font-bold">Tech Devise</b> possesses a professional team of experts! Our primary goal is to meet the requirements of our clients. We specialize in providing top-notch services as we continue to cater to the needs of our customers even after the delivery period.</p>
-                    <Link to={'#'} className="bg-[#CACB87] inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Know More <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></Link>
+                    <button onClick={() => setShowModal(true)} className="bg-[#CACB87] inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
                 </div>
             </section>
             {/* web landing area section end */}
@@ -302,7 +303,7 @@ const WebApplicationDevelopment = () => {
             <section className="python my-[4.6875rem] bg-[#EEFCFE] max-lg:py-[4.6875rem]">
                 <div className="main-container lg:!ps-0">
                     <div className={` h-full flex-1 flex lg:flex-row flex-col  justify-start items-center gap-[2.875rem] relative transition-all duration-300 `}>
-                        <img src={python} alt="modal side image" className='lg:max-w-[51.5625rem] lg:max-h-[61.9375rem] h-[25rem] w-full lg:object-cover object-cover' />
+                        <img src={python} alt="modal side image" className='lg:max-w-[51.5625rem] lg:max-h-[61.9375rem] lg:h-full h-[25rem] w-full lg:object-cover object-cover' />
                         <div className="lg:flex-1 lg:overflow-y-auto">
                             <h2 className='2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold mb-[3.25rem]'>Digital Marketing Executives</h2>
                             <p className="text-[1.125rem] leading-[2.125rem] font-normal pb-12">
@@ -362,6 +363,7 @@ const WebApplicationDevelopment = () => {
                 </div>
             </section>
             {/* why section end */}
+                   <GetInTouch showModal={showModal} setShowModal={setShowModal} />
         </>
     )
 }

@@ -17,12 +17,19 @@ import AiCoLogo from "/AiCoLogo.svg";
 
 import whyAiBot from "/whyAiBot.svg";
 
-
 import AiLogoBg from "/AiLogoBg.webp";
 import AiLogo from "/AiLogo.svg";
 
 import object from "/object.svg";
-
+// lang icons 0 to 5 start 
+import langlogo1 from '/logoIcons0/lang1.svg'
+import langlogo2 from '/logoIcons0/lang2.svg'
+import langlogo3 from '/logoIcons0/lang3.svg'
+import langlogo4 from '/logoIcons0/lang4.svg'
+import langlogo5 from '/logoIcons0/lang5.svg'
+import langlogo6 from '/logoIcons0/lang6.svg'
+import langlogo7 from '/logoIcons0/lang7.svg'
+import langlogo8 from '/logoIcons0/lang8.svg'
 // lang icons 1 to 5 start
 import langlogo11 from "/logoIcons1/lang1.svg";
 import langlogo12 from "/logoIcons1/lang2.svg";
@@ -71,12 +78,16 @@ import pillerRobo from "/pillerRobo.svg";
 
 import AiTech from "/AiTech.webp";
 import { LuMoveRight } from "react-icons/lu";
+import GetInTouch from "../components/GetInTouch";
 const AiDevelopment = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const prevRefLang = useRef(null);
   const nextRefLang = useRef(null);
+    const [showModal, setShowModal] = useState(false);
   const [cards, setCards] = useState([]);
+  const [isactiveModalStep, setActiveModalStep] = useState(1);
+   const [isActiveSlide, setActiveSlide] = useState(1);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [services, setServices] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -196,46 +207,22 @@ const AiDevelopment = () => {
   if (loading) return <div>Loading AI services...</div>;
   if (error) return <div>{error}</div>;
   if (!services.length) return <div>No AI services available</div>;
+ const logoIcon0 = [langlogo1, langlogo2, langlogo3, langlogo4, langlogo5, langlogo6, langlogo7, langlogo8]
+    const logoIcon1 = [langlogo11, langlogo12, langlogo13, langlogo14, langlogo15, langlogo16]
+    const logoIcon2 = [langlogo21, langlogo22, langlogo23, langlogo24, langlogo25, langlogo26, langlogo27, langlogo28, langlogo29]
+    const logoIcon3 = [langlogo31, langlogo32, langlogo33, langlogo34, langlogo35, langlogo36, langlogo37, langlogo38, langlogo39]
+    const logoIcon4 = [langlogo41, langlogo42, langlogo43, langlogo44, langlogo45]
+    const logoIcon5 = [langlogo51, langlogo52, langlogo53, langlogo54]
+   const slides = [
+        { item: logoIcon0 },
+        { item: logoIcon1 },
+        { item: logoIcon2 },
+        { item: logoIcon3 },
+        { item: logoIcon4 },
+        { item: logoIcon5 },
+    ]
 
-  const logoIcon1 = [
-    langlogo11,
-    langlogo12,
-    langlogo13,
-    langlogo14,
-    langlogo15,
-    langlogo16,
-  ];
-  const logoIcon2 = [
-    langlogo21,
-    langlogo22,
-    langlogo23,
-    langlogo24,
-    langlogo25,
-    langlogo26,
-    langlogo27,
-    langlogo28,
-    langlogo29,
-  ];
-  const logoIcon3 = [
-    langlogo31,
-    langlogo32,
-    langlogo33,
-    langlogo34,
-    langlogo35,
-    langlogo36,
-    langlogo37,
-    langlogo38,
-    langlogo39,
-  ];
-  const logoIcon4 = [
-    langlogo41,
-    langlogo42,
-    langlogo43,
-    langlogo44,
-    langlogo45,
-  ];
-  const logoIcon5 = [langlogo51, langlogo52, langlogo53, langlogo54];
-
+  const modalTabContent = [1, 2, 3, 4, 5, 6];
   const stackTab = [
     "Programming Languages",
     "Frameworks",
@@ -265,15 +252,15 @@ const AiDevelopment = () => {
               decisions, and run your business more efficiently with less
               effort.
             </p>
-            <Link
-              to="/"
+            
+            <button onClick={() => setShowModal(true)}
               className="bg-[#22D5E4] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
             >
               Consult Our Experts{" "}
               <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
                 <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
               </span>
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -576,55 +563,105 @@ const AiDevelopment = () => {
 
           <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 px-[2.6875rem]">
             <ul className=" flex justify-start items-center gap-[4.9375rem] overflow-x-auto hide-scroll mb-14">
-              <li className="text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 border-[#342674]">
+              <li
+                onClick={() => setActiveModalStep(1)}
+                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
+                  isactiveModalStep == 1
+                    ? "border-[#342674] text-[#342674]"
+                    : "border-transparent text-black"
+                }`}
+              >
                 Computer Vision Models
               </li>
-              <li className="text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 border-[#342674]">
+              <li
+                onClick={() => setActiveModalStep(2)}
+                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
+                  isactiveModalStep == 2
+                    ? "border-[#342674] text-[#342674]"
+                    : "border-transparent text-black"
+                }`}
+              >
                 Machine Learning Models
               </li>
-              <li className="text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 border-[#342674]">
+              <li
+                onClick={() => setActiveModalStep(3)}
+                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
+                  isactiveModalStep == 3
+                    ? "border-[#342674] text-[#342674]"
+                    : "border-transparent text-black"
+                }`}
+              >
                 NLP Models
               </li>
-              <li className="text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 border-[#342674]">
+              <li
+                onClick={() => setActiveModalStep(4)}
+                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
+                  isactiveModalStep == 4
+                    ? "border-[#342674] text-[#342674]"
+                    : "border-transparent text-black"
+                }`}
+              >
                 Deep Learning Models
               </li>
-              <li className="text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 border-[#342674]">
+              <li
+                onClick={() => setActiveModalStep(5)}
+                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
+                  isactiveModalStep == 5
+                    ? "border-[#342674] text-[#342674]"
+                    : "border-transparent text-black"
+                }`}
+              >
                 Hybrid Models
               </li>
-              <li className="text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 border-[#342674]">
+              <li
+                onClick={() => setActiveModalStep(6)}
+                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
+                  isactiveModalStep == 6
+                    ? "border-[#342674] text-[#342674]"
+                    : "border-transparent text-black"
+                }`}
+              >
                 Generative Models
               </li>
             </ul>
-            <div className="flex lg:flex-row flex-col justify-center items-stretch 2xl:gap-32 gap-20">
-              <div className="flex-[1_1_26.3125rem] max-w-[26.3125rem] max-lg:mx-auto lg:order-1 order-2">
-                <img
-                  src={object}
-                  alt="object image"
-                  className="h-full w-full object-contain"
-                />
+            {modalTabContent.map((item) => (
+              <div
+                key={item}
+                className={`flex lg:flex-row flex-col justify-center items-stretch 2xl:gap-32 gap-20 ${
+                  isactiveModalStep == item ? "flex" : "hidden"
+                }`}
+              >
+                <div className="flex-[1_1_26.3125rem] max-w-[26.3125rem] max-lg:mx-auto lg:order-1 order-2">
+                  <img
+                    src={object}
+                    alt="object image"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 lg:order-2 order-1 lg:text-start text-center">
+                  <h3 className="text-[2.5rem] font-extrabold text-black">
+                    {item} Computer <br />
+                    Vision Models
+                  </h3>
+                  <p className="text-xl leading-[2.125rem] text-black font-normal my-9">
+                    Our AI development services company delivers cutting-edge
+                    computer vision models for image recognition, object
+                    detection, and quality inspections. These models are powered
+                    by our AI software development services to enhance
+                    efficiency.
+                  </p>
+                  <Link
+                    to="/"
+                    className="bg-[#342674] text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+                  >
+                    Consult Our Experts{" "}
+                    <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
+                      <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
+                    </span>
+                  </Link>
+                </div>
               </div>
-              <div className="flex-1 lg:order-2 order-1 lg:text-start text-center">
-                <h3 className="text-[2.5rem] font-extrabold text-black">
-                  Computer <br />
-                  Vision Models
-                </h3>
-                <p className="text-xl leading-[2.125rem] text-black font-normal my-9">
-                  Our AI development services company delivers cutting-edge
-                  computer vision models for image recognition, object
-                  detection, and quality inspections. These models are powered
-                  by our AI software development services to enhance efficiency.
-                </p>
-                <Link
-                  to="/"
-                  className="bg-[#342674] text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-                >
-                  Consult Our Experts{" "}
-                  <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                    <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
-                  </span>
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -741,8 +778,13 @@ const AiDevelopment = () => {
               <ul className="flex justify-start flex-nowrap text-white overflow-x-scroll hide-scroll gap-[4.5rem] mb-10 px-[3.125rem]">
                 {stackTab.map((item, index) => (
                   <li
+                    onClick={() => setActiveSlide(index + 1)}
                     key={index}
-                    className="text-[1.5rem] leading-[2.4375rem] font-semibold text-nowrap relative w-fit pb-3 before:absolute before:w-full before:h-[.125rem] before:bg-white before:bottom-0 before:left-0"
+                    className={`text-[1.5rem] cursor-pointer leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${
+                      isActiveSlide == index + 1
+                        ? " before:w-full"
+                        : " before:w-0"
+                    }`}
                   >
                     {item}
                   </li>
@@ -763,48 +805,54 @@ const AiDevelopment = () => {
                     </div>
                   </button>
                 </div>
-                <Swiper
-                  className="mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1"
-                  slidesPerView={"auto"}
-                  spaceBetween={30}
-                  speed={500}
-                  loop={true}
-                  // autoplay={{ delay: 1, disableOnInteraction: false }}
-                  grabCursor={true}
-                  modules={[Navigation]}
-                  onInit={(swiper) => {
-                    // Re-assign custom buttons after swiper is initialized
-                    swiper.params.navigation.prevEl = prevRefLang.current;
-                    swiper.params.navigation.nextEl = nextRefLang.current;
-                    swiper.navigation.init();
-                    swiper.navigation.update();
-                  }}
-                  navigation={{
-                    prevEl: prevRefLang.current,
-                    nextEl: nextRefLang.current,
-                  }}
-                >
-                  {logoIcon2.map((item, index) => {
-                    return (
-                      <SwiperSlide
-                        key={index}
-                        className="flex justify-center items-center !w-[10rem]"
-                      >
-                        <img
-                          src={item}
-                          alt="logo"
-                          className="block object-contain h-[9.375rem] w-[10.5rem] mx-auto"
-                        />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
+
+                {slides.map((slide, index) => (
+                  <Swiper
+                    className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1  ${
+                      isActiveSlide == index + 1 ? "flex" : "!hidden"
+                    }`}
+                    slidesPerView={"auto"}
+                    spaceBetween={30}
+                    speed={500}
+                    loop={true}
+                    autoplay={{ delay: 1, disableOnInteraction: false }}
+                    grabCursor={true}
+                    modules={[Navigation, Autoplay]}
+                    onInit={(swiper) => {
+                      // Re-assign custom buttons after swiper is initialized
+                      swiper.params.navigation.prevEl = prevRefLang.current;
+                      swiper.params.navigation.nextEl = nextRefLang.current;
+                      swiper.navigation.init();
+                      swiper.navigation.update();
+                    }}
+                    navigation={{
+                      prevEl: prevRefLang.current,
+                      nextEl: nextRefLang.current,
+                    }}
+                  >
+                    {slide.item.map((itm, index) => {
+                      return (
+                        <SwiperSlide
+                          key={index}
+                          className="flex justify-center items-center !w-[10rem]"
+                        >
+                          <img
+                            src={itm}
+                            alt="logo"
+                            className="block object-contain h-[9.375rem] w-[10.5rem] mx-auto"
+                          />
+                        </SwiperSlide>
+                      );
+                    })}
+                  </Swiper>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* AI tech section end */}
+        <GetInTouch showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };
