@@ -73,6 +73,22 @@ import langlogo52 from "/logoIcons5/lang2.svg";
 import langlogo53 from "/logoIcons5/lang3.svg";
 import langlogo54 from "/logoIcons5/lang4.svg";
 
+
+import clogo1 from "/clogo1.svg";
+import clogo2 from "/clogo2.svg";
+import clogo3 from "/clogo3.svg";
+import clogo4 from "/clogo4.svg";
+import clogo5 from "/clogo5.svg";
+import clogo6 from "/clogo6.svg";
+import clogo7 from "/clogo7.svg";
+import clogo8 from "/clogo8.svg";
+import clogo9 from "/clogo9.svg";
+import clogo10 from "/clogo10.svg";
+import clogo11 from "/clogo11.svg";
+import clogo12 from "/clogo12.svg";
+import clogo13 from "/clogo13.svg";
+import clogo14 from "/clogo14.svg";
+import clogo15 from "/clogo15.svg";
 import pillersBg from "/pillersBg.webp";
 import pillerRobo from "/pillerRobo.svg";
 
@@ -107,67 +123,67 @@ const AiDevelopment = () => {
   ];
 
   const coLogos = [
-    {
-      image: AiCoLogo,
-      alt: "company logo 1",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 2",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 3",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 4",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 5",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 6",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 7",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 8",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 9",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 10",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 11",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 12",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 13",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 14",
-    },
-    {
-      image: AiCoLogo,
-      alt: "company logo 15",
-    },
-  ];
+     {
+       image: clogo1,
+       alt: "company logo 1",
+     },
+     {
+       image: clogo2,
+       alt: "company logo 2",
+     },
+     {
+       image: clogo3,
+       alt: "company logo 3",
+     },
+     {
+       image: clogo4,
+       alt: "company logo 4",
+     },
+     {
+       image: clogo5,
+       alt: "company logo 5",
+     },
+     {
+       image: clogo6,
+       alt: "company logo 6",
+     },
+     {
+       image: clogo7,
+       alt: "company logo 7",
+     },
+     {
+       image: clogo8,
+       alt: "company logo 8",
+     },
+     {
+       image: clogo9,
+       alt: "company logo 9",
+     },
+     {
+       image: clogo10,
+       alt: "company logo 10",
+     },
+     {
+       image: clogo11,
+       alt: "company logo 11",
+     },
+     {
+       image: clogo12,
+       alt: "company logo 12",
+     },
+     {
+       image: clogo13,
+       alt: "company logo 13",
+     },
+     {
+       image: clogo14,
+       alt: "company logo 14",
+     },
+     {
+       image: clogo15,
+       alt: "company logo 15",
+     },
+   ];
 
   useEffect(() => {
     const fetchAiSolutions = async () => {

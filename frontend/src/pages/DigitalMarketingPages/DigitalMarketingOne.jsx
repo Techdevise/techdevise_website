@@ -189,10 +189,10 @@ const DigitalMarketingOne = () => {
             {/* landing area section end */}
 
             {/* Ranking section start */}
-            <section className='pt-[4.3125rem] pb-28'>
+           <section className='pt-[4.3125rem] pb-28 overflow-hidden'>
                 <div className="main-container">
-                    <div className="flex items-center justify-between mb-10">
-                        <div className="w-full max-w-[61.5625rem]">
+                    <div className="flex max-lg:flex-wrap items-center justify-between mb-10">
+                        <div className="w-full max-w-[61.5625rem] lg:text-start text-center">
                             <h2 className="md:text-[3rem] text-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B8CEC1] to-[#157B6C] mb-7">
                                 Give Your Website Ranking a Boost With Our Proven SEO Strategies.
                             </h2>
@@ -202,7 +202,7 @@ const DigitalMarketingOne = () => {
                     </div>
                     <div className="col-span-2 flex flex-col">
 
-                        <div className="flex gap-2.5 justify-start items-stretch mt-[3.25rem] order-2">
+                        <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
                             <button ref={prevRef} className="cursor-pointer order-1">
                                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
                                     <GoArrowLeft className="size-7" />
@@ -233,6 +233,8 @@ const DigitalMarketingOne = () => {
                                 },
                             }}
                             grabCursor={true}
+                            loop={true}
+                            autoplay={{ delay: 1000 }}
                             modules={[Autoplay, Navigation]}
                             onInit={(swiper) => {
                                 // Re-assign custom buttons after swiper is initialized
@@ -248,7 +250,7 @@ const DigitalMarketingOne = () => {
                         >
                             {imageData.map((item, index) => (
                                 <SwiperSlide key={index} className='!h-auto'>
-                                    <div className={`${item.bg} rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                    <div className={`${item.bg} lg:text-start text-center rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
                                         <h2 className={`${item.textColor} text-[6rem] font-bold leading-none mb-3`}>{item.number}</h2>
                                         <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
                                         <p className="text-base leading-[1.8125rem]">{item.description}</p>

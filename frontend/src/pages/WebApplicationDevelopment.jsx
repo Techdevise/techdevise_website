@@ -351,7 +351,7 @@ const WebApplicationDevelopment = () => {
                     <img src={why1} alt="why image" className="block mt-[2.375rem] mb-[4.6875rem]" />
 
                     <div className="flex justify-center items-center lg:flex-row flex-col lg:s-[3.1875rem] relative">
-                        <h4 className="texto max-lg:hidden absolute top-[100px] text-nowrap left-0 rotate-180 sm:text-[1.5625rem] text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[##666666] to-black">Our Work Modules</h4>
+                        <h4 className="texto max-lg:hidden absolute top-[113px] text-nowrap left-0 rotate-180 sm:text-[1.225rem] text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[##666666] to-black">Our Work Modules</h4>
 
                         <div className="flex-1 lg:order-1 order-2">
                             <p className="text-[1.125rem] leading-[1.625rem] font-normal max-w-6xl mx-auto">

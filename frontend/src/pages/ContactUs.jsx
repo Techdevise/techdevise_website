@@ -312,7 +312,7 @@ const ContactUs = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Message"
-                    className="h-[11.9375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
+                    className="h-[11.9375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none min-h-[180px] max-h-[180px]"
                   ></textarea>
                 </div>
 

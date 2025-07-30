@@ -185,30 +185,14 @@ const ItStaff = () => {
       {/* IT Roles section start */}
       <section className="ItRoles py-[4.6875rem] pt-[4.6875rems]">
         <div className="main-container">
-          <div className="sectionHeader relative">
-            <h3 className="2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-black mb-3">
-              We Staff IT Roles Across Any{" "}
-              <span className="text-pine-700">Industry</span>
-            </h3>
-            <p className="text-[1.125rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] mb-[3.3125rem]">
-              TechDevise is an IT staffing company with more than 24 years of
-              experience. You name it, we&apos;ve staffed it before—and
-              we&apos;d love to find great people for you, too. With a dedicated
-              team of tech recruiters leveraging proprietary AI-enabled
-              recruiting tools, we can find qualified candidates in as few as
-              two days. Even the unicorns who aren&apos;t looking for a new
-              role—yet. Then we engage, retain, and develop them through our
-              exclusive consultant care model Explore some of the key roles we
-              staff.
-            </p>
+          <div className="sectionHeader gap-5 md:flex-row flex-col flex justify-between items-start max-md:mb-8">
+                        <div className="text-start">
+                            <h3 className='2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-3'>  We Staff IT Roles Across Any <span className='text-pine-700'>Industry</span></h3>
+                            <p className='text-[1.125rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>TechDevise is an IT staffing company with more than 24 years of experience. You name it, we&apos;ve staffed it before—and we&apos;d love to find great people for you, too. With a dedicated team of tech recruiters leveraging proprietary AI-enabled recruiting tools, we can find qualified candidates in as few as two days. Even the unicorns who aren&apos;t looking for a new role—yet. Then we engage, retain, and develop them through our exclusive consultant care model Explore some of the key roles we staff.</p>
+                        </div>
 
-            <img
-              src={Itleftarrow}
-              data-aos="fade-left"
-              alt="It left arrow"
-              className="absolute top-0 right-0"
-            />
-          </div>
+                        <img src={Itleftarrow}  className='upDown object-contain max-md:h-28' />
+                    </div>
 
           <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 min-[25rem]:grid-cols-2 gap-x-[.75rem] gap-y-[2.3125rem]">
             {roles.map((role) => (
@@ -309,7 +293,7 @@ const ItStaff = () => {
       <section className="itStaffing my-[4.6875rem]">
         <div className="main-container">
           <div className="relative lg:pr-[5.8125rem]">
-            <h4 className="texto max-lg:hidden absolute -top-3 right-5 rotate-180 md:text-[3.4375rem] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#D5E4FF] to-pine-700 text-nowrap">
+            <h4 className="texto max-lg:hidden absolute top-12 right-5 rotate-180 md:text-[3.4375rem] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#D5E4FF] to-pine-700 text-nowrap">
               Professional Services
             </h4>
 

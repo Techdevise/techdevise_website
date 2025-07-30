@@ -3,26 +3,38 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// const rateLimit = require('express-rate-limit');
 var cors = require('cors');
+// const helmet = require('helmet');
 const session = require('express-session');
 var flash = require("express-flash");
 const fileUpload = require('express-fileupload');
 
 // Routers
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const apiRouter = require('./routes/api');
 
 var app = express();
 require('dotenv').config();
 
+
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000, // 15 minutes
+//   max: 20, // Max 20 requests per IP in 15 minutes
+//   message: 'Too many requests from this IP, please try again after 15 minutes.',
+//   standardHeaders: true, // Show rate limit info in headers
+//   legacyHeaders: false, // Disable `X-RateLimit-*` headers (optional)
+// });
 // Middleware
+
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(fileUpload());
+// app.use(limiter);
+// app.use(helmet());
 
 // Session
 app.use(session({
@@ -44,8 +56,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Static files
-app.use(express.static(path.join(__dirname, 'public'))); // Admin static files
-// app.use('/static', express.static(path.join(__dirname, '../frontend/dist/static'))); // React static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API Routes (should come before React catch-all)
 app.use('/api', apiRouter);

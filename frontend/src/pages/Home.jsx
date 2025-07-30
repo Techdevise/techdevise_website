@@ -830,7 +830,7 @@ const Home = () => {
         {/* Experience section end */}
 
         {/* Our Tech section start */}
-       <section className="OurTech overflow-hidden max-lg:hidden">
+         <section className="OurTech overflow-hidden max-lg:hidden">
           <div className="main-container">
 
             <div className="flex justify-between items-center mb-5">
@@ -853,7 +853,7 @@ const Home = () => {
                 spaceBetween={30}
                 slidesPerView={1}
                 speed={1000}
-                autoplay={{ delay: 1000 }}
+                autoplay={{ delay: 1000000 }}
                 grabCursor={true}
                 loop={true}
                 modules={[Autoplay, Navigation]}
@@ -874,9 +874,9 @@ const Home = () => {
                 }}
               >
                 <SwiperSlide
-                  className="flex"
+                  className="flex !h-auto"
                 >
-                  <div className="flex justify-between items-stretch 2xlp-[2.625rem] p-9 rounded-[3rem] bg-pine-600 ">
+                  <div className="flex h-full justify-between items-stretch 2xlp-[2.625rem] p-9 rounded-[3rem] bg-pine-600 ">
                     <div className="flex-[22rem] max-w-[22rem] aspect-square bg-pine-700 rounded-full p-3 shrink-0 self-center">
                       <div className="h-full w-full text-white text-center rounded-full  border-white/80 dashed-lg flex justify-center items-center flex-col px-1">
                         <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">Staff Augmentation</h4>
@@ -907,7 +907,7 @@ const Home = () => {
                 </SwiperSlide>
 
                 <SwiperSlide
-                  className="flex"
+                  className="flex !h-auto"
                 >
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem]  ">
                     <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
@@ -925,8 +925,8 @@ const Home = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide className="flex">
-                  <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem] w-full pb-[5.3125rem]">
+                <SwiperSlide className="flex !w-auto !h-auto">
+                  <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem] w-full max-w-full min-w-full pb-[5.3125rem]">
                     <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
                     <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.</p>
 

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Parallax } from "swiper/modules";
+import { Autoplay, Pagination, Parallax } from "swiper/modules";
 
 // Swiper styles
 import "swiper/css";
@@ -27,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlockchainSlider = ({ triggerRef }) => {
     const swiperRef = useRef(null);
-const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const slideContent = [
         {
             title: "Blockchain Consultation & Integration",
@@ -86,41 +86,41 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     ];
 
     const brackpoint = 992;
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
 
-    window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize);
 
-    // Cleanup: Remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+        // Cleanup: Remove the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     useEffect(() => {
         const swiperInstance = swiperRef.current.swiper;
         const totalSlides = slideContent.length;
-       if (windowWidth > brackpoint) {
-        gsap.to({}, {
-            scrollTrigger: {
-                trigger: triggerRef.current,
-                start: "top 100px",
-                end: () => `+=${totalSlides * 400}`,
-                scrub: true,
-                pin: true,
-                anticipatePin: 0,
-                markers: false,
-                onUpdate: (self) => {
-                    const progress = self.progress;
-                    const newIndex = Math.floor(progress * (totalSlides - 1));
-                    swiperInstance.slideTo(newIndex);
-                },
-            }
-        });
-         } else {
-      console.log(`GSAP disabled below ${brackpoint + 1}px.`);
-    }
+        if (windowWidth > brackpoint) {
+            gsap.to({}, {
+                scrollTrigger: {
+                    trigger: triggerRef.current,
+                    start: "top 100px",
+                    end: () => `+=${totalSlides * 400}`,
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 0,
+                    markers: false,
+                    onUpdate: (self) => {
+                        const progress = self.progress;
+                        const newIndex = Math.floor(progress * (totalSlides - 1));
+                        swiperInstance.slideTo(newIndex);
+                    },
+                }
+            });
+        } else {
+            console.log(`GSAP disabled below ${brackpoint + 1}px.`);
+        }
 
         return () => {
             ScrollTrigger.killAll();
@@ -128,7 +128,7 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     }, [slideContent.length, triggerRef]);
 
     return (
-        <div className="blockchain-scroll-wrapper w-full overflow-hidden max-lg:px-10">
+        <div className="blockchain-scroll-wrapper w-full overflow-hidden max-lg:px-10 max-sm:px-2">
             <Swiper
                 ref={swiperRef}
                 className="mySwiper blockChain w-full justify-between"
@@ -139,12 +139,26 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
                 centeredSlides={true}
                 parallax={true}
                 pagination={{ clickable: true }}
-                modules={[Pagination, Parallax]}
+                modules={[Pagination, Parallax, Autoplay]}
                 breakpoints={{
                     710: {
                         slidesPerView: 1.4,
-                        spaceBetween: 90
+                        spaceBetween: 90,
+                        autoplay: {
+                            delay: 1000,  
+                        },
+                        loop: true,
                     },
+
+                    1023: {
+                        slidesPerView: 1.4,
+                        spaceBetween: 90,
+                        loop: true,
+                        autoplay: {
+                            delay: 1000,  
+                        },
+                    },
+
                     1500: {
                         slidesPerView: 1.9,
                     },
@@ -165,7 +179,7 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
                             data-swiper-parallax="0%"
                             className="py-20 transition-all duration-1000 lg:group-[.swiper-slide-active]:scale-110 lg:scale-90"
                         >
-                            <div className="card p-6 bg-pine-900 rounded-3xl flex lg:flex-row flex-col 2xl:gap-[3.625rem] xl:gap-10 lg:gap-7 gap-5 lg:justify-center lg:items-center items-stretch shadow-lg">
+                            <div className="card sm:p-6 p-3 bg-pine-900 rounded-3xl flex lg:flex-row flex-col 2xl:gap-[3.625rem] xl:gap-10 lg:gap-7 gap-5 lg:justify-center lg:items-center items-stretch shadow-lg">
                                 <div className="aspect-square 2xl:h-[26.5rem] xl:h-[21.875rem] lg:h-[15.625rem] h-[18.75rem]">
                                     <img
                                         src={item.image}
@@ -173,9 +187,9 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
                                         className="object-cover rounded-2xl h-full w-full block"
                                     />
                                 </div>
-                                <div className="lg:flex-[1.3_1_0%]">
+                                <div className="lg:flex-[1.3_1_0%] lg:text-start text-center">
                                     <h3 className="text-3xl xl:text-4xl font-bold text-white mb-4">{item.title}</h3>
-                                    <p className="text-white text-xl">{item.para}</p>
+                                    <p className="text-white text-xl text-justify">{item.para}</p>
                                 </div>
                             </div>
                         </div>

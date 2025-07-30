@@ -414,10 +414,10 @@ const [showModal, setShowModal] = useState(false);
             {/* Transformations section end */}
 
             {/* Analyst section start  */}
-              <section style={{ backgroundImage: `url(${analystBg})` }} className="analyst my-[4.6875rem] py-[4.6875rem]">
+               <section style={{ backgroundImage: `url(${analystBg})` }} className="analyst my-[4.6875rem] py-[4.6875rem]">
                 <div className="main-container">
-                    <div className="lg:flex lg:flex-row flex-col justify-center gap-10 items-stretch text-white">
-                        <div className="lg:w-[30%] w-full">
+                    <div className="lg:flex 2xl:flex-row flex-col justify-center gap-10 items-stretch text-white">
+                        <div className="2xl:w-[30%] w-full lg:text-start text-center">
                             <h3 className='text-[2.5rem] leading-[3.1875rem] font-extrabold'>Analyst <br className='max-lg:hidden' />
                                 Recognition</h3>
 
@@ -428,12 +428,12 @@ const [showModal, setShowModal] = useState(false);
                                 Know More <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
 
                         </div>
-                        <div className="lg:w-[70%] w-full max-lg:mt-10">
+                        <div className="2xl:w-[70%] w-full max-lg:mt-10">
                             <div className="flex lg:flex-row flex-row flex-wrap justify-start items-stretch lg:h-[39.125rem] gap-5">
                                 {openSlide.map((item, index) => (
                                     <div onMouseEnter={() => setOpen(index + 1)} key={index} className={`transition-all duration-1000 overflow-hidden max-lg:h-[25rem] max-lg:flex-[1_1_300px] ${isOpen == index + 1 ? 'lg:w-[39rem] lg:flex-[1_1_39rem] ' : 'lg:w-[10%] lg:flex-[1_1_10%] '}`}>
                                         <div style={{ backgroundImage: `url(${item.image})` }} className='bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-full flex justify-start items-end relative'>
-                                            <h4 className={`text-[1.75rem] leading-[2.4375rem] font-semibold max-lg:hidden absolute bottom-5 left-10 mb-3 text-nowrap texto rotate-180 tracking-wide  transition-all duration-1000  delay-100 ${isOpen == index + 1 ? 'opacity-0': 'opacity-100 delay-700'}`}>{item.title}</h4>
+                                            <h4 className={`text-[1.75rem] leading-[2.4375rem] font-semibold max-lg:hidden absolute bottom-5 left-10 mb-3 text-nowrap texto rotate-180 tracking-wide  transition-all duration-1000  delay-100 ${isOpen == index + 1 ? 'opacity-0' : 'opacity-100 delay-700'}`}>{item.title}</h4>
                                             <div className={`cardBody text-white transition-all duration-1000 delay-500 ${isOpen == index + 1 ? 'mb-0 opacity-100' : 'lg:-mb-32 lg:opacity-0'}`}>
                                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 text-nowrap tracking-wide'>{item.title}</h4>
                                                 <p className=" text-base leading-[1.8125rem] font-normal min-w-[20rem]">{item.para}</p>

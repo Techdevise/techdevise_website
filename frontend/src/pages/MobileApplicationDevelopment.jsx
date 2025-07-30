@@ -240,7 +240,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
        <section className="solutions my-[4.6875rem]">
         <div className="main-container">
           <div className="relative">
-            <h4 className="texto absolute -top-3 left-5 max-lg:hidden rotate-180 text-nowrap sm:text-[2.375rem] text-[2rem] leading-[4.375rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Solutions to Explore</h4>
+            <h4 className="texto absolute -top-0 left-5 max-lg:hidden rotate-180 text-nowrap sm:text-[2.05rem] text-[2rem] leading-[4.375rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Solutions to Explore</h4>
             <div className="flex-1 lg:ps-[7.125rem]">
               <ul className="tabs flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-3 mb-9">
                 {tab.map((tbs, index) => (
@@ -448,20 +448,33 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
       {/* Develop Top-Quality section end */}
 
       {/* React Native section start */}
-      <section className='reactNative bg-gradient-to-b from-[#F2F4FF] to-[#EDEFFD] mt-[4.6875rem] py-[4.1875rem]'>
+      <section className="reactNative bg-gradient-to-b from-[#F2F4FF] to-[#EDEFFD] mt-[4.6875rem] py-[4.1875rem]">
         <div className="main-container">
           <div className="flex justify-between items-end relative">
             <div className="lg:text-start text-center">
-              <h3 className='2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-black mb-3'>React Native App Development</h3>
-              <p className='text-[1.125rem] leading-[2.125rem] font-normal text-black lg:max-w-4xl text-balance'>At Tech Devise we offer various kinds of services under React Native App Development. All our services aim to satisfy your needs. Contact us today to know more about our services.</p>
+              <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-3">
+                React Native App Development
+              </h3>
+              <p className="text-[1.125rem] leading-[2.125rem] font-normal text-black lg:max-w-4xl text-balance">
+                At Tech Devise we offer various kinds of services under React
+                Native App Development. All our services aim to satisfy your
+                needs. Contact us today to know more about our services.
+              </p>
             </div>
-            <img src={react} alt="react native icon" className='absolute lg:top-0 top-24 right-5 block max-lg:hidden' />
+            <img
+              src={react}
+              alt="react native icon"
+              className="absolute lg:top-0 top-24 right-5 block max-lg:hidden animate-spin"
+            />
           </div>
 
           <div className="grid lg:grid-cols-3 grid-cols-1 lg:mt-[4.0625rem] gap-[2.875rem]">
-            <img src={native0} alt="navtive 0 side image" className=' max-lg:mx-auto block' />
+            <img
+              src={native0}
+              alt="navtive 0 side image"
+              className=" max-lg:mx-auto block"
+            />
             <div className="col-span-2 flex flex-col">
-
               <div className="flex gap-2.5 justify-start items-stretch mt-[3.25rem] order-2">
                 <button ref={prevRef2} className="cursor-pointer order-1">
                   <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
@@ -475,17 +488,17 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
                   </div>
                 </button>
               </div>
+
               <Swiper
                 className="mySwiper w-full [&>.swiper-wrapper]:items-stretch order-1"
                 spaceBetween={46}
                 slidesPerView={1}
+                loop={true}
                 speed={1000}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 1000 }}
                 grabCursor={true}
                 modules={[Autoplay, Navigation]}
-
                 breakpoints={{
-
                   768: {
                     slidesPerView: 2,
                   },
@@ -505,7 +518,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
                 }}
                 navigation={{
                   prevEl: prevRef2.current,
-                  nextEl: nextRef2.current
+                  nextEl: nextRef2.current,
                 }}
               >
                 {native.map((item, index) => {
@@ -515,20 +528,24 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
                       className="flex  justify-center items-center !h-auto"
                     >
                       <div className="2xl:max-w-[480px] h-full w-full bg-white rounded-10 py-5 px-6 rounded-[.625rem]">
-                        <img src={item.icon} alt="" className='block size-[6.125rem] object-contain mb-[1.125rem]' />
-                        <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>{item.title}</h4>
-                        <p className="text-[1.125rem] leading-[2.125rem] font-normal">{item.para}</p>
+                        <img
+                          src={item.icon}
+                          alt=""
+                          className="block size-[6.125rem] object-contain mb-[1.125rem]"
+                        />
+                        <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
+                          {item.title}
+                        </h4>
+                        <p className="text-[1.125rem] leading-[2.125rem] font-normal">
+                          {item.para}
+                        </p>
                       </div>
-
                     </SwiperSlide>
                   );
                 })}
               </Swiper>
-
             </div>
           </div>
-
-
         </div>
       </section>
       {/* React Native section end */}
@@ -539,7 +556,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
         <div className="main-container">
           <h3 className='2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-black mb-[2.5625rem]'>Tech Stack We Use</h3>
           <div className="lg:pe-[4.8125rem] relative">
-            <h4 className="texto absolute top-10 right-5 max-lg:hidden rotate-180 text-nowrap sm:text-[1.7813rem] leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Solutions to Explore</h4>
+            <h4 className="texto absolute top-0 right-5 max-lg:hidden rotate-180 text-nowrap sm:text-[2.413rem] leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Solutions to Explore</h4>
 
             <div className="bg-white py-[2.1875rem] px-[3.125rem] rounded-[.625rem] ">
               <ul className='flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-[4.5rem] mb-10'>
