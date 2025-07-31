@@ -304,7 +304,7 @@ const CareerThree = () => {
               {/* Resume Upload */}
               <div className="md:col-span-2">
                 <h5 className='text-[1.125rem] leading-[1.625rem] font-bold mb-3'>Upload CV/Resume</h5>
-                <div className="w-full min-h-[7.625rem] bg-[#ECECEC] rounded-lg py-4 px-8 relative">
+                <div className="w-60 min-h-[7.625rem] bg-[#ECECEC] rounded-lg py-4 px-8 relative">
                   <div className="flex flex-col justify-center items-center">
                     <ImImage className='size-10 block mb-[.75rem] text-[#aaaaaa]' />
                     <h5 className='text-base leading-[1.25rem]'>Please Upload Your CV / Resume</h5>

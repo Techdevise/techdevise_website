@@ -17,6 +17,9 @@ import AiDevelopment from "../pages/AiDevelopment";
 import QualityAnalysis from "../pages/QualityAnalysis";
 import Blockchain from "../pages/Blockchain";
 import ScrollToTop from "../ScrollToTop";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsConditions from "../pages/TermsConditions";
+import Fqa from "../pages/Fqa";
 
 export default createBrowserRouter([
     {
@@ -39,6 +42,18 @@ export default createBrowserRouter([
             {
                 path: '/our-blogs',
                 element: <OurBlogs />,
+            },
+              {
+                path: '/Privacy-Policy',
+                element: <PrivacyPolicy />,
+            },
+              {
+                path: '/Terms-Conditions',
+                element: <TermsConditions />,
+            },
+                {
+                path: '/fqa',
+                element: <Fqa />,
             },
             {
                 path: '/blog-detail/:id',

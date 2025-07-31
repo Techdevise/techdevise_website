@@ -27,7 +27,7 @@ input[type="number"] {
   --color-pine-50: #f1fcf9;
   --color-pine-100: #cef9ed;
   --color-pine-200: #9df2dc;
-  --color-pine-300: #67C792;
+  --color-pine-300: #67c792;
   --color-pine-400: #137365;
   --color-pine-500: #02574b;
   --color-pine-600: #051e16;
@@ -36,6 +36,8 @@ input[type="number"] {
   --color-pine-900: #0b3327;
   --color-pine-950: #11211c;
   --color-pine-999: #061611;
+
+  --animate-spin: spin 10s linear infinite !important;
 }
 
 @layer base {
@@ -142,10 +144,93 @@ select.inputControl {
 }
 
 .inputShadow {
-  box-shadow: 0px 0px 13px 0px rgba(16, 183, 155, 0.20) inset, 0px 0px 18px 0px rgba(16, 183, 155, 0.30);
+  box-shadow: 0px 0px 13px 0px rgba(16, 183, 155, 0.2) inset,
+    0px 0px 18px 0px rgba(16, 183, 155, 0.3);
 }
 
 .texto {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-} 
+}
+
+.shake {
+  animation: horizontal-shake 16s ease-in-out infinite;
+}
+
+.shake-v {
+  animation: vertical-shake 16s ease-in-out infinite;
+}
+.shake-z {
+  animation: rotate-shake 16s ease-in-out infinite;
+}
+@keyframes horizontal-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes vertical-shake {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes rotate-shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: rotate(-5deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: rotate(5deg);
+  }
+}
+
+.upDown {
+  animation: moveUpDown 2s ease-in-out infinite alternate;
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0); /* Starting position, no vertical translation */
+  }
+  100% {
+    transform: translateY(-20px); /* Move 20px upwards */
+  }
+}

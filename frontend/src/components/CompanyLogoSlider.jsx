@@ -19,7 +19,7 @@ const CompanyLogoSlider = ({logos}) => {
         spaceBetween={30}
         speed={2000}
         loop={true}
-        autoplay={{ delay: 1, disableOnInteraction: false }}
+        autoplay={{ delay: 0, disableOnInteraction: false }}
         grabCursor={true}   
         modules={[Autoplay]}
       >

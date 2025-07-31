@@ -5,7 +5,7 @@ module.exports={
       listingCms: async (req, res) => {
             try {
                 let cmss = await Cms.findAll({
-                  
+                 
                 });
                  return res.status(200).json({
                         success: true,

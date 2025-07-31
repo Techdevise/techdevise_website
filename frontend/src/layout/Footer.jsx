@@ -93,9 +93,16 @@ const Footer = () => {
                 >
                   <FaLinkedinIn className="size-5 text-white" />
                 </a>
-                {/* <Link className="flex justify-center items-center size-10 rounded-full aspect-square bg-[#fff]">
-                  <FaXTwitter className="size-5 text-black" />
-                </Link> */}
+
+                  <a
+                  href="https://x.com/it_devise"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex justify-center items-center size-10 rounded-full aspect-square bg-[#fff]"
+                >
+                   <FaXTwitter className="size-5 text-black" />
+                </a>
+             
               </div>
             </div>
             <div className="flex-[1_1_12.6rem] max-w-fit max-md:hidden">
@@ -183,6 +190,14 @@ const Footer = () => {
                     Our Blogs
                   </Link>
                 </li>
+                <li className="mb-3">
+                  <Link
+                    to="/fqa"
+                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                  >
+                    FQA
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="flex-[1_1_21.874rem] max-w-fit max-lg:hidden">
@@ -226,7 +241,7 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <Link className="ms-auto block w-fit rounded-[.375rem] border-2 border-white text-white bg-transparent text-[1.25rem] font-semibold py-2.5 px-6 shine-effect">
+              <Link to="/our-blogs" className="ms-auto block w-fit rounded-[.375rem] border-2 border-white text-white bg-transparent text-[1.25rem] font-semibold py-2.5 px-6 shine-effect">
                 View More
               </Link>
             </div>
@@ -242,22 +257,22 @@ const Footer = () => {
             </div>
             <div className=" max-w-fit">
               <Link
-                to="mailto:techdevise@gmail.com"
+                to="mailto:Info@techdevise.com"
                 target="_block"
                 className="flex justify-center items-center text-nowrap gap-4 font-medium text-[1.125rem] leading-[1.6875rem] text-white"
               >
                 <TbMailFilled className="text-white size-6" />{" "}
-                <span>techdevise@gmail.com</span>
+                <span>Info@techdevise.com</span>
               </Link>
             </div>
             <div className="max-w-fit">
               <Link
-                to="tel: +91 1234567891"
+                to="tel: +91 788-903-8027"
                 className="flex justify-center items-center text-nowrap gap-4 font-medium text-[1.125rem] leading-[1.6875rem] text-white"
               >
                 {" "}
                 <IoCall className="text-white size-6" />{" "}
-                <span>+91 1234567891</span>
+                <span>+91 788-903-8027</span>
               </Link>
             </div>
           </div>
@@ -266,14 +281,14 @@ const Footer = () => {
           <div className="flex flex-wrap sm:justify-between justify-center max-sm:gap-x-16 items-center">
             <div className="flex gap-[1.6875rem] ">
               <Link
-                to="/"
+                to="/Privacy-Policy"
                 className="md:text-[1rem] sm:text-[16px] text-[1rem] leading-[29px] font-medium text-white text-nowrap"
               >
                 Privacy Policy
               </Link>
               <div className="h-[1.375rem] w-[1px] bg-white"></div>
               <Link
-                to="/"
+                to="/Terms-Conditions"
                 className="md:text-[1rem] sm:text-[16px] text-[1rem] leading-[29px] font-medium text-white text-nowrap"
               >
                 Terms & Conditions

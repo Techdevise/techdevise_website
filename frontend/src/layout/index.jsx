@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 import { MdOutlineWhatsapp } from "react-icons/md";
 
 import AOS from "aos";
@@ -24,21 +25,16 @@ const index = () => {
       </div>
       <Footer />
 
-      <div className="whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] right-[2.5rem] aspect-square rounded-full bg-white">
+<Link to="tel: +91 788-903-8027">
+   <div className="whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] right-[2.5rem] aspect-square rounded-full bg-white">
         <div className="h-full w-full rounded-full flex justify-center items-center relative">
           <MdOutlineWhatsapp className="text-green-500 size-[2rem] animate-ping absolute top-1/2 -translate-1/2 left-1/2" />
           <MdOutlineWhatsapp className="text-green-500 size-[2rem]" />
         </div>
       </div>
-      {/* <div
-  onClick={() => window.open('https://wa.me/', '_blank')}
-  className="cursor-pointer whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] right-[2.5rem] aspect-square rounded-full bg-white"
->
-  <div className="h-full w-full rounded-full flex justify-center items-center relative">
-    <MdOutlineWhatsapp className="text-green-500 size-[2rem] animate-ping absolute top-1/2 -translate-1/2 left-1/2" />
-    <MdOutlineWhatsapp className="text-green-500 size-[2rem]" />
-  </div>
-</div> */}
+      </Link>
+   
+  
     </>
   );
 };

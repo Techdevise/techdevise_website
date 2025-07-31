@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// const rateLimit = require('express-rate-limit');
+const rateLimit = require('express-rate-limit');
 var cors = require('cors');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const session = require('express-session');
 var flash = require("express-flash");
 const fileUpload = require('express-fileupload');
@@ -27,14 +27,12 @@ require('dotenv').config();
 // });
 // Middleware
 
-app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(fileUpload());
-// app.use(limiter);
-// app.use(helmet());
+
 
 // Session
 app.use(session({
@@ -54,10 +52,25 @@ app.use((req, res, next) => {
 // View engine setup (only once)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+// Allowed origins for CORS
+// const allowedOrigins = process.env.ALLOWED_ORIGINS
+//   ? process.env.ALLOWED_ORIGINS.split(",") 
+//   : ["https://.techdevise.com", "https://techdevise.com"];
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",") 
+  : ["http://localhost:3003", "http://localhost:3003"];
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Allow cookies if needed
+  })
+);
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(limiter);
+app.use(helmet());
 // API Routes (should come before React catch-all)
 app.use('/api', apiRouter);
 app.use('/admin', indexRouter);

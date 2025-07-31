@@ -13,14 +13,6 @@ import { GoArrowRight } from 'react-icons/go'
 
 import quailtySlideLogo1 from '/quailtySlideLogo1.svg'
 import qualityBg from '/qualityBg.webp'
-import busi1 from '/busi1.webp';
-import busi2 from '/busi2.webp';
-import busi3 from '/busi3.webp';
-import busi4 from '/busi4.webp';
-import busi5 from '/busi5.webp';
-import busi6 from '/busi6.webp';
-import busi7 from '/busi7.webp';
-import busi8 from '/busi8.webp';
 
 import cloudCard1 from '/cloudCard1.webp'
 import cloudCard2 from '/cloudCard2.webp'
@@ -28,6 +20,21 @@ import cloudCard3 from '/cloudCard3.webp'
 import cloudCard4 from '/cloudCard4.webp'
 import cloudCard5 from '/cloudCard5.webp'
 import cloudCard6 from '/cloudCard6.webp'
+import clogo1 from "/clogo1.svg";
+import clogo2 from "/clogo2.svg";
+import clogo3 from "/clogo3.svg";
+import clogo4 from "/clogo4.svg";
+import clogo5 from "/clogo5.svg";
+import clogo6 from "/clogo6.svg";
+import clogo7 from "/clogo7.svg";
+import clogo8 from "/clogo8.svg";
+import clogo9 from "/clogo9.svg";
+import clogo10 from "/clogo10.svg";
+import clogo11 from "/clogo11.svg";
+import clogo12 from "/clogo12.svg";
+import clogo13 from "/clogo13.svg";
+import clogo14 from "/clogo14.svg";
+import clogo15 from "/clogo15.svg";
 
 import gain1 from '/gain1.webp'
 import gain2 from '/gain2.webp'
@@ -52,67 +59,67 @@ const [showModal, setShowModal] = useState(false);
  const [activeService, setActiveService] = useState('digitalAssurance');
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const coLogos = [
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 1",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 2",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 3",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 4",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 5",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 6",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 7",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 8",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 9",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 10",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 11",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 12",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 13",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 14",
-        },
-        {
-            image: quailtySlideLogo1,
-            alt: "company logo 15",
-        },
-    ];
+    {
+      image: clogo1,
+      alt: "company logo 1",
+    },
+    {
+      image: clogo2,
+      alt: "company logo 2",
+    },
+    {
+      image: clogo3,
+      alt: "company logo 3",
+    },
+    {
+      image: clogo4,
+      alt: "company logo 4",
+    },
+    {
+      image: clogo5,
+      alt: "company logo 5",
+    },
+    {
+      image: clogo6,
+      alt: "company logo 6",
+    },
+    {
+      image: clogo7,
+      alt: "company logo 7",
+    },
+    {
+      image: clogo8,
+      alt: "company logo 8",
+    },
+    {
+      image: clogo9,
+      alt: "company logo 9",
+    },
+    {
+      image: clogo10,
+      alt: "company logo 10",
+    },
+    {
+      image: clogo11,
+      alt: "company logo 11",
+    },
+    {
+      image: clogo12,
+      alt: "company logo 12",
+    },
+    {
+      image: clogo13,
+      alt: "company logo 13",
+    },
+    {
+      image: clogo14,
+      alt: "company logo 14",
+    },
+    {
+      image: clogo15,
+      alt: "company logo 15",
+    },
+  ];
 
   
   const [services, setServices] = useState({
@@ -311,7 +318,7 @@ const [showModal, setShowModal] = useState(false);
             <div key={index} className="flex-[1_1_400px]">
               <div className="h-full w-full">
                 <div 
-                  style={{ backgroundImage: `url(${BASE_URL}/${item.image})` }} 
+                  style={{ backgroundImage: `url(${BASE_URL}${item.image})` }} 
                   className='bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end'
                 >
                   <div className="cardBody text-white">

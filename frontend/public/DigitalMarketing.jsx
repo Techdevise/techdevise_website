@@ -1,5 +1,26 @@
 import React, { useRef, useState } from 'react'
 import seoBg from "/seoBg.webp"
+import seoRightImage from "/seoRightImage.png"
+import SEO from "/SEO.svg"
+import facebookBlack from "/facebookBlack.svg"
+import xBlack from "/xBlack.svg"
+import instagramBlack from "/instagramBlack.svg"
+import youtubeBlack from "/youtubeBlack.svg"
+import managementBlack from "/managementBlack.svg"
+import add1 from "/add1.svg"
+import add2 from "/add2.svg"
+import add3 from "/add3.svg"
+import add4 from "/add4.svg"
+import keywordBlack from "/keywordBlack.svg"
+import contentBlack from "/contentBlack.svg"
+import AdwordsIcon1 from "/AdwordsIcon1.svg"
+import AdwordsIcon2 from "/AdwordsIcon2.svg"
+import AdwordsIcon3 from "/AdwordsIcon3.svg"
+import AdwordsIcon4 from "/AdwordsIcon4.svg"
+import AdwordsIcon5 from "/AdwordsIcon5.svg"
+import AdwordsIcon6 from "/AdwordsIcon6.svg"
+
+import play from "/play.svg"
 import girl from '/girl.webp'
 import girl1 from '/girl1.svg'
 import girl2 from '/girl2.svg'
@@ -9,22 +30,6 @@ import girl5 from '/girl5.svg'
 import girl6 from '/girl6.svg'
 import girl7 from '/girl7.svg'
 
-import SEO from "/SEO.svg"
-import facebookBlack from "/facebookBlack.svg"
-import xBlack from "/xBlack.svg"
-import instagramBlack from "/instagramBlack.svg"
-import youtubeBlack from "/youtubeBlack.svg"
-import managementBlack from "/managementBlack.svg"
-import add from "/add.svg"
-import keywordBlack from "/keywordBlack.svg"
-import contentBlack from "/contentBlack.svg"
-import AdwordsIcon1 from "/AdwordsIcon1.svg"
-import AdwordsIcon2 from "/AdwordsIcon2.svg"
-import AdwordsIcon3 from "/AdwordsIcon3.svg"
-import AdwordsIcon4 from "/AdwordsIcon4.svg"
-import AdwordsIcon5 from "/AdwordsIcon5.svg"
-import AdwordsIcon6 from "/AdwordsIcon6.svg"
-import play from "/play.svg"
 import line from "/line.svg"
 import { HiOutlineArrowLongRight } from 'react-icons/hi2'
 import { FaCaretRight } from "react-icons/fa6";
@@ -33,7 +38,6 @@ import { Autoplay, Navigation } from 'swiper/modules'
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { MdOutlinePlayCircleFilled } from "react-icons/md";
 import { PiArrowUpRightBold } from 'react-icons/pi'
-import GetInTouch from '../../components/GetInTouch'
 const imageData = [
     {
         number: '01',
@@ -155,13 +159,41 @@ const services = [
     }
 ];
 const DigitalMarketingOne = () => {
-    const [showModal, setShowModal] = useState(false);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const prevRef2 = useRef(null);
     const nextRef2 = useRef(null);
+    const [isActiveTab, setActiveTab] = useState(1);
 
 
+    const tabContent = [1, 2, 3, 4, 5]
+
+    const addSlide = [
+        {
+            title: 'Show up',
+            bgColor: 'bg-[#CEEAD6]',
+            textColor: 'text-[#1F8E3D]',
+            image: add1,
+        },
+        {
+            title: 'Be found',
+            bgColor: 'bg-[#FEF7E0]',
+            textColor: 'text-[#F29900]',
+            image: add2,
+        },
+        {
+            title: 'Drive sales',
+            bgColor: 'bg-[#D2E3FC]',
+            textColor: 'text-[#1C73E8]',
+            image: add3,
+        },
+        {
+            title: 'Stand out',
+            bgColor: 'bg-[#FCE8E6]',
+            textColor: 'text-[#C5221F]',
+            image: add4,
+        },
+    ]
     return (
         <>
             {/* landing area section start */}
@@ -206,7 +238,7 @@ const DigitalMarketingOne = () => {
             {/* landing area section end */}
 
             {/* Ranking section start */}
-           <section className='pt-[4.3125rem] pb-28 overflow-hidden'>
+            <section className='pt-[4.3125rem] pb-28 overflow-hidden'>
                 <div className="main-container">
                     <div className="flex max-lg:flex-wrap items-center justify-between mb-10">
                         <div className="w-full max-w-[61.5625rem] lg:text-start text-center">
@@ -283,14 +315,29 @@ const DigitalMarketingOne = () => {
             {/* Social Media section start */}
             <section className='bg-gradient-to-r from-pine-100 to-pine-300 py-24'>
                 <div className="main-container">
-                    <div className="flex items-start justify-between gap-2.5">
-                        <div className="w-[calc(100%_-_13.125rem)]">
+                    <div className="flex flex-wrap items-start justify-between gap-2.5">
+                        <div className="lg:w-[calc(100%_-_13.125rem)] w-full lg:text-start text-center">
                             <h2 className='text-5xl font-extrabold leading-none mb-9'>Our Social Media Marketing Services</h2>
-                            <p className='font-medium text-xl leading-7 mb-20'>At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing solutions that will surely
+                            <p className='font-medium text-xl leading-7 lg:mb-20 mb-5'>At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing solutions that will surely
                                 improve your business&apos;s online visibility. With the help of your experts, you can increase your online customer base as well.  </p>
+
+                            <div className='w-full lg:hidden gap-3 flex justify-center items-center'>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={facebookBlack} alt="facebookBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={xBlack} alt="xBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={instagramBlack} alt="instagramBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={youtubeBlack} alt="youtubeBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                            </div>
                             <div className="col-span-2 flex flex-col">
 
-                                <div className="flex gap-2.5 justify-start items-stretch mt-[3.25rem] order-2">
+                                <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
                                     <button ref={prevRef2} className="cursor-pointer order-1">
                                         <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
                                             <GoArrowLeft className="size-7" />
@@ -308,6 +355,7 @@ const DigitalMarketingOne = () => {
                                     slidesPerView={1}
                                     spaceBetween={25}
                                     speed={1000}
+                                    loop={true}
                                     breakpoints={{
 
                                         1024: {
@@ -321,6 +369,7 @@ const DigitalMarketingOne = () => {
                                         },
                                     }}
                                     grabCursor={true}
+                                    autoplay={{ delay: 1000 }}
                                     modules={[Autoplay, Navigation]}
                                     onInit={(swiper) => {
                                         // Re-assign custom buttons after swiper is initialized
@@ -336,8 +385,8 @@ const DigitalMarketingOne = () => {
                                 >
                                     {socialMediaData.map((item, index) => (
                                         <SwiperSlide key={index} className='!h-auto'>
-                                            <div className={`${item.bg} rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
-                                                <div className={`w-[7rem] h-[7rem] rounded-full ${item.roundBg} flex items-center justify-center mb-[1.8125rem]`}>
+                                            <div className={`${item.bg} lg:text-start text-center rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                                <div className={`size-[7rem] rounded-full ${item.roundBg} flex items-center justify-center mb-[1.8125rem] lg:mx-0 mx-auto`}>
                                                     <img src={item.image} alt={item.title} className='w-[3.1875rem]' />
                                                 </div>
                                                 <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
@@ -348,18 +397,18 @@ const DigitalMarketingOne = () => {
                                 </Swiper>
                             </div>
                         </div>
-                        <div className='w-fit'>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={facebookBlack} alt="facebookBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                        <div className='lg:w-fit w-full lg:block gap-3 hidden justify-center items-center'>
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={facebookBlack} alt="facebookBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={xBlack} alt="xBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={xBlack} alt="xBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={instagramBlack} alt="instagramBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={instagramBlack} alt="instagramBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={youtubeBlack} alt="youtubeBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={youtubeBlack} alt="youtubeBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
                         </div>
                     </div>
@@ -368,17 +417,17 @@ const DigitalMarketingOne = () => {
             {/* Social Media section end */}
 
             {/* Google Adwords section start */}
-            <section className='py-[6.75rem]'>
+            <section className='pt-[6.75rem]'>
                 <div className="main-container">
                     <h3 className='md:text-5xl text-3xl font-extrabold leading-none mb-[1.9375rem] text-center'>Google Adwords</h3>
                     <p className='mb-[3.8125rem] w-fll max-w-[67.0625rem] mx-auto text-lg leading-[2.125rem] text-center'>Wanting to rank your website higher on Google search pages? If yes, then contact us and our Google Adwords experts to suggest the best strategies to get the most out of your Google Adwords campaigns. Contact us today to know more.</p>
-                    <div className="bg-[#F5F7FB] py-[5.3125rem] 2xl:px-[3.4375rem] px-7 rounded-[.9375rem] relative flex flex-wrap">
-                        <img src={line} alt="line" className='w-[9.8125rem] absolute top-full right-full -mt-14 -mr-14' />
-                        <div className="lg:w-2/5 w-full pr-10">
-                            <h3 className='lg:text-5xl text-3xl font-extrabold leading-none mb-[1.9375rem]'>The Services we offer under Google Adwords</h3>
+                    <div className="bg-[#F5F7FB] py-[5.3125rem] 2xl:px-[3.4375rem] px-7 rounded-[.9375rem] relative flex gap-5 max-lg:flex-wrap">
+                        <img src={line} alt="line" className='w-[9.8125rem] absolute top-full right-full -mt-14 -mr-14 shake-v' />
+                        <div className="lg:w-2/5 w-full xl:pr-10 lg:text-start text-center">
+                            <h3 className='xl:text-5xl lg:text-4xl text-3xl font-extrabold leading-none mb-[1.9375rem]'>The Services we offer under Google Adwords</h3>
                             <p className='mb-[3.8125rem] max-w-[67.0625rem] mx-auto text-lg leading-[2.125rem]'>We all know that the internet is flooded with millions of websites. Hence, getting your website to be noticed among this huge crowd is a challenging task. But nothing is impossible. With the help from our Google Adword experts, you can achieve the desired traffic to your website and improve its visibility. Our team will assist you in creating result-oriented Google Adword campaigns that will take your business to the next level.</p>
                         </div>
-                        <div className="lg:w-3/5 w-full pl-10">
+                        <div className="lg:w-3/5 w-full xl:pl-10">
                             <div className="col-span-2 flex flex-col">
 
                                 <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
@@ -399,19 +448,22 @@ const DigitalMarketingOne = () => {
                                     slidesPerView={1}
                                     spaceBetween={44}
                                     speed={1000}
+                                    loop={true}
                                     breakpoints={{
-
+                                        640: {
+                                            slidesPerView: 2,
+                                            centeredSlides: false,
+                                        },
                                         1024: {
                                             slidesPerView: 1.5,
-                                        },
-                                        1200: {
-                                            slidesPerView: 1.5,
+                                            centeredSlides: true,
                                         },
                                         1400: {
                                             slidesPerView: 2,
                                         },
                                     }}
                                     grabCursor={true}
+                                    autoplay={{ delay: 1000 }}
                                     modules={[Autoplay, Navigation]}
                                     onInit={(swiper) => {
                                         // Re-assign custom buttons after swiper is initialized
@@ -427,7 +479,7 @@ const DigitalMarketingOne = () => {
                                 >
                                     {services.map((item, index) => (
                                         <SwiperSlide key={index} className='!h-auto'>
-                                            <div className={`bg-white rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                            <div className={`bg-white rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full lg:text-start text-center`}>
                                                 <img src={item.image} alt={item.title} className='w-[2.9375rem] h-[2.9375rem] inline-block mb-[.9375rem]' />
                                                 <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
                                                 <p className="text-base leading-[1.8125rem]">{item.description}</p>
@@ -443,19 +495,36 @@ const DigitalMarketingOne = () => {
             {/* Google Adwords section end */}
 
             {/* Google Ads  section start*/}
-            <section className='pt-[3.625rem] pb-[7.375rem]'>
+            <section className='lg:pt-[3.625rem] sm:py-28 pt-20 pb-20 lg:pb-[7.375rem]'>
                 <div className="main-container">
-                    <div className="flex items-center justify-center">
-                        <div className="w-[20.5625rem] h-[20.5625rem] rounded-[1.25rem] flex items-center justify-center relative bg-[#CEEAD6]">
-                            <MdOutlinePlayCircleFilled className='text-[#1F8E3D] absolute text-3xl top-3 left-3' />
-                            <img src={add} alt="add" className='w-8/12' />
-                        </div>
-                        <div className="-ml-10 z-10">
-                            <h2 className='text-[#1F8E3D] text-[clamp(3.125rem,_7vw,_8.0625rem)] font-bold'>Show up</h2>
-                            <h2 className='text-[clamp(2.3rem,_5vw,_5.75rem)] font-bold'>with Google Ads</h2>
-                            <p className='text-[1.0625rem] lg:pl-24 md:12'>Whatever your business goal, drive better results with Performance Max.</p>
-                        </div>
-                    </div>
+
+
+                    <Swiper
+                        className="mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:items-stretch"
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        speed={1000}
+                        grabCursor={true}
+                        loop={true}
+                        modules={[Autoplay]}
+                        autoplay={{ delay: 1000 }}
+                    >
+                        {addSlide.map((item, index) => (
+                            <SwiperSlide key={index} className='!h-auto'>
+                                <div className="flex items-center justify-center">
+                                    <div className={`md:size-[20.5625rem] size-[12.5rem] aspect-square rounded-[1.25rem] flex items-center justify-center relative ${item.bgColor}`}>
+                                        <MdOutlinePlayCircleFilled className={`${item.textColor} absolute text-3xl top-3 left-3`} />
+                                        <img src={item.image} alt="add" className='w-8/12' />
+                                    </div>
+                                    <div className="-ml-10 z-10">
+                                        <h2 className={`${item.textColor} text-[clamp(3.125rem,_7vw,_8.0625rem)] font-bold`}>{item.title}</h2>
+                                        <h2 className='text-[clamp(2.3rem,_5vw,_5.75rem)] font-bold'>with Google Ads</h2>
+                                        <p className='text-[1.0625rem] lg:pl-24 md:12'>Whatever your business goal, drive better results with Performance Max.</p>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </section>
             {/* Google Ads  section start*/}
@@ -463,60 +532,60 @@ const DigitalMarketingOne = () => {
             {/*Our PPC Expert section start*/}
             <section className='pt-[4.375rem] pb-[7.5625rem] bg-gradient-to-r from-[#E3FFEB] to-[#C2EAF2]'>
                 <div className="main-container">
-                    <h2 className="text-center text-5xl font-bold">Why Hire Our PPC Expert?</h2>
+                    <h2 className="text-center xl:text-5xl lg:text-4xl text-3xl font-bold">Why Hire Our PPC Expert?</h2>
                     <p className='max-w-[55.125rem] w-full mx-auto text-center text-lg font-medium leading-7 mb-12 mt-3 '>Tech Devise is certified by Google as a reputed Adword agency. Our certification and partnership
                         prove that we know all the intricate details about Google Adwords.</p>
 
                     {/* Positions */}
-                    <div className="bg-white shadow-xl shadow-gray-600/5 rounded-[.625rem] py-[3.4375rem] px-[2.375rem]">
+                    <div className="bg-white shadow-xl shadow-gray-600/5 rounded-[.625rem] lg:py-[3.4375rem] lg:px-[2.375rem] p-3">
                         <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-stretch">
-                            <div className="lg:w-[25.625rem] lg:border-r border-black/20  pe-[3.3125rem]">
+                            <div className="lg:w-[25.625rem] lg:border-r border-black/20  lg:pe-[3.3125rem]">
                                 <ul className='lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll'>
 
-                                    <li className='mb-3.5'>
-                                        <div className={` text-black bg-gradient-to-r from-[#D8F4E5] to-[#5CEA90] min-h-[4.8125rem] border border-black flex rounded-full items-center justify-between p-3 gap-[2.0625rem] font-medium text-base`}>
+                                    <li onClick={() => setActiveTab(1)} className='mb-3.5'>
+                                        <div className={` text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${isActiveTab == 1 ? 'bg-gradient-to-r from-[#D8F4E5] to-[#5CEA90]' : 'bg-white'}`}>
                                             <span className='text-base font-semibold ps-5 text-nowrap'>Certified Agency</span>
-                                            <span className="ms-auto size-[3.3125rem] aspect-square rounded-full bg-[#fff] flex items-center justify-center"><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
+                                            <span className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center  transition-all duration-300 ${isActiveTab == 1 ? 'bg-white' : 'bg-[#5CEA90]'}`}><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
                                         </div>
                                     </li>
-                                    <li className='mb-3.5'>
-                                        <div className={` text-black bg-white min-h-[4.8125rem] border border-black flex rounded-full items-center justify-between p-3 gap-[2.0625rem] font-medium text-base`}>
+                                    <li onClick={() => setActiveTab(2)} className='mb-3.5'>
+                                        <div className={` text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${isActiveTab == 2 ? 'bg-gradient-to-r from-[#FFD9D8] to-[#EA9C99]' : 'bg-white'}`}>
                                             <span className='text-base font-semibold ps-5 text-nowrap'>Certified Agency</span>
-                                            <span className="ms-auto size-[3.3125rem] aspect-square rounded-full bg-[#EA9C99] flex items-center justify-center"><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
+                                            <span className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center  transition-all duration-300 ${isActiveTab == 2 ? 'bg-white' : 'bg-[#EA9C99]'}`}><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
                                         </div>
                                     </li>
-                                    <li className='mb-3.5'>
-                                        <div className={` text-black bg-white min-h-[4.8125rem] border border-black flex rounded-full items-center justify-between p-3 gap-[2.0625rem] font-medium text-base`}>
+                                    <li onClick={() => setActiveTab(3)} className='mb-3.5'>
+                                        <div className={` text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${isActiveTab == 3 ? 'bg-gradient-to-r from-[#DDFFEC] to-[#67C792]' : 'bg-white'}`}>
                                             <span className='text-base font-semibold ps-5 text-nowrap'>Certified Agency</span>
-                                            <span className="ms-auto size-[3.3125rem] aspect-square rounded-full bg-[#67C792] flex items-center justify-center"><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
+                                            <span className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center  transition-all duration-300 ${isActiveTab == 3 ? 'bg-white' : 'bg-[#67C792]'}`}><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
                                         </div>
                                     </li>
-                                    <li className='mb-3.5'>
-                                        <div className={` text-black bg-white min-h-[4.8125rem] border border-black flex rounded-full items-center justify-between p-3 gap-[2.0625rem] font-medium text-base`}>
+                                    <li onClick={() => setActiveTab(4)} className='mb-3.5'>
+                                        <div className={` text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${isActiveTab == 4 ? 'bg-gradient-to-r from-[#FFF8CE] to-[#FFE74E]' : 'bg-white'}`}>
                                             <span className='text-base font-semibold ps-5 text-nowrap'>Certified Agency</span>
-                                            <span className="ms-auto size-[3.3125rem] aspect-square rounded-full bg-[#FFE74E] flex items-center justify-center"><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
+                                            <span className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center  transition-all duration-300 ${isActiveTab == 4 ? 'bg-white' : 'bg-[#FFE74E]'}`}><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
                                         </div>
                                     </li>
-                                    <li className='mb-3.5'>
-                                        <div className={` text-black bg-white min-h-[4.8125rem] border border-black flex rounded-full items-center justify-between p-3 gap-[2.0625rem] font-medium text-base`}>
+                                    <li onClick={() => setActiveTab(5)} className='mb-3.5'>
+                                        <div className={` text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${isActiveTab == 5 ? 'bg-gradient-to-r from-[#F1DEFF] to-[#C897EB]' : 'bg-white'}`}>
                                             <span className='text-base font-semibold ps-5 text-nowrap'>Certified Agency</span>
-                                            <span className="ms-auto size-[3.3125rem] aspect-square rounded-full bg-[#C897EB] flex items-center justify-center"><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
+                                            <span className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center  transition-all duration-300 ${isActiveTab == 5 ? 'bg-white' : 'bg-[#C897EB]'}`}><PiArrowUpRightBold className='text-[18px]  text-black' strokeWidth={2} /> </span>
                                         </div>
                                     </li>
-
                                 </ul>
                             </div>
-                            <div className={`flex-1 lg:ps-[5.75rem] flex justify-center items-center min-h-[18.75rem]`}>
-
-                                <p className='text-[1.125rem] leading-[1.625rem] font-normal'><strong className='font-semibold'>Tech Devise </strong> is certified by Google as a reputed Adword agency. Our certification and partnership prove that we know all  the intricate details about Google Adwords.</p>
-                            </div>
+                            {tabContent.map((item) => (
+                                <div key={item} className={`flex-1 lg:text-start text-center lg:ps-[5.75rem] justify-center items-center min-h-[18.75rem] ${isActiveTab == item ? 'flex' : 'hidden'}`}>
+                                    <p className='text-[1.125rem] leading-[1.625rem] font-normal'><strong className='font-semibold'>{item} Tech Devise </strong> is certified by Google as a reputed Adword agency. Our certification and partnership prove that we know all  the intricate details about Google Adwords.</p>
+                                </div>
+                            ))}
                         </div>
 
                     </div>
                 </div>
             </section>
             {/*Our PPC Expert section end*/}
-<GetInTouch showModal={showModal} setShowModal={setShowModal} />
+
         </>
     )
 }

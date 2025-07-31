@@ -17,6 +17,15 @@ import gap2 from "/gap2.svg";
 import gap3 from "/gap3.svg";
 import gap4 from "/gap4.svg";
 
+import clogo1 from "/clogo16.png";
+import clogo2 from "/clogo17.png";
+import clogo3 from "/clogo18.png";
+import clogo4 from "/clogo19.png";
+import clogo5 from "/clogo20.png";
+import clogo6 from "/clogo21.png";
+import clogo7 from "/clogo22.png";
+import clogo8 from "/clogo23.png";
+
 import itStaffing from "/itStaffing.webp";
 
 import recog1 from "/recog1.webp";
@@ -37,17 +46,71 @@ const ItStaff = () => {
      const [selectedRole, setSelectedRole] = useState({ id: null, name: '' });
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const coLogo = [
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
-    { image: stafflogo },
+    {
+      image: clogo1,
+      alt: "company logo 1",
+    },
+    {
+      image: clogo2,
+      alt: "company logo 2",
+    },
+    {
+      image: clogo3,
+      alt: "company logo 3",
+    },
+    {
+      image: clogo4,
+      alt: "company logo 4",
+    },
+    {
+      image: clogo5,
+      alt: "company logo 5",
+    },
+    {
+      image: clogo6,
+      alt: "company logo 6",
+    },
+    {
+      image: clogo7,
+      alt: "company logo 7",
+    },
+    {
+      image: clogo8,
+      alt: "company logo 8",
+    },
+       {
+      image: clogo1,
+      alt: "company logo 1",
+    },
+    {
+      image: clogo2,
+      alt: "company logo 2",
+    },
+    {
+      image: clogo3,
+      alt: "company logo 3",
+    },
+    {
+      image: clogo4,
+      alt: "company logo 4",
+    },
+    {
+      image: clogo5,
+      alt: "company logo 5",
+    },
+    {
+      image: clogo6,
+      alt: "company logo 6",
+    },
+    {
+      image: clogo7,
+      alt: "company logo 7",
+    },
+    {
+      image: clogo8,
+      alt: "company logo 8",
+    },
+   
   ];
 
   useEffect(() => {

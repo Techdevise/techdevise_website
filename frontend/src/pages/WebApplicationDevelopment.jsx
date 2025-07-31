@@ -129,7 +129,7 @@ const WebApplicationDevelopment = () => {
                 <div className="main-container !pe-0">
 
                     <div className="relative">
-                        <h4 className="texto max-lg:hidden absolute -top-3 left-5 rotate-180 md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Our Work Modules</h4>
+                        <h4 className="texto max-lg:hidden absolute top-2 left-5 rotate-180 md:text-[58px] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Our Work Modules</h4>
                         <div className="lg:ps-[7.125rem] ">
                             <div className="section-header flex gap-10 lg:flex-row flex-col justify-between lg:items-center items-stretch main-container !ps-0 max-lg:!pe-10 !max-w-auto">
                                 <p className="text-[20px] leading-[2.6875rem] max-w-6xl "><strong>Content Management System</strong> - Our team follows a very meticulous and precise procedure that allows us to meet the client requirements adequately within the deadline date. We take great pride in our module and the work ethic we possess.</p>

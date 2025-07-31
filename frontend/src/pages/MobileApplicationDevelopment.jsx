@@ -142,7 +142,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   ]
 
 const qualityContent = [1, 2, 3, 4, 5, 6]
-   
+     const BASE_URL = `${API_BASE_URL}/images`; 
  useEffect(() => {
     const fetchSlides = async () => {
       try {
@@ -274,7 +274,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
           {/* Dynamic image that syncs with active slide */}
           {slides.length > 0 && (
             <img 
-              src={`${API_BASE_URL}/images${slides[currentSlideIndex]?.image}`} 
+              src={`${BASE_URL}${slides[currentSlideIndex]?.image}`} 
               alt={slides[currentSlideIndex]?.title || 'Slide image'} 
               className='lg:max-w-[32.875rem] lg:max-h-[29.3125rem] w-full h-full lg:object-contain object-cover transition-opacity duration-500' 
             />

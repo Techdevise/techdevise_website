@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import HireTopModal from "/HireTopModal1.svg";
 import { IoClose } from "react-icons/io5";
 import FlagInput from "./FlagInput";
@@ -10,6 +10,11 @@ import { toast } from "react-toastify";
 const HireTop = ({ showModal, setShowModal, selectedRole }) => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [userType, setUserType] = useState(null);
+  const fileInputRef = useRef(null);
+
+  const handleDivClick = () => {
+    fileInputRef.current.click(); // trigger hidden file input
+  };
   const typeOfHire = [
     { value: 1, label: "Contractors" },
     { value: 2, label: "Permanent Hires" },
@@ -108,11 +113,11 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
               </p>
 
               <a
-                href="tel: +123 4567 890"
+                href="tel: +91 788-903-8027"
                 className="text-black text-[1.125rem] leading-6 font-medium"
               >
                 Call us toll-free:{" "}
-                <strong className="text-pine-700">+123 4567 890</strong>
+                <strong className="text-pine-700">+91 788-903-8027</strong>
               </a>
 
               <div className="max-lg:hidden image size-full max-h-[34.6875rem] max-w-auto mt-10">
@@ -146,7 +151,7 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
                     required
                   />
                 </div>
-   <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]  h-[4.375rem]">
+                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]  h-[4.375rem]">
                   <input
                     type="tel"
                     name="phone"
@@ -259,15 +264,24 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
                         required
                       ></textarea>
                     </div>
-                    <div className="md:col-span-2 min-h-[7.625rem] bg-[#ECECEC] rounded-lg py-4 px-8">
-                      <div className="flex flex-col justify-center items-center">
-                        <ImImage className="size-10 block mb-[.75rem] text-[#aaaaaa]" />
-                        <h5 className="text-base leading-[1.25rem]">
-                          Please Upload Your CV / Resume
-                        </h5>
-                        <input type="file" name="image" className="mt-2" />
+                    <div
+                      className="w-40 h-22 bg-[#ECECEC] rounded-lg py-4 px-4 cursor-pointer ml-0"
+                      onClick={handleDivClick}
+                    >
+                      <div className="flex flex-col justify-center items-start">
+                        <ImImage className="size-8 mb-2 text-[#aaaaaa]" />
+                        <h5 className="text-sm leading-4">Choose file</h5>
+
+                        {/* Hidden file input */}
+                        <input
+                          type="file"
+                          name="image"
+                          ref={fileInputRef}
+                          className="hidden"
+                        />
                       </div>
                     </div>
+
                     <div className="md:col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.875rem]">
                       <textarea
                         name="position"

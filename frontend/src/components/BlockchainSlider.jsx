@@ -189,7 +189,7 @@ const BlockchainSlider = ({ triggerRef }) => {
                                 </div>
                                 <div className="lg:flex-[1.3_1_0%] lg:text-start text-center">
                                     <h3 className="text-3xl xl:text-4xl font-bold text-white mb-4">{item.title}</h3>
-                                    <p className="text-white text-xl text-justify">{item.para}</p>
+                                    <p className="text-white text-xl text-justify md:text-start">{item.para}</p>
                                 </div>
                             </div>
                         </div>
