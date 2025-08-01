@@ -61,8 +61,11 @@ app.use(helmet());
 // Serve public static files (if any)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set correct path for React build
+const frontendBuildPath = path.join(__dirname, '../frontend/dist');
+console.log('Serving React build from:', frontendBuildPath);
+
 // Serve React build static files
-const frontendBuildPath = path.join(__dirname, '../frontend/build');
 app.use(express.static(frontendBuildPath));
 
 // API routes
@@ -72,9 +75,13 @@ app.use('/api', apiRouter);
 app.use('/admin', indexRouter);
 
 // React frontend catch-all route (after /api and /admin)
-// Sends React app's index.html for all other routes (client-side routing support)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendBuildPath, 'index.html'));
+  res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
+    if (err) {
+      console.error('Error sending React index.html:', err);
+      res.status(err.status).end();
+    }
+  });
 });
 
 // 404 handler
