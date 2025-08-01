@@ -42,9 +42,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     date: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATEONLY,
       allowNull: false,
-      defaultValue: 0
     },
     time: {
       type: DataTypes.TIME,

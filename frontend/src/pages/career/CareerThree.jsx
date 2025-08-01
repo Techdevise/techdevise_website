@@ -76,8 +76,8 @@ const CareerThree = () => {
     form.append("first_name", formData.firstName);
     form.append("last_name", formData.lastName);
     form.append("email", formData.email);
-    const fullPhoneNumber = `${formData.countryCode}${formData.phone}`;
-    form.append("phone", fullPhoneNumber);
+    form.append("phone", formData.phone);
+    form.append("country_code",formData.countryCode);
     form.append("message", formData.message);
     form.append("linkedin_profile", formData.linkedinProfile);
     form.append("about_us", formData.source);

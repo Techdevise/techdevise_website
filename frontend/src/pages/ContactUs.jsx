@@ -60,7 +60,7 @@ const ContactUs = () => {
   }
 
   // Format time: HH:mm -> HH:mm:00
-  const formattedTime = formData.time ? `${formData.time}:00` : "";
+ const formattedTime = `${formData.time}:00`;
 
   // Format date: YYYY-MM-DD -> DD-MM-YYYY
   let formattedDate = "";
@@ -71,7 +71,8 @@ const ContactUs = () => {
 
   const payload = {
     ...formData,
-    date: `${formattedTime}, ${formattedDate}`,
+      date: formData.date, // Already in YYYY-MM-DD format from input
+      time: formattedTime
   };
 
   try {

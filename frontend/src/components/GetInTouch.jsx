@@ -90,7 +90,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
       );
 
       if (response.data.success) {
-        toast.success(response.data.message || "Form submitted successfully!");
+        toast.success("Form submitted successfully!");
         // Reset form
         setFormData({
           fullname: "",
@@ -285,6 +285,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                     className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
+                
 
                 <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.375rem] relative">
                   <select

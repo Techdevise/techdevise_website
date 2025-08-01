@@ -7,7 +7,13 @@ const blogController = require('../controller/website/blogController');
 const cmsController = require('../controller/website/cmsController');
 const sliderController = require('../controller/website/sliderController');
 var apiRouter = express.Router();
+// const rateLimit = require('express-rate-limit');
 
+// const loginLimiter = rateLimit({
+//   windowMs: 15 * 60 * 1000, // 15 minutes
+//   max: 2, // limit each IP to 5 requests per 15 mins
+//   message: 'Too many login attempts. Please try again later.',
+// });
 apiRouter.post('/job_position', jobValidationRules, job_positionController.addJobPosition)
 apiRouter.get('/jobs', job_positionController.job_listing)
 apiRouter.get('/careers', job_positionController.Carreer_listing)
@@ -26,8 +32,6 @@ apiRouter.get('/teams', blogController.listing_Team)
 apiRouter.get('/techTeam', blogController.listing_TechTeam)
 apiRouter.get('/officeActivity', blogController.listing_Office_Activity)
 apiRouter.get('/cms', cmsController.listingCms)
-
-
 
 apiRouter.get('/react_native', sliderController.listing_React)
 apiRouter.get('/ai', sliderController.listing_Ai_Integrated)

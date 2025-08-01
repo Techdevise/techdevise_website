@@ -44,9 +44,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // CORS config
+// Allowed origins for CORS
+// const allowedOrigins = process.env.ALLOWED_ORIGINS
+//   ? process.env.ALLOWED_ORIGINS.split(",") 
+//   : ["https://website.techdevise.com", "https://techdevise.com"];
 const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(",")
-  : ["https://website.techdevise.com", "https://techdevise.com"];
+  ? process.env.ALLOWED_ORIGINS.split(",") 
+  : ["http://localhost:3003", "http://localhost:3003"];
 
 app.use(cors({
   origin: allowedOrigins,
@@ -63,7 +67,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set correct path for React build
 const frontendBuildPath = path.join(__dirname, '../frontend/dist');
-console.log('Serving React build from:', frontendBuildPath);
 
 // Serve React build static files
 app.use(express.static(frontendBuildPath));

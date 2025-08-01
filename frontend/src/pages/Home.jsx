@@ -1493,10 +1493,10 @@ const Home = () => {
                     <span className="text-2xl">300+</span>
                     Visionaries.
                   </p>
-                  <button className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">
+                  <Link to="/contact-us" className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">
                     Let's Innovate Together{" "}
                     <BsArrowRight className="size-[1.875rem]" />
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="lg:w-1/2 w-full grid grid-cols-4 gap-[.625rem] max-md:hidden">
