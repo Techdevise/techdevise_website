@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 const HireTop = ({ showModal, setShowModal, selectedRole }) => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [userType, setUserType] = useState(null);
+  const [typeOfHireSelected, setTypeOfHireSelected] = useState(null); // Add this state
   const fileInputRef = useRef(null);
 
   const handleDivClick = () => {
@@ -39,7 +40,7 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
       // Employer
       formData.append("company_name", e.target.company_name.value);
       formData.append("job_title", e.target.job_title.value);
-      formData.append("type_of_hire", e.target.type_of_hire.value);
+      formData.append("type_of_hire", typeOfHireSelected?.value); // Use the selected value
       formData.append("number_of_job", e.target.number_of_job.value);
       formData.append("help", e.target.help.value);
       formData.append("position", e.target.position.value);
@@ -66,6 +67,7 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
         setShowModal(false);
         e.target.reset();
         setUserType(null);
+        setTypeOfHireSelected(null); // Reset the selected value
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -161,12 +163,6 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
                     required
                   />
                 </div>
-                {/* <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]  h-[4.375rem]">
-                  <FlagInput
-                    name="phone"
-                    required
-                  />
-                </div> */}
 
                 <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]  h-[4.375rem]">
                   <input
@@ -244,6 +240,8 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
                         name="type_of_hire"
                         placeholder={"Type Of Hire"}
                         required
+                        selectedOption={typeOfHireSelected}
+                        setSelectedOption={setTypeOfHireSelected}
                       />
                     </div>
 
@@ -312,7 +310,7 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
                     <span className="text-base leading-[1.625rem]">
                       TechDevise will process any personal information that you
                       provide in accordance with its{" "} <br />
-                      <Link to="/Privacy-Policy" className="text-[#02574B] font-bold font-montserrat"> Privacy Policy.</Link>
+                      <Link to="/Privacy-Policy" className="text-[#02574B] font-bold font-montserrat"> Privacy Policy.</Link>
                     </span>
                   </label>
                 </div>

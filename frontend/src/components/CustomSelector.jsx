@@ -1,8 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaCaretDown } from 'react-icons/fa';
 
-export default function CustomSelector({ options = [], placeholder, id, name, required }) {
-    const [selectedOption, setSelectedOption] = useState(null);
+export default function CustomSelector({ 
+  options = [], 
+  placeholder, 
+  id, 
+  name, 
+  required,
+  selectedOption,
+  setSelectedOption 
+}) {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
     const [openUpward, setOpenUpward] = useState(false);
@@ -83,7 +90,7 @@ export default function CustomSelector({ options = [], placeholder, id, name, re
                 <input 
                     type="hidden" 
                     name={name} 
-                    value={selectedOption?.value || selectedOption || ''} 
+                    value={selectedOption?.value || ''} 
                 />
             </div>
 

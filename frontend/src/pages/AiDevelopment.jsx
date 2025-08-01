@@ -379,7 +379,7 @@ const AiDevelopment = () => {
                             {item.title}
                           </h4>
                           <p className="text-base leading-[1.8125rem] font-normal">
-                            {item.para}
+                            {item.message}
                           </p>
                         </div>
                       </div>

@@ -44,6 +44,8 @@ module.exports = {
             } = req.body;
             let imagePath = "";
 
+       
+             
             if (req.files && req.files.image) {
                 const images = req.files.image;
                 imagePath = await uploadImage(images);
