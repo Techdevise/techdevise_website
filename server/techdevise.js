@@ -9,34 +9,24 @@ const helmet = require('helmet');
 const session = require('express-session');
 var flash = require("express-flash");
 const fileUpload = require('express-fileupload');
+require('dotenv').config();
+
+var app = express();
 
 // Routers
 var indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
 
-var app = express();
-require('dotenv').config();
-
-
-// const limiter = rateLimit({
-//   windowMs: 15 * 60 * 1000, // 15 minutes
-//   max: 20, // Max 20 requests per IP in 15 minutes
-//   message: 'Too many requests from this IP, please try again after 15 minutes.',
-//   standardHeaders: true, // Show rate limit info in headers
-//   legacyHeaders: false, // Disable `X-RateLimit-*` headers (optional)
-// });
 // Middleware
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(fileUpload());
 
-
 // Session
 app.use(session({
-  secret: process.env.SECRET, 
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
 }));
@@ -49,38 +39,44 @@ app.use((req, res, next) => {
   next();
 });
 
-// View engine setup (only once)
+// View engine setup for Admin Panel
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-// Allowed origins for CORS
+
+// CORS config
 const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(",") 
+  ? process.env.ALLOWED_ORIGINS.split(",")
   : ["https://website.techdevise.com", "https://techdevise.com"];
-// const allowedOrigins = process.env.ALLOWED_ORIGINS
-//   ? process.env.ALLOWED_ORIGINS.split(",") 
-//   : ["http://localhost:3003", "http://localhost:3003"];
+
 app.use(
   cors({
     origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // Allow cookies if needed
+    credentials: true,
   })
 );
-// Static files
-app.use(express.static(path.join(__dirname, 'public')));
-// app.use(limiter);
+
+// Helmet for security
 app.use(helmet());
-// API Routes (should come before React catch-all)
+
+// Serve static files (e.g., CSS, JS, images)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// === ⬇️ Serve React Build from "frontend/build" folder (adjust path as needed) ===
+const frontendBuildPath = path.join(__dirname, '../frontend/build');
+app.use(express.static(frontendBuildPath));
+
+// Routes
 app.use('/api', apiRouter);
 app.use('/admin', indexRouter);
 
-// React catch-all route (must come AFTER specific routes)
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
-// });
+// React Catch-All (MUST come after /api and /admin)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendBuildPath, 'index.html'));
+});
 
-// Error handlers
+// Error Handling
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -92,9 +88,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const port = process.env.PORT || 8006;
+// Server
+const port = process.env.PORT || 8005;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
 
 module.exports = app;
