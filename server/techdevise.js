@@ -14,8 +14,8 @@ require('dotenv').config();
 var app = express();
 
 // Routers
-var indexRouter = require('./routes/index');
-const apiRouter = require('./routes/api');
+var indexRouter = require('./routes/index');  // Admin routes
+const apiRouter = require('./routes/api');    // API routes
 
 // Middleware
 app.use(logger('dev'));
@@ -24,14 +24,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(fileUpload());
 
-// Session
+// Session config
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.SECRET || 'your-secret-key',
   resave: false,
   saveUninitialized: true,
 }));
 
-// Flash messages
+// Flash messages middleware
 app.use(flash());
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// View engine setup for Admin Panel
+// View engine setup for admin panel (EJS)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -48,50 +48,55 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",")
   : ["https://website.techdevise.com", "https://techdevise.com"];
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
 
-// Helmet for security
+// Security middleware
 app.use(helmet());
 
-// Serve static files (e.g., CSS, JS, images)
+// Serve public static files (if any)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// === ⬇️ Serve React Build from "frontend/build" folder (adjust path as needed) ===
+// Serve React build static files
 const frontendBuildPath = path.join(__dirname, '../frontend/build');
 app.use(express.static(frontendBuildPath));
 
-// Routes
+// API routes
 app.use('/api', apiRouter);
+
+// Admin panel routes
 app.use('/admin', indexRouter);
 
-// React Catch-All (MUST come after /api and /admin)
+// React frontend catch-all route (after /api and /admin)
+// Sends React app's index.html for all other routes (client-side routing support)
 app.get('*', (req, res) => {
   res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
 
-// Error Handling
+// 404 handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
+// Error handler
 app.use(function(err, req, res, next) {
+  // Set locals, only providing error details in development mode
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // Render the error page with status
   res.status(err.status || 500);
   res.render('error');
 });
 
-// Server
+// Start the server
 const port = process.env.PORT || 8005;
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
 
 module.exports = app;
