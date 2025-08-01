@@ -334,7 +334,7 @@ const CareerThree = () => {
                     <IoCheckmark className='size-7' strokeWidth={0.1} />
                   </div>
                   <span className='text-base leading-[1.625rem]'>
-                    I consent to receiving from the Company e-mail information about new job, our events, trainings and other ongoing activities - <Link to='/' className='text-pine-700'>Terms & Conditions</Link>.
+                    I consent to receiving from the Company e-mail information about new job, our events, trainings and other ongoing activities - <Link to='/Terms-Conditions' className='text-pine-700'>Terms & Conditions</Link>.
                   </span>
                 </label>
               </div>

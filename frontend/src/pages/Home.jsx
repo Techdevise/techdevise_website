@@ -440,7 +440,6 @@ const Home = () => {
         }
       );
 
-      console.log("API Response:", response.data);
 
       if (response.data.success) {
         toast.success(response.data.message || "Form submitted successfully!");

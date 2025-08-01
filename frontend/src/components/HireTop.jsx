@@ -5,6 +5,7 @@ import FlagInput from "./FlagInput";
 import CustomSelector from "./CustomSelector";
 import { ImImage } from "react-icons/im";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const HireTop = ({ showModal, setShowModal, selectedRole }) => {
@@ -309,9 +310,9 @@ const HireTop = ({ showModal, setShowModal, selectedRole }) => {
                       <div className="group peer bg-white peer-checked:bg-pine-700 rounded-full duration-300 w-16 h-8 ring-2 ring-pine-700 after:duration-300 after:bg-pine-700 peer-checked:after:bg-white peer-checked:ring-pine-700 after:rounded-full after:absolute after:h-6 after:w-6 after:top-1 after:left-1 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8 peer-hover:after:scale-95"></div>
                     </div>
                     <span className="text-base leading-[1.625rem]">
-                      I consent to receiving from the Company e-mail information
-                      about new job, our events, trainings and other ongoing
-                      activities.
+                      TechDevise will process any personal information that you
+                      provide in accordance with its{" "} <br />
+                      <Link to="/Privacy-Policy" className="text-[#02574B] font-bold font-montserrat"> Privacy Policy.</Link>
                     </span>
                   </label>
                 </div>

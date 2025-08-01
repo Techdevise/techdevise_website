@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import axios from "axios";
@@ -774,8 +775,11 @@ const About = () => {
               </label>
             </div>
             <p className="text-base leading-[1.625rem] font-bold md:col-span-2">
-              I consent to receiving from the Company e-mail information about
-              new job , our events, trainings and other ongoing activities.
+              If you are unable to submit your details, then please share your
+              recently updated resume at{" "}
+              <Link to="mailto:Info@techdevise.com" className="underline">
+                info@techdevise.com
+              </Link>
             </p>
             <button
               type="submit"
