@@ -167,82 +167,47 @@ const ItStaff = () => {
   return (
     <>
       {/*it staff landing section start  */}
-      <section
-        style={{ backgroundImage: `url(${staff1})` }}
-        className="landingItStaff bg-center bg-cover bg-no-repeat mb-[4.6875rem] min-h-[100dvh] flex justify-center items-end"
-      >
-        <div className="main-container">
-          <div className="pt-[6.25rem]">
-            <div className="bottomContent">
-              <div className="flex lg:flex-row flex-col">
-                <div className="lg:flex-1 max-w-fit">
-                  <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
-                    Your Trusted Partner for IT Staffing and Services
-                  </h1>
-                  <p className="text-[1rem] leading-[1.5rem] font-normal text-white max-w-3xl text-start ">
-                    TechDevise is a staffing agency that has the expertise,
-                    experience, and network to find you the most qualified
-                    candidates for any industry or function in as little as two
-                    days. Plus, we have access to top international talent and
-                    can source great people from 50+ countries. Questions? Call
-                    us toll-free: +1 123 456 7890
-                  </p>
-                </div>
-                <div className="lg:flex-1 flex justify-center items-stretch gap-[1.6875rem]">
-                  <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
-                    <h3 className="text-[2rem] font-bold text-white">
-                      Schedule a <br /> meeting
-                    </h3>
-                    <p className="text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl text-start mt-5 mb-8 ">
-                      Talk with one of our experts about your IT staffing and
-                      tech solutions needs.
-                    </p>
+     <section style={{ backgroundImage: `url(${staff1})` }} className="landingItStaff bg-center bg-cover bg-no-repeat mb-[4.6875rem] min-h-[100dvh] flex justify-center items-end">
+                <div className="main-container">
+                    <div className="pt-[6.25rem]">
+                        <div className="bottomContent">
+                            <div className="flex 2xl:flex-row flex-col lg:gap-5 gap-10">
+                                <div className="lg:flex-1 max-w-fit">
+                                    <h1 className='text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]'>Your Trusted Partner for IT Staffing and Services</h1>
+                                    <p className='text-[1rem] leading-[1.5rem] font-normal text-white 2xl:max-w-3xl text-start '>TechDevise is a staffing agency that has the expertise, experience, and network to find you the most qualified candidates for any industry or function in as little as two days. Plus, we have access to top international talent and can source great people from 50+ countries. Questions? Call us toll-free: +1 123 456 7890</p>
+                                </div>
+                                <div className="lg:flex-1 flex max-md:flex-wrap justify-center items-stretch gap-[1.6875rem]">
+                                    <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
+                                        <h3 className="text-[2rem] font-bold text-white">Schedule a <br className='max-2xl:hidden' /> meeting</h3>
+                                        <p className='text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
+                                            Talk with one of our experts about your IT staffing and tech solutions needs.
+                                        </p>
 
-                    <button
-                      onClick={() => setShowModal(true)}
-                      className="bg-[#BCFFCE] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-                    >
-                      Let's Connect{" "}
-                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                        <LuMoveUpRight
-                          className="text-[18px] -rotate-12 text-black"
-                          strokeWidth={1}
-                        />{" "}
-                      </span>
-                    </button>
-                  </div>
-                  <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
-                    <h3 className="text-[2rem] font-bold text-white">
-                      Submit Staffing <br />
-                      Request
-                    </h3>
-                    <p className="text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl text-start mt-5 mb-8 ">
-                      Talk with one of our experts about your IT staffing and
-                      tech solutions needs.
-                    </p>
+                                        <button onClick={() => setShowModal(true)} className="bg-[#BCFFCE] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                                            Let's Connect <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><LuMoveUpRight className='text-[18px] -rotate-12 text-black' strokeWidth={1} /> </span></button>
 
-                    <button
-                      onClick={() => setShowModal(true)}
-                      className="bg-[#FFBCBE] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-                    >
-                      Get Started
-                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                        <LuMoveUpRight
-                          className="text-[18px] -rotate-12 text-black"
-                          strokeWidth={1}
-                        />{" "}
-                      </span>
-                    </button>
-                  </div>
+                                    </div>
+                                    <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
+                                        <h3 className="text-[2rem] font-bold text-white">Submit Staffing <br  className='max-2xl:hidden' />Request</h3>
+                                        <p className='text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
+                                            Talk with one of our experts about your IT staffing and tech solutions needs.
+                                        </p>
+
+                                        <button onClick={() => setShowModal(true)} className="bg-[#FFBCBE] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                                            Get Started<span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><LuMoveUpRight className='text-[18px] -rotate-12 text-black' strokeWidth={1} /> </span></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="rounded-[2.1875rem] w-full mt-[3.8125rem] bg-gradient-to-l from-[#7BDB9D] to-[#6AD2B6] py-[2.625rem] px-[2rem] translate-y-20">
+                                <CompanyLogoSlider logos={coLogo} />
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-              </div>
-              <div className="rounded-[2.1875rem] w-full mt-[3.8125rem] bg-gradient-to-l from-[#7BDB9D] to-[#6AD2B6] py-[2.625rem] px-[2rem] translate-y-20">
-                <CompanyLogoSlider logos={coLogo} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
       {/*it staff landing section end  */}
 
       {/* IT Roles section start */}

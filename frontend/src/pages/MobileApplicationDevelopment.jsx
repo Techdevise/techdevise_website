@@ -214,7 +214,15 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
     { item: logoIcon5 },
   ]
   // const logoSliders = [logoIcon1, logoIcon2, logoIcon3, logoIcon4, logoIcon5]
-  const stackTab = ['Programming Languages', 'Frameworks', 'Databases', 'Devops', 'Payment Gateways', 'Clouds']
+  const stackTab = [
+    "Programming Languages",
+    "Frameworks",
+    "Databases",
+    "Devops",
+    "Payment Gateways",
+    "Clouds",
+  ];
+
   return (
     <>
       {/*landing area of Mobile Application Development start  */}
@@ -552,24 +560,37 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
 
 
       {/* Tech Stack We Use section start */}
-       <section style={{ backgroundImage: `url(${bglayerdevices})` }} className="py-[4.687rem] mb-[3rem] bg-bottom bg-cover bg-no-repeat">
+  <section
+        style={{ backgroundImage: `url(${bglayerdevices})` }}
+        className="py-[4.687rem] mb-[3rem] bg-bottom bg-cover bg-no-repeat"
+      >
         <div className="main-container">
-          <h3 className='2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-black mb-[2.5625rem]'>Tech Stack We Use</h3>
+          <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-[2.5625rem]">
+            Tech Stack We Use
+          </h3>
           <div className="lg:pe-[4.8125rem] relative">
-            <h4 className="texto absolute top-0 right-5 max-lg:hidden rotate-180 text-nowrap sm:text-[2.413rem] leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Solutions to Explore</h4>
+            <h4 className="texto absolute top-10 right-5 max-lg:hidden rotate-180 text-nowrap sm:text-[1.7813rem] leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">
+              Solutions to Explore
+            </h4>
 
-            <div className="bg-white py-[2.1875rem] px-[3.125rem] rounded-[.625rem] ">
-              <ul className='flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-[4.5rem] mb-10'>
+            <div className="bg-white lg:py-[2.1875rem] lg:px-[3.125rem] p-5  rounded-[.625rem] ">
+              <ul className="flex justify-start flex-nowrap overflow-x-scroll hide-scroll md:gap-[4.5rem] gap-8 mb-4">
                 {stackTab.map((item, index) => (
-                  <li onClick={() => setActiveSlide(index + 1)} key={index} className={`text-[1.5rem] cursor-pointer leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-black before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
+                  <li
+                    onClick={() => setActiveSlide(index + 1)}
+                    key={index}
+                    className={`md:text-[1.5rem] text-lg cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-black before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1
+                        ? " before:w-full"
+                        : " before:w-0"
+                      }`}
+                  >
                     {item}
                   </li>
                 ))}
               </ul>
 
               <div className="flex flex-col">
-
-                <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
+                <div className="flex gap-2.5 justify-end items-stretch lg:mt-[3.25rem] mt-4 order-2">
                   <button ref={prevRefLang} className="cursor-pointer order-1">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
                       <GoArrowLeft className="size-7" />
@@ -584,13 +605,13 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
                 </div>
 
                 {slide1.map((slide, index) => (
-
                   <Swiper
                     key={index}
-                    className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1 ${isActiveSlide == index + 1 ? 'flex' : '!hidden'}`}
-                    slidesPerView={'auto'}
+                    className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1 ${isActiveSlide == index + 1 ? "flex" : "!hidden"
+                      }`}
+                    slidesPerView={"auto"}
                     spaceBetween={30}
-                    speed={500}
+                    speed={3000}
                     loop={true}
                     autoplay={{ delay: 1, disableOnInteraction: false }}
                     grabCursor={true}
@@ -604,19 +625,19 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
                     }}
                     navigation={{
                       prevEl: prevRefLang.current,
-                      nextEl: nextRefLang.current
+                      nextEl: nextRefLang.current,
                     }}
                   >
                     {slide.item.map((itm, index) => {
                       return (
                         <SwiperSlide
                           key={index}
-                          className="flex justify-center items-center !w-[10rem]"
+                          className="flex justify-center items-center lg:!w-[10rem] !w-[6rem]"
                         >
                           <img
                             src={itm}
-                            alt='logo'
-                            className="block object-contain h-[9.375rem] w-[10.5rem] mx-auto"
+                            alt="logo"
+                            className="block object-contain lg:h-[9.375rem] lg:w-[10.5rem]  mx-auto"
                           />
                         </SwiperSlide>
                       );

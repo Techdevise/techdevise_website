@@ -17,6 +17,7 @@ import vectorEight from "/vectorEight.svg";
 import vectorNine from "/vectorNine.svg";
 import vector12 from "/vector12.svg";
 import GoogleAnalytics from "/GoogleAnalytics.svg";
+import VisionSlider from "../components/visionSlider";
 import cardOne from "/cardOne.webp";
 import layerOne from "/layerOne.webp";
 
@@ -1470,13 +1471,14 @@ const Home = () => {
         {/* socialLink section end */}
 
         {/* Seamless Vision start */}
-        <section className="my-[6.0625rem]">
+      
+
+            <section className="my-[6.0625rem]">
           <div className="main-container">
             <div className="md:border-[.0625rem] border-white/20 rounded-3xl flex max-lg:flex-wrap items-center lg:justify-between justify-center 2xl:p-14 gap-12 lg:p-12 md:p-10">
-              <div className="lg:pb-[3.3125rem] lg:w-1/2 w-full">
+              <div className="lg:pb-[3.3125rem] lg:w-1/2 w-full ">
                 <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
-                  A Seamless Vision that Adapts to Every Industry
-                  <span>&apos;</span>s Demands
+                  A Seamless Vision that Adapts to Every Industry<span>&apos;</span>s Demands
                 </h4>
                 <p className="text-white font-medium text-[1.25rem] leading-[1.875rem] lg:mb-16 mb-7 max-lg:text-center">
                   We deliver flexible and innovative IT solutions tailored to
@@ -1484,35 +1486,31 @@ const Home = () => {
                   efficiency, scalability, and long-term success.
                 </p>
                 <div className="p-6 bg-gradient-to-b from-pine-600/70 to-pine-600 rounded-3xl md:flex max-xl:flex-wrap items-center xl:justify-between justify-center lg:gap-3 gap-5">
-                  {/* <div className="gallerySlider md:hidden py-10">
-                    <VisionSlider industries={industries} />
-                  </div> */}
+
+                  <div className="gallerySlider md:hidden py-10">
+                    <VisionSlider />.
+                  </div>
+
 
                   <p className="text-white text-[1.25rem] 2xl:text-balance leading-[2.25rem] max-xl:text-center max-lg:mb-4">
-                    Fuel Success in a Digital-First World with{" "}
-                    <span className="text-2xl">300+</span>
+                    Fuel Success in a Digital- First World with <span className="text-2xl">300+</span>
                     Visionaries.
                   </p>
-                  <Link to="/contact-us" className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">
+   <Link to="/contact-us" className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">
                     Let's Innovate Together{" "}
                     <BsArrowRight className="size-[1.875rem]" />
                   </Link>
                 </div>
               </div>
-              <div className="lg:w-1/2 w-full grid grid-cols-4 gap-[.625rem] max-md:hidden">
-                {industries.map((industry, index) => (
-                  <div
-                    key={index}
-                    className="relative rounded-xl overflow-hidden"
-                  >
-                    <img
+              <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden">
+             {industries.map((industry, index) => (
+                  <div key={index} className="relative rounded-xl overflow-hidden">
+                  <img
                       src={`${API_BASE_URL}/images${industry.image}`}
                       alt={industry.title}
                       className="w-full aspect-square object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85 p-3 text-sm text-white font-semibold">
-                      {industry.title}
-                    </div>
+                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85  p-3 text-sm text-white font-semibold"> {industry.title}</div>
                   </div>
                 ))}
               </div>

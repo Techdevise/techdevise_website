@@ -15,7 +15,10 @@ import xBlack from "/xBlack.svg"
 import instagramBlack from "/instagramBlack.svg"
 import youtubeBlack from "/youtubeBlack.svg"
 import managementBlack from "/managementBlack.svg"
-import add from "/add.svg"
+import add1 from "/add1.svg"
+import add2 from "/add2.svg"
+  import add3 from "/add5.svg"
+import add4 from "/add4.svg"
 import keywordBlack from "/keywordBlack.svg"
 import contentBlack from "/contentBlack.svg"
 import AdwordsIcon1 from "/AdwordsIcon1.svg"
@@ -154,6 +157,32 @@ const services = [
         description: 'We believe that if you are investing in anything, then you should get some assurance from our end. For every campaign, we do a precise calculation about how successful the campaign is going to get and what are the possible results out of it.'
     }
 ];
+    const addSlide = [
+        {
+            title: 'Show up',
+            bgColor: 'bg-[#CEEAD6]',
+            textColor: 'text-[#1F8E3D]',
+            image: add1,
+        },
+        {
+            title: 'Be found',
+            bgColor: 'bg-[#FEF7E0]',
+            textColor: 'text-[#F29900]',
+            image: add2,
+        },
+        {
+            title: 'Drive sales',
+            bgColor: 'bg-[#D2E3FC]',
+            textColor: 'text-[#1C73E8]',
+            image: add3,
+        },
+        {
+            title: 'Stand out',
+            bgColor: 'bg-[#FCE8E6]',
+            textColor: 'text-[#C5221F]',
+            image: add4,
+        },
+    ]
 const DigitalMarketingOne = () => {
     const [showModal, setShowModal] = useState(false);
     const prevRef = useRef(null);
@@ -283,14 +312,29 @@ const DigitalMarketingOne = () => {
             {/* Social Media section start */}
             <section className='bg-gradient-to-r from-pine-100 to-pine-300 py-24'>
                 <div className="main-container">
-                    <div className="flex items-start justify-between gap-2.5">
-                        <div className="w-[calc(100%_-_13.125rem)]">
+                    <div className="flex flex-wrap items-start justify-between gap-2.5">
+                        <div className="lg:w-[calc(100%_-_13.125rem)] w-full lg:text-start text-center">
                             <h2 className='text-5xl font-extrabold leading-none mb-9'>Our Social Media Marketing Services</h2>
-                            <p className='font-medium text-xl leading-7 mb-20'>At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing solutions that will surely
+                            <p className='font-medium text-xl leading-7 lg:mb-20 mb-5'>At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing solutions that will surely
                                 improve your business&apos;s online visibility. With the help of your experts, you can increase your online customer base as well.  </p>
+
+                            <div className='w-full lg:hidden gap-3 flex justify-center items-center'>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={facebookBlack} alt="facebookBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={xBlack} alt="xBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={instagramBlack} alt="instagramBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                    <img src={youtubeBlack} alt="youtubeBlack" className='lg:size-[3.5625rem] size-10' />
+                                </div>
+                            </div>
                             <div className="col-span-2 flex flex-col">
 
-                                <div className="flex gap-2.5 justify-start items-stretch mt-[3.25rem] order-2">
+                                <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
                                     <button ref={prevRef2} className="cursor-pointer order-1">
                                         <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
                                             <GoArrowLeft className="size-7" />
@@ -308,6 +352,7 @@ const DigitalMarketingOne = () => {
                                     slidesPerView={1}
                                     spaceBetween={25}
                                     speed={1000}
+                                    loop={true}
                                     breakpoints={{
 
                                         1024: {
@@ -321,6 +366,7 @@ const DigitalMarketingOne = () => {
                                         },
                                     }}
                                     grabCursor={true}
+                                    autoplay={{ delay: 1000 }}
                                     modules={[Autoplay, Navigation]}
                                     onInit={(swiper) => {
                                         // Re-assign custom buttons after swiper is initialized
@@ -336,8 +382,8 @@ const DigitalMarketingOne = () => {
                                 >
                                     {socialMediaData.map((item, index) => (
                                         <SwiperSlide key={index} className='!h-auto'>
-                                            <div className={`${item.bg} rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
-                                                <div className={`w-[7rem] h-[7rem] rounded-full ${item.roundBg} flex items-center justify-center mb-[1.8125rem]`}>
+                                            <div className={`${item.bg} lg:text-start text-center rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                                <div className={`size-[7rem] rounded-full ${item.roundBg} flex items-center justify-center mb-[1.8125rem] lg:mx-0 mx-auto`}>
                                                     <img src={item.image} alt={item.title} className='w-[3.1875rem]' />
                                                 </div>
                                                 <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
@@ -348,18 +394,18 @@ const DigitalMarketingOne = () => {
                                 </Swiper>
                             </div>
                         </div>
-                        <div className='w-fit'>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={facebookBlack} alt="facebookBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                        <div className='lg:w-fit w-full lg:block gap-3 hidden justify-center items-center'>
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={facebookBlack} alt="facebookBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={xBlack} alt="xBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={xBlack} alt="xBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={instagramBlack} alt="instagramBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={instagramBlack} alt="instagramBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
-                            <div className="border border-dashed border-black w-[9rem] h-[9rem] rounded-full flex items-center mb-[1.8125rem] justify-center">
-                                <img src={youtubeBlack} alt="youtubeBlack" className='w-[3.5625rem] h-[3.5625rem]' />
+                            <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+                                <img src={youtubeBlack} alt="youtubeBlack" className='lg:size-[3.5625rem] size-10' />
                             </div>
                         </div>
                     </div>
@@ -368,17 +414,17 @@ const DigitalMarketingOne = () => {
             {/* Social Media section end */}
 
             {/* Google Adwords section start */}
-            <section className='py-[6.75rem]'>
+           <section className='pt-[6.75rem]'>
                 <div className="main-container">
                     <h3 className='md:text-5xl text-3xl font-extrabold leading-none mb-[1.9375rem] text-center'>Google Adwords</h3>
                     <p className='mb-[3.8125rem] w-fll max-w-[67.0625rem] mx-auto text-lg leading-[2.125rem] text-center'>Wanting to rank your website higher on Google search pages? If yes, then contact us and our Google Adwords experts to suggest the best strategies to get the most out of your Google Adwords campaigns. Contact us today to know more.</p>
-                    <div className="bg-[#F5F7FB] py-[5.3125rem] 2xl:px-[3.4375rem] px-7 rounded-[.9375rem] relative flex flex-wrap">
-                        <img src={line} alt="line" className='w-[9.8125rem] absolute top-full right-full -mt-14 -mr-14' />
-                        <div className="lg:w-2/5 w-full pr-10">
-                            <h3 className='lg:text-5xl text-3xl font-extrabold leading-none mb-[1.9375rem]'>The Services we offer under Google Adwords</h3>
+                    <div className="bg-[#F5F7FB] py-[5.3125rem] 2xl:px-[3.4375rem] px-7 rounded-[.9375rem] relative flex gap-5 max-lg:flex-wrap">
+                        <img src={line} alt="line" className='w-[9.8125rem] absolute top-full right-full -mt-14 -mr-14 shake-v' />
+                        <div className="lg:w-2/5 w-full xl:pr-10 lg:text-start text-center">
+                            <h3 className='xl:text-5xl lg:text-4xl text-3xl font-extrabold leading-none mb-[1.9375rem]'>The Services we offer under Google Adwords</h3>
                             <p className='mb-[3.8125rem] max-w-[67.0625rem] mx-auto text-lg leading-[2.125rem]'>We all know that the internet is flooded with millions of websites. Hence, getting your website to be noticed among this huge crowd is a challenging task. But nothing is impossible. With the help from our Google Adword experts, you can achieve the desired traffic to your website and improve its visibility. Our team will assist you in creating result-oriented Google Adword campaigns that will take your business to the next level.</p>
                         </div>
-                        <div className="lg:w-3/5 w-full pl-10">
+                        <div className="lg:w-3/5 w-full xl:pl-10">
                             <div className="col-span-2 flex flex-col">
 
                                 <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
@@ -399,19 +445,22 @@ const DigitalMarketingOne = () => {
                                     slidesPerView={1}
                                     spaceBetween={44}
                                     speed={1000}
+                                    loop={true}
                                     breakpoints={{
-
+                                        640: {
+                                            slidesPerView: 2,
+                                            centeredSlides: false,
+                                        },
                                         1024: {
                                             slidesPerView: 1.5,
-                                        },
-                                        1200: {
-                                            slidesPerView: 1.5,
+                                            centeredSlides: true,
                                         },
                                         1400: {
                                             slidesPerView: 2,
                                         },
                                     }}
                                     grabCursor={true}
+                                    autoplay={{ delay: 1000 }}
                                     modules={[Autoplay, Navigation]}
                                     onInit={(swiper) => {
                                         // Re-assign custom buttons after swiper is initialized
@@ -427,7 +476,7 @@ const DigitalMarketingOne = () => {
                                 >
                                     {services.map((item, index) => (
                                         <SwiperSlide key={index} className='!h-auto'>
-                                            <div className={`bg-white rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                            <div className={`bg-white rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full lg:text-start text-center`}>
                                                 <img src={item.image} alt={item.title} className='w-[2.9375rem] h-[2.9375rem] inline-block mb-[.9375rem]' />
                                                 <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
                                                 <p className="text-base leading-[1.8125rem]">{item.description}</p>
@@ -443,19 +492,36 @@ const DigitalMarketingOne = () => {
             {/* Google Adwords section end */}
 
             {/* Google Ads  section start*/}
-            <section className='pt-[3.625rem] pb-[7.375rem]'>
+           <section className='lg:pt-[3.625rem] sm:py-28 pt-20 pb-20 lg:pb-[7.375rem]'>
                 <div className="main-container">
-                    <div className="flex items-center justify-center">
-                        <div className="w-[20.5625rem] h-[20.5625rem] rounded-[1.25rem] flex items-center justify-center relative bg-[#CEEAD6]">
-                            <MdOutlinePlayCircleFilled className='text-[#1F8E3D] absolute text-3xl top-3 left-3' />
-                            <img src={add} alt="add" className='w-8/12' />
-                        </div>
-                        <div className="-ml-10 z-10">
-                            <h2 className='text-[#1F8E3D] text-[clamp(3.125rem,_7vw,_8.0625rem)] font-bold'>Show up</h2>
-                            <h2 className='text-[clamp(2.3rem,_5vw,_5.75rem)] font-bold'>with Google Ads</h2>
-                            <p className='text-[1.0625rem] lg:pl-24 md:12'>Whatever your business goal, drive better results with Performance Max.</p>
-                        </div>
-                    </div>
+
+
+                    <Swiper
+                        className="mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:items-stretch"
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        speed={1000}
+                        grabCursor={true}
+                        loop={true}
+                        modules={[Autoplay]}
+                        autoplay={{ delay: 1000 }}
+                    >
+                        {addSlide.map((item, index) => (
+                            <SwiperSlide key={index} className='!h-auto'>
+                                <div className="flex items-center justify-center">
+                                    <div className={`md:size-[20.5625rem] size-[12.5rem] aspect-square rounded-[1.25rem] flex items-center justify-center relative ${item.bgColor}`}>
+                                        <MdOutlinePlayCircleFilled className={`${item.textColor} absolute text-3xl top-3 left-3`} />
+                                        <img src={item.image} alt="add" className='w-8/12' />
+                                    </div>
+                                    <div className="-ml-10 z-10">
+                                        <h2 className={`${item.textColor} text-[clamp(3.125rem,_7vw,_8.0625rem)] font-bold`}>{item.title}</h2>
+                                        <h2 className='text-[clamp(2.3rem,_5vw,_5.75rem)] font-bold'>with Google Ads</h2>
+                                        <p className='text-[1.0625rem] lg:pl-24 md:12'>Whatever your business goal, drive better results with Performance Max.</p>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </section>
             {/* Google Ads  section start*/}

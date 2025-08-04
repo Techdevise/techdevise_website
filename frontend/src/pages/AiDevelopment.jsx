@@ -561,312 +561,167 @@ const AiDevelopment = () => {
       {/* Ai Work section end */}
 
       {/* Models section start  */}
-      <section className="models my-[4.6875rem]">
-        <div className="main-container">
-          <div className="w-full max-w-[64.1875rem] m-auto text-center mb-[5.3125rem]">
-            <h5 className="text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8">
-              We are #1 AI Development Company around the Globe
-            </h5>
-            <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-black mb-5">
-              Models our AI Developers are Proficient with
-            </h3>
-            <p className="text-xl font-normal text-black mb-[1.375rem]">
-              As a leading Blockchain development company, TechDevise only hires
-              Blockchain developers with a proven track record. That&apos;s why
-              we can handle any task or project, even the most complicated ones.
-            </p>
-          </div>
+       <section className="models my-[4.6875rem]">
+                <div className="main-container">
+                    <div className="w-full max-w-[64.1875rem] m-auto text-center lg:mb-[5.3125rem] mb-14">
+                        <h5 className='text-base font-medium rounded-full bg-[#E3E3E3] text-black px-8 py-[1.125rem] w-fit mx-auto mb-8'>We are #1 AI Development Company around the Globe</h5>
+                        <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2rem] font-extrabold text-black mb-5">
+                            Models our AI Developers are Proficient with
+                        </h3>
+                        <p className="text-xl font-normal text-black mb-[1.375rem]">As a leading Blockchain development company, TechDevise only hires Blockchain developers with a proven track record. That&apos;s why we can handle any task or project, even the most complicated ones.</p>
+                    </div>
 
-          <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 px-[2.6875rem]">
-            <ul className=" flex justify-start items-center gap-[4.9375rem] overflow-x-auto hide-scroll mb-14">
-              <li
-                onClick={() => setActiveModalStep(1)}
-                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
-                  isactiveModalStep == 1
-                    ? "border-[#342674] text-[#342674]"
-                    : "border-transparent text-black"
-                }`}
-              >
-                Computer Vision Models
-              </li>
-              <li
-                onClick={() => setActiveModalStep(2)}
-                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
-                  isactiveModalStep == 2
-                    ? "border-[#342674] text-[#342674]"
-                    : "border-transparent text-black"
-                }`}
-              >
-                Machine Learning Models
-              </li>
-              <li
-                onClick={() => setActiveModalStep(3)}
-                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
-                  isactiveModalStep == 3
-                    ? "border-[#342674] text-[#342674]"
-                    : "border-transparent text-black"
-                }`}
-              >
-                NLP Models
-              </li>
-              <li
-                onClick={() => setActiveModalStep(4)}
-                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
-                  isactiveModalStep == 4
-                    ? "border-[#342674] text-[#342674]"
-                    : "border-transparent text-black"
-                }`}
-              >
-                Deep Learning Models
-              </li>
-              <li
-                onClick={() => setActiveModalStep(5)}
-                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
-                  isactiveModalStep == 5
-                    ? "border-[#342674] text-[#342674]"
-                    : "border-transparent text-black"
-                }`}
-              >
-                Hybrid Models
-              </li>
-              <li
-                onClick={() => setActiveModalStep(6)}
-                className={`text-xl leading-[2.4375rem] text-nowrap pb-3 border-b-2 ${
-                  isactiveModalStep == 6
-                    ? "border-[#342674] text-[#342674]"
-                    : "border-transparent text-black"
-                }`}
-              >
-                Generative Models
-              </li>
-            </ul>
-            {modalTabContent.map((item) => (
-              <div
-                key={item}
-                className={`flex lg:flex-row flex-col justify-center items-stretch 2xl:gap-32 gap-20 ${
-                  isactiveModalStep == item ? "flex" : "hidden"
-                }`}
-              >
-                <div className="flex-[1_1_26.3125rem] max-w-[26.3125rem] max-lg:mx-auto lg:order-1 order-2">
-                  <img
-                    src={object}
-                    alt="object image"
-                    className="h-full w-full object-contain"
-                  />
+                    <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 md:px-[2.6875rem] p-4">
+                        <ul className=' flex justify-start items-center md:gap-[4.9375rem] sm:gap-7 gap-4 overflow-x-auto hide-scroll md:mb-14 mb-8'>
+                            <li onClick={() => setActiveModalStep(1)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 1 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Computer Vision Models</li>
+                            <li onClick={() => setActiveModalStep(2)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 2 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Machine Learning Models</li>
+                            <li onClick={() => setActiveModalStep(3)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 3 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>NLP Models</li>
+                            <li onClick={() => setActiveModalStep(4)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 4 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Deep Learning Models</li>
+                            <li onClick={() => setActiveModalStep(5)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 5 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Hybrid Models</li>
+                            <li onClick={() => setActiveModalStep(6)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 6 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Generative Models</li>
+                        </ul>
+                        {modalTabContent.map((item) => (
+                            <div key={item} className={`flex lg:flex-row flex-col justify-center items-stretch 2xl:gap-32 gap-20 ${isactiveModalStep == item ? 'flex' : 'hidden'}`}>
+                                <div className="flex-[1_1_26.3125rem] max-w-[26.3125rem] max-lg:mx-auto lg:order-1 order-2">
+                                    <img src={object} alt="object image" className='h-full w-full object-contain' />
+                                </div>
+                                <div className="flex-1 lg:order-2 order-1 lg:text-start text-center">
+                                    <h3 className='md:text-[2.5rem] text-[2rem] font-extrabold text-black'>{item} Computer <br className='max-md:hidden'/>
+                                        Vision Models</h3>
+                                    <p className='text-xl leading-[2.125rem] text-black font-normal my-9'>Our AI development services company delivers cutting-edge computer vision models for image recognition, object detection, and quality inspections. These models are powered by our AI software development services to enhance efficiency.</p>
+                                    <button onClick={() => setShowModal(true)} className="bg-[#342674] text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                                        Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="flex-1 lg:order-2 order-1 lg:text-start text-center">
-                  <h3 className="text-[2.5rem] font-extrabold text-black">
-                    {item} Computer <br />
-                    Vision Models
-                  </h3>
-                  <p className="text-xl leading-[2.125rem] text-black font-normal my-9">
-                    Our AI development services company delivers cutting-edge
-                    computer vision models for image recognition, object
-                    detection, and quality inspections. These models are powered
-                    by our AI software development services to enhance
-                    efficiency.
-                  </p>
-                  <Link
-                    to="/"
-                    className="bg-[#342674] text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-                  >
-                    Consult Our Experts{" "}
-                    <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                      <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </section>
       {/* Models section end  */}
 
       {/* 5 Pillers section start */}
-      <section
-        style={{ backgroundImage: `url(${pillersBg})` }}
-        className="5_pillers my-[4.6875rem] bg-center bg-no-repeat bg-cover"
-      >
-        <div className="main-container">
-          <div className="flex lg:flex-row flex-col justify-center items-start ">
-            <div className="flex-[1_1_24.9375rem] max-xl:hidden max-w-[24.9375rem] max-lg:mx-auto lg:order-1 order-2">
-              <img
-                src={pillerRobo}
-                alt="robo image"
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="flex-1 lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10 py-[4.6875rem]">
-              <div className="max-w-[23.3125rem] flex-[1_1_23.3125rem] text-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                <h4 className="text-[2.1875rem] font-extrabold">
-                  5 Pillars of Our AI Development Services
-                </h4>
-                <p className="text-base leading-[1.625rem]">
-                  As a leading Blockchain development company, TechDevise only
-                  hires Blockchain developers with a proven track record.
-                  That&apos;s why we can handle any task or project, even the
-                  most complicated ones.
-                </p>
-              </div>
-              <div className="max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
-                  Data Quality
-                </h4>
-                <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                  Our AI ML development services built the foundation for clean,
-                  structured, and reliable data solutions. By leveraging AI
-                  development frameworks, we ensure the best possible datasets
-                  power your AI models.
-                </p>
-              </div>
-              <div className="max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
-                  Explainability
-                </h4>
-                <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                  We prioritize transparency by making AI solutions easily
-                  interpretable for businesses and end-users alike. With our
-                  top-class AI development process, your enterprise gains clear
-                  and actionable outcomes from AI-driven analytics.
-                </p>
-              </div>
-              <div className="max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
-                  Scalability
-                </h4>
-                <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                  Our AI systems are built to grow with your business. From
-                  initial deployment to future expansions, we offer scalable
-                  solutions that adapt to your evolving needs, providing
-                  long-term value and flexibility.
-                </p>
-              </div>
-              <div className="max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
-                  Predictable ROI
-                </h4>
-                <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                  We guarantee a predictable return on investment by aligning AI
-                  strategies with business goals. Our AI development platforms
-                  streamline operations and optimize decision-making for better
-                  profitability.
-                </p>
-              </div>
-              <div className="max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
-                  Security
-                </h4>
-                <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                  We implement robust security measures during the AI software
-                  development process to ensure compliance and data integrity.
-                  As the best AI development company, we offer scalable AI
-                  systems tailored to meet your needs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+       <section style={{ backgroundImage: `url(${pillersBg})` }} className="5_pillers my-[4.6875rem] bg-center bg-no-repeat bg-cover">
+                <div className="main-container">
+                    <div className="flex lg:flex-row flex-col justify-center items-start ">
+                        <div className="flex-[1_1_24.9375rem] max-xl:hidden max-w-[24.9375rem] max-lg:mx-auto lg:order-1 order-2">
+                            <img src={pillerRobo} alt="robo image" className='h-full w-full object-contain' />
+                        </div>
+                        <div className="flex-1 lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10 py-[4.6875rem]">
+
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] text-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                                <h4 className='md:text-[2.1875rem] text-[2rem] font-extrabold'>5 Pillars of Our AI Development Services</h4>
+                                <p className="text-base leading-[1.625rem]">As a leading Blockchain development company, TechDevise only hires Blockchain developers with a proven track record. That&apos;s why we can handle any task or project, even the most complicated ones.</p>
+                            </div>
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                                <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Data Quality</h4>
+                                <p className="text-[1.125rem] leading-[2.125rem] font-normal">Our AI ML development services built the foundation for clean, structured, and reliable data solutions. By leveraging AI development frameworks, we ensure the best possible datasets power your AI models.</p>
+                            </div>
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                                <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Explainability</h4>
+                                <p className="text-[1.125rem] leading-[2.125rem] font-normal">We prioritize transparency by making AI solutions easily interpretable for businesses and end-users alike. With our top-class AI development process, your enterprise gains clear and actionable outcomes from AI-driven analytics.</p>
+                            </div>
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                                <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Scalability</h4>
+                                <p className="text-[1.125rem] leading-[2.125rem] font-normal">Our AI systems are built to grow with your business. From initial deployment to future expansions, we offer scalable solutions that adapt to your evolving needs, providing long-term value and flexibility.</p>
+                            </div>
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                                <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Predictable ROI</h4>
+                                <p className="text-[1.125rem] leading-[2.125rem] font-normal">We guarantee a predictable return on investment by aligning AI strategies with business goals. Our AI development platforms streamline operations and optimize decision-making for better profitability.</p>
+                            </div>
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                                <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Security</h4>
+                                <p className="text-[1.125rem] leading-[2.125rem] font-normal">We implement robust security measures during the AI software development process to ensure compliance and data integrity. As the best AI development company, we offer scalable AI systems tailored to meet your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
       {/* 5 Pillers section end */}
 
       {/* AI tech section start */}
       <section className="aiTech my-[4.6875rem]">
-        <div className="main-container">
-          <div className="w-full max-w-6xl m-auto text-center mb-[5.3125rem]">
-            <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-black mb-8">
-              Tech Stack, We Use As an Artificial Intelligence Development
-              Company!
-            </h3>
-            <p className="text-xl font-normal text-black mb-[4.375rem]">
-              Our AI app developers excel in a diverse and advanced tech stack.
-              From backend frameworks to development tools, we meticulously
-              select the best-in-class components to ensure your app meets the
-              most stringent technical standards.
-            </p>
-          </div>
-
-          <div className="">
-            <div
-              style={{ backgroundImage: `url(${AiTech})` }}
-              className=" bg-no-repeat bg-center bg-cover py-[2.1875rem] px-[3.125rem] rounded-[.625rem] "
-            >
-              <ul className="flex justify-start flex-nowrap text-white overflow-x-scroll hide-scroll gap-[4.5rem] mb-10 px-[3.125rem]">
-                {stackTab.map((item, index) => (
-                  <li
-                    onClick={() => setActiveSlide(index + 1)}
-                    key={index}
-                    className={`text-[1.5rem] cursor-pointer leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${
-                      isActiveSlide == index + 1
-                        ? " before:w-full"
-                        : " before:w-0"
-                    }`}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-col px-[3.125rem]">
-                <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
-                  <button ref={prevRefLang} className="cursor-pointer order-1">
-                    <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
-                      <GoArrowLeft className="size-7" />
+                <div className="main-container">
+                    <div className="w-full max-w-6xl m-auto text-center mb-[5.3125rem]">
+                        <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2rem] font-extrabold text-black mb-8">
+                            Tech Stack, We Use As an Artificial
+                            Intelligence Development Company!
+                        </h3>
+                        <p className="text-xl font-normal text-black mb-[4.375rem]">Our AI app developers excel in a diverse and advanced tech stack. From backend frameworks to development
+                            tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.</p>
                     </div>
-                  </button>
 
-                  <button ref={nextRefLang} className="cursor-pointer order-2">
-                    <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
-                      <GoArrowRight className="size-7" />
+                    <div className="">
+                        <div style={{ backgroundImage: `url(${AiTech})` }} className=" bg-no-repeat bg-center lg:py-[2.1875rem] lg:px-[3.125rem] p-5 rounded-[.625rem] ">
+                            <ul className='flex justify-start flex-nowrap text-white overflow-x-scroll hide-scrollmd:gap-[4.5rem] gap-8 lg:mb-10 mb-4'>
+                                {stackTab.map((item, index) => (
+                                    <li onClick={() => setActiveSlide(index + 1)} key={index} className={`lg:text-[1.5rem] text-lg cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div className="flex flex-col">
+
+                                <div className="flex gap-2.5 justify-end items-stretch lg:mt-[3.25rem] mt-4 order-2">
+                                    <button ref={prevRefLang} className="cursor-pointer order-1">
+                                        <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
+                                            <GoArrowLeft className="size-7" />
+                                        </div>
+                                    </button>
+
+                                    <button ref={nextRefLang} className="cursor-pointer order-2">
+                                        <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
+                                            <GoArrowRight className="size-7" />
+                                        </div>
+                                    </button>
+                                </div>
+
+                                {slides.map((slide, index) => (
+
+                                    <Swiper
+                                        className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1  ${isActiveSlide == index + 1 ? 'flex' : '!hidden'}`}
+                                        slidesPerView={'auto'}
+                                        spaceBetween={30}
+                                        speed={3000}
+                                        loop={true}
+                                        autoplay={{ delay: 1, disableOnInteraction: false }}
+                                        grabCursor={true}
+                                        modules={[Navigation, Autoplay]}
+                                        onInit={(swiper) => {
+                                            // Re-assign custom buttons after swiper is initialized
+                                            swiper.params.navigation.prevEl = prevRefLang.current;
+                                            swiper.params.navigation.nextEl = nextRefLang.current;
+                                            swiper.navigation.init();
+                                            swiper.navigation.update();
+                                        }}
+                                        navigation={{
+                                            prevEl: prevRefLang.current,
+                                            nextEl: nextRefLang.current
+                                        }}
+                                    >
+
+                                        {slide.item.map((itm, index) => {
+                                            return (
+                                                <SwiperSlide
+                                                    key={index}
+                                                    className="flex justify-center items-center lg:!w-[10rem] !w-[6rem]"
+                                                >
+                                                    <img
+                                                        src={itm}
+                                                        alt='logo'
+                                                        className="block object-contain lg:h-[9.375rem] lg:w-[10.5rem] mx-auto"
+                                                    />
+                                                </SwiperSlide>
+                                            );
+                                        })}
+                                    </Swiper>
+
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                  </button>
                 </div>
-
-                {slides.map((slide, index) => (
-                  <Swiper
-                    className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1  ${
-                      isActiveSlide == index + 1 ? "flex" : "!hidden"
-                    }`}
-                    slidesPerView={"auto"}
-                    spaceBetween={30}
-                    speed={500}
-                    loop={true}
-                    autoplay={{ delay: 1, disableOnInteraction: false }}
-                    grabCursor={true}
-                    modules={[Navigation, Autoplay]}
-                    onInit={(swiper) => {
-                      // Re-assign custom buttons after swiper is initialized
-                      swiper.params.navigation.prevEl = prevRefLang.current;
-                      swiper.params.navigation.nextEl = nextRefLang.current;
-                      swiper.navigation.init();
-                      swiper.navigation.update();
-                    }}
-                    navigation={{
-                      prevEl: prevRefLang.current,
-                      nextEl: nextRefLang.current,
-                    }}
-                  >
-                    {slide.item.map((itm, index) => {
-                      return (
-                        <SwiperSlide
-                          key={index}
-                          className="flex justify-center items-center !w-[10rem]"
-                        >
-                          <img
-                            src={itm}
-                            alt="logo"
-                            className="block object-contain h-[9.375rem] w-[10.5rem] mx-auto"
-                          />
-                        </SwiperSlide>
-                      );
-                    })}
-                  </Swiper>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
       {/* AI tech section end */}
         <GetInTouch showModal={showModal} setShowModal={setShowModal} />
     </>

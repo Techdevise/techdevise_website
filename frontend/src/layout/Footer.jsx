@@ -195,7 +195,7 @@ const Footer = () => {
                     to="/fqa"
                     className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
-                    FQA
+                    FAQs
                   </Link>
                 </li>
               </ul>
