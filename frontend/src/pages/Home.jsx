@@ -17,7 +17,7 @@ import vectorEight from "/vectorEight.svg";
 import vectorNine from "/vectorNine.svg";
 import vector12 from "/vector12.svg";
 import GoogleAnalytics from "/GoogleAnalytics.svg";
-import VisionSlider from "../components/visionSlider";
+import VisionSlider from "../components/VisionSlider";
 import cardOne from "/cardOne.webp";
 import layerOne from "/layerOne.webp";
 
