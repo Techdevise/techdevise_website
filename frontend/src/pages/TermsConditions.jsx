@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import map from "/map.svg";
+import itemsTrams from "/itemsTrams.svg";
 const TermsConditions = () => {
   const [cmsData, setCmsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,25 +23,15 @@ const TermsConditions = () => {
   return (
 
     <>
-      <section className="contact_us bg-pine-999 pt-[5.5rem]">
-    
-            <div className="main-container">
-              <div className="py-10 relative">
-                <div
-                  style={{ backgroundImage: `url(${map})` }}
-                  className="bg-center bg-contain bg-no-repeat min-h-[20.625rem] flex justify-center items-center flex-col "
-                >
-                  <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
-                     Terms & Conditions
-                  </h1>
-             
-    
-                  
-                </div>
-              </div>
-            </div>
-          </section>
 
+  <section
+        style={{ backgroundImage: `url(${itemsTrams})` }}
+        className="h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center"
+      >
+        <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
+              Terms & Conditions
+        </h1>
+      </section>
              <section>
       <div className="main-container">
       

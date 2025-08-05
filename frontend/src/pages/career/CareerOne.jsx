@@ -57,7 +57,10 @@ const CareerOne = () => {
     <>
       {/* landing section start */}
       <section style={{ backgroundImage: `url(${career1})` }} className='h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
-        <h1 className='text-[2.5rem] font-bold text-white'>Careers</h1>
+      
+             <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
+            Careers
+        </h1>
       </section>
       {/* landing section end */}
 

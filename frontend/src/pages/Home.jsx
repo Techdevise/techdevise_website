@@ -606,7 +606,7 @@ const Home = () => {
             autoPlay
             className="h-full  w-[100dvw] object-cover absolute top-0 left-0 z-[-1]"
           ></video>
-          <div className="cover bg-pine-999/60 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
+          <div className="cover bg-pine-999/70 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
             <div className=" flex justify-between items-stretch flex-col h-full">
               <div className="flex-1">
                 <div className="main-container relative  flex justify-center items-stretch flex-col lg:flex-row h-full">

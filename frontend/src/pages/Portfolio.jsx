@@ -89,7 +89,10 @@ const Portfolio = () => {
         <>
             {/* landing section start */}
             <section style={{ backgroundImage: `url(${portfolioBanner})` }} className='h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
-                <h1 className='text-[2.5rem] font-bold text-white'>Portfolio</h1>
+            
+                      <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
+            Portfolio
+        </h1>
             </section>
             {/* landing section end */}
 

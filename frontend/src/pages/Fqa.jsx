@@ -1,5 +1,5 @@
 import { useState } from "react";
-import map from "/map.svg";
+import map from "/Faq`s.svg";
 
 const Fqa = () => {
   const faqs = [
@@ -39,20 +39,12 @@ const Fqa = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="contact_us bg-pine-999 pt-[5.5rem]">
-        <div className="main-container">
-          <div className="py-10 relative">
-            <div
-              style={{ backgroundImage: `url(${map})` }}
-              className="bg-center bg-contain bg-no-repeat min-h-[20.625rem] flex justify-center items-center flex-col"
-            >
-              <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
-                FAQ
+     
+      <section style={{ backgroundImage: `url(${map})` }} className='h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
+               <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
+                FAQ's
               </h1>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
       {/* FAQ Section */}
       <section className="bg-[#F7F7F7]">

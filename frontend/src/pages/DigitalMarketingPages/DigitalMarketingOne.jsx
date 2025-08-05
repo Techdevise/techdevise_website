@@ -8,7 +8,7 @@ import girl4 from '/girl4.svg'
 import girl5 from '/girl5.svg'
 import girl6 from '/girl6.svg'
 import girl7 from '/girl7.svg'
-
+import arrowRightUp from "/arrowRightUp.svg"
 import SEO from "/SEO.svg"
 import facebookBlack from "/facebookBlack.svg"
 import xBlack from "/xBlack.svg"
@@ -184,6 +184,7 @@ const services = [
         },
     ]
 const DigitalMarketingOne = () => {
+
     const [showModal, setShowModal] = useState(false);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
@@ -203,17 +204,8 @@ const DigitalMarketingOne = () => {
                                 SEO Experts
                             </h1>
                             <p className='text-xl leading-[2.125rem] text-white mb-[2.125rem]'>At Tech Devise we have one of the most promising and talented SEO experts who strive to deliver results. Our resulted oriented SEO strategies will ensure that your website ranking is boosted in no time. Contact us today to know more!</p>
-                            <div className="flex max-sm:flex-col sm:items-center justify-start gap-12">
-                                <button className="border-pine-300 bg-pine-300 text-white text-base text-nowrap font-semibold border py-3 px-5 rounded-[.625rem] flex justify-center items-center gap-3">Explore more <HiOutlineArrowLongRight className='size-10' /></button>
-                                <button className='flex items-center justify-center gap-12'>
-                                    <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
-                                        <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
-                                        <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
-                                        <img src={play} alt="play icon" className="mx-auto h-full w-full aspect-square " />
-                                    </div>
-                                    <span className='font-bold text-xl text-white'>Play Video</span>
-                                </button>
-                            </div>
+                          
+                               <button onClick={() => setShowModal(true)} className="bg-pine-300 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
                             <h2 className='text-[clamp(9rem,_13vw,_15.75rem)] max-lg:hidden text-white font-extrabold opacity-5 leading-none mt-9 mb-4'>SEO</h2>
                         </div>
                         <div className="lg:max-w-2/5 w-full pt-7 self-end max-lg:hidden">

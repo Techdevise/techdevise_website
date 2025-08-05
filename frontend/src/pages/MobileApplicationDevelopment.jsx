@@ -11,7 +11,7 @@ import serviceBgPhone from '/serviceBgPhone.webp'
 import play from "/play.svg";
 import vector14 from '/vector14.svg'
 import mapWhite from '/mapWhite.svg'
-
+import arrowRightUp from "/arrowRightUp.svg"
 import ios from '/ios.svg'
 import android from '/android.svg'
 import reactNative from '/reactNative.svg'
@@ -95,9 +95,11 @@ import { HiOutlineArrowLongRight } from 'react-icons/hi2'
 
 
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import GetInTouch from '../components/GetInTouch';
 const MobileApplicationDevelopment = () => {
  const [slides, setSlides] = useState([]);
    const [isActiveSlide, setActiveSlide] = useState(1);
+     const [showModal, setShowModal] = useState(false);
  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
  const [isQualityActive, setQualityActive] = useState(1);
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -114,7 +116,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const tab = [
     { tabTitle: 'iOS App Development Ideation' },
     { tabTitle: 'iOS Application Design and Strategy' },
-    { tabTitle: 'iiOS App Development and Quality Assurance' },
+    { tabTitle: 'iOS App Development and Quality Assurance' },
     { tabTitle: 'Launch Strategy and Support' },
   ]
 
@@ -238,8 +240,9 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
             Development Services
           </h1>
           <p className="text-xl font-normal text-white mb-[1.375rem]">Turn your ideas into innovative mobile experiences with our AI-driven and blockchain-secured mobile app development services. We build custom mobile apps for Android and iOS, integrated with the latest cutting-edge technologies.</p>
-          <Link to="/" className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-            Mobile App Development <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
+          {/* <Link to="/" className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+            Mobile App Development <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link> */}
+              <button onClick={() => setShowModal(true)} className="bg-pine-700 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
         </div>
       </section>
       {/*landing area of Mobile Application Development end  */}
@@ -290,9 +293,9 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
 
           <div className="lg:w-[calc(100%_-_32.875rem)] w-full flex flex-col">
             <div className="flex justify-between items-center gap-5 order-2">
-              <Link to="/mobile-application-development" className='flex w-fit gap-3 justify-center items-center py-3 px-5 rounded-[10px] border border-black bg-[#F7FBDF] text-base font-semibold text-black'>
+              {/* <Link to="/mobile-application-development" className='flex w-fit gap-3 justify-center items-center py-3 px-5 rounded-[10px] border border-black bg-[#F7FBDF] text-base font-semibold text-black'>
                 More Information <HiOutlineArrowLongRight className='size-10' />
-              </Link>
+              </Link> */}
 
               <div className="flex gap-2.5 justify-between items-stretch order-1">
                 <button ref={prevRef} className="cursor-pointer">
@@ -650,7 +653,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
         </div>
       </section>
       {/* Tech Stack We Use section end */}
-
+    <GetInTouch showModal={showModal} setShowModal={setShowModal} />
     </>
   )
 }
