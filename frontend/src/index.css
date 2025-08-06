@@ -116,11 +116,11 @@ input[type="number"] {
 .inputControl {
   @apply w-full appearance-none py-5 px-[1.1875rem] border-[.0625rem] border-white/40 rounded-lg outline-none shadow-[0px_0px_5px_0px_#10B89D4D] text-white text-lg font-medium placeholder:opacity-100 placeholder:text-white mb-[1.375rem];
 }
-select.inputControl {
+/* select.inputControl {
   background: var(--color-pine-999) url(/downarrow.svg) no-repeat
     calc(100% - 23px) center / 13px;
   padding-right: 3.125rem;
-}
+} */
 .blockChain .swiper-pagination-bullet {
   width: 55px;
   height: 9px;
