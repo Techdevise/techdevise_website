@@ -171,27 +171,27 @@ const [showModal, setShowModal] = useState(false);
     const tabContent = [
         {
             image: cloudCard1,
-            para: 'Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.'
+            para: 'Have an entirely cloud-based infrastructure ensuring scalability, security, and the absence of maintenance expenses, allowing one to access them anytime and anywhere.'
         },
         {
             image: cloudCard2,
-            para: 'Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.'
+            para: 'With your end-to-end digital solutions provider at hand, uncover the latest innovations, fast track development, and accelerate business transformation.'
         },
         {
             image: cloudCard3,
-            para: 'Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.'
+            para: ' Incorporate development, design, QA, and operation teams and ensure they work collaboratively, accelerate the process of delivery, and deliver success on all levels.'
         },
         {
             image: cloudCard4,
-            para: 'Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.'
+            para: 'A smart test automation tool brings the benefits of artificial intelligence (AI) to coverage and accelerates testing and offers the assurance of reliable and high-quality releases throughout your DevOps pipeline.'
         },
         {
             image: cloudCard5,
-            para: 'Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.'
+            para: 'Each of the layers, including user interface layer and backend systems, must work and perform perfectly, as well as offer a good user experience.'
         },
         {
             image: cloudCard6,
-            para: 'Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.'
+            para: 'digital success and enhance quality by incorporating strategic direction.'
         },
     ]
 
@@ -260,8 +260,7 @@ const [showModal, setShowModal] = useState(false);
                             Redefining Software Quality using AI Engineering
                             Excellence, Assuring Accuracy
                         </h1>
-                        <p className="text-xl font-normal text-white mb-[1.375rem]">Boost your business operations 20x with our advanced AI development services. Automate repetitive
-                            tasks, make data-driven decisions, and run your business more efficiently with less effort.</p>
+                        <p className="text-xl font-normal text-white mb-[1.375rem]">Enhance the performance of your business by up to 20 times using our advanced AI development solutions.Automate repetitive tasks, make data-driven decisions, and drive operational efficiency.Work half as much, with more time on your hands and better use of your resources.</p>
                         <button onClick={() => setShowModal(true)} className="bg-[#9EDF84] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
                             Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
                     </div>
@@ -293,8 +292,7 @@ const [showModal, setShowModal] = useState(false);
           <h5 className='text-base font-medium text-white w-fit mx-auto mb-5 py-[1.125rem] px-[3.4375rem] rounded-full bg-gradient-to-b from-[#0B6F4F] via-[#021811] to-[#000000]'>What we do</h5>
           <h3 className="text-[3rem] font-extrabold text-black mb-[1.625rem]">Accelerate your business</h3>
           <p className="text-[1.125rem] leading-[1.625rem] font-medium">
-            With an emphasis on digital business transformation, we consult and implement programs aimed at
-            strengthening enterprises in the present while ensuring preparedness for the future.
+           Our digital business-based transformation strategy and implementation services are designed to enable businesses today and position those businesses to succeed in the environments of the future.
           </p>
         </div>
 
@@ -344,7 +342,7 @@ const [showModal, setShowModal] = useState(false);
                                 Skip <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
 
                         </div>
-                        <p className="text-base leading-[1.625rem] font-medium">Explore the comprehensive suite of services we offer, designed to transform your ideas into impactful digital solutions. From initial strategy and design to development, deployment, and ongoing support , we provide everything you need to build and scale top-performing Android applications. Dive deeper to see how we help businesses achieve their goals through innovation, efficiency, and expert execution.</p>
+                        <p className="text-base leading-[1.625rem] font-medium">Browse our wide offering of services that can implement your ideas into a successful online solution.We deliver end-to-end experience to build and grow high-performance Android apps, spanning strategy and design, development, deployment, and post-release support.Find out how we leverage innovation, operational excellence, and experience to help organizations achieve their goals.</p>
                     </div>
 
                     <Swiper
@@ -462,7 +460,7 @@ const [showModal, setShowModal] = useState(false);
                         <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-black mb-5">
                             Turn Your Team into Test Automation Experts
                         </h3>
-                        <p className="text-xl font-normal text-black mb-[1.375rem]">Leverage user-friendly keywords and smart automation to unify experiences across teams and deliver quality releases at enterprise scale.</p>
+                        <p className="text-xl font-normal text-black mb-[1.375rem]"> Equip your teams with intelligent tools and hassle-free, keyword-based automation.Enable enterprise-scale high-quality releases, enhance team collaboration, and automatize testing process.</p>
                     </div>
 
                     <div className="tabsForCloud bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 px-[2.6875rem]">

@@ -32,55 +32,55 @@ const BlockchainSlider = ({ triggerRef }) => {
         {
             title: "Blockchain Consultation & Integration",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "Our custom blockchain software development specialists are with you in every phase of your blockchain experience, including a complex roadmap all the way to deployment. We provide a smooth transition to the blockchain, as Techdevise possesses the required knowledge in the industry and great experience in the field.",
             image: cardTwo,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "Layer 2 Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "We design advanced Layer 2 solutions to overcome the constraints of base-layer blockchains. Our team builds powerful protocols like rollups and state channels that integrate effortlessly with existing blockchain infrastructures.",
             image: cardThree,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "Blockchain Protocol Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "Our end-to-end experience in the development of the protocol covers both the choice of the most suitable consensus mechanism and the development of robust governance structures. Our team is also leading in designing and deployment of scalable, customizable blockchain protocols that will meet your exclusive needs.",
             image: cardFour,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "Centralized/Decentralized Exchange Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "TechDevise is making safe, fully adjustable, and convenient trading platforms that could be used to carry out a seamless exchange of cryptocurrencies. We place a premium on good performance and compliance with regulations and provide custom centralized and decentralized exchange architectures.",
             image: cardFive,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "NFT Marketplace Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "Our expertise lies in the creation of customizable non-fungible token marketplaces with highly advanced functionalities such as multi-chain support, smart contract, and secure payment gateway support. We have unique solutions that avoid duplication and make the token transactions safe and seamless.",
             image: cardSix,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "Smart Contract Development & Audit",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "We test and provide security audits of your smart contracts to be secure, reliable, and able to meet current industry standards. Our highly qualified personnel can develop, design, and audit smart contracts on various blockchain platforms.",
             image: cardSeven,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "Crypto Wallet Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "TechDevise offers highly qualified crypto wallet development services that deal with developing secure and efficient crypto wallets to manage digital assets. We focus on best-in-class security by using the best encryption, multiple-input signature verification and security auditing procedures.",
             image: cardEight,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: " Decentralized App (dApp) Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "We provide end-to-end dApp development--concept, launch, and beyond. Techdevise has rich technical potential and approach to innovation to provide high-grade dApps that add value and provide boost to your digital stature.",
             image: cardNine,
         },
         {
-            title: "Blockchain Consultation & Integration",
+            title: "Metaverse Development",
             para:
-                "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Tech Devise deep industry knowledge and proven track record ensure successful blockchain integration.",
+                "We craft immersive metaverse experiences that seamlessly merge the physical and digital worlds. From custom avatars to AR/VR applications, our team collaborates closely with clients to design and develop solutions to their business objectives.",
             image: cardTen,
         },
     ];

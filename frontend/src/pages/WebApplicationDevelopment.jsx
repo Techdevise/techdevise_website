@@ -39,37 +39,37 @@ const WebApplicationDevelopment = () => {
             bg: "#E5FCFF",
             image: ourWork1,
             title: "Review / Planning",
-            discription: "We work from the scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design etc.",
+            discription: "Each project begins with nothing. First, we will review your ideas and visit the websites of our competitors. Then we will suggest improvements and lay out everything according to your preferences. Once it has all been completed we provide a detailed description of the features, design, development, and workflow.",
         },
         {
             bg: "#EBF8F1",
             image: ourWork2,
             title: "Design",
-            discription: "Good design is absolutely necessary when it comes to CMS.We maintain a good quality in every single step of designing phase and ensure that you get a consistent result all the time. We do prefer to discuss with you before final development so as to make all the necessary changes before we start our final development.",
+            discription: "A properly designed layout is necessary in every CMS based site. Throughout the design phase we maintain top standards in quality to ensure that it is reliable and aesthetic. Before we even start development we have comprehensive conversations with you to ensure we make all the adjustments needed and ensure the final product will fulfill your expectations in every way possible.",
         },
         {
             bg: "#EDF5C0",
             image: ourWork3,
             title: "Development",
-            discription: "The development process is long and complicated but you can rest assured that we will deliver a well-developed, fully functional CMS website to you. We will install your newly designed website and configure it to make sure you get a nice, SEO-friendly website without having to worry about anything.",
+            discription: "We will ensure we deliver a fully operational, optimally optimized CMS website, regardless of the complexity that the development process can entail sometimes. We take care of everything so you never need to worry about a single thing, which includes installing your newly designed site, as well as optimizing it to perform and be search engine friendly.",
         },
         {
             bg: "#FFD3E5",
             image: ourWork4,
             title: "Content Upload",
-            discription: "Since your new website is based on CMS, you will need content to get going. The first content upload is on us. We upload the first set of content on your website and check whether everything is alright or not. Of course, at a later stage you will be able to change the content at will.",
+            discription: "Your CMS site needs content until it is launched. Your first upload is also our responsibility where we ensure your content is uploaded in the right place and without hassles. You will also be in full control of content modification or updating later.",
         },
         {
             bg: "#D0EBFF",
             image: ourWork1,
             title: "Testing",
-            discription: "We make sure that the content formulated is of the finest quality and clarifies all the queries of the target audience. The keywords incorporated are adequately placed such that it helps in the ranking aspect as well. Adequate testing is initiated to make sure that no compromise is made in quality standards.",
+            discription: "We ensure that your app and web platform undergo a test run to deliver reliable and fluid software. Attentively, our team checks responsiveness, speed, functionality, and compatibility with different browsers and devices. Each element undergoes a strict testing procedure, and these parts are designed in such a way that they provide the best quality products, and they also provide a smooth experience without any bugs to your users.",
         },
         {
             bg: "#FFF0BA",
             image: ourWork2,
             title: "Quality Delivered",
-            discription: "We understand your need and ensure that you get the right quality service at an affordable price. We promise to maintain quality throughout the development phase and offer quality support post delivery as well.",
+            discription: " We intend to offer a quality service by maintaining an affordable price. To ensure your website runs efficiently, we shall also ensure that all the processes involved in the development process are top quality and there should be support even after the project is finished.",
         },
     ]
 
@@ -77,36 +77,36 @@ const WebApplicationDevelopment = () => {
         {
             icon: ecom1,
             title: 'E-Commerce Development',
-            para: 'We work from the scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design etc.'
+            para: ' We build e-commerce websites upon your idea and detailed analytical research of the competitors. We have a staff of strategic planning and recommendations that are particular with your aims. Before the launch you will be briefed on the entire features, the design elements and the development as a whole.'
         },
         {
             icon: ecom2,
             title: 'Custom E-commerce',
-            para: 'We work from the scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design etc.'
+            para: 'Our entirely custom-made e-commerce sites are tailored to perfectly suit the objectives of your company. We research the competition, formulate major functions, and collaborate directly with you throughout the entire process. When all this work is complete, you will have access to all the technical specifications and documentation of your new platform.'
         },
         {
             icon: ecom3,
             title: 'Responsive Shopping Website',
-            para: 'We work from the scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design etc.'
+            para: ' We create mobile friendly, responsive shopping websites that work on all the platforms . After conducting a market research and understanding your objectives we develop user friendly design which puts accessibility and usability at the forefront to ensure that your site works and looks good across all platforms.'
         },
 
 
         {
             icon: ecom4,
             title: 'Plug-In & Module Development',
-            para: 'We not only create E-commerce websites but also develop tools and plugins that will help your website to run smoother. Our plugins will add a new edge to your E-commerce website, and hence it will surely make your website unique and better than your competitors.'
+            para: 'With our plugin and module development service, you can further extend the capability of your e-commerce site. However, regardless of all possible other functionality, performance enhancements, and novel features you might require, our solutions will give you a competitive advantage and a superior user experience.'
         },
 
         {
             icon: ecom5,
             title: 'Payment Gateway Integration',
-            para: 'Do your customers complain that their payments are getting failed? Our experts understand how important it is for customers to have a smooth website. Therefore, we offer result oriented payment gateway integration that will not fail you anytime.'
+            para: ' We ensure that your preferred e-commerce site will have a fail free transaction through the adoption of secure and trusted payment gateways. The outcome of this is that your customers will end up with an unmatched checkout process resulting in an increase in customer trust and satisfaction each time they shop.'
         },
 
         {
             icon: ecom6,
             title: 'Shopping Cart Development',
-            para: 'Does your website not getting enough conversions? If yes, then try out our Shopping Cart Development services. Our team will create a unique shopping cart that will ensure higher conversion rates.'
+            para: 'We develop custom shopping carts that are optimized to increase conversions and user activity. We will also assist you in reducing the rate of abandoning orders due to the simple, fast, and seamless process of checkouts through our carts.'
         },
 
     ]
@@ -116,10 +116,11 @@ const WebApplicationDevelopment = () => {
             <section style={{ backgroundImage: `url(${serviceBg})` }} className="min-h-screen bg-no-repeat bg-cover bg-center flex justify-center items-center">
                 <div className="main-container  text-center ">
                     <h1 className="md:text-5xl sm:text-[2.625rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#BEC033] mb-5">
-                        Expert Website Development <br />
+                       Website Development <br />
                         Services
                     </h1>
-                    <p className="text-xl font-normal max-w-[64.1875rem] mx-auto text-white mb-[1.375rem]"><b className="font-bold">Tech Devise</b> possesses a professional team of experts! Our primary goal is to meet the requirements of our clients. We specialize in providing top-notch services as we continue to cater to the needs of our customers even after the delivery period.</p>
+                    <p className="text-xl font-normal max-w-[64.1875rem] mx-auto text-white mb-[1.375rem]"><b className="font-bold">Tech Devise</b> employs a professional team of experts. Our primary goal is the fulfillment of the needs of our clients. The fact that we still offer to meet the needs of our clients after the delivery period makes it our strength to offer good services.
+</p>
                     <button onClick={() => setShowModal(true)} className="bg-[#CACB87] inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
                 </div>
             </section>
@@ -132,7 +133,8 @@ const WebApplicationDevelopment = () => {
                         <h4 className="texto max-lg:hidden absolute top-2 left-5 rotate-180 md:text-[50px] lg:text-[42px] xl:text-[52px] 2xl:text-[58px] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Our Work Modules</h4>
                         <div className="lg:ps-[7.125rem] ">
                             <div className="section-header flex gap-10 lg:flex-row flex-col justify-between lg:items-center items-stretch main-container !ps-0 max-lg:!pe-10 !max-w-auto">
-                                <p className="text-[20px] leading-[2.6875rem] max-w-6xl "><strong>Content Management System</strong> - Our team follows a very meticulous and precise procedure that allows us to meet the client requirements adequately within the deadline date. We take great pride in our module and the work ethic we possess.</p>
+                                <p className="text-[20px] leading-[2.6875rem] max-w-6xl "><strong>Content Management System</strong> -  A content management system allows the users to create, manage, and publish digital content without having to possess high-level technical expertise. It simplifies the maintenance of the sites, teamwork, and lets users come up with the design, SEO, and scheduling of the content.
+</p>
                                 <div className="flex gap-2.5 justify-end items-stretch  order-1">
                                     <button ref={prevRef} className="cursor-pointer">
                                         <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
@@ -207,8 +209,7 @@ const WebApplicationDevelopment = () => {
                 <div className="main-container">
                     <div className="section-header text-center mb-[5.375rem]">
                         <h3 className="text-[3rem] font-extrabold  text-black mb-[1.625rem]">Our E-Commerce Services</h3>
-                        <p className="text-[1.125rem] leading-[1.625rem] font-medium max-w-6xl mx-auto">We are a team of experts who offer unique and innovative E-commerce solutions. So, if you are looking to take your business digital,
-                            our E-commerce services will surely help you to take your business to the next level.</p>
+                        <p className="text-[1.125rem] leading-[1.625rem] font-medium max-w-6xl mx-auto"> We offer our solutions to customers due to our team of experts offering personalized and innovative e-commerce services. There is no doubt that our E-commerce services will help you realize the next level of your company should you want to go digital.</p>
                     </div>
                     <div className="flex flex-col lg:pe-[16.75rem] relative">
                         <div className="flex gap-2.5 justify-start items-stretch mt-[3.25rem] order-2">
@@ -287,10 +288,10 @@ const WebApplicationDevelopment = () => {
                     <div className="bg-white rounded-[.625rem] lg:px-[2.9375rem] p-10 lg:py-[5.3125rem] pt-[0] pb-10">
                         <div className="flex xl:flex-row flex-col 2xl:gap-[4.25rem] lg:gap-[3.125rem] gap-10">
                             <div className="flex-1 lg:order-1 order-2">
-                                <h2 className="2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold mb-[1.875rem]">Tech Devise: Developing User friendly and Flexible automation</h2>
+                                <h2 className="2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold mb-[1.875rem]">Tech Devise: Creating flexible and easy to work automation solutions
+</h2>
                                 <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                                    At Tech Devise, we have dedicated professionals who are specialists in Robot and Control systems. We offer you Robot Based Control system to our clients. Be it the automotive industry, or consumer goods, we are ready to customize our product and offer you the best that will amaze you for sure. Whether you already have an automation system ready and just need us to update / modify, or you need a completely new and customized control system, we are always ready for the challenge. We are capable enough to build new and customized Robot Systems or we can build systems utilizing your old Robots to meet your requirement in any sector. We can even work on your old Robot to make it work efficiently, fast, and increase your pay back amount as well. In case you need to port your system to a remote place or to other cities or countries, we are always ready to do it for you. Since we have dedicated and experienced people working with us, we are sure to not only to fulfill your requirements but also build a nice relationship and understanding with you. Understanding your need is pretty much important in this field and we do the same with our clients. Be it a large project or a small one, you can always expect us to deliver cost-effective and high-performance solutions.
-                                </p>
+Being a group of committed individuals of Tech Devise, we specialize and deal with robotic and control systems. We deliver high-tech control solutions with robotization that are highly customized to the individual business requirements of our clients with industries such as the automotive and consumer goods.It does not matter whether you have to install an entirely novel and even highly distinctive control system or you want merely to renew or improve your current automation system, here we are. We can either create the latest robotic systems on the ground up or modify your existing robots to improve performance, cost and speed.We may also provide system relocation services, when you need to move operations to another city or country, we are capable of moving your setup to the destination so easily. Whether your project is large or small, you can rely upon us to produce cost effective and high performance results.                                </p>
                             </div>
                             <img src={robo} alt="robo" className="lg:flex-[0_1_25rem] lg:max-w-[25rem] max-w-2xl w-full h-full mx-auto block lg:order-2 order-1" />
                         </div>
@@ -307,7 +308,7 @@ const WebApplicationDevelopment = () => {
                         <div className="lg:flex-1 lg:overflow-y-auto">
                             <h2 className='2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold mb-[3.25rem]'>Digital Marketing Executives</h2>
                             <p className="text-[1.125rem] leading-[2.125rem] font-normal pb-12">
-                                In today&apos;s world, to be a successful business owner you need to keep up with the pace. As a business owner, it’s important to deliver quick result to your clients and this is exactly where the Python comes in. Python, as you know, is one of the well-known dynamic languages that follow Object Oriented Programming laws. It helps you work in an efficient, fast, and better way to ensure quality result all the time. We at Tech Devise ensure that we put this good technology to use for our client’s betterment.
+Python is a high- level programming language because it is expandable and has become one of the simplest codes to learn and apply. Python possesses a diverse library and frame and is widely used in software development programs, data science, automation, web development, and artificial intelligence. Its features amount to its versatility and strength, and being able to deal with difficult applications used by talented workers and large technological firms, but also its easy syntax, rendering it a perfect beginner programming language.
                             </p>
 
                             <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3">Our python experts can help you work with:</h4>
@@ -345,7 +346,7 @@ const WebApplicationDevelopment = () => {
                 <div className="main-container">
                     <div className="section-header text-center mb-[5.375rem]">
                         <h3 className="text-[3rem] font-extrabold  text-black mb-[1.625rem]">Why Choose Us</h3>
-                        <p className="text-[1.125rem] leading-[1.625rem] font-normal max-w-6xl mx-auto">Our team focuses mainly on scalability, secure, agile, and high performance python development. This not only helps us to meet client&apos;s requirement but also helps in producing output for our clients as well. So, if you are looking for quality service at an affordable rate, then you can surely give us a call or drop us a mail and we will try to deliver you the best quality service that you can expect. While you work with Tech Devise, you can rest assured that you will always get highly responsive support even after project delivery for sure.</p>
+                        <p className="text-[1.125rem] leading-[1.625rem] font-normal max-w-6xl mx-auto">At our team, high performance, scalability, security and agility in Website development are the main areas of interest. This assists us in generating output to our clients besides addressing their requirements. This way, you are most certainly welcome to call us or leave an email, in case you are interested in our high-quality service at a decent price, and we will do our best to fulfill your satisfaction. You will be assured that the work with Tech Devise will give you quality support all the time and well even after the project delivery.</p>
                     </div>
 
                     <img src={why1} alt="why image" className="block mt-[2.375rem] mb-[4.6875rem]" />

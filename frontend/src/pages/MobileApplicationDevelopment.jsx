@@ -123,22 +123,22 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const tabPanel = [
     {
       title: 'iOS App Development Ideation',
-      para: 'It is essential to know and analyse the driving force of the app concerned before making the final decision of coding. An overview and analysis of the end-user, the expectations of the target audience, and the value proposition of the application. This helps us to identify relevant solutions to the problems.',
+      para: 'Before making any final coding decisions, it is critical to understand and assess the motivations behind the app in issue. Examine the application value proposition, target audience expectations, and end-user experience. It assists us in identifying appropriate solutions to the problems.',
       image: vector14,
     },
     {
       title: 'iOS Application Design and Strategy',
-      para: 'We focus on creating an intuitive design and defining the architecture of the application. Our strategy ensures the UI/UX matches iOS guidelines and delivers an impactful experience for end-users.',
+      para: "We focus on building the application's structure and designing a user interface that is easy to use. Our plan makes sure the UI/UX conforms with iOS standards and gives end users an excellent experience.",
       image: vector14,
     },
     {
       title: 'iOS App Development and Quality Assurance',
-      para: 'Our developers turn concepts into real, high-performing iOS apps. We integrate robust testing cycles to make sure the app functions flawlessly on different iOS devices.',
+      para: 'Our developers integrate ideas into functional, successful iOS applications. To make sure that the app runs easily on all iOS devices, we include thorough testing cycles.',
       image: vector14,
     },
     {
       title: 'Launch Strategy and Support',
-      para: 'We help you deploy the app to the App Store and provide post-launch maintenance, performance monitoring, and iterative improvements to ensure app success.',
+      para: 'In order to ensure app success, we help you with app store deployment and offer post-launch maintenance, performance tracking, and ongoing updates.',
       image: vector14,
     },
   ]
@@ -239,7 +239,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
             Custom Mobile App <br />
             Development Services
           </h1>
-          <p className="text-xl font-normal text-white mb-[1.375rem]">Turn your ideas into innovative mobile experiences with our AI-driven and blockchain-secured mobile app development services. We build custom mobile apps for Android and iOS, integrated with the latest cutting-edge technologies.</p>
+          <p className="text-xl font-normal text-white mb-[1.375rem]">Use our blockchain-secured and Al-driven mobile app development services to transform your designs into modern mobile experiences. We create unique mobile applications for iOS and Android that include the newest, most advanced technologies.</p>
           {/* <Link to="/" className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
             Mobile App Development <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link> */}
               <button onClick={() => setShowModal(true)} className="bg-pine-700 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
@@ -368,7 +368,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
           <div className="flex lg:flex-row flex-col lg:gap-[6.25rem] gap-10 justify-center items-center">.
             <div style={{ backgroundImage: `url(${mapWhite})` }} className="flex-1 max-w-[706px] bg-center bg-contain bg-no-repeat lg:py-20">
               <h3 className='text-[2.875rem] leading-[4.375rem] font-bold'>Comprehensive Mobile App Development Services We Provide</h3>
-              <p className='text-[1.125rem] leading-[1.625rem] font-medium'>Our extensive mobile app development services cover everything from concept to deployment, ensuring a seamless and innovative user experience.</p>
+              <p className='text-[1.125rem] leading-[1.625rem] font-medium'>We provide complete mobile app development services, from concept to deployment, to provide a perfect and special user experience.</p>
             </div>
             <div className="flex-1">
               <div className="flex gap-4 items-stretch flex-wrap justify-center">
@@ -467,10 +467,7 @@ const qualityContent = [1, 2, 3, 4, 5, 6]
                 React Native App Development
               </h3>
               <p className="text-[1.125rem] leading-[2.125rem] font-normal text-black lg:max-w-4xl text-balance">
-                At Tech Devise we offer various kinds of services under React
-                Native App Development. All our services aim to satisfy your
-                needs. Contact us today to know more about our services.
-              </p>
+Tech Devise provides a range of services related to React Native app development. Our services are all designed to meet your demands. To learn more about our services, get in touch with us right now.              </p>
             </div>
             <img
               src={react}

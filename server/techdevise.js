@@ -39,6 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 // View engine setup for admin panel (EJS)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -78,14 +79,14 @@ app.use('/api', apiRouter);
 app.use('/admin', indexRouter);
 
 // React frontend catch-all route (after /api and /admin)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
-    if (err) {
-      console.error('Error sending React index.html:', err);
-      res.status(err.status).end();
-    }
-  });
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
+//     if (err) {
+//       console.error('Error sending React index.html:', err);
+//       res.status(err.status).end();
+//     }
+//   });
+// });
 
 // 404 handler
 app.use(function(req, res, next) {

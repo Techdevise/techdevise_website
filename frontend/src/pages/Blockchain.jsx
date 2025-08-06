@@ -5,7 +5,7 @@ import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import play from "/play.svg"
+import play from "/play.svg";
 import { Link } from "react-router-dom";
 
 // images
@@ -82,33 +82,33 @@ const Blockchain = () => {
     {
       icon: slideSIcon1,
       title: "Blockchain Bridges",
-      para: "Our blockchain development service professionals develop bespoke blockchain bridges        tailored to your specific needs, allowing seamless interoperability and asset transfers across diverse blockchain networks.",
+      para: "We provide effective and safe blockchain bridges to promote smooth communication across various blockchain networks. This increases your project's reach and compatibility across local networks while enabling easy asset transfers, data sharing, and cross-chain functionality.",
     },
     {
       icon: slideSIcon2,
       title: "Metaverse Spaces",
-      para: "Our blockchain app development services are constantly pushing the limits of what will inspire the next in the metaverse for users worldwide, whether it’s a virtual showroom, a collaborative workspace, or an entertainment venue, we got you covered.",
+      para: "Be it a virtual office, gallery, event space, or brand experience, our team designs immersive and engaging metaverse environments that are customized to your specifications. We use technology and creativity to create inspiring and engaging digital environments.",
     },
     {
       icon: slideSIcon3,
       title: "Decentralized Exchanges (DEX)",
-      para: "We create secure, scalable and customizable DEX platforms, designed for operators, asset managers, token issuers, brokers, and dealers, offer users seamless access to extensive digital assets while ensuring they have complete control over their funds.",
+      para: "We create and construct safe, easy-to-use decentralized exchange systems that provide users complete asset control. Without sacrificing security or transparency, our DEX systems provide real-time trading, liquidity choices, and sophisticated functionality.",
     },
 
     {
       icon: slideSIcon1,
-      title: "Blockchain Bridges",
-      para: "Our blockchain development service professionals develop bespoke blockchain bridges        tailored to your specific needs, allowing seamless interoperability and asset transfers across diverse blockchain networks.",
+      title: "Smart Contracts",
+      para: "Our developers create tamper-proof, effective smart contracts based on your business logic. Additionally, we do thorough audits of contracts to make sure they are secure, error-free, and operate precisely as planned on the blockchain network of your choice.",
     },
     {
       icon: slideSIcon2,
-      title: "Metaverse Spaces",
-      para: "Our blockchain app development services are constantly pushing the limits of what will inspire the next in the metaverse for users worldwide, whether it’s a virtual showroom, a collaborative workspace, or an entertainment venue, we got you covered.",
+      title: "NFT Marketplaces",
+      para: "Users can mint, purchase, sell, and trade digital assets on our scalable and reliable NFT marketplaces. We offer the resources and design to facilitate user development, whether it is for collectibles, gaming, music, or art.",
     },
     {
       icon: slideSIcon3,
-      title: "Decentralized Exchanges (DEX)",
-      para: "We create secure, scalable and customizable DEX platforms, designed for operators, asset managers, token issuers, brokers, and dealers, offer users seamless access to extensive digital assets while ensuring they have complete control over their funds.",
+      title: "Crypto Wallets",
+      para: "Secure, multi-currency support is provided by our custom crypto wallet development services for both web and mobile platforms. For both personal and business use, features include biometric security, DeFi integration, private key management, and smooth transactions.",
     },
   ];
 
@@ -116,33 +116,33 @@ const Blockchain = () => {
     {
       icon: slideTIcon1,
       title: "Certified Blockchain Experts",
-      para: "Work with a team of certified blockchain experts with extensive experience across various industries.",
+      para: "Tech Devise’s team includes certified blockchain professionals who deliver secure, innovative, and reliable decentralized solutions for any industry.",
     },
     {
       icon: slideTIcon2,
       title: "Client-Focused Blockchain Approach",
-      para: "We prioritize our clients needs, ensuring transparent and flexible development processes.",
+      para: "At Tech Devise, we tailor every blockchain solution around your business goals, ensuring practical value and measurable outcomes.",
     },
     {
       icon: slideTIcon3,
-      title: "Client-Focused Blockchain Approach",
-      para: "Our products comply with industry standards, ensuring security and reliability.",
+      title: "Compliance-Assured Blockchain Products",
+      para: "Our blockchain solutions are built to meet global regulatory standards, keeping your business safe, transparent, and legally sound.",
     },
 
     {
       icon: slideTIcon1,
-      title: "Certified Blockchain Experts",
-      para: "Work with a team of certified blockchain experts with extensive experience across various industries.",
+      title: "24/7 Blockchain Support",
+      para: "Tech Devise offers round-the-clock technical assistance, so your blockchain systems stay secure, updated, and fully operational anytime.",
     },
     {
       icon: slideTIcon2,
-      title: "Client-Focused Blockchain Approach",
-      para: "We prioritize our clients needs, ensuring transparent and flexible development processes.",
+      title: "Quick Turnaround Time",
+      para: "We put efficiency first and provide excellent blockchain solutions quickly—without sacrificing security, performance, or the objectives of your project.",
     },
     {
       icon: slideTIcon3,
-      title: "Client-Focused Blockchain Approach",
-      para: "Our products comply with industry standards, ensuring security and reliability.",
+      title: "Proven Track Record and Expertise",
+      para: "With successful blockchain projects across industries, Tech Devise brings deep expertise and a strong portfolio you can trust.",
     },
   ];
 
@@ -167,17 +167,21 @@ const Blockchain = () => {
       >
         <div className="w-full max-w-[64.1875rem] m-auto text-center">
           <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
-                    <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
-                    <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
-                    <img src={play} alt="play icon" className="mx-auto h-full w-full aspect-square " />
-                  </div>
+            <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+            <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+            <img
+              src={play}
+              alt="play icon"
+              className="mx-auto h-full w-full aspect-square "
+            />
+          </div>
           <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
             Blockchain Development Company
           </h1>
           <p className="text-xl font-normal text-white mb-[1.375rem]">
-            With expertise in over 40 blockchain protocols, we are leading the
-            charge toward the web3 future with our advanced blockchain
-            development services.
+            We help lead the transition to the web3 future with our cutting-edge
+            blockchain development services, having experience with more than 40
+            blockchain protocols.
           </p>
           <button
             onClick={() => setShowModal(true)}
@@ -205,9 +209,9 @@ const Blockchain = () => {
             </h2>
 
             <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
-              Whether you are planning to start a venture or a large-scale
-              organization looking to re-invent the value chain, our trusted
-              Blockchain development solutions got you covered.
+              Our secure Blockchain development solutions are helpful to both
+              large organizations looking to re-invent the value chain and those
+              aiming to launch a new business.
             </p>
           </div>
 
@@ -327,9 +331,10 @@ const Blockchain = () => {
               Blockchain Development Solutions We Deliver
             </h3>
             <p className="text-[1.125rem] leading-[1.625rem] font-medium max-w-6xl">
-              Unlock your business’s full potential with our expert blockchain
-              development services, designed to transform and innovate your
-              operations with tailor-made, agile solutions.
+              With our professional blockchain development services, which are
+              intended to revolutionize and improve your business operations
+              with specialized, flexible solutions, you can unleash the full
+              potential of your enterprise.
             </p>
           </div>
           <div className="flex flex-col lg:ps-[16.75rem] relative">
@@ -407,12 +412,13 @@ const Blockchain = () => {
         <div className="main-container">
           <div className="section-header text-center lg:text-start mb-[5.375rem]">
             <h3 className="text-[3rem] font-extrabold  text-black mb-[1.625rem]">
-              Blockchain Development Solutions We Deliver
+              Why Are We The Perfect Fit To Be Your Blockchain Development
+              Company?
             </h3>
             <p className="text-[1.125rem] leading-[1.625rem] font-medium max-w-6xl">
-              Unlock your business&apos;s full potential with our expert
-              blockchain development services, designed to transform and
-              innovate your operations with tailor-made, agile solutions.
+              We provide safe, scalable blockchain solutions that are customized
+              to your particular company objectives by fusing certified
+              experience, cutting-edge technology, and client-focused methods.
             </p>
           </div>
           <div
@@ -513,10 +519,10 @@ const Blockchain = () => {
             </h2>
 
             <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
-              As a trusted Blockchain software development company with the
-              experience of managing Blockchain projects of varied complexity
-              levels, we offer expertise to turn your idea into secure, scalable
-              and trusted solution.
+              Allow TechDevise to transform your company with performance-,
+              scalability-, and security-focused blockchain solutions. We
+              develop technology that simplifies processes and opens up new
+              digital opportunities from conception to implementation.
             </p>
           </div>
 
@@ -601,9 +607,9 @@ const Blockchain = () => {
             </h2>
 
             <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
-              As a leading Blockchain development company, TechDevise only hires
-              Blockchain developers with a proven track record. That&apos;s why
-              we can handle any task or project, even the most complicated ones.
+              We can create safe, scalable, and personalized solutions for
+              Ethereum, BNB Chain, Polygon, and Solana thanks to our
+              multi-platform blockchain development services knowledge.
             </p>
           </div>
 

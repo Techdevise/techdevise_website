@@ -739,25 +739,15 @@ const Home = () => {
                 </h2>
                 <p
                   data-aos-delay="400"
-                  className="2xl:text-[1.25rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                  className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
-                  At Tech Devise, we are passionate about delivering innovative
-                  technology solutions that drive business success. With a team
-                  of highly skilled developers, designers, and IT experts, we
-                  specialize in creating cutting-edge software, web
-                  applications, mobile apps, and enterprise solutions tailored
-                  to meet your unique needs.
+              Tech Devise possesses a professional team of experts! Our main objective is to satisfy our client needs. Our area of expertise is offering excellent services since we keep meeting the needs of our clients even beyond the delivery term. We, at Tech Devise, work very methodically to provide ultimate satisfaction to clients. Our work begins with a consultation with our client. We understand your needs better and suggest the best solution. This is followed by development and implementation of your project. Upon delivery, we assure quality support and maintenance. 
                 </p>
                 <p
                   data-aos-delay="600"
-                  className="2xl:text-[1.25rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                  className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
-                  Our mission is to empower businesses with scalable, secure,
-                  and efficient digital solutions that enhance productivity and
-                  growth. We stay ahead of the curve by leveraging the latest
-                  technologies, industry best practices, and a customer-centric
-                  approach to ensure seamless digital transformation.
-                </p>
+At Tech Devise our dynamic and innovative team works in a simple process. For us, knowing the client's preferences and expectations is absolutely vital. Ensuring that the client and our staff are in agreement depends mostly on effective communication.                </p>
               </div>
               <div className="flex-[1_1_18.75rem]">
                 <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem]  bg-pine-950">
@@ -962,12 +952,9 @@ const Home = () => {
                       Website Development
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                      Enhance your brand's presence with our creative digital
-                      marketing tools! Engage your audience and see your
-                      business grow.
-                    </p>
+Looking to start your own company website? If so, our skilled web developers and designers will undoubtedly give you with the website of your dreams. We provide comprehensive web development solutions adapted to your individual requirements.</p>
                     <Link
-                      to="/"
+                      to="/web-app-development"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
                     >
                       <span>More information</span>
@@ -999,11 +986,7 @@ const Home = () => {
                       data-aos="fade-down"
                       className="2xl:text-[1.25rem] text-[1.1rem] leading-[1.875rem] font-normal text-white"
                     >
-                      At Tech Devise, we provide cutting-edge IT solutions
-                      designed to drive innovation, efficiency, and security for
-                      businesses of all sizes. Our expertise spans across
-                      multiple domains, ensuring that your technology needs are
-                      met with precision and excellence.
+                      Tech Devise offers IT solutions that foster creativity, efficiency, and security for organizations of every size. Our experience covers numerous disciplines, guaranteeing that your technological requirements are addressed with accuracy and brilliance.
                     </p>
                   </div>
                 </div>
@@ -1014,12 +997,10 @@ const Home = () => {
                         E-commerce Website
                       </h4>
                       <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                        Enhance your brand's presence with our creative digital
-                        marketing tools! Engage your audience and see your
-                        business grow.
+                    We all know that the eCommerce sector is booming like anything. Hence, if you want to sell your products online, then check our eCommerce development services Our expert team offers quality eCommerce websites which will surely take your business to the next level.
                       </p>
                       <Link
-                        to="/"
+                        to="/web-app-development"
                         className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
                       >
                         <span>More information</span>
@@ -1045,12 +1026,10 @@ const Home = () => {
                       E-commerce Website
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                      Enhance your brand's presence with our creative digital
-                      marketing tools! Engage your audience and see your
-                      business grow.
+                We all know that the eCommerce sector is booming like anything. Hence, if you want to sell your products online, then check our eCommerce development services Our expert team offers quality eCommerce websites which will surely take your business to the next level.
                     </p>
                     <Link
-                      to="/"
+                      to="/web-app-development"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
                     >
                       <span>More information</span>
@@ -1075,12 +1054,10 @@ const Home = () => {
                       Digital Marketing
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                      Enhance your brand's presence with our creative digital
-                      marketing tools! Engage your audience and see your
-                      business grow.
+                 Is your business finding it difficult to flourish in the online world? Well, it is no surprise because if proper digital marketing is not done then your website will not be able to gain the desired notice from the audience.
                     </p>
                     <Link
-                      to="/"
+                      to="/digital-marketing"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
                     >
                       <span>More information</span>
@@ -1105,12 +1082,10 @@ const Home = () => {
                       Quality Analysis
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                      Enhance your brand's presence with our creative digital
-                      marketing tools! Engage your audience and see your
-                      business grow.
+                    We offer a comprehensive package of Software Quality Assurance(QA) and Testing services. We in maximising the quality and performance of software solutions for our clients while reducing the costs and risks.
                     </p>
                     <Link
-                      to="/"
+                      to="/quality-analysis"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
                     >
                       <span>More information</span>
@@ -1136,12 +1111,13 @@ const Home = () => {
                       Mobile Application development
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                      Enhance your brand's presence with our creative digital
-                      marketing tools! Engage your audience and see your
-                      business grow.
+                   Our team of experts specialize in offering unique app development services which can help you to scale your business.
+
+Under app development we offer services like android app development, iOS app development, and React Native App Development.
+
                     </p>
                     <Link
-                      to="/"
+                      to="/mobile-app-development"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
                     >
                       <span>More information</span>
@@ -1167,10 +1143,7 @@ const Home = () => {
                       UI/UX Design
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                      Enhance your brand's presence with our creative digital
-                      marketing tools! Engage your audience and see your
-                      business grow.
-                    </p>
+Techdevise’s UI and UX services. Our design team is a small design studio with best experts in the field that will help you build an engaging product easily and quickly</p>
                     <Link
                       to="/"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
@@ -1206,10 +1179,7 @@ const Home = () => {
                 Our Blockchain Development Services
               </h2>
               <p className="2xl:text-[1.25rem] text-[1rem] leading-[1.875rem] font-normal text-white max-w-4xl max-lg:mx-auto max-lg:text-center pe-10">
-                <strong>Tech Devise</strong> provides a full suite of blockchain
-                development services to help businesses harness the full
-                potential of the technology and stay ahead in today’s
-                competitive web3 era.
+                <strong>Tech Devise</strong> provides a full suite of blockchain development services to help businesses harness the full potential of the technology and stay ahead in today’s competitive web3 era.
               </p>
             </div>
           </div>

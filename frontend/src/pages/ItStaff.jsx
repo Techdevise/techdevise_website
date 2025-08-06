@@ -174,7 +174,7 @@ const ItStaff = () => {
                             <div className="flex 2xl:flex-row flex-col lg:gap-5 gap-10">
                                 <div className="lg:flex-1 max-w-fit">
                                     <h1 className='text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]'>Your Trusted Partner for IT Staffing and Services</h1>
-                                    <p className='text-[1rem] leading-[1.5rem] font-normal text-white 2xl:max-w-3xl text-start '>TechDevise is a staffing agency that has the expertise, experience, and network to find you the most qualified candidates for any industry or function in as little as two days. Plus, we have access to top international talent and can source great people from 50+ countries. Questions? Call us toll-free: +1 123 456 7890</p>
+                                    <p className='text-[1rem] leading-[1.5rem] font-normal text-white 2xl:max-w-3xl text-start '>TechDevise is a professional staffing firm comprising of the knowledge, experience and network that can get you the most qualified of candidates within any form or industry within two days. We can find great talent both domestically and abroad and source the best talent globally in 50+ countries. Questions? Call us toll-free: +1 123 456 7890</p>
                                 </div>
                                 <div className="lg:flex-1 flex max-md:flex-wrap justify-center items-stretch gap-[1.6875rem]">
                                     <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
@@ -216,7 +216,7 @@ const ItStaff = () => {
           <div className="sectionHeader gap-5 md:flex-row flex-col flex justify-between items-start max-md:mb-8">
                         <div className="text-start">
                             <h3 className='2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-3'>  We Staff IT Roles Across Any <span className='text-pine-700'>Industry</span></h3>
-                            <p className='text-[1.125rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>TechDevise is an IT staffing company with more than 24 years of experience. You name it, we&apos;ve staffed it before—and we&apos;d love to find great people for you, too. With a dedicated team of tech recruiters leveraging proprietary AI-enabled recruiting tools, we can find qualified candidates in as few as two days. Even the unicorns who aren&apos;t looking for a new role—yet. Then we engage, retain, and develop them through our exclusive consultant care model Explore some of the key roles we staff.</p>
+                            <p className='text-[1.125rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>TechDevise is a staffing corporation in IT that has over 5 years of experience. We have staffed it, call it whatever you want, and we would love to staff it with great folks as well. Using a specialized team of tech recruiters with an array of proprietary, AI-powered recruiting tools, candidates can be identified within two days. Even those unicorns who are not seeking a new position, yet. And we recruit, retain and grow them using our one-of-a-kind consultant care concept Learn about some of our most popular positions.</p>
                         </div>
 
                         <img src={Itleftarrow}  className='upDown object-contain max-md:h-28' />
@@ -303,13 +303,7 @@ const ItStaff = () => {
                 What impact does this have on business?
               </h4>
               <p className="text-base leading-[1.5rem] font-normal">
-                <strong>TechDevise delivers</strong> world-class technical and
-                talent services to IT clients around the globe through
-                Evergreen, our professional services division. With staffing
-                experts in 70+ offices across North America, Europe, and Asia,
-                as well as our state-of the-art technology delivery center in
-                Hyderabad, India, we provide the solutions you need to achieve
-                your company&apos;s goals.
+                <strong>TechDevise</strong> we provide our IT Clients with best of world Class technology and talent solutions in our professional services segment. Our experienced staffing experts in 70+ offices throughout North America, Europe and Asia combined with our state of the art technology delivery center in mohali, India position us to service your business as it strives to achieve its strategic goals.
               </p>
             </div>
           </div>
@@ -338,24 +332,14 @@ const ItStaff = () => {
                   data-aos-delay="400"
                   className="2xl:text-[1.125rem] text-[1rem] leading-[2.125rem] font-normal text-black mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
-                  <strong>TechDevise</strong> goes beyond staffing. As a true
-                  tech and talent partner, we go above and beyond to deliver IT
-                  services that power innovation and transformation. When you
-                  partner with Insight Global, you get the engine of a leading
-                  IT staffing company as well as extensive technical solutions
-                  through our Evergreen professional services division.
+                  <strong>TechDevise</strong> is not just a staffing firm we are your strategic trading partner in technology and talent. And we put our pulse on the leading IT staffing organization together with strong technical expertise to create innovation and business change. Our professional services division provides turnkey IT services that also provide growth and development to your organization.
                 </p>
                 <p
                   data-aos-delay="600"
                   className="2xl:text-[1.25rem] text-[1rem] leading-[2.125rem] font-normal text-black mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
-                  Evergreen pairs a forward-thinking tech approach with
-                  TechDevise powerhouse staffing capabilities. The result? An
-                  expert vision to transform your business with the skills to
-                  execute the strategy. From sourcing high-impact,
-                  built-for-purpose teams to helping you meet your technology
-                  goals, we design solutions that drive current success and
-                  long-term growth.
+              We bring together an innovative technology strategy along with the unsurpassed staffing expertise of TechDevise so we can produce ground breaking outcomes. We combine innovative minds with the power and skill to deliver on their ideas-creating custom teams and bespoke solutions that will enable you to reach your technology destination, deliver long-term value and impact today.
+
                 </p>
               </div>
               <div className="flex-[1_1_18.75rem]">
@@ -381,9 +365,7 @@ const ItStaff = () => {
               Our Company Recognition
             </h3>
             <p className="text-[1.25rem] leading-[2.125rem] font-normal mb-[3.75rem]">
-              <strong>Lorem Ipsum</strong> is simply dummy text of the printing
-              and typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text
+              <strong>Techdevise</strong> is on the list of reputable leaders in the area of IT staffing which are being known as the providers of the first-rate talent and innovative staffing and solution options. We never fail to impress and have accolades of the industry and appreciation by our clients. Our reputation stems out of being committed, experienced, and producing results that lead to business success in many industries and within technology sectors.
             </p>
             <div className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2  gap-x-[1.125rem] gap-y-[3.0625rem]">
               {recogImages.map((item, index) => (
