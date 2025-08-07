@@ -629,9 +629,9 @@ const AiDevelopment = () => {
       {/* 5 Pillers section end */}
 
       {/* AI tech section start */}
-      <section className="aiTech my-[4.6875rem]">
+    <section className="aiTech my-[4.6875rem]">
                 <div className="main-container">
-                    <div className="w-full max-w-6xl m-auto text-center mb-[5.3125rem]">
+                 <div className="w-full max-w-6xl m-auto text-center mb-[5.3125rem]">
                         <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2rem] font-extrabold text-black mb-8">
                             Tech Stack, We Use As an Artificial
                             Intelligence Development Company!
@@ -642,7 +642,7 @@ const AiDevelopment = () => {
 
                     <div className="">
                         <div style={{ backgroundImage: `url(${AiTech})` }} className=" bg-no-repeat bg-center lg:py-[2.1875rem] lg:px-[3.125rem] p-5 rounded-[.625rem] ">
-                            <ul className='flex justify-start flex-nowrap text-white overflow-x-scroll hide-scrollmd:gap-[4.5rem] gap-8 lg:mb-10 mb-4'>
+                            <ul className='flex justify-between flex-nowrap text-white overflow-x-scroll hide-scroll md:gap-[4.5rem] gap-8 lg:mb-10 mb-4'>
                                 {stackTab.map((item, index) => (
                                     <li onClick={() => setActiveSlide(index + 1)} key={index} className={`lg:text-[1.5rem] text-lg cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
                                         {item}
@@ -652,7 +652,7 @@ const AiDevelopment = () => {
 
                             <div className="flex flex-col">
 
-                                <div className="flex gap-2.5 justify-end items-stretch lg:mt-[3.25rem] mt-4 order-2">
+                                <div className="hidden gap-2.5 justify-end items-stretch lg:mt-[3.25rem] mt-4 order-2">
                                     <button ref={prevRefLang} className="cursor-pointer order-1">
                                         <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
                                             <GoArrowLeft className="size-7" />

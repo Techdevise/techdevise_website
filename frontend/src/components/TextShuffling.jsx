@@ -53,9 +53,9 @@ export default function TextShuffling() {
       <h1
         data-aos="fade-up"
         data-aos-delay="800"
-        className="2xl:text-[5.6rem] xl:text-[4.8rem] lg:text-[4.175rem] md:text-[3rem] sm:text-[2.425rem]  text-[2.35rem]  leading-[115%] 2xl:min-h-[6rem] xl:min-h-[5rem] lg:min-h-[4.375rem] md:min-h-[3.125rem] sm:min-h-[2.625rem] min-h-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:mt-3 mt-10 flex lg:justify-start justify-center items-end"
+        className="2xl:text-[5rem] 2xl:min-h-[104px]  xl:text-[4.3rem] xl:min-h-[84px] lg:text-[4.175rem] lg:min-h-[68px] md:text-[3rem] md:min-h-[42px] sm:text-[2.425rem] min-h-[34px]  text-[2.35rem]   leading-[115%] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:mt-3 mt-10 flex lg:justify-start justify-center items-end"
       >
-        {displayText} <span className="lg:w-4 w-2 inline-block 2xl:min-h-[6rem] xl:min-h-[5rem] lg:min-h-[4.375rem] md:min-h-[3.125rem] sm:min-h-[2.625rem] min-h-[2.55rem] bg-pine-700 animate-blink"></span>
+        {displayText} <span className="lg:w-4 w-2 inline-block 2xl:min-h-[104px] xl:min-h-[84px] lg:min-h-[68px] md:min-h-[42px] min-h-[34px] bg-pine-700 animate-blink"></span>
       </h1>
 
       {/* Tailwind CSS keyframes for blinking cursor */}

@@ -28,7 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
 const BlockchainSlider = ({ triggerRef }) => {
     const swiperRef = useRef(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const slideContent = [
+     const slideContent = [
         {
             title: "Blockchain Consultation & Integration",
             para:
@@ -106,7 +106,7 @@ const BlockchainSlider = ({ triggerRef }) => {
                 scrollTrigger: {
                     trigger: triggerRef.current,
                     start: "top 100px",
-                    end: () => `+=${totalSlides * 400}`,
+                    end: () => `+=${totalSlides * 600}`,
                     scrub: true,
                     pin: true,
                     anticipatePin: 0,
@@ -146,14 +146,12 @@ const BlockchainSlider = ({ triggerRef }) => {
                         spaceBetween: 90,
                         autoplay: {
                             delay: 1000,  
-                        },
-                        loop: true,
+                        }, 
                     },
 
                     1023: {
                         slidesPerView: 1.4,
-                        spaceBetween: 90,
-                        loop: true,
+                        spaceBetween: 90, 
                         autoplay: {
                             delay: 1000,  
                         },
@@ -189,7 +187,7 @@ const BlockchainSlider = ({ triggerRef }) => {
                                 </div>
                                 <div className="lg:flex-[1.3_1_0%] lg:text-start text-center">
                                     <h3 className="text-3xl xl:text-4xl font-bold text-white mb-4">{item.title}</h3>
-                                    <p className="text-white text-xl text-justify md:text-start">{item.para}</p>
+                                    <p className="text-white text-xl text-start">{item.para}</p>
                                 </div>
                             </div>
                         </div>

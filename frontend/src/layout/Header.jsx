@@ -38,7 +38,7 @@ const navMenu = [
     link: "/contact-us",
   },
   {
-    name: "Careers",
+    name: "Career",
     link: "/career-one",
   },
 ];
@@ -111,7 +111,7 @@ const Header = () => {
       window.addEventListener('scroll', handleScroll);
       handleScroll();
       return () => window.removeEventListener('scroll', handleScroll);
-      
+
     }
     // Cleanup on unmount
   }, [router]);
@@ -123,12 +123,14 @@ const Header = () => {
   const showMenu = () => {
     setIsShowMenu(!isShowMenu); // Toggle mega drop menu
   }
+  
+
+
   return (
     <>
       <header className={`fixed top-0 left-0 z-[1198] w-full transition-all duration-300 ${scrolledPast ? 'bg-[#00000069] backdrop-blur-lg' : router.pathname === "/" ? 'bg-[#00000000]' : 'bg-[#00000069]'}`}>
         <div className="main-container relative">
-          <nav className={`py-[1rem] flex justify-between items-stretch`}>
-
+          <nav className={` flex justify-between items-stretch`}>
             <div onMouseLeave={() => setIsShowMenu(false)} className={`megaDropmenu max-lg:hidden w-full absolute top-full left-0 transition-all duration-300 grid ${isShowMenu ? 'grid-rows-[1fr] mt-1 z-10' : 'grid-rows-[0fr] mt-5 -z-20'} `}>
               <div className="main-container  max-2xl:!px-10 overflow-hidden">
                 <div className="flex justify-start items-stretch flex-wrap bg-white overflow-hidden w-full rounded-[1.25rem]">
@@ -150,7 +152,7 @@ const Header = () => {
                         <ul>
                           {menuTabs.map((tab, index) => (
                             <li onClick={showMenu} onMouseEnter={() => setActiveMenu(index + 1)} key={index}>
-                              <NavLink to={tab.link} className={`flex justify-start items-center gap-[1.125rem] 2xl:text-[1.25rem] text-base font-semibold transition-all duration-300 mb-[1.625rem] cursor-pointer ${isActiveMenu == index + 1 ? 'text-pine-700' : 'text-black'}`}>
+                              <NavLink to={tab.link} className={`flex justify-start items-center gap-[1.125rem] 2xl:text-[1.25rem] text-base font-semibold transition-all duration-300 mb-[1.625rem] cursor-pointer ${isActiveMenu == index + 1 ? 'text-pine-700' :  'text-black'} ${router.pathname == tab.link && isActiveMenu == index + 1 ? 'text-pine-700' : 'text-black'}`}>
                                 <img src={tab.icon} alt="dropmenu icons" className="size-[1.8125rem] aspect-square" />
                                 <span className="text-nowrap flex justify-start items-center gap-2 flex-1 pe-10"><span>{tab.name}</span> <LuMoveRight className="size-5" /> </span>
                               </NavLink>
@@ -179,11 +181,11 @@ const Header = () => {
             </div>
 
             {/* Nav logo */}
-            <NavLink to="/" className="block h-[2.5rem] self-center">
+            <NavLink to="/" className="block py-[1rem] self-center">
               <img
                 src={Logo}
                 alt="logo"
-                className="h-full block"
+                className="h-full min-h-[2.5rem] block"
               />
             </NavLink>
 
@@ -207,9 +209,9 @@ const Header = () => {
                 </li> */}
                 <li
                   onMouseEnter={showMenu}
-                  className="lg:h-full cursor-pointer lg:flex justify-center items-center text-white lg:hover:opacity-65 transition-all duration-300"
+                  className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white lg:hover:opacity-65 transition-all duration-300"
                 >
-                  <button type="button" className={`text-[1.25rem] max-lg:w-full max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 flex gsp-1 lg:justify-center justify-between items-center focus:outline-0 focus:ring-0`}>
+                  <button type="button" className={`text-[1.25rem] max-lg:w-full max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 flex gap-1 lg:justify-center justify-between items-center focus:outline-0 focus:ring-0`}>
                     <span>Services</span>
                     <FaCaretDown className="text-base" />
                   </button>
@@ -231,7 +233,7 @@ const Header = () => {
                   return (
                     <li onClick={show}
                       key={index}
-                      className="lg:h-full cursor-pointer lg:flex justify-center items-center text-white lg:hover:opacity-65 transition-all duration-300"
+                      className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white lg:hover:opacity-65 transition-all duration-300"
                     >
                       <NavLink to={item.link} className={`text-[1.25rem] max-lg:block max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300  focus:outline-0 focus:ring-0`}>
                         {item.name}
@@ -242,14 +244,16 @@ const Header = () => {
                 {/* Nav Button mobile View */}
               </ul>
               <button
+                onClick={() => setShowModal(true)}
                 className="lg:hidden h-[3.5rem] block text-start w-full rounded-lg font-bold text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect">Get in Touch</button>
 
             </div>
             {/* Nav Button */}
 
-            <button onClick={() => setShowModal(true)}
-              className="h-[3.5rem] block ms-[3.75rem] rounded-lg font-bold text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect max-lg:hidden">Get in Touch</button>
-
+            <div className="flex justify-center items-center">
+              <button onClick={() => setShowModal(true)}
+                className="h-[3.5rem] block ms-[3.75rem] rounded-lg font-bold text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect max-lg:hidden">Get in Touch</button>
+            </div>
             {/* Menu button */}
             <div className="h-full flex justify-center items-center">
               <button onClick={show} className="cursor-pointer aspect-square py-[.4375rem] px-[.3125rem]  flex justify-center items-center bg-white rounded lg:hidden">

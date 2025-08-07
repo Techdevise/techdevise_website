@@ -380,36 +380,36 @@ const [showModal, setShowModal] = useState(false);
             {/* Gain Insights into our Services end */}
 
             {/* Transformations section start */}
-            <section className="transformations my-[4.6875rem]">
+              <section className="transformations my-[4.6875rem]">
                 <div className="main-container">
-                    <div className="flex lg:flex-row flex-col justify-center items-center 2xl:gap-10 ">
-                        <div className="flex-[1_1_23.125rem] max-xl:hidden max-w-[23.125rem] max-lg:mx-auto lg:order-1 order-2">
+                    <div className="flex lg:flex-row flex-col justify-center items-center gap-10 ">
+                        <div className="flex-[1_1_23.125rem] max-xl:hidden 2xl:max-w-[20.125rem] max-w-[15.625rem] max-lg:mx-auto lg:order-1 order-2">
                             <img src={vectorGirl} alt="robo image" className='h-full w-full object-contain' />
                         </div>
-                        <div className="flex-1 lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10">
+                        <div className="flex-1 lg:text-start text-center lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10">
 
                             <div className="flex-[1_1_23.3125rem] text-black rounded-10 py-9 rounded-[1.625rem] scale-100 ">
                                 <h4 className='text-[2rem] leading-[3rem] font-extrabold mb-3'>Fuelling your digital transformation and assurance goals</h4>
                                 <p className="text-base leading-[1.625rem]">We lead with innovation to deliver resilient solutions with maximum impact. We instill quality throughout the product development lifecycle with end-to-end service capabilities, converging development and quality assurance domains.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                                <h4 className='text-[1.75rem] font-semibold mb-3 pe-24'>Adapting Next Gen Technologies</h4>
+                                <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Adapting Next Gen Technologies</h4>
                                 <p className="text-base leading-[1.625rem] font-normal">We leverage next-gen and AI technologies in our Digital Assurance and engineering solutions to ensure you make data-driven decisions, streamline processes, and optimize workflows through advanced analytics, ML, and AI-driven automation.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                                <h4 className='text-[1.75rem] font-semibold mb-3 pe-24'>Leading through innovation</h4>
+                                <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Leading through innovation</h4>
                                 <p className="text-base leading-[1.625rem] font-normal">Our experienced resource pool implements an innovation-led journey of exploration, experimentation, and evolution. Our Quality Engineering is at the forefront of innovation with experimentation, iteration, rapid prototyping to quickly validate ideas.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                                <h4 className='text-[1.75rem] font-semibold mb-3 pe-24'>Focusing on the Customer's Business Outcomes</h4>
+                                <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Focusing on the Customer's Business Outcomes</h4>
                                 <p className="text-base leading-[1.625rem] font-normal">Our tailored solutions address your specific business goals and needs. We are your one-stop-shop for Quality Engineering services capabilities from functional to non-functional testing with next-gen testing services like AI, RPA, Cloud.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                                <h4 className='text-[1.75rem] font-semibold mb-3 pe-24'>Digital Engineering with Quality DNA</h4>
+                                <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Digital Engineering with Quality DNA</h4>
                                 <p className="text-base leading-[1.625rem] font-normal">Our expertise on end-to-end digital engineering empowers businesses to embrace change, drive growth, and unlock their full potential in the digital age. As the world&apos;s 5th largest QA & software testing company, quality is in our DNA.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                                <h4 className='text-[1.75rem] font-semibold mb-3 pe-24'>Scaling with Agility</h4>
+                                <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Scaling with Agility</h4>
                                 <p className="text-base leading-[1.625rem] font-normal">We provide solutions based on real-world usage and insights, enabling clients to iterate rapidly, refine their ideas, and drive innovation.</p>
                             </div>
                         </div>
