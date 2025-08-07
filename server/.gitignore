@@ -1,5 +1,5 @@
 node_modules
-# /public/images
-# /public/pdfs
+/public/images
+/public/pdfs
 # .env
 # /config
