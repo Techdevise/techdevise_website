@@ -208,7 +208,7 @@ const ContactUs = () => {
                 </div>
                 <div className="xl:col-span-1 max-sm:col-span-full  bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] ">
                   <input
-                    type="tel"
+                    type="number"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}

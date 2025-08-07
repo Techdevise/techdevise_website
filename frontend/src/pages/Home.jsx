@@ -7,6 +7,12 @@ import video from "/Homevideo1-BHIh2a86.mp4";
 import lightOne from "/lightOne.svg";
 import lightTwo from "/lightTwo.svg";
 import vectorOne from "/vectorOne.svg";
+import vectorTwo from "/vectorTwo.svg";
+import vectorThree from "/vectorThree.svg";
+import vectorFour from "/vectorFour.svg";
+import vectorFive from "/vectorFive.svg";
+import vectorSix from "/vectorSix.svg";
+import vectorSeven from "/vectorSeven.svg";
 import vectorEight from "/vectorEight.svg";
 import vectorNine from "/vectorNine.svg";
 import vector12 from "/vector12.svg";
@@ -950,6 +956,230 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
           </div>
         </section>
         {/* Our Tech section end */}
+        <section className="ourServices-section my-[6.0625rem]">
+          <div className="main-container">
+            <div className="flex justify-center items-stretch flex-wrap lg:gap-[2.375rem] gap-[.9375rem] lg:mb-[2.375rem] mb-[.9375rem]">
+              <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-1 order-2">
+                <div className="card h-full bg-[#67C792] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
+                  <div className="p-[1.4375rem]  flex-[2_1_0%]">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Website Development
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+Looking to start your own company website? If so, our skilled web developers and designers will undoubtedly give you with the website of your dreams. We provide comprehensive web development solutions adapted to your individual requirements.</p>
+                    <Link
+                      to="/web-app-development"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
+                      <span>More information</span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#3aad6e] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                    <img
+                      src={vectorTwo}
+                      alt="vector two"
+                      className="mx-auto max-md:h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="xl:flex-1 flex justify-center items-stretch xl:flex-wrap max-md:flex-wrap  gap-[2.125rem] xl:order-2 order-1">
+                <div className="lg:w-full w-full overflow-hidden p-[1px] rounded-[1.625rem] bg-gradient-to-b from-[#1f443c] via-[#123b32] to-[#0a3a31]">
+                  <div className="h-full w-full bg-pine-999 rounded-[1.5625rem] py-5 sm:px-[1.875rem] px-4 text-center">
+                    <h2
+                      data-aos="fade-down"
+                      data-aos-delay="200"
+                      className="text-transparent 2xl:text-[3rem] text-[2.7rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3"
+                    >
+                      Our Services
+                    </h2>
+                    <p
+                      data-aos="fade-down"
+                      className="2xl:text-[1.25rem] text-[1.1rem] leading-[1.875rem] font-normal text-white"
+                    >
+                      Tech Devise offers IT solutions that foster creativity, efficiency, and security for organizations of every size. Our experience covers numerous disciplines, guaranteeing that your technological requirements are addressed with accuracy and brilliance.
+                    </p>
+                  </div>
+                </div>
+                <div className="max-xl:hidden xl:w-full w-full">
+                  <div className="card h-full bg-[#99eae0] overflow-hidden rounded-[1.625rem] flex justify-between items-stretch xl:gap-5 max-xl:flex-row-reverse">
+                    <div className="p-[1.4375rem] xl:w-[65%] flex-[2_1_0%]">
+                      <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                        E-commerce Website
+                      </h4>
+                      <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                    We all know that the eCommerce sector is booming like anything. Hence, if you want to sell your products online, then check our eCommerce development services Our expert team offers quality eCommerce websites which will surely take your business to the next level.
+                      </p>
+                      <Link
+                        to="/web-app-development"
+                        className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                      >
+                        <span>More information</span>
+                        <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                          <FiArrowUpRight className="size-4" />
+                        </span>
+                      </Link>
+                    </div>
+                    <div className="image xl:w-[35%] flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#5dc6b9] max-xl:before:rounded-[1.625rem] before:h-full sm:before:w-[62%] before:w-[82%]">
+                      <img
+                        src={vectorThree}
+                        alt="vector Three"
+                        className="xl:h-[178px] xl:w-[179px] max-md:h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-1 order-2 xl:hidden">
+                <div className="card h-full bg-[#99eae0] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
+                  <div className="p-[1.4375rem]  flex-[2_1_0%]">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      E-commerce Website
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                We all know that the eCommerce sector is booming like anything. Hence, if you want to sell your products online, then check our eCommerce development services Our expert team offers quality eCommerce websites which will surely take your business to the next level.
+                    </p>
+                    <Link
+                      to="/web-app-development"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
+                      <span>More information</span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#5dc6b9] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                    <img
+                      src={vectorThree}
+                      alt="vector two"
+                      className="mx-auto max-md:h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
+                <div className="card h-full bg-[#deea99] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
+                  <div className="p-[1.4375rem]  flex-[2_1_0%]">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Digital Marketing
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                 Is your business finding it difficult to flourish in the online world? Well, it is no surprise because if proper digital marketing is not done then your website will not be able to gain the desired notice from the audience.
+                    </p>
+                    <Link
+                      to="/digital-marketing"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
+                      <span>More information</span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#b1bf62] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                    <img
+                      src={vectorFour}
+                      alt="vector Four"
+                      className="mx-auto max-md:h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="xl:w-[calc(100%_/_3_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
+                <div className="card h-full bg-[#99cbea] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
+                  <div className="p-[1.4375rem]  flex-[2_1_0%]">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Quality Analysis
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                    We offer a comprehensive package of Software Quality Assurance(QA) and Testing services. We in maximising the quality and performance of software solutions for our clients while reducing the costs and risks.
+                    </p>
+                    <Link
+                      to="/quality-analysis"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
+                      <span>More information</span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#76b6de] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                    <img
+                      src={vectorFive}
+                      alt="vector Five"
+                      className="mx-auto max-md:h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="xl:w-[calc(100%_/_3_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
+                <div className="card h-full bg-[#ea99b9] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
+                  <div className="p-[1.4375rem]  flex-[2_1_0%]">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Mobile Application development
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+                   Our team of experts specialize in offering unique app development services which can help you to scale your business.
+
+Under app development we offer services like android app development, iOS app development, and React Native App Development.
+
+                    </p>
+                    <Link
+                      to="/mobile-app-development"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
+                      <span>More information</span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#dd7aa2] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                    <img
+                      src={vectorSix}
+                      alt="vector Six"
+                      className="mx-auto max-md:h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="xl:w-[calc(100%_/_3_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-3 order-3">
+                <div className="card h-full bg-[#ea9c99] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
+                  <div className="p-[1.4375rem]  flex-[2_1_0%]">
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      UI/UX Design
+                    </h4>
+                    <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
+Techdevise’s UI and UX services. Our design team is a small design studio with best experts in the field that will help you build an engaging product easily and quickly</p>
+                    <Link
+                      to="/"
+                      className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
+                    >
+                      <span>More information</span>
+                      <span className="size-[1.625rem] rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                        <FiArrowUpRight className="size-4" />
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#d67f7c] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                    <img
+                      src={vectorSeven}
+                      alt="vector Seven"
+                      className="mx-auto max-md:h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Our Tech Mobile view section start */}
         <section className="ourTechMobileView lg:hidden my-[4.6875rem]">
@@ -1376,7 +1606,7 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
 
         {/* Let’s Talk start */}
         <section className="pb-[6.0625rem]">
-          <ToastContainer position="top-right" autoClose={5000} />
+     
           <div className="main-container">
             <div className="border-[.0625rem] border-white/40 rounded-3xl flex flex-wrap items-start relative">
               <img
@@ -1531,51 +1761,21 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
         <section className="pb-[1.0625rem]">
           <div className="main-container text-white">
             <div className="text-center mb-[3.9375rem]">
-              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
-                Location
-              </h4>
-              <h3 className="text-[3.4375rem] font-extrabold leading-none mb-5">
-                We&apos;d love to here from you
-              </h3>
-              <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
-                We have offices and teams all around the world.{" "}
-                <img
-                  src={vector12}
-                  alt="vector12"
-                  className="w-[5.6875rem] absolute top-full lg:left-full left-1/2 -translate-x-1/2"
-                />
-              </p>
+              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">Location</h4>
+              <h3 className='lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-extrabold leading-none mb-5'>We&apos;d love to here from you</h3>
+              <p className='text-lg font-medium leading-[1.8125rem] inline-block relative'>We have offices and teams all around the world. <img src={vector12} alt="vector12" className='w-[5.6875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v' /></p>
             </div>
             <div className="grid gap-[1.375rem] xl:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-[4.1875rem] pb-[7rem] relative z-0">
-              <img
-                src={map}
-                alt="map"
-                className="max-w-full h-full object-contain absolute top-0 left-1/2 -translate-x-1/2 -z-[1]"
-              />
+              <img src={map} alt="map" className='max-w-full xl:h-full object-contain absolute top-0 left-1/2 -translate-x-1/2 -z-[1]' />
               {addressList.map((listitem, index) => (
-                <div
-                  key={index}
-                  className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]"
-                >
-                  <img
-                    src={listitem.bgimage}
-                    alt="indai bg"
-                    className="2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover"
-                  />
+                <div key={index} className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]">
+                  <img src={listitem.bgimage} alt="indai bg" className='2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover' />
                   <div className="grow">
                     <div className="flex gap-[.9375rem] items-center mb-[1.375rem]">
-                      <img
-                        src={listitem.flag}
-                        alt="indaiFlag"
-                        className="w-[3.1875rem] h-[2.125rem]"
-                      />
-                      <span className="font-bold capitalize">
-                        {listitem.countryName}
-                      </span>
+                      <img src={listitem.flag} alt="indaiFlag" className="w-[3.1875rem] h-[2.125rem]" />
+                      <span className='font-bold capitalize'>{listitem.countryName}</span>
                     </div>
-                    <p className="2xl:text-lg text-base font-medium leading-[1.8125rem]">
-                      {listitem.address}
-                    </p>
+                    <p className='2xl:text-lg text-base font-medium leading-[1.8125rem]'>{listitem.address}</p>
                   </div>
                 </div>
               ))}

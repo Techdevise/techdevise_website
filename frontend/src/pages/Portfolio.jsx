@@ -15,7 +15,7 @@ import portfolio11 from '/portfolio11.png'
 import portfolioLogo1 from '/portfolioLogo1.svg'
 import portfolioLogo2 from '/portfolioLogo2.svg'
 import portfolioLogo3 from '/portfolioLogo3.svg'
-import portfolioLogo4 from '/portfolioLogo4.svg'
+import portfolioLogo4 from '/portfolioLogo4.png'
 import portfolioLogo5 from '/portfolioLogo5.svg'
 import portfolioLogo6 from '/portfolioLogo6.svg'
 import portfolioLogo7 from '/portfolioLogo7.png'
@@ -49,7 +49,7 @@ const Portfolio = () => {
             dis: 'Eureka Telecom was incorporated to bring innovation in the telecommunication industry by offering modernized telecom services.',
             website: 'https://www.bubbleswholesale.com/',
             platform: 'PHP, React.js',
-            bg: 'bg-gradient-to-b from-[#F8FFEE] to-[#C4F67B]',
+            bg: 'bg-gradient-to-r from-[#F8FFEE] to-[#C4F67B]',
             rowPosition: 'lg:flex-row-reverse'
         },
         {
@@ -71,7 +71,7 @@ const Portfolio = () => {
             dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
             website: 'https://www.sterlingforever.com/',
             platform: 'Shopify',
-            bg: 'bg-gradient-to-b from-[#F6D083] to-[#FFF8EA]',
+            bg: 'bg-gradient-to-r from-[#F6D083] to-[#FFF8EA]',
             rowPosition: 'lg:flex-row-reverse'
         },
         {
@@ -93,7 +93,7 @@ const Portfolio = () => {
             dis: 'Pediatric Therapy Associates is a kids focused therapy place. We are a multi-disciplinary group with the singular focus of developing your child to the fullest.',
             website: 'https://therapypediatric.com/',
             platform: 'Wordpress',
-            bg: 'bg-gradient-to-b from-[#FCFFFF] to-[##A9F2F2]',
+            bg: 'bg-gradient-to-r from-[#FCFFFF] to-[#A9F2F2]',
             rowPosition: 'lg:flex-row-reverse'
         },
         {
@@ -115,7 +115,7 @@ const Portfolio = () => {
             dis: 'Welcome to SEO PRODUCTIEF – the leading digital marketing solutions company in the Netherlands. We help you achieve success with your online presence.',
             website: 'https://seoproductief.nl/',
             platform: 'Wordpress',
-            bg: 'bg-gradient-to-b from-[#EBFBFF] to-[#7BDBF6]',
+            bg: 'bg-gradient-to-r from-[#EBFBFF] to-[#7BDBF6]',
             rowPosition: 'lg:flex-row-reverse'
         },
         {
@@ -137,7 +137,7 @@ const Portfolio = () => {
             dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
             website: 'https://www.sterlingforever.com/',
             platform: 'Shopify',
-            bg: 'bg-gradient-to-b from-[#F7FFDF] to-[#DBF683]',
+            bg: 'bg-gradient-to-r from-[#F7FFDF] to-[#DBF683]',
             rowPosition: 'lg:flex-row-reverse'
         },
         {

@@ -334,7 +334,7 @@ const MobileApplicationDevelopment = () => {
             Mobile App Development <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link> */}
           <button
             onClick={() => setShowModal(true)}
-            className="bg-pine-700 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+            className="bg-pine-700 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base text-white"
           >
             Consult Our Experts{" "}
             <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">

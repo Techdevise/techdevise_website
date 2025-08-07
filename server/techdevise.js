@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const rateLimit = require('express-rate-limit');
 var cors = require('cors');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const session = require('express-session');
 var flash = require("express-flash");
 const fileUpload = require('express-fileupload');
@@ -61,7 +61,7 @@ app.use(cors({
 }));
 
 // Security middleware
-app.use(helmet());
+// app.use(helmet());
 
 // Serve public static files (if any)
 app.use(express.static(path.join(__dirname, 'public')));
