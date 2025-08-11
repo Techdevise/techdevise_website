@@ -231,8 +231,8 @@ const Clock = ({ countryName, bgColor = '#B9CFEC', pinColor = '#000000', innerSh
         </svg>
       </div>
       <div className="time mt-[.0625rem]">
-        <h5 className="text-[20px] leading-[2.125rem] font-medium text-white text-center uppercase">{countryName}</h5>
-        <h5 className="text-[20px] leading-[2.125rem] font-medium text-white text-center">{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: timezone })}</h5>
+        <h5 className="text-[15px] leading-[2.125rem] font-semibold text-white text-center uppercase">{countryName}</h5>
+        <h5 className="text-[14px] leading-[1.125rem] font-medium text-white text-center">{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: timezone })}</h5>
       </div>
     </div>
   );

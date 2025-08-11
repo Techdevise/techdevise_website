@@ -50,9 +50,9 @@ import icon26 from "/langicon/icon26.svg";
 import icon27 from "/langicon/icon27.svg";
 import icon28 from "/langicon/icon28.svg";
 // Images
-import halfDotCirleGreen from '/halfDotCirleGreen.svg'
+import halfDotCirleGreen from "/halfDotCirleGreen.svg";
 
-import halfDotCircleWhite from '/halfDotCircleWhite.svg'
+import halfDotCircleWhite from "/halfDotCircleWhite.svg";
 // social icons
 import linkedin from "/linkedin.svg";
 import upwork from "/upwork.svg";
@@ -120,10 +120,10 @@ const Home = () => {
   const [industries, setIndustries] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-    const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(1);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
- const [totalSlides, setTotalSlides] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
   const prev2Ref = useRef(null);
   const next2Ref = useRef(null);
   const customPaginationRender = (swiper, current, total) => {
@@ -131,53 +131,52 @@ const Home = () => {
     setTotalSlides(total);
   };
   const [budget, setBudget] = useState(10000);
-    const clockThirSlideCircles = [
+  const clockThirSlideCircles = [
     {
-      bordeColor: 'border-pine-700',
-      bgColor: 'bg-pine-700',
-      textColor: 'text-white',
+      bordeColor: "border-pine-700",
+      bgColor: "bg-pine-700",
+      textColor: "text-white",
       arrow: halfDotCirleGreen,
-      title: 'Sprint Backlog',
+      title: "Sprint Backlog",
     },
     {
-      bordeColor: 'border-white',
-      bgColor: 'bg-white',
-      textColor: 'text-pine-700',
+      bordeColor: "border-white",
+      bgColor: "bg-white",
+      textColor: "text-pine-700",
       arrow: halfDotCircleWhite,
-      title: 'Planning',
+      title: "Planning",
     },
 
     {
-      bordeColor: 'border-pine-700',
-      bgColor: 'bg-pine-700',
-      textColor: 'text-white',
+      bordeColor: "border-pine-700",
+      bgColor: "bg-pine-700",
+      textColor: "text-white",
       arrow: halfDotCirleGreen,
-      title: 'Implementation',
+      title: "Implementation",
     },
     {
-      bordeColor: 'border-white',
-      bgColor: 'bg-white',
-      textColor: 'text-pine-700',
+      bordeColor: "border-white",
+      bgColor: "bg-white",
+      textColor: "text-pine-700",
       arrow: halfDotCircleWhite,
-      title: 'Review',
+      title: "Review",
     },
 
     {
-      bordeColor: 'border-pine-700',
-      bgColor: 'bg-pine-700',
-      textColor: 'text-white',
+      bordeColor: "border-pine-700",
+      bgColor: "bg-pine-700",
+      textColor: "text-white",
       arrow: halfDotCirleGreen,
-      title: 'Retrospective',
+      title: "Retrospective",
     },
     {
-      bordeColor: 'border-white',
-      bgColor: 'bg-white',
-      textColor: 'text-pine-700',
+      bordeColor: "border-white",
+      bgColor: "bg-white",
+      textColor: "text-pine-700",
       arrow: halfDotCircleWhite,
-      title: 'Definition of Done',
+      title: "Definition of Done",
     },
-
-  ]
+  ];
 
   const langlistOne = [
     {
@@ -348,8 +347,6 @@ const Home = () => {
     email: "",
     phone: "",
     company_name: "",
-    job_title: "",
-    launch_timeline: "",
     budget: "20000",
     message: "",
   });
@@ -391,15 +388,7 @@ const Home = () => {
       newErrors.phone = "Phone number should be 10-15 digits";
     }
 
-    // Job title validation
-    if (!formData.job_title) {
-      newErrors.job_title = "Job title is required";
-    }
-
-    // Launch timeline validation
-    if (!formData.launch_timeline) {
-      newErrors.launch_timeline = "Launch timeline is required";
-    }
+    
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -433,7 +422,6 @@ const Home = () => {
         budget: budget.toString(),
       };
 
-
       const response = await axios.post(
         `${API_BASE_URL}/api/experts`,
         payload,
@@ -444,7 +432,6 @@ const Home = () => {
         }
       );
 
-
       if (response.data.success) {
         toast.success(response.data.message || "Form submitted successfully!");
 
@@ -454,8 +441,6 @@ const Home = () => {
           email: "",
           phone: "",
           company_name: "",
-          job_title: "",
-          launch_timeline: "",
           budget: "20000",
           message: "",
         });
@@ -609,7 +594,7 @@ const Home = () => {
             autoPlay
             className="h-full  w-[100dvw] object-cover absolute top-0 left-0 z-[-1]"
           ></video>
-          <div className="cover bg-pine-999/70 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
+          <div className="cover bg-pine-999/50 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
             <div className=" flex justify-between items-stretch flex-col h-full">
               <div className="flex-1">
                 <div className="main-container relative  flex justify-center items-stretch flex-col lg:flex-row h-full">
@@ -667,7 +652,7 @@ const Home = () => {
                         onClick={() => setShowModal(true)}
                         data-aos="fade-right"
                         data-aos-delay="1000"
-                        className="bg-transparent border border-white/40 rounded-[.625rem] text-[1.25rem] py-4 px-5 text-white font-semibold flex justify-center items-center gap-[.75rem] w-fit max-lg:mx-auto shine-effect"
+                        className="bg-transparent border border-white/40 rounded-[.625rem] text-[1.25rem] py-4 px-5 text-white font-normal flex justify-center items-center gap-[.75rem] w-fit max-lg:mx-auto shine-effect"
                       >
                         <span>Consult Our Experts</span>
                         <HiOutlineArrowLongRight className="size-10" />
@@ -712,7 +697,7 @@ const Home = () => {
                     <h4 className="text-[1.15rem] font-bold text-white text-nowrap">
                       Trusted By
                     </h4>
-                    <h4 className="text-[1rem] font-medium text-white text-nowrap mt-1.5">
+                    <h4 className="text-[0.95rem] font-medium text-white text-nowrap mt-1.5">
                       Our global clients Network
                     </h4>
                   </div>
@@ -736,7 +721,7 @@ const Home = () => {
                 </h5>
                 <h2
                   data-aos-delay="200"
-                  className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center"
+                  className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center"
                 >
                   Innovating the Future of <br /> Technology
                 </h2>
@@ -744,13 +729,27 @@ const Home = () => {
                   data-aos-delay="400"
                   className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
-              Tech Devise possesses a professional team of experts! Our main objective is to satisfy our client needs. Our area of expertise is offering excellent services since we keep meeting the needs of our clients even beyond the delivery term. We, at Tech Devise, work very methodically to provide ultimate satisfaction to clients. Our work begins with a consultation with our client. We understand your needs better and suggest the best solution. This is followed by development and implementation of your project. Upon delivery, we assure quality support and maintenance. 
+                  Tech Devise possesses a professional team of experts! Our main
+                  objective is to satisfy our client needs. Our area of
+                  expertise is offering excellent services since we keep meeting
+                  the needs of our clients even beyond the delivery term. We, at
+                  Tech Devise, work very methodically to provide ultimate
+                  satisfaction to clients. Our work begins with a consultation
+                  with our client. We understand your needs better and suggest
+                  the best solution. This is followed by development and
+                  implementation of your project. Upon delivery, we assure
+                  quality support and maintenance.
                 </p>
                 <p
                   data-aos-delay="600"
-                  className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                  className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center mt-4"
                 >
-At Tech Devise our dynamic and innovative team works in a simple process. For us, knowing the client's preferences and expectations is absolutely vital. Ensuring that the client and our staff are in agreement depends mostly on effective communication.                </p>
+                  At Tech Devise our dynamic and innovative team works in a
+                  simple process. For us, knowing the client's preferences and
+                  expectations is absolutely vital. Ensuring that the client and
+                  our staff are in agreement depends mostly on effective
+                  communication.{" "}
+                </p>
               </div>
               <div className="flex-[1_1_18.75rem]">
                 <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem]  bg-pine-950">
@@ -772,48 +771,109 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
             <div className="flex-1">
               <div className="grid lg:grid-cols-4 min-[480px]:grid-cols-3 grid-cols-2 lg:gap-[1.875rem] gap-[.9375rem]">
                 <div className="lg:col-span-2 min-[480px]:col-span-3 col-span-2 max-lg:text-center mb-3">
-                  <h3 data-aos="fade-down" data-aos-delay="200" className="text-[3rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700">Experience</h3>
-                  <p data-aos="fade-down" className="text-[1.125rem] leading-[2.125rem] font-normal text-white lg:max-w-2xl">With years of experience in the IT industry, we have successfully delivered cutting-edge software solutions, web and mobile applications, and enterprise-grade systems. Our expertise spans various technologies, ensuring innovative, scalable, and secure digital solutions tailored to your business needs.</p>
+                  <h3
+                    data-aos="fade-down"
+                    data-aos-delay="200"
+                    className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold  text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700"
+                  >
+                    Experience
+                  </h3>
+                  <p
+                    data-aos="fade-down"
+                    className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-white lg:max-w-2xl"
+                  >
+                    With years of experience in the IT industry, we have
+                    successfully delivered cutting-edge software solutions, web
+                    and mobile applications, and enterprise-grade systems. Our
+                    expertise spans various technologies, ensuring innovative,
+                    scalable, and secure digital solutions tailored to your
+                    business needs.
+                  </p>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#67c792]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={10} speed={752} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Years of Experience</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={10}
+                      speed={752}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Years of Experience
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#deea99]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Clients</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={500}
+                      speed={12}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Clients
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#99eae0]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Clients</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={500}
+                      speed={12}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Clients
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#99cbea]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={20} speed={376} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={20}
+                      speed={376}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Client
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#ea99b9]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={500} speed={12} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={500}
+                      speed={12}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Client
+                    </h4>
                   </div>
                 </div>
                 <div className="col-span-1">
                   <div className="rounded-[1.625rem] bg-[#ea9c99]">
-                    <AutoCounter sectionRef={countRef} label="Visitors Today" maxValue={20} speed={376} />
-                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">Client</h4>
+                    <AutoCounter
+                      sectionRef={countRef}
+                      label="Visitors Today"
+                      maxValue={20}
+                      speed={376}
+                    />
+                    <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
+                      Client
+                    </h4>
                   </div>
                 </div>
               </div>
             </div>
-            <div data-aos="zoom-in" className="flex-[0_1_7.3125rem] max-w-[7.3125rem] max-xl:hidden overflow-hidden">
+            <div
+              data-aos="zoom-in"
+              className="flex-[0_1_7.3125rem] max-w-[7.3125rem] max-xl:hidden overflow-hidden"
+            >
               <h2 className="2xl:text-[5.5rem] text-[5rem] inline-block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1f2d29] to-[#08211b] rotate-90 origin-[10%_50%]">
                 Experience
               </h2>
@@ -822,31 +882,40 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
         </section>
         {/* Experience section end */}
 
-       
-
         {/* Our Tech section start */}
         <section className="OurTech overflow-hidden max-lg:hidden">
           <div className="main-container">
-
             <div className="flex justify-between items-center mb-5">
-              <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.5rem] text-[2.2rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 max-w-6xl max-lg:mx-auto max-lg:text-center mb-[1.75rem]">
-                Our Tech Offerings - Tailored to Your Time Zone and Business Needs</h2>
+              <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.0rem] text-[2.2rem] font-bold bg-clip-text bg-gradient-to-r from-white to-pine-700 max-w-6xl max-lg:mx-auto max-lg:text-center mb-[1.75rem]">
+                Our Tech Offerings - Tailored to Your Time
+                <span className="hidden lg:inline">
+                  <br />
+                </span>
+                Zone and Business Needs
+              </h2>
 
               <div>
                 <div className="flex gap-3 mb-2">
-
-                  <button ref={prevRef} className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer">
+                  <button
+                    ref={prevRef}
+                    className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
+                  >
                     <GoArrowLeft className="size-6" />
                   </button>
-                  <button ref={nextRef} className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer">
+                  <button
+                    ref={nextRef}
+                    className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
+                  >
                     <GoArrowRight className="size-6" />
                   </button>
                 </div>
                 <div className="text-base text-center font-bold text-white">
-                  <span className='text-[1.5rem]'>{currentSlide}</span> <span className='text-base'>/ {totalSlides === 0 ? '?' : totalSlides}</span>
+                  <span className="text-[1.5rem]">{currentSlide}</span>{" "}
+                  <span className="text-base">
+                    / {totalSlides === 0 ? "?" : totalSlides}
+                  </span>
                 </div>
               </div>
-
             </div>
             <div className="">
               <Swiper
@@ -866,64 +935,104 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
                   swiper.navigation.update();
                 }}
                 pagination={{
-                  type: 'custom',
+                  type: "custom",
                   renderCustom: customPaginationRender,
                 }}
                 navigation={{
                   prevEl: prevRef.current,
-                  nextEl: nextRef.current
-                }} breakpoints={{
+                  nextEl: nextRef.current,
+                }}
+                breakpoints={{
                   1440: {
                     slidesPerView: 1.2,
                   },
                 }}
               >
-                <SwiperSlide
-                  className="flex !h-auto"
-                >
+                <SwiperSlide className="flex !h-auto">
                   <div className="flex h-full justify-between items-stretch 2xlp-[2.625rem] p-9 rounded-[3rem] bg-pine-600 ">
                     <div className="flex-[22rem] max-w-[22rem] aspect-square bg-pine-700 rounded-full p-3 shrink-0 self-center">
                       <div className="h-full w-full text-white text-center rounded-full  border-white/80 dashed-lg flex justify-center items-center flex-col px-1">
-                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">Staff Augmentation</h4>
-                        <p className="text-[1.105rem] leading-[1.75rem] font-medium">Hire pre-vetted developers skilled in the latest technologies, ready to work around the clock to meet your project needs.</p>
+                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
+                          Staff Augmentation
+                        </h4>
+                        <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem] font-normal p-2">
+                          Hire pre-vetted developers skilled in the latest
+                          technologies, ready to work around the clock to meet
+                          your project needs.
+                        </p>
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
-                        <Clock countryName="USA" bgColor="#FDE3DA" pinColor="#646E82" innerShadowColor="#FDE3DA" />
+                        <Clock
+                          countryName="USA"
+                          bgColor="#FDE3DA"
+                          pinColor="#646E82"
+                          innerShadowColor="#FDE3DA"
+                        />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-start items-center flex-col">
                       <div className="clock1 w-[10rem]">
-                        <Clock countryName="India" bgColor="#B9CFEC" pinColor="#646E82" innerShadowColor="#B9CFEC" />
+                        <Clock
+                          countryName="India"
+                          bgColor="#B9CFEC"
+                          pinColor="#646E82"
+                          innerShadowColor="#B9CFEC"
+                        />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[10rem]">
-                        <Clock countryName="Netherlands" bgColor="#719E91" pinColor="#646E82" innerShadowColor="#2A6C59" />
+                        <Clock
+                          countryName="Netherlands"
+                          bgColor="#719E91"
+                          pinColor="#646E82"
+                          innerShadowColor="#2A6C59"
+                        />
                       </div>
                     </div>
                     <div className="flex-[0_1_10rem] flex justify-start items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
-                        <Clock countryName="Canada" bgColor="#EA99B9" pinColor="#646E82" innerShadowColor="#EA99B9" />
+                        <Clock
+                          countryName="Canada"
+                          bgColor="#EA99B9"
+                          pinColor="#646E82"
+                          innerShadowColor="#EA99B9"
+                        />
                       </div>
                     </div>
                   </div>
                 </SwiperSlide>
 
-                <SwiperSlide
-                  className="flex !h-auto"
-                >
+                <SwiperSlide className="flex !h-auto">
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem]  ">
-                    <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
-                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.</p>
+                    <h4 className="text-[1.625rem] mb-2 font-bold">
+                      Build your offshore development team
+                    </h4>
+                    <p className="text-lg font-normal leading-[1.5625rem] max-w-[42.75rem]">
+                      At TechDevise, setting up dedicated software development
+                      team is quick and hassle-free, completed in just four
+                      simple steps.
+                    </p>
                     <div className="grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-[2.8125rem]">
                       {offshore.map((item, index) => (
-                        <div key={index} className="relative py-[.9375rem] pl-[1.0625rem] pr-[2.4375rem] group">
-                          <img src={item.image} alt="dash green" className='w-full absolute bottom-0 left-0 group-even:top-0' />
+                        <div
+                          key={index}
+                          className="relative py-[.9375rem] pl-[1.0625rem] pr-[2.4375rem] group"
+                        >
+                          <img
+                            src={item.image}
+                            alt="dash green"
+                            className="w-full absolute bottom-0 left-0 group-even:top-0"
+                          />
                           <div className="bg-pine-700 h-[13.125rem] rounded-[.8125rem] pb-[1.0625rem] pl-[1.5625rem] pr-3 flex flex-col justify-end group-even:bg-white group-even:text-pine-700">
-                            <h5 className='text-lg font-semibold leading-[1.5rem] mb-1.5'>{item.title}</h5>
-                            <p className='text-lg leading-[1.5rem]'>{item.discription}</p>
+                            <h5 className="text-lg font-semibold leading-[1.5rem] mb-1.5">
+                              {item.title}
+                            </h5>
+                            <p className="text-[16px] leading-[1.5rem]">
+                              {item.discription}
+                            </p>
                           </div>
                         </div>
                       ))}
@@ -932,22 +1041,44 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
                 </SwiperSlide>
                 <SwiperSlide className="flex !w-auto !h-auto">
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem] w-full max-w-full min-w-full pb-[5.3125rem]">
-                    <h4 className="text-[1.625rem] mb-2 font-bold">Build your offshore development team</h4>
-                    <p className="text-lg font-medium leading-[1.5625rem] max-w-[42.75rem]">At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.</p>
+                    <h4 className="text-[1.625rem] mb-2 font-bold">
+                      Build your offshore development team
+                    </h4>
+                    <p className="text-lg font-normal leading-[1.5625rem] max-w-[42.75rem]">
+                      At TechDevise, setting up dedicated software development
+                      team is quick and hassle-free, completed in just four
+                      simple steps.
+                    </p>
 
                     <div className="mt-[4.1875rem] flex justify-start items-center gap-[2.85rem]">
                       {clockThirSlideCircles.map((item, index) => (
-                        <div key={index} className="size-[10.5625rem]  rounded-full flex justify-center items-center aspect-square relative">
-                          <div className={`absolute inset-0 bg-transparent rounded-full border-2 ${item.bordeColor} border-solid scale-[100.6%] border-r-transparent border-t-transparent rotate-45`}></div>
-                          <div className={`absolute inset-0 bg-transparent rounded-full border-2 ${item.bordeColor} border-dashed scale-[100.6%] border-l-transparent border-b-transparent rotate-45`}></div>
-                          <img src={item.arrow} alt="GreenArrow" className="arrow absolute left-full top-1/2 -translate-y-1/2" />
-                          <div className={`size-[8.6875rem] ${item.bgColor} rounded-full px-4 flex justify-center items-center`}>
-                            <span className={`${item.textColor} text-sm leading-[1.5rem] font-bold text-center`}>{item.title}</span>
+                        <div
+                          key={index}
+                          className="size-[10.5625rem]  rounded-full flex justify-center items-center aspect-square relative"
+                        >
+                          <div
+                            className={`absolute inset-0 bg-transparent rounded-full border-2 ${item.bordeColor} border-solid scale-[100.6%] border-r-transparent border-t-transparent rotate-45`}
+                          ></div>
+                          <div
+                            className={`absolute inset-0 bg-transparent rounded-full border-2 ${item.bordeColor} border-dashed scale-[100.6%] border-l-transparent border-b-transparent rotate-45`}
+                          ></div>
+                          <img
+                            src={item.arrow}
+                            alt="GreenArrow"
+                            className="arrow absolute left-full top-1/2 -translate-y-1/2"
+                          />
+                          <div
+                            className={`size-[8.6875rem] ${item.bgColor} rounded-full px-4 flex justify-center items-center`}
+                          >
+                            <span
+                              className={`${item.textColor} text-[14px] leading-[1.5rem] font-normal text-center`}
+                            >
+                              {item.title}
+                            </span>
                           </div>
                         </div>
                       ))}
                     </div>
-
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -965,7 +1096,12 @@ At Tech Devise our dynamic and innovative team works in a simple process. For us
                       Website Development
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-Looking to start your own company website? If so, our skilled web developers and designers will undoubtedly give you with the website of your dreams. We provide comprehensive web development solutions adapted to your individual requirements.</p>
+                      Looking to start your own company website? If so, our
+                      skilled web developers and designers will undoubtedly give
+                      you with the website of your dreams. We provide
+                      comprehensive web development solutions adapted to your
+                      individual requirements.
+                    </p>
                     <Link
                       to="/web-app-development"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
@@ -991,7 +1127,7 @@ Looking to start your own company website? If so, our skilled web developers and
                     <h2
                       data-aos="fade-down"
                       data-aos-delay="200"
-                      className="text-transparent 2xl:text-[3rem] text-[2.7rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3"
+                      className="text-transparent 2xl:text-[3rem] text-[2.7rem] font-bold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3"
                     >
                       Our Services
                     </h2>
@@ -999,7 +1135,11 @@ Looking to start your own company website? If so, our skilled web developers and
                       data-aos="fade-down"
                       className="2xl:text-[1.25rem] text-[1.1rem] leading-[1.875rem] font-normal text-white"
                     >
-                      Tech Devise offers IT solutions that foster creativity, efficiency, and security for organizations of every size. Our experience covers numerous disciplines, guaranteeing that your technological requirements are addressed with accuracy and brilliance.
+                      Tech Devise offers IT solutions that foster creativity,
+                      efficiency, and security for organizations of every size.
+                      Our experience covers numerous disciplines, guaranteeing
+                      that your technological requirements are addressed with
+                      accuracy and brilliance.
                     </p>
                   </div>
                 </div>
@@ -1010,7 +1150,11 @@ Looking to start your own company website? If so, our skilled web developers and
                         E-commerce Website
                       </h4>
                       <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                    We all know that the eCommerce sector is booming like anything. Hence, if you want to sell your products online, then check our eCommerce development services Our expert team offers quality eCommerce websites which will surely take your business to the next level.
+                        We all know that the eCommerce sector is booming like
+                        anything. Hence, if you want to sell your products
+                        online, then check our eCommerce development services
+                        Our expert team offers quality eCommerce websites which
+                        will surely take your business to the next level.
                       </p>
                       <Link
                         to="/web-app-development"
@@ -1039,7 +1183,11 @@ Looking to start your own company website? If so, our skilled web developers and
                       E-commerce Website
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                We all know that the eCommerce sector is booming like anything. Hence, if you want to sell your products online, then check our eCommerce development services Our expert team offers quality eCommerce websites which will surely take your business to the next level.
+                      We all know that the eCommerce sector is booming like
+                      anything. Hence, if you want to sell your products online,
+                      then check our eCommerce development services Our expert
+                      team offers quality eCommerce websites which will surely
+                      take your business to the next level.
                     </p>
                     <Link
                       to="/web-app-development"
@@ -1067,7 +1215,10 @@ Looking to start your own company website? If so, our skilled web developers and
                       Digital Marketing
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                 Is your business finding it difficult to flourish in the online world? Well, it is no surprise because if proper digital marketing is not done then your website will not be able to gain the desired notice from the audience.
+                      Is your business finding it difficult to flourish in the
+                      online world? Well, it is no surprise because if proper
+                      digital marketing is not done then your website will not
+                      be able to gain the desired notice from the audience.
                     </p>
                     <Link
                       to="/digital-marketing"
@@ -1095,7 +1246,10 @@ Looking to start your own company website? If so, our skilled web developers and
                       Quality Analysis
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                    We offer a comprehensive package of Software Quality Assurance(QA) and Testing services. We in maximising the quality and performance of software solutions for our clients while reducing the costs and risks.
+                      We offer a comprehensive package of Software Quality
+                      Assurance(QA) and Testing services. We in maximising the
+                      quality and performance of software solutions for our
+                      clients while reducing the costs and risks.
                     </p>
                     <Link
                       to="/quality-analysis"
@@ -1124,10 +1278,11 @@ Looking to start your own company website? If so, our skilled web developers and
                       Mobile Application development
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-                   Our team of experts specialize in offering unique app development services which can help you to scale your business.
-
-Under app development we offer services like android app development, iOS app development, and React Native App Development.
-
+                      Our team of experts specialize in offering unique app
+                      development services which can help you to scale your
+                      business. Under app development we offer services like
+                      android app development, iOS app development, and React
+                      Native App Development.
                     </p>
                     <Link
                       to="/mobile-app-development"
@@ -1156,7 +1311,10 @@ Under app development we offer services like android app development, iOS app de
                       UI/UX Design
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
-Techdevise’s UI and UX services. Our design team is a small design studio with best experts in the field that will help you build an engaging product easily and quickly</p>
+                      Techdevise’s UI and UX services. Our design team is a
+                      small design studio with best experts in the field that
+                      will help you build an engaging product easily and quickly
+                    </p>
                     <Link
                       to="/"
                       className="flex justify-start items-center text-[1rem] leading-[1.875rem] font-bold gap-[.5625rem] group/link"
@@ -1184,25 +1342,37 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
         <section className="ourTechMobileView lg:hidden my-[4.6875rem]">
           <div className="main-container">
             <div className="sectionHeader mb-3.5">
-              <h2 className="text-transparent lg:text-start text-center 2xl:text-[3rem] text-[2rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3">Our Tech Offerings - Tailored to Your Time Zone and Business Needs</h2>
+              <h2 className="text-transparent lg:text-start text-center 2xl:text-[3rem] text-[2rem] font-bold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3">
+                Our Tech Offerings - Tailored to Your Time Zone and Business
+                Needs
+              </h2>
             </div>
 
             <div className="card bg-pine-950 px-3.5 text-white py-4 text-center rounded-[1.125rem] mb-5">
-              <h4 className="text-[1.3rem] font-bold mb-3">Staff Augmentation</h4>
+              <h4 className="text-[1.3rem] font-bold mb-3">
+                Staff Augmentation
+              </h4>
               <p className="text-[1.2rem] font-normal">
-                Hire pre-vetted developers skilled in the latest technologies, ready to work around the clock to meet your project needs.
+                Hire pre-vetted developers skilled in the latest technologies,
+                ready to work around the clock to meet your project needs.
               </p>
             </div>
             <div className="card bg-pine-950 px-3.5 text-white py-4 text-center rounded-[1.125rem] mb-5">
-              <h4 className="text-[1.3rem] font-bold mb-3">Build your offshore development team</h4>
+              <h4 className="text-[1.3rem] font-bold mb-3">
+                Build your offshore development team
+              </h4>
               <p className="text-[1.2rem] font-normal">
-                At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.
+                At TechDevise, setting up dedicated software development team is
+                quick and hassle-free, completed in just four simple steps.
               </p>
             </div>
             <div className="card bg-pine-950 px-3.5 text-white py-4 text-center rounded-[1.125rem]">
-              <h4 className="text-[1.3rem] font-bold mb-3">Build your offshore development team</h4>
+              <h4 className="text-[1.3rem] font-bold mb-3">
+                Build your offshore development team
+              </h4>
               <p className="text-[1.2rem] font-normal">
-                At TechDevise, setting up dedicated software development team is quick and hassle-free, completed in just four simple steps.
+                At TechDevise, setting up dedicated software development team is
+                quick and hassle-free, completed in just four simple steps.
               </p>
             </div>
           </div>
@@ -1215,11 +1385,14 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
         >
           <div className=" main-container">
             <div className="w-fit  ">
-              <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.5rem] text-[2.2rem] font-extrabold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3 max-w-xl max-lg:mx-auto max-lg:text-center">
+              <h2 className="text-transparent 2xl:text-[3rem] xl:text-[2.5rem] text-[2.2rem] font-bold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3 max-w-xl max-lg:mx-auto max-lg:text-center">
                 Our Blockchain Development Services
               </h2>
-              <p className="2xl:text-[1.25rem] text-[1rem] leading-[1.875rem] font-normal text-white max-w-4xl max-lg:mx-auto max-lg:text-center pe-10">
-                <strong>Tech Devise</strong> provides a full suite of blockchain development services to help businesses harness the full potential of the technology and stay ahead in today’s competitive web3 era.
+              <p className="2xl:text-[1.25rem] lg:text-xl text-[1rem] leading-[1.875rem] font-normal text-white 2xl:max-w-4xl lg:max-w-3xl max-w-4xl max-lg:mx-auto max-lg:text-center pe-10">
+                <strong>Tech Devise</strong> provides a full suite of blockchain
+                development services to help businesses harness the full
+                potential of the technology and stay ahead in today’s
+                competitive web3 era.
               </p>
             </div>
           </div>
@@ -1244,12 +1417,12 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
               className="border-[.0625rem] border-white/40 rounded-[1.625rem] 2xl:p-[3.5625rem] xl:p-10 p-8 bg-center bg-no-repeat bg-cover"
             >
               <div className="flex justify-between items-center lg:flex-row flex-col mb-[4rem] gap-5">
-                <h3 className="flex-1 2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
+                <h3 className="flex-1 2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
                   Innovative Technology <br /> Solutions
                 </h3>
                 <p
                   data-aos-delay="400"
-                  className="flex-1 2xl:text-[1.25rem] text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                  className="flex-1 2xl:text-[1.25rem] lg:text-xl text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
                   Empowering businesses with cutting-edge IT solutions,
                   including cloud computing, cybersecurity, AI, automation, and
@@ -1427,13 +1600,13 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
           <div className="main-container">
             <div className="flex justify-center items-center gap-5 lg:flex-row flex-col rounded-[1.625rem] p-6 bg-pine-600">
               <div className="flex-1 flex justify-start items-center gap-x-16">
-                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
+                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
                   You can Find <br /> Us on
                 </h4>
                 <img
                   src={vectorNine}
                   alt="vector nine"
-                  className="max-lg:hidden max-xl:h-[5.125rem]"
+                  className="max-lg:hidden min-xl:h-[5.525rem]"
                 />
               </div>
               <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[.875rem] overflow-hidden">
@@ -1461,7 +1634,7 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
                   rel="noopener noreferrer"
                   className="sm:h-[8.25rem] bg-[#17313b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={clutch} alt="clutch" className="h-[2rem]" />
+                  <img src={clutch} alt="clutch" className="h-[1.59rem]" />
                   <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
                 </a>
 
@@ -1481,46 +1654,54 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
         {/* socialLink section end */}
 
         {/* Seamless Vision start */}
-      
 
-            <section className="my-[6.0625rem]">
+        <section className="my-[6.0625rem]">
           <div className="main-container">
             <div className="md:border-[.0625rem] border-white/20 rounded-3xl flex max-lg:flex-wrap items-center lg:justify-between justify-center 2xl:p-14 gap-12 lg:p-12 md:p-10">
               <div className="lg:pb-[3.3125rem] lg:w-1/2 w-full ">
-                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
-                  A Seamless Vision that Adapts to Every Industry<span>&apos;</span>s Demands
+                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
+                  A Seamless Vision that Adapts to Every Industry
+                  <span>&apos;</span>s Demands
                 </h4>
-                <p className="text-white font-medium text-[1.25rem] leading-[1.875rem] lg:mb-16 mb-7 max-lg:text-center">
+                <p className="text-white font-medium 2xl:text-[1.25rem] lg:text-xl text-[1rem] leading-[1.875rem] lg:mb-16 mb-7 max-lg:text-center">
                   We deliver flexible and innovative IT solutions tailored to
                   meet the evolving needs of various industries, ensuring
                   efficiency, scalability, and long-term success.
                 </p>
                 <div className="p-6 bg-gradient-to-b from-pine-600/70 to-pine-600 rounded-3xl md:flex max-xl:flex-wrap items-center xl:justify-between justify-center lg:gap-3 gap-5">
-
                   <div className="gallerySlider md:hidden py-10">
                     <VisionSlider />.
                   </div>
 
-
-                  <p className="text-white text-[1.25rem] 2xl:text-balance leading-[2.25rem] max-xl:text-center max-lg:mb-4">
-                    Fuel Success in a Digital- First World with <span className="text-2xl">300+</span>
+                  <p className="text-white 2xl:text-[1.25rem] lg:text-[14px] text-[1rem]  leading-[2.25rem] max-xl:text-center max-lg:mb-4">
+                    Fuel Success in a Digital- First World with{" "}
+                    <span className="text-2xl">300+</span>
                     Visionaries.
                   </p>
-   <Link to="/contact-us" className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center">
+                  <Link
+                    to="/contact-us"
+                    className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center"
+                  >
                     Let's Innovate Together{" "}
                     <BsArrowRight className="size-[1.875rem]" />
                   </Link>
                 </div>
               </div>
               <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden">
-             {industries.map((industry, index) => (
-                  <div key={index} className="relative rounded-xl overflow-hidden">
-                  <img
+                {industries.map((industry, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-xl overflow-hidden"
+                  >
+                    <img
                       src={`${API_BASE_URL}/images${industry.image}`}
                       alt={industry.title}
                       className="w-full aspect-square object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85  p-3 text-sm text-white font-semibold"> {industry.title}</div>
+                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85  p-3 text-sm text-white font-semibold">
+                      {" "}
+                      {industry.title}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1533,7 +1714,7 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
         <section className="pb-[6.0625rem]">
           <div className="main-container">
             <div className="flex justify-between gap-5 items-end mb-6">
-              <h4 className=" 2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700">
+              <h4 className=" 2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700">
                 What our customers say <br /> about us
               </h4>
 
@@ -1614,13 +1795,13 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
                 className="absolute top-1/2 left-1/2 -translate-1/2 pointer-events-none w-1/2"
               />
               <div className="p-14 pb-0 lg:w-[45%] w-full relative before:w-[1px] before:h-[calc(100%_-_100px)] before:absolute before:right-0 before:top-1/2 before:-translate-1/2 before:bg-[#FFFFFF14] before:z-10 lg:text-start text-center">
-                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-5">
+                <h4 className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-5">
                   Let<span>&apos;</span>s Talk
                 </h4>
-                <h5 className="lg:text-[2.375rem] text-[2rem] font-medium text-white lg:w-fit mb-6 lg:text-start text-center">
+                <h5 className="2xl:text-[1.375rem] lg:text-[1.45rem] text-[2rem] font-medium text-white lg:w-fit mb-6 lg:text-start text-center">
                   Partner with tech catalysts who transform ideas into impact.
                 </h5>
-                <p className="text-white font-medium text-2xl mb-16 mt-3">
+                <p className="text-white font-medium text-[1.1  5rem] mb-16 mt-3">
                   Book your free consultation with us.
                 </p>
                 <img
@@ -1630,7 +1811,7 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
                 />
               </div>
               <div className="lg:w-[55%] w-full 2xl:p-14 lg:p-10 md:p-8 sm:p-5 p-3 max-sm:pb-5">
-                <h4 className="text-[2rem] text-white font-bold mb-[2.0625rem]">
+                <h4 className="text-[1.45rem] text-white font-bold mb-[2.0625rem]">
                   Speak with our Experts
                 </h4>
                 <form onSubmit={handleSubmit}>
@@ -1678,8 +1859,8 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
                         onChange={handleChange}
                       />
                     </div>
-                    
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+
+                    {/* <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <select
                         className="inputControl"
                         name="job_title"
@@ -1728,7 +1909,7 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
                         formatValue={formatCurrency}
                         formatCurrency={formatCurrency(budget)}
                       />
-                    </div>
+                    </div> */}
                     <div className="w-full">
                       <textarea
                         name="message"
@@ -1760,21 +1941,51 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
         <section className="pb-[1.0625rem]">
           <div className="main-container text-white">
             <div className="text-center mb-[3.9375rem]">
-              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">Location</h4>
-              <h3 className='lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-extrabold leading-none mb-5'>We&apos;d love to here from you</h3>
-              <p className='text-lg font-medium leading-[1.8125rem] inline-block relative'>We have offices and teams all around the world. <img src={vector12} alt="vector12" className='w-[5.6875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v' /></p>
+              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
+                Location
+              </h4>
+              <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
+                We&apos;d love to here from you
+              </h3>
+              <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
+                We have offices and teams all around the world.{" "}
+                <img
+                  src={vector12}
+                  alt="vector12"
+                  className="w-[5.6875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v"
+                />
+              </p>
             </div>
             <div className="grid gap-[1.375rem] xl:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-[4.1875rem] pb-[7rem] relative z-0">
-              <img src={map} alt="map" className='max-w-full xl:h-full object-contain absolute top-0 left-1/2 -translate-x-1/2 -z-[1]' />
+              <img
+                src={map}
+                alt="map"
+                className="max-w-full xl:h-full object-contain absolute top-0 left-1/2 -translate-x-1/2 -z-[1]"
+              />
               {addressList.map((listitem, index) => (
-                <div key={index} className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]">
-                  <img src={listitem.bgimage} alt="indai bg" className='2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover' />
+                <div
+                  key={index}
+                  className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]"
+                >
+                  <img
+                    src={listitem.bgimage}
+                    alt="indai bg"
+                    className="2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover"
+                  />
                   <div className="grow">
                     <div className="flex gap-[.9375rem] items-center mb-[1.375rem]">
-                      <img src={listitem.flag} alt="indaiFlag" className="w-[3.1875rem] h-[2.125rem]" />
-                      <span className='font-bold capitalize'>{listitem.countryName}</span>
+                      <img
+                        src={listitem.flag}
+                        alt="indaiFlag"
+                        className="w-[3.1875rem] h-[2.125rem]"
+                      />
+                      <span className="font-bold capitalize">
+                        {listitem.countryName}
+                      </span>
                     </div>
-                    <p className='2xl:text-lg text-base font-medium leading-[1.8125rem]'>{listitem.address}</p>
+                    <p className="2xl:text-lg text-base font-medium leading-[1.8125rem]">
+                      {listitem.address}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -1782,7 +1993,12 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
           </div>
         </section>
         {/* Location end */}
-         <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
+        <GetInTouch
+          showModal={showModal}
+          setShowModal={() => {
+            setShowModal(!showModal);
+          }}
+        />
       </main>
     </>
   );

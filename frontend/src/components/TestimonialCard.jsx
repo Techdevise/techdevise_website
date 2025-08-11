@@ -10,8 +10,8 @@ const TestimonialCard = ({ image, title, discription, className, dataSwiperParal
                     <button className="z-10 absolute top-1/2 left-1/2 -translate-1/2"><img src={vectorten} alt="video fill" className="w-full h-full object-cover" /></button>
                 </div>
                 <div className={` text-white testiIner overflow-hidden px-[1.875rem]  ${className}`}>
-                    <h4 className="text-xl font-extrabold">{title}</h4>
-                    <p className="leading-[1.5625rem] text-lg mb-2">{discription}</p>
+                    <h4 className="text-xl font-bold">{title}</h4>
+                    <p className="leading-[1.5625rem] text-md mb-2">{discription}</p>
                     <div className="flex text-[#B88533] text-2xl gap-1">
                         <FaStar />
                         <FaStar />
@@ -32,7 +32,7 @@ const TestimonialCard = ({ image, title, discription, className, dataSwiperParal
                         <img src={image} alt="profile" className="object-cover h-full w-full aspect-square" />
                     </div>
                     <div className="title text-white">
-                        <h4 className="text-xl font-extrabold">{title}</h4>
+                        <h4 className="text-xl font-bold">{title}</h4>
                         <div className="flex text-[#B88533] text-2xl gap-1">
                             <FaStar />
                             <FaStar />
@@ -46,7 +46,7 @@ const TestimonialCard = ({ image, title, discription, className, dataSwiperParal
                     </div>
                 </div>
 
-                <p className="leading-[1.5625rem] text-lg mt-2">{discription}</p>
+                <p className="leading-[1.5625rem] text-md mt-2">{discription}</p>
             </div>
         </>
     )

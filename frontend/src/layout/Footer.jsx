@@ -13,18 +13,18 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <>
-      <footer className="-mt-12 py-[3.375rem] bg-gradient-to-b from-pine-700 to-pine-999 sm:rounded-t-[3.25rem] rounded-t-[2.1875rem]">
+      <footer className="-mt-12 py-[1.375rem] bg-gradient-to-b from-pine-700 to-pine-999 sm:rounded-t-[3.25rem] rounded-t-[2.1875rem]">
         <div className="main-container">
           {/* Send mail */}
-          <div className="mail md:flex hidden justify-between items-center pb-[3.625rem]">
+          <div className="mail md:flex hidden justify-between items-center pb-[1.125rem]">
             <h3 className="lg:text-[2.25rem] text-[1.5rem] lg:leading-[2.875rem] leading-[2.25rem] font-semibold text-white">
               Keep up with the latest
             </h3>
-            <form className="lg:max-w-[45.625rem] max-w-[31.25rem] w-full h-[5.125rem] rounded-xl bg-white/25 flex justify-between items-center p-[.3125rem]">
+            <form className="lg:max-w-[35.625rem] max-w-[29.25rem] w-full h-[4.125rem] rounded-xl bg-white/25 flex justify-between items-center p-[.1125rem]">
               <input
                 type="email"
                 id="emailInput"
-                className="bg-transparent h-full flex-1 py-[1.125rem] ps-[2.75rem] text-[1.125rem] leading-[2.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0"
+                className="bg-transparent h-full flex-1 py-[1.125rem] ps-[1.75rem] text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0"
                 placeholder="Enter your email"
                 required
                 onChange={(e) => {
@@ -36,7 +36,7 @@ const Footer = () => {
                 id="sendButton"
                 type="submit"
                 disabled
-                className="lg:px-[5.3125rem] px-[3.125rem] h-full rounded-[.4375rem] text-[1.25rem] font-bold text-white bg-pine-700 shine-effect disabled:bg-pine-700/50 disabled:cursor-not-allowed relative group"
+                className="lg:px-[5.3125rem] px-[1.125rem] h-full rounded-[.4375rem] text-[1.25rem] font-bold text-white bg-pine-700 shine-effect disabled:bg-pine-700/50 disabled:cursor-not-allowed relative group"
                 title="Please enter email"
               >
                 Send
@@ -50,12 +50,12 @@ const Footer = () => {
           <div className="line max-md:hidden w-full h-[1px] bg-white/35"></div>
 
           {/* Intro / menus / cards */}
-          <div className="flex md:justify-between justify-center items-stretch gap-5 md:pt-[3.625rem] pt-[.75rem] md:mb-[4.125rem]">
+          <div className="flex md:justify-between justify-center items-stretch gap-5 md:pt-[1.625rem] pt-[.75rem] md:mb-[1.125rem]">
             <div className="flex-[1_1_31.25rem] max-w-fit">
               <Link to="/" className="mb-4 block w-fit max-md:mx-auto">
-                <img src={Logo} alt="logo" className="h-[3.5rem] w-auto" />
+                <img src={Logo} alt="logo" className="h-[2.5rem] w-auto" />
               </Link>
-              <p className="text-[1.125rem] leading-[1.6875rem] text-white font-medium w-full max-w-xl max-md:text-center">
+              <p className="text-[.910rem] leading-[1.6875rem] text-white font-medium w-full max-w-xl max-md:text-center">
                 Tech Devise is a digital solution provider which offers various
                 digital services that will help your online business to
                 flourish. We expertise in providing services like digital
@@ -65,7 +65,7 @@ const Footer = () => {
               <div className="flex justify-start items-center gap-[.9375rem] mt-[2.125rem]">
                 <Link
                   to="/contact-us"
-                  className="w-fit block max-md:mx-auto py-2.5 px-5 rounded-[.625rem] bg-white text-[1.25rem] leading-[1.8125rem] font-bold text-pine-700 shine-effect"
+                  className="w-fit block max-md:mx-auto py-2.5 px-5 rounded-[.625rem] bg-white text-[1.05rem] leading-[1.8125rem] font-bold text-pine-700 shine-effect"
                 >
                   Contact Now!
                 </Link>
@@ -106,14 +106,14 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex-[1_1_12.6rem] max-w-fit max-md:hidden">
-              <h5 className="font-bold text-[1.125rem] leading-[1.6875rem] text-white mb-[.9375rem]">
+              <h5 className="font-bold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
                 Services
               </h5>
               <ul>
                 <li className="mb-3">
                   <Link
                     to="/mobile-app-development"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Mobile Application Development
                   </Link>
@@ -121,7 +121,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/blockchain"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Blockchain Development
                   </Link>
@@ -129,7 +129,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/web-app-development"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Website Development
                   </Link>
@@ -137,7 +137,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/digital-marketing"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Digital Marketing
                   </Link>
@@ -145,7 +145,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/quality-analysis"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Quality Analysis
                   </Link>
@@ -154,7 +154,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/it-staff"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     IT Staffing
                   </Link>
@@ -162,14 +162,14 @@ const Footer = () => {
               </ul>
             </div>
             <div className="flex-[1_1_12.6rem] max-w-fit max-md:hidden">
-              <h5 className="font-bold text-[1.125rem] leading-[1.6875rem] text-white mb-[.9375rem]">
+              <h5 className="font-bold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
                 Quick Link
               </h5>
               <ul>
                 <li className="mb-3">
                   <Link
                     to="/about"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     About TechDevise
                   </Link>
@@ -177,7 +177,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/contact-us"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Contact Us
                   </Link>
@@ -185,7 +185,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/our-blogs"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     Our Blogs
                   </Link>
@@ -193,7 +193,7 @@ const Footer = () => {
                 <li className="mb-3">
                   <Link
                     to="/fqa"
-                    className="text-[1.125rem] leading-[1.6875rem] font-normal text-nowrap text-white"
+                    className="text-[.910rem] leading-[1.6875rem] font-normal text-nowrap text-white"
                   >
                     FAQ's
                   </Link>
@@ -201,7 +201,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="flex-[1_1_21.874rem] max-w-fit max-lg:hidden">
-              <h5 className="font-bold text-[1.125rem] leading-[1.6875rem] text-white mb-[.9375rem]">
+              <h5 className="font-bold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
                 Recent Blogs
               </h5>
 
@@ -241,16 +241,16 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <Link to="/our-blogs" className="ms-auto block w-fit rounded-[.375rem] border-2 border-white text-white bg-transparent text-[1.25rem] font-semibold py-2.5 px-6 shine-effect">
+              <Link to="/our-blogs" className="ms-auto block w-fit underline  text-white bg-transparent text-[1.25rem] font-semibold  px-1 shine-effect">
                 View More
               </Link>
             </div>
           </div>
           {/* Contact info */}
-          <div className="py-[1.8125rem] px-[1.6875rem] rounded-[1.625rem] flex flex-wrap 2xl:justify-between justify-center xl:items-center items-start xl:gap-5 gap-10 md:bg-white/5 md:mb-[2.625rem] mb-[1.3125rem]">
+          <div className="py-[1.8125rem] px-[1.6875rem] rounded-[1.625rem] flex flex-wrap 2xl:justify-between justify-center xl:items-center items-start xl:gap-5 gap-10 md:bg-white/5 md:mb-[1.125rem] mb-[1.11rem]">
             <div className=" max-w-fit flex justify-start items-start gap-[.875rem]">
               <RiMapPin2Fill className="size-[1.5rem] text-white" />
-              <p className="text-[1.125rem] lg:text-nowrap leading-[1.8125rem] text-white font-medium w-full ">
+              <p className="text-[.910rem] lg:text-nowrap leading-[1.8125rem] text-white font-medium w-full ">
                 F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar,
                 Punjab 160071
               </p>
@@ -259,7 +259,7 @@ const Footer = () => {
               <Link
                 to="mailto:Info@techdevise.com"
                 target="_block"
-                className="flex justify-center items-center text-nowrap gap-4 font-medium text-[1.125rem] leading-[1.6875rem] text-white"
+                className="flex justify-center items-center text-nowrap gap-6 font-medium text-[.910rem] leading-[1.6875rem] text-white"
               >
                 <TbMailFilled className="text-white size-6" />{" "}
                 <span>Info@techdevise.com</span>
@@ -268,7 +268,7 @@ const Footer = () => {
             <div className="max-w-fit">
               <Link
                 to="tel: +91 788-903-8027"
-                className="flex justify-center items-center text-nowrap gap-4 font-medium text-[1.125rem] leading-[1.6875rem] text-white"
+                className="flex justify-center items-center text-nowrap gap-6 font-medium text-[.910rem] leading-[1.6875rem] text-white"
               >
                 {" "}
                 <IoCall className="text-white size-6" />{" "}

@@ -364,7 +364,7 @@ Python is a high- level programming language because it is expandable and has be
                 </div>
             </section>
             {/* why section end */}
-                   <GetInTouch showModal={showModal} setShowModal={setShowModal} />
+                      <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
         </>
     )
 }

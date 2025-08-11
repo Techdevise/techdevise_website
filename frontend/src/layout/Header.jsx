@@ -262,10 +262,10 @@ const Header = () => {
             </div>
           </nav>
         </div>
-        <div className={`h-[.0625rem] max-lg:hidden ${scrolledPast ? 'bg-white/0' : 'bg-white/10'}`} data-aos="fade-down"></div>
+        <div className={`h-[.0625rem] max-lg:hidden ${scrolledPast ? 'bg-white/0' : 'bg-white/20'}`} data-aos="fade-down"></div>
       </header>
 
-      <div onClick={show} className={`bg-black/20 backdrop-blur-sm fixed h-[100dvh] w-[100dvw] top-0 left-0  lg:hidden transition-all duration-300 ${isCollapsed ? 'visible opacity-100 z-[998]' : 'invisible opacity-0 z-[-1]'}`}></div>
+      <div onClick={show} className={`bg-black/20   -blur-sm fixed h-[100dvh] w-[100dvw] top-0 left-0  lg:hidden transition-all duration-300 ${isCollapsed ? 'visible opacity-100 z-[998]' : 'invisible opacity-0 z-[-1]'}`}></div>
 
 
       <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
