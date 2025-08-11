@@ -486,7 +486,7 @@ const [showModal, setShowModal] = useState(false);
                 </div>
             </section>
             {/* Cloud section end  */}
-            <GetInTouch showModal={showModal} setShowModal={setShowModal} />
+               <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
         </>
     )
 }

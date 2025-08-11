@@ -759,7 +759,7 @@ const Blockchain = () => {
         </div>
       </section>
       {/* Expertise section end */}
-      <GetInTouch showModal={showModal} setShowModal={setShowModal} />
+        <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
     </>
   );
 };

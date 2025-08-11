@@ -713,7 +713,7 @@ const AiDevelopment = () => {
                 </div>
             </section>
       {/* AI tech section end */}
-        <GetInTouch showModal={showModal} setShowModal={setShowModal} />
+          <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
     </>
   );
 };

@@ -885,7 +885,7 @@ const MobileApplicationDevelopment = () => {
         </div>
       </section>
       {/* Tech Stack We Use section end */}
-      <GetInTouch showModal={showModal} setShowModal={setShowModal} />
+      <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
     </>
   );
 };

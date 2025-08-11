@@ -611,7 +611,7 @@ const DigitalMarketingOne = () => {
     </div>
 </section>
             {/*Our PPC Expert section end*/}
-<GetInTouch showModal={showModal} setShowModal={setShowModal} />
+   <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
         </>
     )
 }

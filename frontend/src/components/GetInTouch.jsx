@@ -129,18 +129,18 @@ const GetInTouch = ({ showModal, setShowModal }) => {
         }`}
       >
         <div
-          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[97dvh] overflow-y-auto max-w-[98.5625rem] w-full relative transition-all duration-500 ${
+          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto max-w-[98.5625rem] w-full relative transition-all duration-500 ${
             showModal ? "scale-100" : "scale-90"
           }`}
         >
           <div
-            onClick={setShowModal}
+            onClick={() => setShowModal(false)}
             className="absolute top-3 right-3 cursor-pointer rounded-full size-10 bg-pine-700 flex justify-center items-center text-white"
           >
             <IoClose />
           </div>
-        <div className="flex justify-center items-center h-full lg:flex-row flex-col gap-5">
-                        <div className="lg:w-[40%] w-full bg-pine-700 pt-6 pb-6 px-[1.625rem] text-white text-center">
+          <div className="flex justify-center items-center h-full lg:flex-row flex-col gap-5">
+             <div className="lg:w-[40%] w-full bg-pine-700 pt-6 pb-6 px-[1.625rem] text-white text-center">
                             <h2 className='lg:text-4xl text-3xl leading-10 font-bold'>Turn Your Idea into a <br /> Profit Making App</h2>
                             <p className='text-[1.125rem] leading-6 font-medium mt-2 2xl:px-10'>Reach out to us and start your digital transformation journey today.</p>
                             <div className="line w-full h-[.0625rem] bg-gradient-to-r from-transparent via-white to-transparent mt-4"></div>
@@ -249,6 +249,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                     className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
+                
 
                 <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.375rem] relative">
                   <select
@@ -324,20 +325,20 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                   </div>
                 </div>
 
-                <div className="col-span-2 bg-gradient-to-b from-pine-700/0 to-pine-700/30 p-[1px] shadow-2xl shadow-black/10 rounded-[.625rem] overflow-hidden max-h-[500px] overflow-y-auto">
-                  <h4 className="text-base leading-[1.625rem] font-semibold">
-                    Description
-                  </h4>
-                  <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] min-h-[4.875rem]">
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your project..."
-                      className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none min-h-[150px] max-h-[150px] "
-                    ></textarea>
-                  </div>
-                </div>
+              <div className="col-span-2 bg-gradient-to-b from-pine-700/0 to-pine-700/30 p-[1px] shadow-2xl shadow-black/10 rounded-[.625rem] overflow-hidden max-h-[500px] overflow-y-auto">
+  <h4 className="text-base leading-[1.625rem] font-semibold">
+    Description
+  </h4>
+  <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] min-h-[4.875rem]">
+    <textarea
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      placeholder="Tell us about your project..."
+      className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none min-h-[150px] max-h-[150px] "
+    ></textarea>
+  </div>
+</div>
                 <button
                   type="submit"
                   disabled={isSubmitting}

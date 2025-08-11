@@ -433,7 +433,6 @@ const Home = () => {
         budget: budget.toString(),
       };
 
-      console.log("Submitting payload:", payload);
 
       const response = await axios.post(
         `${API_BASE_URL}/api/experts`,
@@ -665,10 +664,10 @@ const Home = () => {
                     </div>
                     <div className="flex-[0_1_0%]">
                       <button
+                        onClick={() => setShowModal(true)}
                         data-aos="fade-right"
                         data-aos-delay="1000"
                         className="bg-transparent border border-white/40 rounded-[.625rem] text-[1.25rem] py-4 px-5 text-white font-semibold flex justify-center items-center gap-[.75rem] w-fit max-lg:mx-auto shine-effect"
-                        onClick={() => setShowModal(true)}
                       >
                         <span>Consult Our Experts</span>
                         <HiOutlineArrowLongRight className="size-10" />
@@ -1606,7 +1605,7 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
 
         {/* Let’s Talk start */}
         <section className="pb-[6.0625rem]">
-     
+          <ToastContainer position="top-right" autoClose={5000} />
           <div className="main-container">
             <div className="border-[.0625rem] border-white/40 rounded-3xl flex flex-wrap items-start relative">
               <img
@@ -1783,7 +1782,7 @@ Techdevise’s UI and UX services. Our design team is a small design studio with
           </div>
         </section>
         {/* Location end */}
-        <GetInTouch showModal={showModal} setShowModal={setShowModal} />
+         <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
       </main>
     </>
   );
