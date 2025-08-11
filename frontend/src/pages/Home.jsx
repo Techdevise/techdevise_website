@@ -664,7 +664,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex-[1_1_0%] flex flex-col justify-between items-stretch">
-                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-8">
+                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-[18px]">
                       <div className="h-[170px] overflow-hidden">
                         <img
                           src={lightOne}
