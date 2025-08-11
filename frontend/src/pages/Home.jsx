@@ -347,6 +347,8 @@ const Home = () => {
     email: "",
     phone: "",
     company_name: "",
+      date: "",
+        time: "",
     budget: "20000",
     message: "",
   });
@@ -441,6 +443,8 @@ const Home = () => {
           email: "",
           phone: "",
           company_name: "",
+            date: "",
+        time: "",
           budget: "20000",
           message: "",
         });
@@ -1855,6 +1859,27 @@ const Home = () => {
                         className="inputControl"
                         placeholder="Company name"
                         value={formData.company_name}
+                        onChange={handleChange}
+                      />
+                    </div>
+                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      <input
+                        type="date"
+                        name="date"
+                        className="inputControl"
+                        placeholder="Mobile Number"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      <input
+                        type="time"
+                        name="time"
+                        className="inputControl"
+                        placeholder="Company name"
+                        value={formData.time}
                         onChange={handleChange}
                       />
                     </div>
