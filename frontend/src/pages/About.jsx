@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // images
-import bg1 from "/bg1.webp";
+import bg1 from "/AboutPage.jpg";
 import plusBorder from "/plusBorder.svg";
 import aboutGirl from "/aboutGirl.png";
 
@@ -151,11 +151,18 @@ const About = () => {
     fetchImages();
   }, []);
 
-  const filteredImages = () => {
-    if (filter === "team") return teamWorkImages;
-    if (filter === "office") return officeActivityImages;
-    return teamImages;
-  };
+
+const filteredImages = () => {
+  switch (filter) {
+    case "team":
+      return teamWorkImages;
+    case "office":
+      return officeActivityImages;
+    case "all":
+    default:
+      return teamImages.slice(0, 8);
+  }
+};
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -419,7 +426,7 @@ const About = () => {
       </section>
       {/* Open Positions section end */}
       {/* Visionaries start*/}
-      <section className=" visionaries my-[4.6875rem]">
+      {/* <section className=" visionaries my-[4.6875rem]">
         <div className="main-container">
           <div className="text-center mb-10">
             <h2 className="text-5xl font-bold leading-[1]">
@@ -455,11 +462,11 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Visionaries end */}
 
       {/* IT Experts section start */}
-      <section className="it-experts my-[4.6875rem]">
+      {/* <section className="it-experts my-[4.6875rem]">
         <div className="main-container flex gap-[3.75rem] xl:flex-row flex-col justify-center items-stretch text-black">
           <div className="flex-1 flex flex-col justify-start items-stretch lg:text-start text-center  ">
             <h4 className="text-[2rem] leading-[3.625rem] font-bold text-pine-700">
@@ -544,7 +551,7 @@ const About = () => {
             </Swiper>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* IT Experts section end */}
 
       {/* Location section start */}

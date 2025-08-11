@@ -660,7 +660,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex-[1_1_0%] flex flex-col justify-between items-stretch">
-                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden">
+                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-8">
                       <div className="h-[170px] overflow-hidden">
                         <img
                           src={lightOne}
@@ -1087,13 +1087,12 @@ const Home = () => {
         </section>
         {/* Our Tech section end */}
         <section className="ourServices-section my-[6.0625rem]">
-          <div className="main-container">
+     <div className="main-container">
             <div className="flex justify-center items-stretch flex-wrap lg:gap-[2.375rem] gap-[.9375rem] lg:mb-[2.375rem] mb-[.9375rem]">
               <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-1 order-2">
                 <div className="card h-full bg-[#67C792] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
-                      Website Development
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">Website Development
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
                       Looking to start your own company website? If so, our
@@ -1127,13 +1126,13 @@ const Home = () => {
                     <h2
                       data-aos="fade-down"
                       data-aos-delay="200"
-                      className="text-transparent 2xl:text-[3rem] text-[2.7rem] font-bold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3"
+                      className="text-transparent 2xl:text-[3rem] lg:text:[2.5rem] text-[2.7rem] font-bold bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-3"
                     >
                       Our Services
                     </h2>
                     <p
                       data-aos="fade-down"
-                      className="2xl:text-[1.25rem] text-[1.1rem] leading-[1.875rem] font-normal text-white"
+                      className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal text-white"
                     >
                       Tech Devise offers IT solutions that foster creativity,
                       efficiency, and security for organizations of every size.
@@ -1416,13 +1415,13 @@ const Home = () => {
               style={{ backgroundImage: `url(${layerOne})` }}
               className="border-[.0625rem] border-white/40 rounded-[1.625rem] 2xl:p-[3.5625rem] xl:p-10 p-8 bg-center bg-no-repeat bg-cover"
             >
-              <div className="flex justify-between items-center lg:flex-row flex-col mb-[4rem] gap-5">
+              <div className="flex justify-between items-center lg:flex-row flex-col mb-[1.430rem] gap-5">
                 <h3 className="flex-1 2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 lg:w-fit mb-6 lg:text-start text-center">
                   Innovative Technology <br /> Solutions
                 </h3>
                 <p
                   data-aos-delay="400"
-                  className="flex-1 2xl:text-[1.25rem] lg:text-xl text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                  className="flex-1 2xl:text-[1.25rem] lg:text-xl text-[1rem] leading-[2.125rem] font-normal text-white mb-1.5 lg:max-w-3xl lg:text-start text-center lg:pr-10"
                 >
                   Empowering businesses with cutting-edge IT solutions,
                   including cloud computing, cybersecurity, AI, automation, and
@@ -1673,7 +1672,7 @@ const Home = () => {
                     <VisionSlider />.
                   </div>
 
-                  <p className="text-white 2xl:text-[1.25rem] lg:text-[14px] text-[1rem]  leading-[2.25rem] max-xl:text-center max-lg:mb-4">
+                  <p className="text-white 2xl:text-[1.20rem] lg:text-[14px] text-[1rem]  leading-[2.25rem] max-xl:text-center max-lg:mb-4">
                     Fuel Success in a Digital- First World with{" "}
                     <span className="text-2xl">300+</span>
                     Visionaries.

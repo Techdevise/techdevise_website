@@ -173,13 +173,13 @@ const ItStaff = () => {
                         <div className="bottomContent">
                             <div className="flex 2xl:flex-row flex-col lg:gap-5 gap-10">
                                 <div className="lg:flex-1 max-w-fit">
-                                    <h1 className='text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]'>Your Trusted Partner for IT Staffing and Services</h1>
-                                    <p className='text-[1rem] leading-[1.5rem] font-normal text-white 2xl:max-w-3xl text-start '>TechDevise is a professional staffing firm comprising of the knowledge, experience and network that can get you the most qualified of candidates within any form or industry within two days. We can find great talent both domestically and abroad and source the best talent globally in 50+ countries. Questions? Call us toll-free: +1 123 456 7890</p>
+                                    <h1 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]'>Your Trusted Partner for IT Staffing and Services</h1>
+                                    <p className='2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal text-white 2xl:max-w-3xl text-start  max-w-6xl'>TechDevise is a professional staffing firm comprising of the knowledge, experience and network that can get you the most qualified of candidates within any form or industry within two days. We can find great talent both domestically and abroad and source the best talent globally in 50+ countries. Questions? Call us toll-free: +1 123 456 7890</p>
                                 </div>
                                 <div className="lg:flex-1 flex max-md:flex-wrap justify-center items-stretch gap-[1.6875rem]">
                                     <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
                                         <h3 className="text-[2rem] font-bold text-white">Schedule a <br className='max-2xl:hidden' /> meeting</h3>
-                                        <p className='text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
+                                        <p className='2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
                                             Talk with one of our experts about your IT staffing and tech solutions needs.
                                         </p>
 
@@ -189,7 +189,7 @@ const ItStaff = () => {
                                     </div>
                                     <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
                                         <h3 className="text-[2rem] font-bold text-white">Submit Staffing <br  className='max-2xl:hidden' />Request</h3>
-                                        <p className='text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
+                                        <p className='2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
                                             Talk with one of our experts about your IT staffing and tech solutions needs.
                                         </p>
 
@@ -215,8 +215,8 @@ const ItStaff = () => {
         <div className="main-container">
           <div className="sectionHeader gap-5 md:flex-row flex-col flex justify-between items-start max-md:mb-8">
                         <div className="text-start">
-                            <h3 className='2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-3'>  We Staff IT Roles Across Any <span className='text-pine-700'>Industry</span></h3>
-                            <p className='text-[1.125rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>TechDevise is a staffing corporation in IT that has over 5 years of experience. We have staffed it, call it whatever you want, and we would love to staff it with great folks as well. Using a specialized team of tech recruiters with an array of proprietary, AI-powered recruiting tools, candidates can be identified within two days. Even those unicorns who are not seeking a new position, yet. And we recruit, retain and grow them using our one-of-a-kind consultant care concept Learn about some of our most popular positions.</p>
+                            <h3 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-3'>  We Staff IT Roles Across Any <span className='text-pine-700'>Industry</span></h3>
+                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>TechDevise is a staffing corporation in IT that has over 5 years of experience. We have staffed it, call it whatever you want, and we would love to staff it with great folks as well. Using a specialized team of tech recruiters with an array of proprietary, AI-powered recruiting tools, candidates can be identified within two days. Even those unicorns who are not seeking a new position, yet. And we recruit, retain and grow them using our one-of-a-kind consultant care concept Learn about some of our most popular positions.</p>
                         </div>
 
                         <img src={Itleftarrow}  className='upDown object-contain max-md:h-28' />
@@ -252,14 +252,14 @@ const ItStaff = () => {
               className=" max-lg:h-[25rem] lg:w-[50%] w-full lg:object-cover object-cover block"
             />
             <div className="lg:flex-1 lg:overflow-y-auto py-[4.6875rem] text-center lg:text-start">
-              <h2 className="2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold mb-[1.4375rem]">
+              <h2 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold mb-[1.4375rem]">
                 Filling the Tech <br className="max-lg:hidden" /> Services Gap
               </h2>
               <h4 className="text-[1.5rem] font-semibold mb-4">
                 Did you know…
               </h4>
 
-              <p className="text-[1rem] leading-[1.5rem] font-normal pb-[1.125rem]">
+              <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal pb-[1.125rem]">
                 That 75% of IT decision-makers see skill gaps within their
                 teams? Some of the top areas include:
               </p>
@@ -315,7 +315,7 @@ const ItStaff = () => {
       <section className="itStaffing my-[4.6875rem]">
         <div className="main-container">
           <div className="relative lg:pr-[5.8125rem]">
-            <h4 className="texto max-lg:hidden absolute top-12 right-5 rotate-180 md:text-[3.4375rem] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#D5E4FF] to-pine-700 text-nowrap">
+            <h4 className="texto max-lg:hidden absolute 2xl:top-12 lg:top-22 right-5 rotate-180 2xl:text-[2.9375rem] lg:text-[2.2375rem]  text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#D5E4FF] to-pine-700 text-nowrap">
               Professional Services
             </h4>
 
@@ -323,14 +323,14 @@ const ItStaff = () => {
               <div className="flex-[1_1_25rem]">
                 <h2
                   data-aos-delay="200"
-                  className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] font-extrabold text-black lg:w-fit mb-6 lg:text-start text-center"
+                  className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black lg:w-fit mb-6 lg:text-start text-center"
                 >
                   Professional Services <br />
                   Beyond <span className="text-pine-700">IT Staffing</span>
                 </h2>
                 <p
                   data-aos-delay="400"
-                  className="2xl:text-[1.125rem] text-[1rem] leading-[2.125rem] font-normal text-black mb-1.5 lg:max-w-3xl lg:text-start text-center"
+                  className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-black mb-1.5 lg:max-w-3xl lg:text-start text-center"
                 >
                   <strong>TechDevise</strong> is not just a staffing firm we are your strategic trading partner in technology and talent. And we put our pulse on the leading IT staffing organization together with strong technical expertise to create innovation and business change. Our professional services division provides turnkey IT services that also provide growth and development to your organization.
                 </p>
@@ -361,10 +361,10 @@ const ItStaff = () => {
       <section className="recog mt-[4.6875rem] bg-gradient-to-l from-[#FFF2DF] to-[#F7F5F3] pt-[4.6875rem] pb-[7rem]">
         <div className="main-container text-center">
           <div className="mx-auto max-w-[69.125rem]">
-            <h3 className="text-[3rem] text-black font-bold mb-[1.75rem]">
+            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] text-black font-bold mb-[1.75rem]">
               Our Company Recognition
             </h3>
-            <p className="text-[1.25rem] leading-[2.125rem] font-normal mb-[3.75rem]">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal mb-[3.75rem]">
               <strong>Techdevise</strong> is on the list of reputable leaders in the area of IT staffing which are being known as the providers of the first-rate talent and innovative staffing and solution options. We never fail to impress and have accolades of the industry and appreciation by our clients. Our reputation stems out of being committed, experienced, and producing results that lead to business success in many industries and within technology sectors.
             </p>
             <div className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2  gap-x-[1.125rem] gap-y-[3.0625rem]">

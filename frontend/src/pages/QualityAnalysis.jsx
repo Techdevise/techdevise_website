@@ -256,11 +256,11 @@ const [showModal, setShowModal] = useState(false);
                 <div className="landing flex-1 w-full flex justify-center items-center ">
                     <div className="w-full max-w-[64.1875rem] m-auto text-center">
                         <h5 className='text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8'>Quality Analysis</h5>
-                        <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#9A9A14] mb-5">
+                        <h1 className=" 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#9A9A14] mb-5">
                             Redefining Software Quality using AI Engineering
                             Excellence, Assuring Accuracy
                         </h1>
-                        <p className="text-xl font-normal text-white mb-[1.375rem]">Enhance the performance of your business by up to 20 times using our advanced AI development solutions.Automate repetitive tasks, make data-driven decisions, and drive operational efficiency.Work half as much, with more time on your hands and better use of your resources.</p>
+                        <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal text-white mb-[1.375rem]">Enhance the performance of your business by up to 20 times using our advanced AI development solutions.Automate repetitive tasks, make data-driven decisions, and drive operational efficiency.Work half as much, with more time on your hands and better use of your resources.</p>
                         <button onClick={() => setShowModal(true)} className="bg-[#9EDF84] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
                             Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
                     </div>
@@ -290,8 +290,8 @@ const [showModal, setShowModal] = useState(false);
       <div className="main-container">
         <div className="section-header text-center mb-[5.375rem] max-w-5xl mx-auto">
           <h5 className='text-base font-medium text-white w-fit mx-auto mb-5 py-[1.125rem] px-[3.4375rem] rounded-full bg-gradient-to-b from-[#0B6F4F] via-[#021811] to-[#000000]'>What we do</h5>
-          <h3 className="text-[3rem] font-extrabold text-black mb-[1.625rem]">Accelerate your business</h3>
-          <p className="text-[1.125rem] leading-[1.625rem] font-medium">
+          <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-[1.625rem]">Accelerate your business</h3>
+          <p className="2xl:text-[1.20rem] text-[1rem] leading-[1.625rem] font-medium">
            Our digital business-based transformation strategy and implementation services are designed to enable businesses today and position those businesses to succeed in the environments of the future.
           </p>
         </div>
@@ -337,12 +337,12 @@ const [showModal, setShowModal] = useState(false);
                 <div className="main-container">
                     <div className="section-header lg:text-start text-center text-white mb-[2.8125rem]">
                         <div className="flex justify-between items-center">
-                            <h3 className="text-[3rem] font-extrabold text-balance mb-[1.625rem]">Gain Insights into <br /> our Services</h3>
+                            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-balance mb-[1.625rem]">Gain Insights into <br /> our Services</h3>
                             <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
                                 Skip <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
 
                         </div>
-                        <p className="text-base leading-[1.625rem] font-medium">Browse our wide offering of services that can implement your ideas into a successful online solution.We deliver end-to-end experience to build and grow high-performance Android apps, spanning strategy and design, development, deployment, and post-release support.Find out how we leverage innovation, operational excellence, and experience to help organizations achieve their goals.</p>
+                        <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] 2xl:max-w-7xl lg:max-w-6xl  font-medium">Browse our wide offering of services that can implement your ideas into a successful online solution.We deliver end-to-end experience to build and grow high-performance Android apps, spanning strategy and design, development, deployment, and post-release support.Find out how we leverage innovation, operational excellence, and experience to help organizations achieve their goals.</p>
                     </div>
 
                     <Swiper
@@ -363,8 +363,8 @@ const [showModal, setShowModal] = useState(false);
                                 >
                                     <div style={{ backgroundImage: `url(${item.image})` }} className="min-h-[51.5rem] text-white flex justify-start items-end bg-center bg-no-repeat bg-cover rounded-[1.5625rem] relative px-12 py-28">
                                         <div className="content max-w-7xl">
-                                            <h4 className="text-[3rem] font-extrabold text-balance mb-[1.625rem]">{item.title}</h4>
-                                            <p className='text-xl leading-[2.1875rem] my-8'>{item.para}</p>
+                                            <h4 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-balance mb-[1.625rem]">{item.title}</h4>
+                                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] my-8'>{item.para}</p>
                                             <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
                                                 Know More <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
                                         </div>
@@ -389,28 +389,28 @@ const [showModal, setShowModal] = useState(false);
                         <div className="flex-1 lg:text-start text-center lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10">
 
                             <div className="flex-[1_1_23.3125rem] text-black rounded-10 py-9 rounded-[1.625rem] scale-100 ">
-                                <h4 className='text-[2rem] leading-[3rem] font-extrabold mb-3'>Fuelling your digital transformation and assurance goals</h4>
-                                <p className="text-base leading-[1.625rem]">We lead with innovation to deliver resilient solutions with maximum impact. We instill quality throughout the product development lifecycle with end-to-end service capabilities, converging development and quality assurance domains.</p>
+                                <h4 className='text-[2rem] leading-[3rem] font-bold mb-3'>Fuelling your digital transformation and assurance goals</h4>
+                                <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem]">We lead with innovation to deliver resilient solutions with maximum impact. We instill quality throughout the product development lifecycle with end-to-end service capabilities, converging development and quality assurance domains.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
                                 <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Adapting Next Gen Technologies</h4>
-                                <p className="text-base leading-[1.625rem] font-normal">We leverage next-gen and AI technologies in our Digital Assurance and engineering solutions to ensure you make data-driven decisions, streamline processes, and optimize workflows through advanced analytics, ML, and AI-driven automation.</p>
+                                <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal">We leverage next-gen and AI technologies in our Digital Assurance and engineering solutions to ensure you make data-driven decisions, streamline processes, and optimize workflows through advanced analytics, ML, and AI-driven automation.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
                                 <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Leading through innovation</h4>
-                                <p className="text-base leading-[1.625rem] font-normal">Our experienced resource pool implements an innovation-led journey of exploration, experimentation, and evolution. Our Quality Engineering is at the forefront of innovation with experimentation, iteration, rapid prototyping to quickly validate ideas.</p>
+                                <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal">Our experienced resource pool implements an innovation-led journey of exploration, experimentation, and evolution. Our Quality Engineering is at the forefront of innovation with experimentation, iteration, rapid prototyping to quickly validate ideas.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
                                 <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Focusing on the Customer's Business Outcomes</h4>
-                                <p className="text-base leading-[1.625rem] font-normal">Our tailored solutions address your specific business goals and needs. We are your one-stop-shop for Quality Engineering services capabilities from functional to non-functional testing with next-gen testing services like AI, RPA, Cloud.</p>
+                                <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal">Our tailored solutions address your specific business goals and needs. We are your one-stop-shop for Quality Engineering services capabilities from functional to non-functional testing with next-gen testing services like AI, RPA, Cloud.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
                                 <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Digital Engineering with Quality DNA</h4>
-                                <p className="text-base leading-[1.625rem] font-normal">Our expertise on end-to-end digital engineering empowers businesses to embrace change, drive growth, and unlock their full potential in the digital age. As the world&apos;s 5th largest QA & software testing company, quality is in our DNA.</p>
+                                <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal">Our expertise on end-to-end digital engineering empowers businesses to embrace change, drive growth, and unlock their full potential in the digital age. As the world&apos;s 5th largest QA & software testing company, quality is in our DNA.</p>
                             </div>
                             <div className="flex-[1_1_23.3125rem] bg-[#C6EBDF] rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
                                 <h4 className='text-[1.75rem] font-semibold mb-3 lg:pe-24'>Scaling with Agility</h4>
-                                <p className="text-base leading-[1.625rem] font-normal">We provide solutions based on real-world usage and insights, enabling clients to iterate rapidly, refine their ideas, and drive innovation.</p>
+                                <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal">We provide solutions based on real-world usage and insights, enabling clients to iterate rapidly, refine their ideas, and drive innovation.</p>
                             </div>
                         </div>
                     </div>
@@ -423,10 +423,10 @@ const [showModal, setShowModal] = useState(false);
                 <div className="main-container">
                     <div className="lg:flex 2xl:flex-row flex-col justify-center gap-10 items-stretch text-white">
                         <div className="2xl:w-[30%] w-full lg:text-start text-center">
-                            <h3 className='text-[2.5rem] leading-[3.1875rem] font-extrabold'>Analyst <br className='max-lg:hidden' />
+                            <h3 className='2xl:text-[2.6rem] lg:text-[2.4rem] text-[2rem] font-bold leading-[3.1875rem] font-extrabold'>Analyst <br className='max-lg:hidden' />
                                 Recognition</h3>
 
-                            <p className='text-xl leading-[2.125rem] font-normal mt-[1.5625rem] pb-[2.3125rem]'>
+                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal mt-[1.5625rem] pb-[2.3125rem] 2xl:max-w-7xl  lg:max-w-6xl'>
                                 Our AI development services company delivers cutting-edge computer vision models for image recognition, object detection, and quality inspections. These models are powered by our AI software development services to enhance efficiency.
                             </p>
                             <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
@@ -457,28 +457,28 @@ const [showModal, setShowModal] = useState(false);
             <section className="Cloud my-[4.6875rem]">
                 <div className="main-container">
                     <div className="w-full max-w-[64.1875rem] m-auto text-center mb-[5.3125rem]">
-                        <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-black mb-5">
+                        <h3 className=" 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-5">
                             Turn Your Team into Test Automation Experts
                         </h3>
-                        <p className="text-xl font-normal text-black mb-[1.375rem]"> Equip your teams with intelligent tools and hassle-free, keyword-based automation.Enable enterprise-scale high-quality releases, enhance team collaboration, and automatize testing process.</p>
+                        <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-black mb-[1.375rem]"> Equip your teams with intelligent tools and hassle-free, keyword-based automation.Enable enterprise-scale high-quality releases, enhance team collaboration, and automatize testing process.</p>
                     </div>
 
                     <div className="tabsForCloud bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 px-[2.6875rem]">
                         <ul className=' flex justify-start items-center gap-10 overflow-x-auto hide-scroll mb-14'>
                             {tabBtn.map((btn, index) => (
-                                <li onClick={() => setActiveTab(index + 1)} key={index} className={`text-xl leading-[2.4375rem] font-bold text-nowrap cursor-pointer pb-3 border-b-2 transition-all duration-300 ${isActiveTab === index + 1 ? 'text-pine-700 border-pine-700' : ' text-black border-transparent '}`}>{btn}</li>
+                                <li onClick={() => setActiveTab(index + 1)} key={index} className={`2xl:text-[1.10rem] text-[1rem] leading-[2.4375rem] font-bold text-nowrap cursor-pointer pb-3 border-b-2 transition-all duration-300 ${isActiveTab === index + 1 ? 'text-pine-700 border-pine-700' : ' text-black border-transparent '}`}>{btn}</li>
                             ))}
                         </ul>
                         {tabContent.map((item, index) => (
                             <div key={index} className={`lg:flex-row flex-col justify-center items-center 2xl:gap-32 lg:gap-20 gap-5 ${isActiveTab == index + 1 ? 'flex' : 'hidden'}`}>
                                 <div className="lg:flex-[1_1_51.625rem]  max-lg:mx-auto lg:order-2 order-1  relative lg:pe-[3.375rem]">
-                                    <h4 className="texto absolute -top-5 right-0 max-lg:hidden rotate-0 tracking-[10px] text-nowrap 2xl:text-[1.6875rem] text-xl leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-t from-[#005163] to-[#01090A]">Automation Experts</h4>
+                                    <h4 className="texto absolute 2xl:-top-0  lg:-top-0 -top-6 right-0 max-lg:hidden rotate-0 tracking-[10px] text-nowrap 2xl:text-[1.6875rem] text-xl leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-t from-[#005163] to-[#01090A]">Automation Experts</h4>
 
                                     <img src={item.image} alt="cloudcard image" className='h-full w-full rounded-[.9375rem] object-contain' />
                                 </div>
                                 <div className="lg:flex-[1_1_29.25rem] lg:order-1 order-2 lg:text-start text-center">
 
-                                    <p className='text-xl leading-[2.125rem] text-black font-normal my-9'>{item.para}</p>
+                                    <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] text-black font-normal my-9'>{item.para}</p>
                                 </div>
                             </div>
                         ))}

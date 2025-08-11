@@ -320,11 +320,11 @@ const MobileApplicationDevelopment = () => {
               className="mx-auto h-full w-full aspect-square "
             />
           </div>
-          <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+          <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
             Custom Mobile App <br />
             Development Services
           </h1>
-          <p className="text-xl font-normal text-white mb-[1.375rem]">
+          <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal text-white mb-[1.375rem]">
             Use our blockchain-secured and Al-driven mobile app development
             services to transform your designs into modern mobile experiences.
             We create unique mobile applications for iOS and Android that
@@ -555,7 +555,7 @@ const MobileApplicationDevelopment = () => {
       <section className="topQuality my-[4.6875rem]">
         <div className="main-container">
           <div className="relative z-0 py-24 lg:px-20 px-5 text-center before:absolute before:w-full before:h-3/4 before:top-0 before:left-0 before:bg-white before:-z-10">
-            <h3 className="mb-11 2xl:text-5xl lg:text-4xl sm:text-3xl text-2xl font-extrabold text-balance leading-[3.5rem]">
+            <h3 className="mb-11 2xl:text-[3rem] lg:[2.5rem] sm:text-3xl text-2xl font-bold text-balance leading-[3.5rem]">
               Develop Top-Quality Applications to dominate the Android Play
               Store
             </h3>
@@ -693,7 +693,7 @@ const MobileApplicationDevelopment = () => {
         <div className="main-container">
           <div className="flex justify-between items-end relative">
             <div className="lg:text-start text-center">
-              <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-3">
+              <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-bold text-black mb-3">
                 React Native App Development
               </h3>
               <p className="text-[1.125rem] leading-[2.125rem] font-normal text-black lg:max-w-4xl text-balance">
@@ -798,7 +798,7 @@ const MobileApplicationDevelopment = () => {
         className="py-[4.687rem] mb-[3rem] bg-bottom bg-cover bg-no-repeat"
       >
         <div className="main-container">
-          <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-extrabold text-black mb-[2.5625rem]">
+          <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-bold text-black mb-[2.5625rem]">
             Tech Stack We Use
           </h3>
           <div className="lg:pe-[4.8125rem] relative">

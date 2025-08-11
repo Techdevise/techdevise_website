@@ -27,12 +27,12 @@ import portfolioLogo11 from '/portfolioLogo11.png'
 const Portfolio = () => {
     const [activeTab, setActiveTab] = useState('All')
 
-    const tabButtons = ['All', 'Website Development', 'Design', 'Ideas', 'Technology']
+    const tabButtons = ['All', 'Website Development', 'Design', 'Development', 'SEO']
 
     const allPortfolios = [
         {
             id: 1,
-            category: 'Ideas',
+            category: 'Development',
             siteImage: portfolio1,
             logo: portfolioLogo1,
             dis: 'AVB Marketing can help your business dominate the industry with marketing and technology solutions that secure independent retail success.',

@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="main-container">
           {/* Send mail */}
           <div className="mail md:flex hidden justify-between items-center pb-[1.125rem]">
-            <h3 className="lg:text-[2.25rem] text-[1.5rem] lg:leading-[2.875rem] leading-[2.25rem] font-semibold text-white">
+            <h3 className="2xl:text-[2.25rem] lg:text-[1.25rem] text-[1.5rem] lg:leading-[2.875rem] leading-[2.25rem] font-semibold text-white">
               Keep up with the latest
             </h3>
             <form className="lg:max-w-[35.625rem] max-w-[29.25rem] w-full h-[4.125rem] rounded-xl bg-white/25 flex justify-between items-center p-[.1125rem]">
@@ -218,7 +218,7 @@ const Footer = () => {
                   </p>
                   <Link
                     to="/"
-                    className="bg-pine-700 rounded-[.625rem] text-[1.125rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
+                    className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
                   >
                     15 Feb
                   </Link>
@@ -235,7 +235,7 @@ const Footer = () => {
                   </p>
                   <Link
                     to="/"
-                    className="bg-pine-700 rounded-[.625rem] text-[1.125rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
+                    className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
                   >
                     20 Feb
                   </Link>
@@ -247,7 +247,7 @@ const Footer = () => {
             </div>
           </div>
           {/* Contact info */}
-          <div className="py-[1.8125rem] px-[1.6875rem] rounded-[1.625rem] flex flex-wrap 2xl:justify-between justify-center xl:items-center items-start xl:gap-5 gap-10 md:bg-white/5 md:mb-[1.125rem] mb-[1.11rem]">
+          <div className="py-[1.8125rem] px-[1.6875rem] rounded-[1.625rem] flex flex-wrap 2xl:justify-between lg:justify-between justify-center xl:items-center items-start xl:gap-5 gap-10 md:bg-white/5 md:mb-[1.125rem] mb-[1.11rem]">
             <div className=" max-w-fit flex justify-start items-start gap-[.875rem]">
               <RiMapPin2Fill className="size-[1.5rem] text-white" />
               <p className="text-[.910rem] lg:text-nowrap leading-[1.8125rem] text-white font-medium w-full ">

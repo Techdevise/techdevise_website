@@ -221,8 +221,8 @@ const AiDevelopment = () => {
   }, []);
 
   if (loading) return <div>Loading AI services...</div>;
-  if (error) return <div>{error}</div>;
-  if (!services.length) return <div>No AI services available</div>;
+  // if (error) return <div>{error}</div>;
+  // if (!services.length) return <div>No AI services available</div>;
  const logoIcon0 = [langlogo1, langlogo2, langlogo3, langlogo4, langlogo5, langlogo6, langlogo7, langlogo8]
     const logoIcon1 = [langlogo11, langlogo12, langlogo13, langlogo14, langlogo15, langlogo16]
     const logoIcon2 = [langlogo21, langlogo22, langlogo23, langlogo24, langlogo25, langlogo26, langlogo27, langlogo28, langlogo29]
@@ -259,10 +259,10 @@ const AiDevelopment = () => {
             <h5 className="text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8">
               AI solutions that deliver real ROI
             </h5>
-            <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+            <h1 className=" 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
               Best AI Development Company
             </h1>
-            <p className="text-xl font-normal text-white mb-[1.375rem]">
+            <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
               We create flexible, smart AI applications that are tailored to the goals of your company.Creativity, accuracy, and effective results-oriented development are what our clients trust us with.
 
             </p>
@@ -284,7 +284,7 @@ const AiDevelopment = () => {
               <h4 className="text-xl font-bold text-white text-nowrap">
                 Trusted By
               </h4>
-              <h4 className="text-xl font-medium text-white text-nowrap mt-1.5">
+              <h4 className="text-[0.95rem] font-medium text-white text-nowrap mt-1.5">
                 Our global clients Network
               </h4>
             </div>
@@ -300,10 +300,10 @@ const AiDevelopment = () => {
       <section className="whyChooseAi bg-gradient-to-r from-white to-[#D5D5D5] my-[4.6875rem] py-[4.6875rem]">
         <div className="main-container">
           <div className="section-header text-center mb-[5.375rem] max-w-5xl mx-auto">
-            <h3 className="text-[3rem] font-extrabold text-black mb-[1.625rem]">
+            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-[1.625rem]">
               Why Choose AI Integrated Solutions For Your Business?
             </h3>
-            <p className="text-[1.125rem] leading-[1.625rem] font-medium">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-medium">
               AI-based tools will enhance decision-making, efficiency, and streamline operations. The solutions will help your company become more adaptable, competitive, and future-ready.
 
             </p>
@@ -396,10 +396,10 @@ const AiDevelopment = () => {
       <section className="open-positions my-[4.6875rem] pb-[3rem]">
         <div className="main-container">
           <div className="sectionHeader text-center text-black max-w-5xl mx-auto mb-[4rem]">
-            <h3 className="text-[3rem] font-bold mb-[1.875rem]">
+            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold mb-[1.875rem]">
               Enhance Profitability with Our Intelligent AI Development Services
             </h3>
-            <p className="text-[1.125rem] leading-[1.75rem]">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem]">
             Automate the processes with state-of-the-art AI solutions, decrease costs, and support smarter growth.Our experienced team delivers tailor-made AI solutions that drive productivity and maximize profitability.
 
             </p>
@@ -477,7 +477,7 @@ const AiDevelopment = () => {
               alt=""
               className="mx-auto object-contain mb-[2.5625rem] block filter mix-blend-luminosity"
             />
-            <p className="text-[1.25rem] text-white leading-[2.1875rem] font-medium">
+            <p className="2xl:text-[1.10rem] text-[1rem] text-white leading-[2.1875rem] font-medium">
               Artificial intelligence (AI) allows machines to emulate human intelligence by learning data and improving over time.It is used to make more intelligent decisions, automate tasks, and transform industries rapidly and precisely.
             </p>
           </div>
@@ -549,10 +549,10 @@ const AiDevelopment = () => {
     <div className="main-container">
         <div className="w-full max-w-[64.1875rem] m-auto text-center lg:mb-[5.3125rem] mb-14">
             <h5 className='text-base font-medium rounded-full bg-[#E3E3E3] text-black px-8 py-[1.125rem] w-fit mx-auto mb-8'>We are #1 AI Development Company around the Globe</h5>
-            <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2rem] font-extrabold text-black mb-5">
+            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-5">
                 Models our AI Developers are Proficient with
             </h3>
-            <p className="text-xl font-normal text-black mb-[1.375rem]">Our team is very proficient in designing and optimizing advanced AI models, including computer vision, machine learning, deep learning, and natural language processing.We work with frameworks like TensorFlow, PyTorch, OpenCV, and transformer-based models to provide robust AI solutions.</p>
+            <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-black mb-[1.375rem]">Our team is very proficient in designing and optimizing advanced AI models, including computer vision, machine learning, deep learning, and natural language processing.We work with frameworks like TensorFlow, PyTorch, OpenCV, and transformer-based models to provide robust AI solutions.</p>
         </div>
 
         <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 md:px-[2.6875rem] p-4">
@@ -571,7 +571,7 @@ const AiDevelopment = () => {
                     </div>
                     <div className="flex-1 lg:order-2 order-1 lg:text-start text-center">
                         {/* <h3 className='md:text-[2.5rem] text-[2rem] font-extrabold text-black'>{item}</h3> */}
-                        <p className='text-xl leading-[2.125rem] text-black font-normal my-9'>
+                        <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] text-black font-normal my-9'>
                             {index === 0 && "Our areas of interest include developing state-of-the-art computer vision models that enable computers to see, analyze and interpret visual data. Whether you require object detection or face recognition, our models can aid in automating intelligence and decisions within real-time."}
                             {index === 1 && "We develop Machine learning models that learn and make predictions to automate complex tasks, using power machine models. Our solutions are customizable to address practical business problems of diverse industries."}
                             {index === 2 && "We create sophisticated Natural Language Processing (NLP) models which comprehend, interpret and produce human languages. Using chatbots, sentiment analysis, or models in all spheres of life, our technology can optimize the communication process and reveal text data insights."}
@@ -599,7 +599,7 @@ const AiDevelopment = () => {
                         <div className="flex-1 lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10 py-[4.6875rem]">
 
                             <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] text-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
-                                <h4 className='md:text-[2.1875rem] text-[2rem] font-extrabold'>5 Pillars of Our AI Development Services</h4>
+                                <h4 className='md:text-[2.1875rem] text-[2rem] font-bold'>5 Pillars of Our AI Development Services</h4>
                                 <p className="text-base leading-[1.625rem]">TechDevise is a leading AI development firm with the pillars of Advanced Technology, Custom Solutions, Expert Talent, Seamless Integration and End-to-End Support to execute even the most complicated AI projects successfully.</p>
                             </div>
                             <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
@@ -632,11 +632,11 @@ const AiDevelopment = () => {
     <section className="aiTech my-[4.6875rem]">
                 <div className="main-container">
                  <div className="w-full max-w-6xl m-auto text-center mb-[5.3125rem]">
-                        <h3 className=" md:text-5xl sm:text-[2.625rem] text-[2rem] font-extrabold text-black mb-8">
+                        <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-8">
                             Tech Stack, We Use As an Artificial
                             Intelligence Development Company!
                         </h3>
-                        <p className="text-xl font-normal text-black mb-[4.375rem]">Our AI app developers excel in a diverse and advanced tech stack. From backend frameworks to development
+                        <p className="2xl:text-[1.250rem] text-[1rem] font-normal text-black mb-[4.375rem]">Our AI app developers excel in a diverse and advanced tech stack. From backend frameworks to development
                             tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.</p>
                     </div>
 
@@ -644,7 +644,7 @@ const AiDevelopment = () => {
                         <div style={{ backgroundImage: `url(${AiTech})` }} className=" bg-no-repeat bg-center lg:py-[2.1875rem] lg:px-[3.125rem] p-5 rounded-[.625rem] ">
                             <ul className='flex justify-between flex-nowrap text-white overflow-x-scroll hide-scroll md:gap-[4.5rem] gap-8 lg:mb-10 mb-4'>
                                 {stackTab.map((item, index) => (
-                                    <li onClick={() => setActiveSlide(index + 1)} key={index} className={`lg:text-[1.5rem] text-lg cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
+                                    <li onClick={() => setActiveSlide(index + 1)} key={index} className={`2xl:text-[1.25rem] text-[1rem] cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
                                         {item}
                                     </li>
                                 ))}

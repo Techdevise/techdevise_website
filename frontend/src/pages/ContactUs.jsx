@@ -19,8 +19,6 @@ const ContactUs = () => {
     phone: "",
     date: "",
     time: "",
-    job_title: "",
-    launch_timeline: "",
     message: "",
   });
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -50,8 +48,6 @@ const ContactUs = () => {
   }
   if (!formData.date) errors.push("Date is required.");
   if (!formData.time) errors.push("Time is required.");
-  if (!formData.job_title.trim()) errors.push("Job title is required.");
-  if (!formData.launch_timeline.trim()) errors.push("Launch timeline is required.");
   if (!formData.message.trim()) errors.push("Message is required.");
 
   if (errors.length > 0) {
@@ -95,8 +91,6 @@ const ContactUs = () => {
         phone: "",
         date: "",
         time: "",
-        job_title: "",
-        launch_timeline: "",
         message: "",
       });
     } else {
@@ -217,7 +211,7 @@ const ContactUs = () => {
                     className="h-[4.375rem] bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
-                <div className="xl:col-span-1 max-sm:col-span-full relative">
+                {/* <div className="xl:col-span-1 max-sm:col-span-full relative">
                   <select
                     name="job_title"
                     value={formData.job_title}
@@ -235,7 +229,6 @@ const ContactUs = () => {
                     <option value="6">Others</option>
                   </select>
 
-                  {/* Dropdown Arrow Icon */}
                   <div className="pointer-events-none absolute right-4 top-1/2 transform -translate-y-1/2">
                     <svg
                       className="w-4 h-4 text-black/50"
@@ -267,7 +260,6 @@ const ContactUs = () => {
                     <option value="4">After 6 Months</option>
                   </select>
 
-                  {/* Dropdown Arrow Icon */}
                   <div className="pointer-events-none absolute right-4 top-1/2 transform -translate-y-1/2">
                     <svg
                       className="w-4 h-4 text-black/50"
@@ -281,7 +273,7 @@ const ContactUs = () => {
                       />
                     </svg>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="xl:col-span-1 max-sm:col-span-full bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px]">
                   <input

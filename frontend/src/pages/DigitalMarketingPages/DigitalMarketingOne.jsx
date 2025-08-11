@@ -205,11 +205,11 @@ const DigitalMarketingOne = () => {
                 <div className="main-container">
                     <div className="flex max-lg:flex-col items-stretch justify-between">
                         <div className="w-full max-w-[51.1875rem] self-center py-14 lg:text-start text-center">
-                            <h1 className="lg:text-[3.875rem] text-[2.8rem] font-extrabold text-transparent bg-clip-text bg-[linear-gradient(90deg,_#FFFFFF_0%,_#EDF5F3_7.5%,_#D4E7E4_17.5%,_#157B6C_95.5%)] mb-7">
-                                Renowned <br className='max-lg:hidden' />
-                                SEO Experts
+                            <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-[linear-gradient(90deg,_#FFFFFF_0%,_#EDF5F3_7.5%,_#D4E7E4_17.5%,_#157B6C_95.5%)] mb-7">
+                                Result-Driven <br className='max-lg:hidden' />
+                                Digital Marketing Services
                             </h1>
-                            <p className='text-xl leading-[2.125rem] text-white mb-[2.125rem]'>One of the most creative and hopeful SEO professionals at Tech Devise works hard to produce solutions. Your website's ranking will quickly increase thanks to our results-driven SEO tactics. Get in touch with us immediately to find out more!</p>
+                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] text-white mb-[2.125rem]'>One of the most creative and hopeful SEO professionals at Tech Devise works hard to produce solutions. Your website's ranking will quickly increase thanks to our results-driven SEO tactics. Get in touch with us immediately to find out more!</p>
                           
                                <button onClick={() => setShowModal(true)} className="bg-pine-300 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
                             <h2 className='text-[clamp(9rem,_13vw,_15.75rem)] max-lg:hidden text-white font-extrabold opacity-5 leading-none mt-9 mb-4'>SEO</h2>
@@ -237,10 +237,10 @@ const DigitalMarketingOne = () => {
                 <div className="main-container">
                     <div className="flex max-lg:flex-wrap items-center justify-between mb-10">
                         <div className="w-full max-w-[61.5625rem] lg:text-start text-center">
-                            <h2 className="md:text-[3rem] text-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B8CEC1] to-[#157B6C] mb-7">
+                            <h2 className="md:text-[3rem] lg:text-[2.4rem] text-[2.5rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#B8CEC1] to-[#157B6C] mb-7">
                                 Give Your Website Ranking a Boost With Our Proven SEO Strategies.
                             </h2>
-                            <p className='text-xl font-medium leading-[2.1875rem] mb-0'>Are you it challenging to attract visitors to your company's website? If the response is yes, it is a frequent problem for all websites because it is hard to stand out in the crowded field of millions of websites on the internet.</p>
+                            <p className='2xl:text-[1.10rem] text-[1rem] font-medium leading-[2.1875rem] mb-0'>Are you it challenging to attract visitors to your company's website? If the response is yes, it is a frequent problem for all websites because it is hard to stand out in the crowded field of millions of websites on the internet.</p>
                         </div>
                         <img src={SEO} alt="seo" className="w-full max-w-[35.4162rem]" />
                     </div>
@@ -312,8 +312,8 @@ const DigitalMarketingOne = () => {
                 <div className="main-container">
                     <div className="flex flex-wrap items-start justify-between gap-2.5">
                         <div className="lg:w-[calc(100%_-_13.125rem)] w-full lg:text-start text-center">
-                            <h2 className='text-5xl font-extrabold leading-none mb-9'>Our Social Media Marketing Services</h2>
-                            <p className='font-medium text-xl leading-7 lg:mb-20 mb-5'>At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing solutions that will surely improve your business's online visibility. With the help of your experts, you can increase your online customer base as well. 
+                            <h2 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold  leading-none mb-9'>Our Social Media Marketing Services</h2>
+                            <p className='font-medium 2xl:text-[1.10rem] text-[1rem] leading-7 lg:mb-20 mb-5'>At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing solutions that will surely improve your business's online visibility. With the help of your experts, you can increase your online customer base as well. 
   </p>
 
                             <div className='w-full lg:hidden gap-3 flex justify-center items-center'>
@@ -414,13 +414,13 @@ const DigitalMarketingOne = () => {
             {/* Google Adwords section start */}
            <section className='pt-[6.75rem]'>
                 <div className="main-container">
-                    <h3 className='md:text-5xl text-3xl font-extrabold leading-none mb-[1.9375rem] text-center'>Google Adwords</h3>
-                    <p className='mb-[3.8125rem] w-fll max-w-[67.0625rem] mx-auto text-lg leading-[2.125rem] text-center'>Wanting to rank your website higher on Google search pages? If yes, then contact us and our Google Adwords experts to suggest the best strategies to get the most out of your Google Adwords campaigns. Contact us today to know more.</p>
+                    <h3 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold leading-none mb-[1.9375rem] text-center'>Google Adwords</h3>
+                    <p className='mb-[3.8125rem] w-fll max-w-[67.0625rem] mx-auto 2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] text-center'>Wanting to rank your website higher on Google search pages? If yes, then contact us and our Google Adwords experts to suggest the best strategies to get the most out of your Google Adwords campaigns. Contact us today to know more.</p>
                     <div className="bg-[#F5F7FB] py-[5.3125rem] 2xl:px-[3.4375rem] px-7 rounded-[.9375rem] relative flex gap-5 max-lg:flex-wrap">
                         <img src={line} alt="line" className='w-[9.8125rem] absolute top-full right-full -mt-14 -mr-14 shake-v' />
                         <div className="lg:w-2/5 w-full xl:pr-10 lg:text-start text-center">
-                            <h3 className='xl:text-5xl lg:text-4xl text-3xl font-extrabold leading-none mb-[1.9375rem]'>The Services we offer under Google Adwords</h3>
-                            <p className='mb-[3.8125rem] max-w-[67.0625rem] mx-auto text-lg leading-[2.125rem]'>As everyone knows, there are millions of websites on the internet. Therefore, getting your website to stand out in this vast competition is a difficult task. But nothing is impossible. You may increase your website's visibility and get the traffic you want with the assistance of our Google Adword specialists. Our staff will help you develop performance-driven Google AdWords ads that will propel your company forward.</p>
+                            <h3 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold leading-none mb-[1.9375rem]'>The Services we offer under Google Adwords</h3>
+                            <p className='mb-[3.8125rem] max-w-[67.0625rem] mx-auto 2xl:text-[1.10rem] text-[1rem] leading-[2.125rem]'>As everyone knows, there are millions of websites on the internet. Therefore, getting your website to stand out in this vast competition is a difficult task. But nothing is impossible. You may increase your website's visibility and get the traffic you want with the assistance of our Google Adword specialists. Our staff will help you develop performance-driven Google AdWords ads that will propel your company forward.</p>
                         </div>
                         <div className="lg:w-3/5 w-full xl:pl-10">
                             <div className="col-span-2 flex flex-col">
@@ -527,8 +527,8 @@ const DigitalMarketingOne = () => {
             {/*Our PPC Expert section start*/}
          <section className='pt-[4.375rem] pb-[7.5625rem] bg-gradient-to-r from-[#E3FFEB] to-[#C2EAF2]'>
     <div className="main-container">
-        <h2 className="text-center xl:text-5xl lg:text-4xl text-3xl font-bold">Why Hire Our PPC Expert?</h2>
-        <p className='max-w-[55.125rem] w-full mx-auto text-center text-lg font-medium leading-7 mb-12 mt-3 '>Google has verified Tech Devise as a professional Adwords agency. Our relationship and certification attest to our thorough understanding of Google Adwords.</p>
+        <h2 className="text-center 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold">Why Hire Our PPC Expert?</h2>
+        <p className='max-w-[55.125rem] w-full mx-auto text-center 2xl:text-[1.10rem] text-[1rem] font-medium leading-7 mb-12 mt-3 '>Google has verified Tech Devise as a professional Adwords agency. Our relationship and certification attest to our thorough understanding of Google Adwords.</p>
 
         {/* Positions */}
         <div className="bg-white shadow-xl shadow-gray-600/5 rounded-[.625rem] lg:py-[3.4375rem] lg:px-[2.375rem] p-3">

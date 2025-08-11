@@ -74,9 +74,7 @@ const Blockchain = () => {
     fetchSlides();
   }, []);
 
-  if (!slides.length) {
-    return <div>Loading...</div>; // Or a loading spinner
-  }
+
 
   const slideS = [
     {
@@ -175,10 +173,10 @@ const Blockchain = () => {
               className="mx-auto h-full w-full aspect-square "
             />
           </div>
-          <h1 className=" md:text-5xl sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+          <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
             Blockchain Development Company
           </h1>
-          <p className="text-xl font-normal text-white mb-[1.375rem]">
+          <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
             We help lead the transition to the web3 future with our cutting-edge
             blockchain development services, having experience with more than 40
             blockchain protocols.
@@ -202,13 +200,13 @@ const Blockchain = () => {
           <div className="sectionHeader text-center max-w-6xl mx-auto mb-[5.4375rem]">
             <h2
               data-aos-delay="200"
-              className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] text-black mb-7 font-extrabold text-center"
+              className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-7  text-center"
             >
               Re-Invent Security For Business With Our Blockchain App
               Development Services
             </h2>
 
-            <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] font-medium">
               Our secure Blockchain development solutions are helpful to both
               large organizations looking to re-invent the value chain and those
               aiming to launch a new business.
@@ -270,7 +268,7 @@ const Blockchain = () => {
                           {slide.title}
                         </h3>
 
-                        <p className="text-[1.125rem] leading-[1.625rem] font-medium">
+                        <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-medium">
                           {slide.message}
                         </p>
                       </SwiperSlide>
@@ -327,10 +325,10 @@ const Blockchain = () => {
       >
         <div className="main-container">
           <div className="section-header text-center lg:text-start mb-[5.375rem]">
-            <h3 className="text-[3rem] font-extrabold  text-black mb-[1.625rem]">
+            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold  text-black mb-[1.625rem]">
               Blockchain Development Solutions We Deliver
             </h3>
-            <p className="text-[1.125rem] leading-[1.625rem] font-medium max-w-6xl">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-medium max-w-6xl">
               With our professional blockchain development services, which are
               intended to revolutionize and improve your business operations
               with specialized, flexible solutions, you can unleash the full
@@ -394,7 +392,7 @@ const Blockchain = () => {
                       <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
                         {item.title}
                       </h4>
-                      <p className="text-[1.125rem] leading-[2.125rem] font-normal">
+                      <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal">
                         {item.para}
                       </p>
                     </div>
@@ -411,11 +409,11 @@ const Blockchain = () => {
       <section className="solutions my-[4.6875rem] py-[4.6875rem]">
         <div className="main-container">
           <div className="section-header text-center lg:text-start mb-[5.375rem]">
-            <h3 className="text-[3rem] font-extrabold  text-black mb-[1.625rem]">
+            <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold  text-black mb-[1.625rem]">
               Why Are We The Perfect Fit To Be Your Blockchain Development
               Company?
             </h3>
-            <p className="text-[1.125rem] leading-[1.625rem] font-medium max-w-6xl">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-medium max-w-6xl">
               We provide safe, scalable blockchain solutions that are customized
               to your particular company objectives by fusing certified
               experience, cutting-edge technology, and client-focused methods.
@@ -493,7 +491,7 @@ const Blockchain = () => {
                       <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
                         {item.title}
                       </h4>
-                      <p className="text-[1.125rem] leading-[2.125rem] font-normal">
+                      <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal">
                         {item.para}
                       </p>
                     </div>
@@ -512,13 +510,13 @@ const Blockchain = () => {
           <div className="sectionHeader text-center  max-w-7xl mx-auto mb-[3.8125rem]">
             <h2
               data-aos-delay="200"
-              className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] text-black mb-7 font-extrabold text-center text-balance"
+              className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-7 text-center text-balance"
             >
               Let's Transform Your Operations with TechDevise Custom Blockchain
               Development
             </h2>
 
-            <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] font-medium">
               Allow TechDevise to transform your company with performance-,
               scalability-, and security-focused blockchain solutions. We
               develop technology that simplifies processes and opens up new
@@ -534,7 +532,7 @@ const Blockchain = () => {
                 </span>
               </div>
               <div className="text">
-                <span className="text-[1.125rem] leading-[2.125rem] font-mediums">
+                <span className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-mediums">
                   Dynamic Blockchain Professional
                 </span>
               </div>
@@ -547,7 +545,7 @@ const Blockchain = () => {
                 </span>
               </div>
               <div className="text">
-                <span className="text-[1.125rem] leading-[2.125rem] font-mediums">
+                <span className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-mediums">
                   Projects Successfully Deployed
                 </span>
               </div>
@@ -560,7 +558,7 @@ const Blockchain = () => {
                 </span>
               </div>
               <div className="text">
-                <span className="text-[1.125rem] leading-[2.125rem] font-mediums">
+                <span className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-mediums">
                   Client Triumph and Success
                 </span>
               </div>
@@ -573,7 +571,7 @@ const Blockchain = () => {
                 </span>
               </div>
               <div className="text">
-                <span className="text-[1.125rem] leading-[2.125rem] font-mediums">
+                <span className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-mediums">
                   Client Retention Rate
                 </span>
               </div>
@@ -600,13 +598,13 @@ const Blockchain = () => {
           <div className="sectionHeader text-center  max-w-7xl mx-auto mb-[4.5625rem]">
             <h2
               data-aos-delay="200"
-              className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] text-black mb-7 font-extrabold text-center text-balance"
+              className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-7  text-center text-balance"
             >
               Our Expertise In Blockchain Development Services Spans Multiple
               Platforms
             </h2>
 
-            <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] font-medium">
               We can create safe, scalable, and personalized solutions for
               Ethereum, BNB Chain, Polygon, and Solana thanks to our
               multi-platform blockchain development services knowledge.
@@ -648,13 +646,12 @@ const Blockchain = () => {
           <div className="sectionHeader text-center  max-w-7xl mx-auto mb-[3.8125rem]">
             <h2
               data-aos-delay="200"
-              className="2xl:text-[3rem] lg:text-[2.5rem] text-[2rem] text-black mb-7 font-extrabold text-center text-balance"
+              className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-7  text-center text-balance"
             >
-              Lour Expertise In Blockchain Development Services Spans Multiple
-              Platforms
+           Featured Blog
             </h2>
 
-            <p className="text-[1.25rem] leading-[2.1875rem] font-medium">
+            <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] font-medium ">
               As a leading Blockchain development company, TechDevise only hires
               Blockchain developers with a proven track record. That’s why we
               can handle any task or project, even the most complicated ones.

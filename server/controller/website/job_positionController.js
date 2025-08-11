@@ -10,7 +10,7 @@ module.exports = {
     try {
       const getJobs = await JobTitle.findAll({
 
-        where: { status: 1 }
+        where: { status: 1,type1:1 }
       })
 
       return res.status(200).json({
