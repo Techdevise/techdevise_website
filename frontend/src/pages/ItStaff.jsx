@@ -177,7 +177,7 @@ const ItStaff = () => {
                                     <p className='2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal text-white 2xl:max-w-3xl text-start  max-w-6xl'>TechDevise is a professional staffing firm comprising of the knowledge, experience and network that can get you the most qualified of candidates within any form or industry within two days. We can find great talent both domestically and abroad and source the best talent globally in 50+ countries. Questions? Call us toll-free: +1 123 456 7890</p>
                                 </div>
                                 <div className="lg:flex-1 flex max-md:flex-wrap justify-center items-stretch gap-[1.6875rem]">
-                                    <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
+                                    <div className="border border-white bg-black/50 rounded-[1.625rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
                                         <h3 className="text-[2rem] font-bold text-white">Schedule a <br className='max-2xl:hidden' /> meeting</h3>
                                         <p className='2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
                                             Talk with one of our experts about your IT staffing and tech solutions needs.
@@ -187,7 +187,7 @@ const ItStaff = () => {
                                             Let's Connect <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><LuMoveUpRight className='text-[18px] -rotate-12 text-black' strokeWidth={1} /> </span></button>
 
                                     </div>
-                                    <div className="border border-white bg-black/50 rounded-[1.25rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
+                                    <div className="border border-white bg-black/50 rounded-[1.625rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
                                         <h3 className="text-[2rem] font-bold text-white">Submit Staffing <br  className='max-2xl:hidden' />Request</h3>
                                         <p className='2xl:text-[1.10rem] text-[1rem] leading-[1.5rem] font-normal text-balance text-white max-w-3xl mx-auto 2xl:text-start text-center mt-5 mb-8 '>
                                             Talk with one of our experts about your IT staffing and tech solutions needs.
@@ -267,7 +267,7 @@ const ItStaff = () => {
               <div className="flex lg:justify-start justify-center items-stretch gap-5 mb-[2.1875rem]">
                 {gapService.map((item, index) => (
                   <div key={index} className="text-center">
-                    <div className="h-[6.1875rem] mb-3  aspect-square bg-white rounded-[1.25rem] flex justify-center items-center shadow-2xl shadow-black/10">
+                    <div className="h-[6.1875rem] mb-3  aspect-square bg-white rounded-[1.625rem] flex justify-center items-center shadow-2xl shadow-black/10">
                       <img
                         src={item.image}
                         alt="finding gap service"
@@ -347,7 +347,7 @@ const ItStaff = () => {
                   <img
                     src={itStaffing}
                     alt="card image"
-                    className="h-full w-full object-cover rounded-[1.75rem]"
+                    className="h-full w-full object-cover rounded-[1.625rem]"
                   />
                 </div>
               </div>
@@ -371,7 +371,7 @@ const ItStaff = () => {
               {recogImages.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white h-[15rem] mx-auto aspect-square rounded-[2.25rem] p-10 border border-[#CDCDCD] shadow-2xl shadow-black/10 flex justify-center items-center"
+                  className="bg-white h-[15rem] mx-auto aspect-square rounded-[1.625rem] p-10 border border-[#CDCDCD] shadow-2xl shadow-black/10 flex justify-center items-center"
                 >
                   <img src={item} alt={item} />
                 </div>

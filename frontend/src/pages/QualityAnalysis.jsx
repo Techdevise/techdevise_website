@@ -42,7 +42,7 @@ import gain3 from '/gain3.webp'
 import gain4 from '/gain4.webp'
 import gain5 from '/gain5.webp'
 
-import vectorGirl from '/vectorGirl.svg'
+import vectorGirl from '/vectorGirl.png'
 
 import analystBg from '/analystBg.webp'
 
@@ -171,27 +171,27 @@ const [showModal, setShowModal] = useState(false);
     const tabContent = [
         {
             image: cloudCard1,
-            para: 'Have an entirely cloud-based infrastructure ensuring scalability, security, and the absence of maintenance expenses, allowing one to access them anytime and anywhere.'
+            para: 'Test execution has never been so fast and installations or continuous maintenance are not needed. Our implementation minimizes your total cost of ownership and it entirely eliminates hardware maintenance related hassle. Get worry free performance, accelerated release cycles and an enhanced efficiency without having to worry about anything infrastructure related, resulting in a focus on your innovation.'
         },
         {
             image: cloudCard2,
-            para: 'With your end-to-end digital solutions provider at hand, uncover the latest innovations, fast track development, and accelerate business transformation.'
+            para: ' As your preferred end-to-end digital solutions partner, we enable you to unleash the latest innovations, accelerate your development and quicken your business transformation. Be it the idea or its implementation, our knowledge helps you to become adaptive, smarter in delivering and nowhere to be seen in the fast changing digital world. Whatever is your objective, achieve your goals with seeksolutions tailored to speed, scalability and long-range success.'
         },
         {
             image: cloudCard3,
-            para: ' Incorporate development, design, QA, and operation teams and ensure they work collaboratively, accelerate the process of delivery, and deliver success on all levels.'
+            para: '  We integrate development, design, QA as well as operations teams such that they fit together in perfect harmony making collaboration a walk in the park at any point. With silo elimination and effective communication, we cut the delivery cycles and promote quality. The outcome is an efficient process that brings success at every layer, concept to customer satisfaction which enables your business to be at a similar speed, faster in terms of innovation and expansion.'
         },
         {
             image: cloudCard4,
-            para: 'A smart test automation tool brings the benefits of artificial intelligence (AI) to coverage and accelerates testing and offers the assurance of reliable and high-quality releases throughout your DevOps pipeline.'
+            para: 'Our smart test automation tool intelligently uses the capabilities of artificial intelligence  to achieve maximized test coverage, faster execution time, and reliable quality. It is easily integrated into your DevOps pipeline and builds dependable high-quality releases on every release. We integrate intelligence automation with unlimited feedback, assisting to help you mitigate risks, speed delivery, and be confident in every release phase.'
         },
         {
             image: cloudCard5,
-            para: 'Each of the layers, including user interface layer and backend systems, must work and perform perfectly, as well as offer a good user experience.'
+            para: 'Each and every layer of system including user interface and the backend systems needs to work in a perfect manner such that the experience is flawless. We are concerned with performance as well as usability, ensuring all parts and pieces integrate well to provide fast, stable and the ease of interaction. The outcome is an excellent, well-working solution that not only satisfies the technicality but also enjoys the solution through every point of contact.'
         },
         {
             image: cloudCard6,
-            para: 'digital success and enhance quality by incorporating strategic direction.'
+            para: 'Quickly resolve issues with tools and processes that identify and repair defects earlier in the development process. Our method leverages AI-powered insights, automatic testing, and collaborative work, to identify issues before they affect the production. We assist you to assure quality, maintain delivery dates, and keep your projects on track start to finish by avoiding delays and eliminating rework.'
         },
     ]
 
@@ -317,7 +317,7 @@ const [showModal, setShowModal] = useState(false);
               <div className="h-full w-full">
                 <div 
                   style={{ backgroundImage: `url(${BASE_URL}${item.image})` }} 
-                  className='bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end'
+                  className='bg-center rounded-[1.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end'
                 >
                   <div className="cardBody text-white">
                     <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>{item.name}</h4>
@@ -361,7 +361,7 @@ const [showModal, setShowModal] = useState(false);
                                     key={index}
                                     className="flex  justify-center items-center !h-auto pb-[4.875rem]"
                                 >
-                                    <div style={{ backgroundImage: `url(${item.image})` }} className="min-h-[51.5rem] text-white flex justify-start items-end bg-center bg-no-repeat bg-cover rounded-[1.5625rem] relative px-12 py-28">
+                                    <div style={{ backgroundImage: `url(${item.image})` }} className="min-h-[51.5rem] text-white flex justify-start items-end bg-center bg-no-repeat bg-cover rounded-[1.625rem] relative px-12 py-28">
                                         <div className="content max-w-7xl">
                                             <h4 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-balance mb-[1.625rem]">{item.title}</h4>
                                             <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] my-8'>{item.para}</p>
@@ -383,8 +383,8 @@ const [showModal, setShowModal] = useState(false);
               <section className="transformations my-[4.6875rem]">
                 <div className="main-container">
                     <div className="flex lg:flex-row flex-col justify-center items-center gap-10 ">
-                        <div className="flex-[1_1_23.125rem] max-xl:hidden 2xl:max-w-[20.125rem] max-w-[15.625rem] max-lg:mx-auto lg:order-1 order-2">
-                            <img src={vectorGirl} alt="robo image" className='h-full w-full object-contain' />
+                        <div className="flex-[1_1_23.125rem] max-xl:hidden 2xl:max-w-[25.125rem] xl:max-w-[20.625rem] max-w-[20.625rem] max-lg:mx-auto lg:order-1 order-2">
+                            <img src={vectorGirl} alt="robo image" className='h-auto w-full object-contain' />
                         </div>
                         <div className="flex-1 lg:text-start text-center lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10">
 
@@ -437,7 +437,7 @@ const [showModal, setShowModal] = useState(false);
                             <div className="flex lg:flex-row flex-row flex-wrap justify-start items-stretch lg:h-[39.125rem] gap-5">
                                 {openSlide.map((item, index) => (
                                     <div onMouseEnter={() => setOpen(index + 1)} key={index} className={`transition-all duration-1000 overflow-hidden max-lg:h-[25rem] max-lg:flex-[1_1_300px] ${isOpen == index + 1 ? 'lg:w-[39rem] lg:flex-[1_1_39rem] ' : 'lg:w-[10%] lg:flex-[1_1_10%] '}`}>
-                                        <div style={{ backgroundImage: `url(${item.image})` }} className='bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-full flex justify-start items-end relative'>
+                                        <div style={{ backgroundImage: `url(${item.image})` }} className='bg-center rounded-[1.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-full flex justify-start items-end relative'>
                                             <h4 className={`text-[1.75rem] leading-[2.4375rem] font-semibold max-lg:hidden absolute bottom-5 left-10 mb-3 text-nowrap texto rotate-180 tracking-wide  transition-all duration-1000  delay-100 ${isOpen == index + 1 ? 'opacity-0' : 'opacity-100 delay-700'}`}>{item.title}</h4>
                                             <div className={`cardBody text-white transition-all duration-1000 delay-500 ${isOpen == index + 1 ? 'mb-0 opacity-100' : 'lg:-mb-32 lg:opacity-0'}`}>
                                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 text-nowrap tracking-wide'>{item.title}</h4>
@@ -463,7 +463,7 @@ const [showModal, setShowModal] = useState(false);
                         <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-black mb-[1.375rem]"> Equip your teams with intelligent tools and hassle-free, keyword-based automation.Enable enterprise-scale high-quality releases, enhance team collaboration, and automatize testing process.</p>
                     </div>
 
-                    <div className="tabsForCloud bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 px-[2.6875rem]">
+                    <div className="tabsForCloud bg-white border border-[#d3d3d3] rounded-[1.625rem] shadow-2xl shadow-black/10 py-10 px-[2.6875rem]">
                         <ul className=' flex justify-start items-center gap-10 overflow-x-auto hide-scroll mb-14'>
                             {tabBtn.map((btn, index) => (
                                 <li onClick={() => setActiveTab(index + 1)} key={index} className={`2xl:text-[1.10rem] text-[1rem] leading-[2.4375rem] font-bold text-nowrap cursor-pointer pb-3 border-b-2 transition-all duration-300 ${isActiveTab === index + 1 ? 'text-pine-700 border-pine-700' : ' text-black border-transparent '}`}>{btn}</li>
@@ -474,7 +474,7 @@ const [showModal, setShowModal] = useState(false);
                                 <div className="lg:flex-[1_1_51.625rem]  max-lg:mx-auto lg:order-2 order-1  relative lg:pe-[3.375rem]">
                                     <h4 className="texto absolute 2xl:-top-0  lg:-top-0 -top-6 right-0 max-lg:hidden rotate-0 tracking-[10px] text-nowrap 2xl:text-[1.6875rem] text-xl leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-t from-[#005163] to-[#01090A]">Automation Experts</h4>
 
-                                    <img src={item.image} alt="cloudcard image" className='h-full w-full rounded-[.9375rem] object-contain' />
+                                    <img src={item.image} alt="cloudcard image" className='h-full w-full rounded-[1.625rem] object-contain' />
                                 </div>
                                 <div className="lg:flex-[1_1_29.25rem] lg:order-1 order-2 lg:text-start text-center">
 

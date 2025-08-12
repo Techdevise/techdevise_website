@@ -129,7 +129,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
         }`}
       >
         <div
-          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto max-w-[98.5625rem] w-full relative transition-all duration-500 ${
+          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto max-w-[98.5625rem] w-full relative transition-all duration-500 rounded-[1.625rem] ${
             showModal ? "scale-100" : "scale-90"
           }`}
         >
@@ -140,7 +140,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
             <IoClose />
           </div>
           <div className="flex justify-center items-center h-full lg:flex-row flex-col gap-5">
-             <div className="lg:w-[40%] w-full bg-pine-700 pt-6 pb-6 px-[1.625rem] text-white text-center">
+             <div className="lg:w-[40%] w-full bg-pine-700 pt-6 pb-6 px-[1.625rem] text-white text-center rounded-[1.625rem]">
                             <h2 className='lg:text-4xl text-3xl leading-10 font-bold'>Turn Your Idea into a <br /> Profit Making App</h2>
                             <p className='text-[1.125rem] leading-6 font-medium mt-2 2xl:px-10'>Reach out to us and start your digital transformation journey today.</p>
                             <div className="line w-full h-[.0625rem] bg-gradient-to-r from-transparent via-white to-transparent mt-4"></div>

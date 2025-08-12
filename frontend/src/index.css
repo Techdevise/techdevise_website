@@ -234,3 +234,10 @@ select.inputControl {
     transform: translateY(-20px); /* Move 20px upwards */
   }
 }
+
+@layer utilities {
+  .home-date::-webkit-calendar-picker-indicator,
+  .home-time::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(100%);
+  }
+}

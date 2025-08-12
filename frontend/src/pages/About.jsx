@@ -332,7 +332,7 @@ const filteredImages = () => {
                   <img
                     src={`${API_BASE_URL}/images${img.image || img.image}`} // 👈 adjust based on your API image key
                     alt="gallery"
-                    className="block h-full w-full object-cover rounded-[.625rem]"
+                    className="block h-full w-full object-cover rounded-[1.625rem]"
                   />
                 </div>
               );

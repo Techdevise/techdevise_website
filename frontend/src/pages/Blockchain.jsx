@@ -383,7 +383,7 @@ const Blockchain = () => {
                     key={index}
                     className="flex  justify-center items-center !h-auto"
                   >
-                    <div className="2xl:max-w-[480px] h-full w-full bg-white rounded-10 py-5 px-6 rounded-[.625rem]">
+                    <div className="2xl:max-w-[480px] h-full w-full bg-white rounded-[1.625rem] py-5 px-6 ">
                       <img
                         src={item.icon}
                         alt=""
@@ -615,7 +615,7 @@ const Blockchain = () => {
             {platforms.map((image, index) => (
               <div
                 key={index}
-                className="col border border-[#D3D3D3] shadow-2xl shadow-black/10 rounded-[.9375rem] lg:w-[18rem] lg:h-[15.4375rem] max-lg:size-[10.375rem] max-lg:aspect-square flex justify-center items-center"
+                className="col border border-[#D3D3D3] shadow-2xl shadow-black/10 rounded-[1.625rem] lg:w-[18rem] lg:h-[15.4375rem] max-lg:size-[10.375rem] max-lg:aspect-square flex justify-center items-center"
               >
                 <img
                   src={image}
@@ -660,8 +660,8 @@ const Blockchain = () => {
 
           <div className="flex xl:flex-row flex-col justify-center items-stretch gap-[2.4375rem]">
             <div className="xl:flex-1 flex flex-col gap-[2.4375rem] justify-start items-stretch">
-              <div className="bg-white rounded-[.9375rem] shadow-2xl shadow-black/5 border border-[#D3D3D3] px-7 py-[1.875rem] gap-[1.8125rem] flex justify-start min-[540px]:items-center min-[540px]:flex-row flex-col">
-                <div className="flex-[1_1_17.125rem] min-[540px]:max-w-[17.125rem] h-[18.9375rem] rounded-[1.25rem] overflow-hidden">
+              <div className="bg-white rounded-[1.625rem] shadow-2xl shadow-black/5 border border-[#D3D3D3] px-7 py-[1.875rem] gap-[1.8125rem] flex justify-start min-[540px]:items-center min-[540px]:flex-row flex-col">
+                <div className="flex-[1_1_17.125rem] min-[540px]:max-w-[17.125rem] h-[18.9375rem] rounded-[1.625rem] overflow-hidden">
                   <img
                     src={expertise1}
                     alt="first card image"

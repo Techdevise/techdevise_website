@@ -11,6 +11,19 @@ import portfolio8 from '/portfolio8.png'
 import portfolio9 from '/portfolio9.png'
 import portfolio10 from '/portfolio10.png'
 import portfolio11 from '/portfolio11.png'
+import portfolio12 from '/portfolio12.png'
+import portfolio13 from '/portfolio13.png'
+// import portfolio14 from '/portfolio14.png'
+import portfolio15 from '/portfolio15.png'
+import portfolio16 from '/portfolio16.png'
+import portfolio17 from '/portfolio17.png'
+
+
+import ranking1 from '/ranking1.png'
+import ranking2 from '/ranking2.png'
+import ranking3 from '/ranking3.png'
+import ranking4 from '/ranking4.png'
+import ranking5 from '/ranking5.png'
 
 import portfolioLogo1 from '/portfolioLogo1.svg'
 import portfolioLogo2 from '/portfolioLogo2.svg'
@@ -23,6 +36,12 @@ import portfolioLogo8 from '/portfolioLogo8.png'
 import portfolioLogo9 from '/portfolioLogo9.png'
 import portfolioLogo10 from '/portfolioLogo10.png'
 import portfolioLogo11 from '/portfolioLogo11.png'
+import portfolioLogo12 from '/portfolioLogo12.png'
+import portfolioLogo13 from '/portfolioLogo13.png'
+// import portfolioLogo14 from '/portfolioLogo14.png'
+import portfolioLogo15 from '/portfolioLogo15.png'
+import portfolioLogo16 from '/portfolioLogo16.png'
+import portfolioLogo17 from '/portfolioLogo17.png'
 
 const Portfolio = () => {
     const [activeTab, setActiveTab] = useState('All')
@@ -150,7 +169,79 @@ const Portfolio = () => {
             platform: 'Wordpress',
             bg: 'bg-transparent',
             rowPosition: 'lg:flex-row'
-        }
+        },
+        {
+            id: 12,
+            category: 'SEO',
+            siteImage: portfolio12,
+            logo: portfolioLogo12,
+            dis: 'Bremafa: for the largest range of sleeping products in the Benelux.',
+            website: 'https://bremafa.nl/',
+            platform: 'Wordpress',
+            bg: 'bg-transparent',
+            rankingImage:ranking1,
+            rowPosition: 'lg:flex-row'
+        },
+        {
+            id: 13,
+            category: 'SEO',
+            siteImage: portfolio13,
+            logo: portfolioLogo13,
+            dis: "Our services are tailor-made for you! You're in luck, because you're in safe hands. We offer a guarantee on all our services, and we're also known for our affordable prices.",
+            website: 'https://nourloodgietersbedrijf.nl/',
+            platform: 'Wordpress',
+            rankingImage:ranking2,
+            bg: 'bg-gradient-to-r from-[#FFF6ED] to-[#F6C27B]',
+            rowPosition: 'lg:flex-row-reverse'
+        },
+        // {
+        //     id: 14,
+        //     category: 'SEO',
+        //     siteImage: portfolio14,
+        //     logo: portfolioLogo14,
+        //     dis: 'A professional dishwasher installation is essential for preventing problems in the kitchen. Yet, not everyone realizes how important this installation actually is, until a leak develops or the appliance malfunctions. At Witgoed Reparatie Profix, we deal with a wide variety of appliances and their installations every day.',
+        //     website: 'https://www.witgoedreparatieprofix.nl/',
+        //     platform: 'Wordpress',
+        //     bg: 'bg-transparent',
+        //     rowPosition: 'lg:flex-row'
+        // },
+        {
+            id: 15,
+            category: 'SEO',
+            siteImage: portfolio15,
+            logo: portfolioLogo15,
+            dis: 'At Nourklusbedrijf, we believe that every project, big or small, deserves attention and care. Whether you want to have your wall painted, a complete kitchen installed.',
+            website: 'https://www.nourklusbedrijf.nl/',
+            platform: 'Wordpress',
+            bg: 'bg-transparent',
+            rankingImage:ranking3,
+            rowPosition: 'lg:flex-row'
+        },
+          {
+            id: 16,
+            category: 'SEO',
+            siteImage: portfolio16,
+            logo: portfolioLogo16,
+            dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
+            website: 'https://blueapple.nl/',
+            platform: 'Wordpress',
+            rankingImage:ranking4,
+            bg: 'bg-gradient-to-r from-[#F7F4FF] to-[#BCA1FF]',
+            rowPosition: 'lg:flex-row-reverse'
+        },
+          {
+            id: 17,
+            category: 'SEO',
+            siteImage: portfolio17,
+            logo: portfolioLogo17,
+            dis: 'Steamy Details biedt een efficiënte, hoogwaardige reinigingsservice die volledig is afgestemd op jouw drukke leven.',
+            website: 'https://steamydetails.nl/',
+            platform: 'Wordpress',
+            bg: 'bg-transparent',
+            rankingImage:ranking5,
+            rowPosition: 'lg:flex-row'
+        },
+
     ]
 
     const filteredPortfolios = activeTab === 'All' 
@@ -210,6 +301,9 @@ const Portfolio = () => {
                                     <div className="flex-1">
                                         <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Platform</h5>
                                         <span className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.platform}</span>
+                                    </div>
+                                    <div className='flex'>
+                                         <img src={sect.rankingImage} alt="Portfolio logo" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
                                     </div>
                                 </div>
                             </div>

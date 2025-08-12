@@ -463,7 +463,7 @@ const MobileApplicationDevelopment = () => {
                   {slides.map((item, index) => (
                     <SwiperSlide
                       key={index}
-                      className="flex flex-col justify-center items-start"
+                      className="flex flex-col justify-center items-start "
                     >
                       <h2 className="text-black lg:text-[3rem] md:text-[2.5rem] sm:text-[2.3rem] text-[2rem] font-bold">
                         {item.title}
@@ -505,7 +505,7 @@ const MobileApplicationDevelopment = () => {
             </div>
             <div className="flex-1">
               <div className="flex gap-4 items-stretch flex-wrap justify-center">
-                <div className="rounded-[1.25rem] h-[10.0625rem] bg-[#EA99B9] flex gap-6 justify-center items-center px-8">
+                <div className="rounded-[1.625rem] h-[10.0625rem] bg-[#EA99B9] flex gap-6 justify-center items-center px-8">
                   <div className="bg-white rounded-full size-[5.5rem] aspect-square flex justify-center items-center">
                     <img
                       src={ios}
@@ -518,7 +518,7 @@ const MobileApplicationDevelopment = () => {
                     Development
                   </span>
                 </div>
-                <div className="rounded-[1.25rem] h-[10.0625rem] bg-[#99EAE0] flex gap-6 justify-center items-center px-8">
+                <div className="rounded-[1.625rem] h-[10.0625rem] bg-[#99EAE0] flex gap-6 justify-center items-center px-8">
                   <div className="bg-white rounded-full size-[5.5rem] aspect-square flex justify-center items-center">
                     <img
                       src={android}
@@ -531,7 +531,7 @@ const MobileApplicationDevelopment = () => {
                     Development
                   </span>
                 </div>
-                <div className="rounded-[1.25rem] h-[10.0625rem] bg-[#99CBEA] flex gap-6 justify-center items-center px-8">
+                <div className="rounded-[1.625rem] h-[10.0625rem] bg-[#99CBEA] flex gap-6 justify-center items-center px-8">
                   <div className="bg-white rounded-full size-[5.5rem] aspect-square flex justify-center items-center">
                     <img
                       src={reactNative}
@@ -679,7 +679,7 @@ const MobileApplicationDevelopment = () => {
                 <img
                   src={item.image}
                   alt={`Content for tab ${item.id}`}
-                  className="w-full lg:h-[39.625rem] ms:h-[31.25rem] h-[25rem] object-cover"
+                  className="w-full lg:h-[39.625rem] ms:h-[31.25rem] h-[25rem] object-cover rounded-[1.625rem]"
                 />
               </div>
             ))}
@@ -769,7 +769,7 @@ const MobileApplicationDevelopment = () => {
                       key={index}
                       className="flex  justify-center items-center !h-auto"
                     >
-                      <div className="2xl:max-w-[480px] h-full w-full bg-white rounded-10 py-5 px-6 rounded-[.625rem]">
+                      <div className="2xl:max-w-[480px] h-full w-full bg-white rounded-10 py-5 px-6 rounded-[1.625rem]">
                         <img
                           src={item.icon}
                           alt=""
@@ -806,7 +806,7 @@ const MobileApplicationDevelopment = () => {
               Solutions to Explore
             </h4>
 
-            <div className="bg-white lg:py-[2.1875rem] lg:px-[3.125rem] p-5  rounded-[.625rem] ">
+            <div className="bg-white lg:py-[2.1875rem] lg:px-[3.125rem] p-5  rounded-[1.625rem] ">
               <ul className="flex justify-start flex-nowrap overflow-x-scroll hide-scroll md:gap-[4.5rem] gap-8 mb-4">
                 {stackTab.map((item, index) => (
                   <li

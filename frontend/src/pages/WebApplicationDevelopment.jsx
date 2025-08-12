@@ -19,7 +19,7 @@ import eComMen from '/eComMen.svg'
 import robo from '/robo.svg'
 
 import python from '/python.webp'
-import why1 from '/why1.webp'
+import why1 from '/why1.jpg'
 import why2 from '/why2.svg'
 // Import Swiper styles
 import "swiper/css";
@@ -187,7 +187,7 @@ const WebApplicationDevelopment = () => {
                                             key={index}
                                             className=""
                                         >
-                                            <div className={`bg-[${item.bg}] rounded-[.9375rem] pt-10 px-7 pb-5`}>
+                                            <div className={`bg-[${item.bg}] rounded-[1.625rem] pt-10 px-7 pb-5`}>
                                                 <div className={`w-[7rem] h-[7rem] rounded-full bg-[${item.roundBg}] flex items-center justify-center mb-[1.8125rem]`}>
                                                     <img src={item.image} alt="" />
                                                 </div>
@@ -260,7 +260,7 @@ const WebApplicationDevelopment = () => {
                                         key={index}
                                         className="flex  justify-center items-center !h-auto"
                                     >
-                                        <div className="2xl:max-w-[480px] h-full w-full bg-[#FFF8E8] rounded-10 py-5 px-6 rounded-[.625rem]">
+                                        <div className="2xl:max-w-[480px] h-full w-full bg-[#FFF8E8] rounded-10 py-5 px-6 rounded-[1.625rem]">
                                             <img src={item.icon} alt="" className='block size-[6.125rem] object-contain mb-[1.125rem]' />
                                             <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>{item.title}</h4>
                                             <p className="text-[1.125rem] leading-[2.125rem] font-normal">{item.para}</p>
@@ -304,7 +304,7 @@ Being a group of committed individuals of Tech Devise, we specialize and deal wi
             <section className="python my-[4.6875rem] bg-[#EEFCFE] max-lg:py-[4.6875rem]">
                 <div className="main-container lg:!ps-0">
                     <div className={` h-full flex-1 flex lg:flex-row flex-col  justify-start items-center gap-[2.875rem] relative transition-all duration-300 `}>
-                        <img src={python} alt="modal side image" className='lg:max-w-[51.5625rem] lg:max-h-[61.9375rem] lg:h-full h-[25rem] w-full lg:object-cover object-cover' />
+                        <img src={python} alt="modal side image" className='lg:max-w-[51.5625rem] lg:max-h-[61.9375rem] lg:h-full h-[25rem] w-full lg:object-cover object-cover rounded-r-[1.625rem]' />
                         <div className="lg:flex-1 lg:overflow-y-auto">
                             <h2 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold mb-[3.25rem]'>Digital Marketing Executives</h2>
                             <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal pb-12">
@@ -349,17 +349,17 @@ Python is a high- level programming language because it is expandable and has be
                         <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal max-w-6xl mx-auto">At our team, high performance, scalability, security and agility in Website development are the main areas of interest. This assists us in generating output to our clients besides addressing their requirements. This way, you are most certainly welcome to call us or leave an email, in case you are interested in our high-quality service at a decent price, and we will do our best to fulfill your satisfaction. You will be assured that the work with Tech Devise will give you quality support all the time and well even after the project delivery.</p>
                     </div>
 
-                    <img src={why1} alt="why image" className="block mt-[2.375rem] mb-[4.6875rem]" />
+                    <img src={why1} alt="why image" className="block mt-[2.375rem] mb-[4.6875rem] rounded-[1.625rem]" />
 
                     <div className="flex justify-center items-center lg:flex-row flex-col lg:s-[3.1875rem] relative">
                         <h4 className="texto max-lg:hidden absolute top-[113px] text-nowrap 2xl:left-0 lg:-left-10 left-0 rotate-180 sm:text-[1.225rem] text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[##666666] to-black">Our Work Modules</h4>
 
                         <div className="flex-1 lg:order-1 order-2">
-                            <p className="2xl:text-[1.25rem] text-[1rem] leading-[1.625rem] font-normal max-w-6xl mx-auto">
-                                Artificial Intelligence as you can understand is all about implementing a system that can calculate, derive, and take decisions without having to wait for human input. All though these days in many field AI is being used, but it&apos;s still a new technology in the corporate world and requires a lot of implementation capabilities. At Tech Devise, we stand as the bridge between the corporate needs and the academic knowledge of AI. We implement the data research models into machines to offer our clients the right solution for their requirement. We have experts in our team of AI and ML. From data studies to deployment, we stay with our clients and make sure that we deliver them a capable AI-enabled system. We team up with data scientists to extract valuable information from any existing data present in any company and then optimize their business with the help AI and ML. If you wish to build scalable ML models that can improve your business progress we are definitely with you.
+                            <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal max-w-6xl mx-auto">
+                                <span className="font-bold">Artificial Intelligence</span> as you can understand is all about implementing a system that can calculate, derive, and take decisions without having to wait for human input. All though these days in many field AI is being used, but it&apos;s still a new technology in the corporate world and requires a lot of implementation capabilities. At Tech Devise, we stand as the bridge between the corporate needs and the academic knowledge of AI. We implement the data research models into machines to offer our clients the right solution for their requirement. We have experts in our team of AI and ML. From data studies to deployment, we stay with our clients and make sure that we deliver them a capable AI-enabled system. We team up with data scientists to extract valuable information from any existing data present in any company and then optimize their business with the help AI and ML. If you wish to build scalable ML models that can improve your business progress we are definitely with you.
                             </p>
                         </div>
-                        <img src={why2} alt="why 2 vector image" className="lg:order-2 order-1" />
+                        <img src={why2} alt="why 2 vector image" className="lg:order-2 order-1 " />
                     </div>
                 </div>
             </section>

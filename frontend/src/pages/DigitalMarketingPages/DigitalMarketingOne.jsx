@@ -209,7 +209,7 @@ const DigitalMarketingOne = () => {
                                 Result-Driven <br className='max-lg:hidden' />
                                 Digital Marketing Services
                             </h1>
-                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] text-white mb-[2.125rem]'>One of the most creative and hopeful SEO professionals at Tech Devise works hard to produce solutions. Your website's ranking will quickly increase thanks to our results-driven SEO tactics. Get in touch with us immediately to find out more!</p>
+                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] text-white mb-[2.125rem]'>We are dedicated to providing effective digital marketing services that can see businesses become identifiable in an online world that is highly competitive. Our services include SEO, social media marketing, PPC, email marketing, and content strategy which are directed at gaining higher visibility and conversions. Our creative and analytics come together to create campaigns that reach your audience and give measurable outcomes. Your brand will be able to realize sustainable growth and a resilient online presence that betrays long-term success under our expertise.</p>
                           
                                <button onClick={() => setShowModal(true)} className="bg-pine-300 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><img src={arrowRightUp} alt="arrow right up" className="w-[1.125rem]" /></span></button>
                             <h2 className='text-[clamp(9rem,_13vw,_15.75rem)] max-lg:hidden text-white font-extrabold opacity-5 leading-none mt-9 mb-4'>SEO</h2>
@@ -294,7 +294,7 @@ const DigitalMarketingOne = () => {
                         >
                             {imageData.map((item, index) => (
                                 <SwiperSlide key={index} className='!h-auto'>
-                                    <div className={`${item.bg} lg:text-start text-center rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                    <div className={`${item.bg} lg:text-start text-center rounded-[1.625rem] pt-10 px-7 pb-5 min-h-full`}>
                                         <h2 className={`${item.textColor} text-[6rem] font-bold leading-none mb-3`}>{item.number}</h2>
                                         <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
                                         <p className="text-base leading-[1.8125rem]">{item.description}</p>
@@ -380,7 +380,7 @@ const DigitalMarketingOne = () => {
                                 >
                                     {socialMediaData.map((item, index) => (
                                         <SwiperSlide key={index} className='!h-auto'>
-                                            <div className={`${item.bg} lg:text-start text-center rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full`}>
+                                            <div className={`${item.bg} lg:text-start text-center rounded-[1.625rem] pt-10 px-7 pb-5 min-h-full`}>
                                                 <div className={`size-[7rem] rounded-full ${item.roundBg} flex items-center justify-center mb-[1.8125rem] lg:mx-0 mx-auto`}>
                                                     <img src={item.image} alt={item.title} className='w-[3.1875rem]' />
                                                 </div>
@@ -474,7 +474,7 @@ const DigitalMarketingOne = () => {
                                 >
                                     {services.map((item, index) => (
                                         <SwiperSlide key={index} className='!h-auto'>
-                                            <div className={`bg-white rounded-[.9375rem] pt-10 px-7 pb-5 min-h-full lg:text-start text-center`}>
+                                            <div className={`bg-white rounded-[1.625rem] pt-10 px-7 pb-5 min-h-full lg:text-start text-center`}>
                                                 <img src={item.image} alt={item.title} className='w-[2.9375rem] h-[2.9375rem] inline-block mb-[.9375rem]' />
                                                 <h4 className="text-[1.75rem] font-semibold text-black mb-3">{item.title}</h4>
                                                 <p className="text-base leading-[1.8125rem]">{item.description}</p>

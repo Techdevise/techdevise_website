@@ -20,23 +20,26 @@ const Footer = () => {
             <h3 className="2xl:text-[2.25rem] lg:text-[1.25rem] text-[1.5rem] lg:leading-[2.875rem] leading-[2.25rem] font-semibold text-white">
               Keep up with the latest
             </h3>
-            <form className="lg:max-w-[35.625rem] max-w-[29.25rem] w-full h-[4.125rem] rounded-xl bg-white/25 flex justify-between items-center p-[.1125rem]">
-              <input
-                type="email"
-                id="emailInput"
-                className="bg-transparent h-full flex-1 py-[1.125rem] ps-[1.75rem] text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0"
-                placeholder="Enter your email"
-                required
-                onChange={(e) => {
-                  const button = document.getElementById("sendButton");
-                  button.disabled = !e.target.validity.valid;
-                }}
-              />
+            <form className="lg:max-w-[35.625rem] max-w-[29.25rem] w-full h-[4.125rem] gap-4 flex justify-end items-center ">
+              <div className="inline-block border-b border-white">
+                <input
+                  type="email"
+                  id="emailInput"
+                  className="bg-transparent h-[50px] flex-1 py-[1.125rem] text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0 w-auto autofill:bg-transparent autofill:text-white"
+                  placeholder="Enter your email"
+                  required
+                  onChange={(e) => {
+                    const button = document.getElementById("sendButton");
+                    button.disabled = !e.target.validity.valid;
+                  }}
+                />
+              </div>
+
               <button
                 id="sendButton"
                 type="submit"
                 disabled
-                className="lg:px-[5.3125rem] px-[1.125rem] h-full rounded-[.4375rem] text-[1.25rem] font-bold text-white bg-pine-700 shine-effect disabled:bg-pine-700/50 disabled:cursor-not-allowed relative group"
+                className="lg:px-[4.1125rem] px-[1.125rem] h-[50px] rounded-[.4375rem] text-[1.25rem] font-bold text-pine-700 bg-white shine-effect disabled:bg-white disabled:cursor-not-allowed relative group"
                 title="Please enter email"
               >
                 Send
@@ -94,15 +97,14 @@ const Footer = () => {
                   <FaLinkedinIn className="size-5 text-white" />
                 </a>
 
-                  <a
+                <a
                   href="https://x.com/it_devise"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center items-center size-10 rounded-full aspect-square bg-[#fff]"
                 >
-                   <FaXTwitter className="size-5 text-black" />
+                  <FaXTwitter className="size-5 text-black" />
                 </a>
-             
               </div>
             </div>
             <div className="flex-[1_1_12.6rem] max-w-fit max-md:hidden">
@@ -241,14 +243,17 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <Link to="/our-blogs" className="ms-auto block w-fit underline  text-white bg-transparent text-[1.25rem] font-semibold  px-1 shine-effect">
+              <Link
+                to="/our-blogs"
+                className="ms-auto block w-fit underline  text-white bg-transparent text-[.910rem] font-normal  px-1 shine-effect -mt-5"
+              >
                 View More
               </Link>
             </div>
           </div>
           {/* Contact info */}
           <div className="py-[1.8125rem] px-[1.6875rem] rounded-[1.625rem] flex flex-wrap 2xl:justify-between lg:justify-between justify-center xl:items-center items-start xl:gap-5 gap-10 md:bg-white/5 md:mb-[1.125rem] mb-[1.11rem]">
-            <div className=" max-w-fit flex justify-start items-start gap-[.875rem]">
+            <div className=" max-w-fit flex justify-start items-start gap-[.775rem]">
               <RiMapPin2Fill className="size-[1.5rem] text-white" />
               <p className="text-[.910rem] lg:text-nowrap leading-[1.8125rem] text-white font-medium w-full ">
                 F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar,
@@ -259,7 +264,7 @@ const Footer = () => {
               <Link
                 to="mailto:Info@techdevise.com"
                 target="_block"
-                className="flex justify-center items-center text-nowrap gap-6 font-medium text-[.910rem] leading-[1.6875rem] text-white"
+                className="flex justify-center items-center text-nowrap gap-2 font-medium text-[.910rem] leading-[1.6875rem] text-white"
               >
                 <TbMailFilled className="text-white size-6" />{" "}
                 <span>Info@techdevise.com</span>
@@ -268,7 +273,7 @@ const Footer = () => {
             <div className="max-w-fit">
               <Link
                 to="tel: +91 788-903-8027"
-                className="flex justify-center items-center text-nowrap gap-6 font-medium text-[.910rem] leading-[1.6875rem] text-white"
+                className="flex justify-center items-center text-nowrap gap-2 font-medium text-[.910rem] leading-[1.875rem] text-white"
               >
                 {" "}
                 <IoCall className="text-white size-6" />{" "}
@@ -282,19 +287,19 @@ const Footer = () => {
             <div className="flex gap-[1.6875rem] ">
               <Link
                 to="/Privacy-Policy"
-                className="md:text-[1rem] sm:text-[16px] text-[1rem] leading-[29px] font-medium text-white text-nowrap"
+                className="text-[.910rem]  leading-[29px] font-medium text-white text-nowrap"
               >
                 Privacy Policy
               </Link>
               <div className="h-[1.375rem] w-[1px] bg-white"></div>
               <Link
                 to="/Terms-Conditions"
-                className="md:text-[1rem] sm:text-[16px] text-[1rem] leading-[29px] font-medium text-white text-nowrap"
+                className="text-[.910rem]  leading-[29px] font-medium text-white text-nowrap"
               >
                 Terms & Conditions
               </Link>
             </div>
-            <p className="md:text-[1rem] sm:text-[16px] text-[1rem] leading-[29px] font-medium text-white text-nowrap">
+            <p className="text-[.910rem] leading-[29px] font-medium text-white text-nowrap">
               Techdevise © 2025. All rights reserved.
             </p>
           </div>

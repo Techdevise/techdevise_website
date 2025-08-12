@@ -74,21 +74,21 @@ import langlogo53 from "/logoIcons5/lang3.svg";
 import langlogo54 from "/logoIcons5/lang4.svg";
 
 
-import clogo1 from "/clogo1.svg";
-import clogo2 from "/clogo2.svg";
-import clogo3 from "/clogo3.svg";
-import clogo4 from "/clogo4.svg";
-import clogo5 from "/clogo5.svg";
-import clogo6 from "/clogo6.svg";
-import clogo7 from "/clogo7.svg";
-import clogo8 from "/clogo8.svg";
-import clogo9 from "/clogo9.svg";
-import clogo10 from "/clogo10.svg";
-import clogo11 from "/clogo11.svg";
-import clogo12 from "/clogo12.svg";
-import clogo13 from "/clogo13.svg";
-import clogo14 from "/clogo14.svg";
-import clogo15 from "/clogo15.svg";
+import clogo1 from "/ailogo1.png";
+import clogo2 from "/ailogo2.png";
+import clogo3 from "/ailogo3.png";
+import clogo4 from "/ailogo4.png";
+import clogo5 from "/ailogo5.png";
+import clogo6 from "/ailogo6.png";
+import clogo7 from "/ailogo7.png";
+import clogo8 from "/ailogo8.png";
+import clogo9 from "/ailogo9.png";
+import clogo10 from "/ailogo10.png";
+import clogo11 from "/ailogo11.png";
+import clogo12 from "/ailogo12.png";
+// import clogo13 from "/ailogo1.png";
+// import clogo14 from "/ailogo1.png";
+// import clogo15 from "/ailogo1.png";
 import pillersBg from "/pillersBg.webp";
 import pillerRobo from "/pillerRobo.svg";
 
@@ -171,18 +171,18 @@ const AiDevelopment = () => {
        image: clogo12,
        alt: "company logo 12",
      },
-     {
-       image: clogo13,
-       alt: "company logo 13",
-     },
-     {
-       image: clogo14,
-       alt: "company logo 14",
-     },
-     {
-       image: clogo15,
-       alt: "company logo 15",
-     },
+    //  {
+    //    image: clogo13,
+    //    alt: "company logo 13",
+    //  },
+    //  {
+    //    image: clogo14,
+    //    alt: "company logo 14",
+    //  },
+    //  {
+    //    image: clogo15,
+    //    alt: "company logo 15",
+    //  },
    ];
 
   useEffect(() => {
@@ -367,7 +367,7 @@ const AiDevelopment = () => {
                         style={{
                           backgroundImage: `url(${API_BASE_URL}/images/${item.image})`,
                         }}
-                        className="bg-center rounded-[.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end"
+                        className="bg-center rounded-[1.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end"
                       >
                         <div className="cardBody text-white">
                           <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
@@ -408,7 +408,7 @@ const AiDevelopment = () => {
           {/* Positions */}
           <div className="">
             <div className="flex gap-[1.875rem] lg:flex-row flex-col lg:justify-between justify-center items-stretch">
-              <div className="lg:w-[32.5625rem] bg-gradient-to-r from-[#005163] to-[#01090A] lg:px-[2.25rem] lg:py-[3rem] p-5 pb-0 rounded-[.9375rem]">
+              <div className="lg:w-[32.5625rem] bg-gradient-to-r from-[#005163] to-[#01090A] lg:px-[2.25rem] lg:py-[3rem] p-5 pb-0 rounded-[1.625rem]">
                 <ul className="lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll">
                   {services.map((service, index) => (
                     <li key={service._id || index} className="">
@@ -442,14 +442,14 @@ const AiDevelopment = () => {
                 <div
                   className={`flex-1 rounded-[.9375rem] overflow-hidden flex-col flex`}
                 >
-                  <div className="image flex-1 overflow-hidden rounded-t-[.9375rem]">
+                  <div className="image flex-1 overflow-hidden rounded-t-[1.625rem]">
                     <img
                       src={`${API_BASE_URL}/images${services[selectedIndex].image}`}
                       alt={services[selectedIndex].title}
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <div className="cardBody text-white bg-gradient-to-r from-[#005163] to-[#01090A] p-9 rounded-b-[.9375rem]">
+                  <div className="cardBody text-white bg-gradient-to-r from-[#005163] to-[#01090A] p-9 rounded-b-[1.625rem]">
                     <h4 className="text-[2.5rem] font-bold mb-3.5">
                       {services[selectedIndex].title}
                     </h4>
@@ -555,7 +555,7 @@ const AiDevelopment = () => {
             <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-black mb-[1.375rem]">Our team is very proficient in designing and optimizing advanced AI models, including computer vision, machine learning, deep learning, and natural language processing.We work with frameworks like TensorFlow, PyTorch, OpenCV, and transformer-based models to provide robust AI solutions.</p>
         </div>
 
-        <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[15px] shadow-2xl shadow-black/10 py-10 md:px-[2.6875rem] p-4">
+        <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[1.625rem] shadow-2xl shadow-black/10 py-10 md:px-[2.6875rem] p-4">
             <ul className=' flex justify-start items-center md:gap-[4.9375rem] sm:gap-7 gap-4 overflow-x-auto hide-scroll md:mb-14 mb-8'>
                 <li onClick={() => setActiveModalStep(1)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 1 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Computer Vision Models</li>
                 <li onClick={() => setActiveModalStep(2)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 2 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Machine Learning Models</li>
@@ -598,27 +598,27 @@ const AiDevelopment = () => {
                         </div>
                         <div className="flex-1 lg:order-2 order-1 flex justify-center items-stretch flex-wrap gap-10 py-[4.6875rem]">
 
-                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] text-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] text-white rounded-[1.625rem] py-9 px-[1.125rem]  scale-100 ">
                                 <h4 className='md:text-[2.1875rem] text-[2rem] font-bold'>5 Pillars of Our AI Development Services</h4>
                                 <p className="text-base leading-[1.625rem]">TechDevise is a leading AI development firm with the pillars of Advanced Technology, Custom Solutions, Expert Talent, Seamless Integration and End-to-End Support to execute even the most complicated AI projects successfully.</p>
                             </div>
-                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-[1.625rem] py-9 px-[1.125rem]  scale-100 ">
                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Data Quality</h4>
                                 <p className="text-[1.125rem] leading-[2.125rem] font-normal"> In ensuring quality of the data, we ascertain reliability, completeness, consistency, and accuracy in all data sets. Effective AI and analytics solutions depend on clean, well structured data.</p>
                             </div>
-                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-[1.625rem] py-9 px-[1.125rem]  scale-100 ">
                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Explainability</h4>
                                 <p className="text-[1.125rem] leading-[2.125rem] font-normal">Explainability is one of the key aspects of the AI systems we design to make model decisions transparent and comprehensible. This assists stakeholders to interpret results with certainty, adhere to the rules and make informed decisions.</p>
                             </div>
-                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-[1.625rem] py-9 px-[1.125rem]  scale-100 ">
                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Scalability</h4>
                                 <p className="text-[1.125rem] leading-[2.125rem] font-normal"> Our artificial intelligence is designed to be scalable, which means that they easily fit the evolving needs of your business. We design systems that can operate reliably at any scale, whether it is supporting an increasing amount of data or supporting an increasing amount of users.</p>
                             </div>
-                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-[1.625rem] py-9 px-[1.125rem]  scale-100 ">
                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Predictable ROI</h4>
                                 <p className="text-[1.125rem] leading-[2.125rem] font-normal"> We target to deliver AI solutions with measurable impact and a consistent ROI. Our strategic approach creates real business value, efficiency, and sustained growth on every project.</p>
                             </div>
-                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-10 py-9 px-[1.125rem] rounded-[1.625rem] scale-100 ">
+                            <div className="sm:max-w-[23.3125rem] flex-[1_1_23.3125rem] bg-white rounded-[1.625rem] py-9 px-[1.125rem]  scale-100 ">
                                 <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>Security</h4>
                                 <p className="text-[1.125rem] leading-[2.125rem] font-normal">Security is the most important aspect in our overall AI development process which ensures that your systems and data will never be in danger. The privacy of our data and data security related deployments and compliance observances are on an industrial scale of criteria.</p>
                             </div>

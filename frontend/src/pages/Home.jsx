@@ -107,6 +107,13 @@ import clogo12 from "/clogo12.svg";
 import clogo13 from "/clogo13.svg";
 import clogo14 from "/clogo14.svg";
 import clogo15 from "/clogo15.svg";
+
+
+import Nour_Deen from "/Nour_Deen.png";
+import Harjit from "/Harjit.png";
+import Shams from "/Shams.png";
+import ShadyAmer from "/ShadyAmer.png";
+
 // clock images
 import dashGreen from "/dashGreen.webp";
 import dashWhite from "/dashWhite.webp";
@@ -301,45 +308,27 @@ const Home = () => {
   ];
   const companyLogos = [
     {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+      image: Nour_Deen,
+      name: "Nour Deen",
+      dis: "“Working with TechDevise was an absolute pleasure. They developed our mobile app with exceptional attention to detail, meeting deadlines without compromising quality. Communication was clear, and their post-launch support ensured a smooth user experience. We’ll definitely collaborate again.”",
     },
     {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+      image: Harjit,
+      name: "Harjit",
+      dis: "“TechDevise transformed our outdated website into a modern, responsive platform that truly represents our brand. Their UI/UX team understood our goals perfectly, delivering a visually appealing and highly functional site. They remain our trusted partner for ongoing updates and improvements.”",
     },
     {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+      image: Shams,
+      name: "Shams El Akabawy",
+      dis: "“We approached TechDevise for AI integration to streamline our operations, and they exceeded expectations. From strategy to implementation, their expertise was evident. Transparent reporting, innovative solutions, and a seamless rollout made this one of our best vendor experiences.”",
     },
     {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+      image: ShadyAmer,
+      name: "Shady Amer",
+      dis: "“Our digital marketing campaign with TechDevise delivered remarkable results in just months. They combined data-driven strategies with creative execution, significantly increasing our online visibility and sales. Their team’s professionalism and commitment to results set them apart from other agencies.”",
     },
-    {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-    },
-    {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-    },
-    {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-    },
-    {
-      image: testimg1,
-      name: "Alex Johnson",
-      dis: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-    },
+   
+  
   ];
 
   const [formData, setFormData] = useState({
@@ -825,11 +814,11 @@ const Home = () => {
                     <AutoCounter
                       sectionRef={countRef}
                       label="Visitors Today"
-                      maxValue={500}
-                      speed={12}
+                      maxValue={300}
+                      speed={21}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Clients
+                      Projects
                     </h4>
                   </div>
                 </div>
@@ -838,11 +827,11 @@ const Home = () => {
                     <AutoCounter
                       sectionRef={countRef}
                       label="Visitors Today"
-                      maxValue={20}
-                      speed={376}
+                      maxValue={10}
+                      speed={752}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Client
+                      Countries
                     </h4>
                   </div>
                 </div>
@@ -1264,7 +1253,7 @@ const Home = () => {
                       </span>
                     </Link>
                   </div>
-                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#76b6de] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[72%] before:h-full sm:before:w-[62%] before:w-[82%]">
+                  <div className="image xl:w-full flex-[1_1_3.375rem] w-fit max-xl:py-10 max-xl:ps-10 flex xl:justify-center justify-end max-xl:pe-3 max-sm:pe-0 items-center relative z-0 before:absolute before:bottom-0 before:z-[-1] xl:before:right-0  max-xl:before:left-0 before:bg-[#76b6de] max-xl:before:rounded-[1.625rem] xl:before:w-full xl:before:h-[69%] before:h-full sm:before:w-[62%] before:w-[82%]">
                     <img
                       src={vectorFive}
                       alt="vector Five"
@@ -1304,6 +1293,7 @@ const Home = () => {
                       className="mx-auto max-md:h-full"
                     />
                   </div>
+                  
                 </div>
               </div>
 
@@ -1612,7 +1602,7 @@ const Home = () => {
                   className="max-lg:hidden min-xl:h-[5.525rem]"
                 />
               </div>
-              <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[.875rem] overflow-hidden">
+              <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[1.625rem] overflow-hidden">
                 <a
                   href="https://www.linkedin.com/company/techdevise"
                   target="_blank"
@@ -1694,7 +1684,7 @@ const Home = () => {
                 {industries.map((industry, index) => (
                   <div
                     key={index}
-                    className="relative rounded-xl overflow-hidden"
+                    className="relative rounded-[1.625rem] overflow-hidden"
                   >
                     <img
                       src={`${API_BASE_URL}/images${industry.image}`}
@@ -1862,27 +1852,28 @@ const Home = () => {
                         onChange={handleChange}
                       />
                     </div>
-                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <input
-                        type="date"
-                        name="date"
-                        className="inputControl"
-                        placeholder="Mobile Number"
-                        value={formData.date}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <input
-                        type="time"
-                        name="time"
-                        className="inputControl"
-                        placeholder="Company name"
-                        value={formData.time}
-                        onChange={handleChange}
-                      />
-                    </div>
+                <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+  <input
+    type="date"
+    name="date"
+    className="inputControl home-date"
+    value={formData.date}
+    onChange={handleChange}
+    required
+  />
+</div>
+<div className="md:w-[calc(100%/_2-_12.5px)] w-full ">
+  <input
+    type="time"
+    name="time"
+    className="inputControl home-time"
+    value={formData.time}
+    onChange={handleChange}
+  />
+</div>
+
+
+
 
                     {/* <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <select
@@ -1989,12 +1980,12 @@ const Home = () => {
               {addressList.map((listitem, index) => (
                 <div
                   key={index}
-                  className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.25rem] flex gap-[1.9375rem] items-center bg-[#071712]"
+                  className="border border-[#0a2a20] py-[1.0625rem] px-5 rounded-[1.625rem] flex gap-[1.9375rem] items-center bg-[#071712]"
                 >
                   <img
                     src={listitem.bgimage}
                     alt="indai bg"
-                    className="2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.25rem] object-cover"
+                    className="2xl:w-[10.0625rem] 2xl:h-[10.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.625rem] object-cover"
                   />
                   <div className="grow">
                     <div className="flex gap-[.9375rem] items-center mb-[1.375rem]">
