@@ -78,15 +78,14 @@ app.use('/api', apiRouter);
 // Admin panel routes
 app.use('/admin', indexRouter);
 
-// React frontend catch-all route (after /api and /admin)
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
-//     if (err) {
-//       console.error('Error sending React index.html:', err);
-//       res.status(err.status).end();
-//     }
-//   });
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
+    if (err) {
+      console.error('Error sending React index.html:', err);
+      res.status(err.status).end();
+    }
+  });
+});
 
 // 404 handler
 app.use(function(req, res, next) {
