@@ -835,11 +835,11 @@ const Home = () => {
                     <AutoCounter
                       sectionRef={countRef}
                       label="Visitors Today"
-                      maxValue={500}
-                      speed={12}
+                      maxValue={50}
+                      speed={130}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Client
+                   Employees
                     </h4>
                   </div>
                 </div>
@@ -848,11 +848,11 @@ const Home = () => {
                     <AutoCounter
                       sectionRef={countRef}
                       label="Visitors Today"
-                      maxValue={20}
-                      speed={376}
+                      maxValue={500}
+                      speed={12}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Client
+                      Digital Solutions Provided
                     </h4>
                   </div>
                 </div>
