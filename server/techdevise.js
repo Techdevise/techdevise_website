@@ -116,17 +116,17 @@ app.use(
     }
   })
 );
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 10,
-  message: "Too many requests, please try again later.",
-  skip: (req) => {
-    // Allow your server IP and localhost
-    const allowedIPs = ['127.0.0.1', '::1', '147.93.102.161']; // Add your server IP
-    return allowedIPs.includes(req.ip);
-  }
-});
-app.use(limiter);
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000,
+//   max: 10,
+//   message: "Too many requests, please try again later.",
+//   skip: (req) => {
+//     // Allow your server IP and localhost
+//     const allowedIPs = ['127.0.0.1', '::1', '147.93.102.161']; // Add your server IP
+//     return allowedIPs.includes(req.ip);
+//   }
+// });
+// app.use(limiter);
 // Serve public static files (if any)
 app.use(express.static(path.join(__dirname, 'public')));
 
