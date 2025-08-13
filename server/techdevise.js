@@ -137,7 +137,7 @@ const frontendBuildPath = path.join(__dirname, '../frontend/dist');
 app.use(express.static(frontendBuildPath));
 
 // API routes
-app.use('/api',limiter, apiRouter);
+app.use('/api', apiRouter);
 
 // Admin panel routes
 app.use('/admin', indexRouter);
