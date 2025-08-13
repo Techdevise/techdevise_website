@@ -54,7 +54,6 @@ import langlogo31 from "/logoIcons3/lang1.svg";
 import langlogo32 from "/logoIcons3/lang2.svg";
 import langlogo33 from "/logoIcons3/lang3.svg";
 import langlogo34 from "/logoIcons3/lang4.svg";
-import langlogo35 from "/logoIcons3/lang5.svg";
 import langlogo36 from "/logoIcons3/lang6.svg";
 import langlogo37 from "/logoIcons3/lang7.svg";
 import langlogo38 from "/logoIcons3/lang8.svg";
@@ -226,7 +225,7 @@ const AiDevelopment = () => {
  const logoIcon0 = [langlogo1, langlogo2, langlogo3, langlogo4, langlogo5, langlogo6, langlogo7, langlogo8]
     const logoIcon1 = [langlogo11, langlogo12, langlogo13, langlogo14, langlogo15, langlogo16]
     const logoIcon2 = [langlogo21, langlogo22, langlogo23, langlogo24, langlogo25, langlogo26, langlogo27, langlogo28, langlogo29]
-    const logoIcon3 = [langlogo31, langlogo32, langlogo33, langlogo34, langlogo35, langlogo36, langlogo37, langlogo38, langlogo39]
+    const logoIcon3 = [langlogo31, langlogo32, langlogo33, langlogo34, langlogo36, langlogo37, langlogo38, langlogo39]
     const logoIcon4 = [langlogo41, langlogo42, langlogo43, langlogo44, langlogo45]
     const logoIcon5 = [langlogo51, langlogo52, langlogo53, langlogo54]
    const slides = [

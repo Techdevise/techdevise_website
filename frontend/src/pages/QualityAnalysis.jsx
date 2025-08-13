@@ -338,8 +338,8 @@ const [showModal, setShowModal] = useState(false);
                     <div className="section-header lg:text-start text-center text-white mb-[2.8125rem]">
                         <div className="flex justify-between items-center">
                             <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-balance mb-[1.625rem]">Gain Insights into <br /> our Services</h3>
-                            <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                                Skip <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
+                            {/* <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                                Skip <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link> */}
 
                         </div>
                         <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] 2xl:max-w-7xl lg:max-w-6xl  font-medium">Browse our wide offering of services that can implement your ideas into a successful online solution.We deliver end-to-end experience to build and grow high-performance Android apps, spanning strategy and design, development, deployment, and post-release support.Find out how we leverage innovation, operational excellence, and experience to help organizations achieve their goals.</p>
@@ -365,9 +365,10 @@ const [showModal, setShowModal] = useState(false);
                                         <div className="content max-w-7xl">
                                             <h4 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-balance mb-[1.625rem]">{item.title}</h4>
                                             <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] my-8'>{item.para}</p>
-                                            <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                                                Know More <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
+                                             <button onClick={() => setShowModal(true)} className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                                                Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
                                         </div>
+                                  
                                     </div>
                                 </SwiperSlide>
                             );
@@ -429,8 +430,8 @@ const [showModal, setShowModal] = useState(false);
                             <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal mt-[1.5625rem] pb-[2.3125rem] 2xl:max-w-7xl  lg:max-w-6xl'>
                                 Our AI development services company delivers cutting-edge computer vision models for image recognition, object detection, and quality inspections. These models are powered by our AI software development services to enhance efficiency.
                             </p>
-                            <Link to="/" className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                                Know More <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link>
+                             <button onClick={() => setShowModal(true)} className="bg-transparent text-white border border-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                               Get In Touch <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
 
                         </div>
                         <div className="2xl:w-[70%] w-full max-lg:mt-10">

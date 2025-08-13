@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
 import axios from "axios";
 // Import Swiper styles
 import "swiper/css";
@@ -21,7 +19,6 @@ import Location from "../components/Location";
 import expert1 from "/expert1.webp";
 import expert2 from "/expert2.webp";
 import expert3 from "/expert3.webp";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 import modal1 from "/modal1.webp";
 import mapin from "/mapin.svg";

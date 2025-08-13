@@ -126,13 +126,13 @@ const ContactUs = () => {
                 data-aos="zoom-in-down"
                 src={contactLight2}
                 alt="light"
-                className="absolute top-0 left-0 "
+                className="absolute -top-5 left-0 "
               />
               <img
                 data-aos="zoom-in-down"
                 src={contactLight1}
                 alt="light"
-                className="absolute top-0 right-0 "
+                className="absolute -top-5 right-0 "
               />
             </div>
           </div>
