@@ -108,7 +108,6 @@ import clogo13 from "/clogo13.svg";
 import clogo14 from "/clogo14.svg";
 import clogo15 from "/clogo15.svg";
 
-
 import Nour_Deen from "/Nour_Deen.png";
 import Harjit from "/Harjit.png";
 import Shams from "/Shams.png";
@@ -327,8 +326,6 @@ const Home = () => {
       name: "Shady Amer",
       dis: "“Our digital marketing campaign with TechDevise delivered remarkable results in just months. They combined data-driven strategies with creative execution, significantly increasing our online visibility and sales. Their team’s professionalism and commitment to results set them apart from other agencies.”",
     },
-   
-  
   ];
 
   const [formData, setFormData] = useState({
@@ -336,8 +333,8 @@ const Home = () => {
     email: "",
     phone: "",
     company_name: "",
-      date: "",
-        time: "",
+    date: "",
+    time: "",
     budget: "20000",
     message: "",
   });
@@ -378,8 +375,6 @@ const Home = () => {
     } else if (!/^\d{10,15}$/.test(formData.phone)) {
       newErrors.phone = "Phone number should be 10-15 digits";
     }
-
-    
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -432,8 +427,8 @@ const Home = () => {
           email: "",
           phone: "",
           company_name: "",
-            date: "",
-        time: "",
+          date: "",
+          time: "",
           budget: "20000",
           message: "",
         });
@@ -943,8 +938,8 @@ const Home = () => {
               >
                 <SwiperSlide className="flex !h-auto">
                   <div className="flex h-full justify-between items-stretch 2xlp-[2.625rem] p-9 rounded-[3rem] bg-pine-600 ">
-                    <div className="flex-[22rem] max-w-[22rem] aspect-square bg-pine-700 rounded-full p-3 shrink-0 self-center">
-                      <div className="h-full w-full text-white text-center rounded-full  border-white/80 dashed-lg flex justify-center items-center flex-col px-1">
+                    {/* <div className="flex-[22rem] max-w-[22rem] aspect-square bg-[#158079] rounded-full p-3 shrink-0 self-center">
+                      <div className="h-full w-full text-white text-center rounded-full border-[2px] border-dashed border-white/80 flex justify-center items-center flex-col px-4">
                         <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
                           Staff Augmentation
                         </h4>
@@ -954,7 +949,26 @@ const Home = () => {
                           your project needs.
                         </p>
                       </div>
-                    </div>
+                    </div> */}
+                    
+           <div className="flex-[22rem] max-w-[22rem] aspect-square bg-[#158079] rounded-full p-3 shrink-0 self-center relative">
+  {/* Outer dashed circle (inset 2px) */}
+  <div className="absolute inset-[8px] rounded-full border-[2px] border-dashed border-white/80 pointer-events-none"></div>
+
+  {/* Inner content */}
+  <div className="relative h-full w-full text-white text-center flex justify-center items-center flex-col px-4">
+    <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
+      Staff Augmentation
+    </h4>
+    <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem] font-normal p-2">
+      Hire pre-vetted developers skilled in the latest
+      technologies, ready to work around the clock to meet
+      your project needs.
+    </p>
+  </div>
+</div>
+
+
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
                         <Clock
@@ -1035,12 +1049,10 @@ const Home = () => {
                 <SwiperSlide className="flex !w-auto !h-auto">
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem] w-full max-w-full min-w-full pb-[5.3125rem]">
                     <h4 className="text-[1.625rem] mb-2 font-bold">
-                      Build your offshore development team
+                     Build-To-Scale Agile Teams
                     </h4>
                     <p className="text-lg font-normal leading-[1.5625rem] max-w-[42.75rem]">
-                      At TechDevise, setting up dedicated software development
-                      team is quick and hassle-free, completed in just four
-                      simple steps.
+                     Expand your team seamlessly by outsourcing the services of professional software developers and programmers to jump start your work.
                     </p>
 
                     <div className="mt-[4.1875rem] flex justify-start items-center gap-[2.85rem]">
@@ -1080,12 +1092,13 @@ const Home = () => {
         </section>
         {/* Our Tech section end */}
         <section className="ourServices-section my-[6.0625rem]">
-     <div className="main-container">
+          <div className="main-container">
             <div className="flex justify-center items-stretch flex-wrap lg:gap-[2.375rem] gap-[.9375rem] lg:mb-[2.375rem] mb-[.9375rem]">
               <div className="xl:w-[calc(100%_/_4_-_30px)] lg:w-[calc(100%_/_2_-_20px)] xl:order-1 order-2">
                 <div className="card h-full bg-[#67C792] overflow-hidden rounded-[1.625rem] flex xl:flex-col flex-row-reverse justify-between items-stretch">
                   <div className="p-[1.4375rem]  flex-[2_1_0%]">
-                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">Website Development
+                    <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      Website Development
                     </h4>
                     <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
                       Looking to start your own company website? If so, our
@@ -1293,7 +1306,6 @@ const Home = () => {
                       className="mx-auto max-md:h-full"
                     />
                   </div>
-                  
                 </div>
               </div>
 
@@ -1852,28 +1864,25 @@ const Home = () => {
                         onChange={handleChange}
                       />
                     </div>
-                <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-  <input
-    type="date"
-    name="date"
-    className="inputControl home-date"
-    value={formData.date}
-    onChange={handleChange}
-    required
-  />
-</div>
-<div className="md:w-[calc(100%/_2-_12.5px)] w-full ">
-  <input
-    type="time"
-    name="time"
-    className="inputControl home-time"
-    value={formData.time}
-    onChange={handleChange}
-  />
-</div>
-
-
-
+                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      <input
+                        type="date"
+                        name="date"
+                        className="inputControl home-date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full ">
+                      <input
+                        type="time"
+                        name="time"
+                        className="inputControl home-time"
+                        value={formData.time}
+                        onChange={handleChange}
+                      />
+                    </div>
 
                     {/* <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <select

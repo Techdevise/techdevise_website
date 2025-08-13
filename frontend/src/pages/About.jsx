@@ -239,58 +239,56 @@ const filteredImages = () => {
   return (
     <>
       {/* about landing area section start */}
-      <section
-        style={{ backgroundImage: `url(${bg1})` }}
-        className="aboutLanding bg-cover bg-center bg-no-repeat mb-[4.6875rem]"
-      >
-        <ToastContainer />
-        <div className="min-h-[90dvh]"></div>
-        <div className="sectionBottomContent">
-          <div className="bg-black/60">
-            <div className="main-container !max-w-full flex lg:flex-row flex-col justify-center lg:items-center items-stretch lg:text-start text-center !m-0 max-lg:!ps-0 !pe-0">
-              <div className="lg:w-[60%]  py-[4.6875rem]">
-                <h4 className="md:text-[2rem] text-[1.6rem] text-white font-normal">
-                  We Believe in the Power of
-                </h4>
-                <h1 className="2xl:text-[4rem] sm:text-5xl text-4xl  text-white font-bold">
-                  Ideas, Innovation, and People
-                </h1>
-              </div>
-              <div className="lg:w-[40%] relative text-white bg-gradient-to-r from-pine-700 to-pine-500 py-[2rem] grid grid-cols-2">
-                <img
-                  src={plusBorder}
-                  alt="plus border"
-                  className="absolute top-1/2 left-1/2 -translate-1/2"
-                />
-                <div className="col py-[2.1875rem] px-[3rem]">
-                  <h2 className="text-[2.25rem] font-bold">10</h2>
-                  <h4 className="text-[1.25rem] font-normal">
-                    Years of Experience
-                  </h4>
-                </div>
-                <div className="col py-[2.1875rem] px-[3rem]">
-                  <h2 className="text-[2.25rem] font-bold">20+</h2>
-                  <h4 className="text-[1.25rem] font-normal">
-                    Countries Served
-                  </h4>
-                </div>
-                <div className="col py-[2.1875rem] px-[3rem]">
-                  <h2 className="text-[2.25rem] font-bold">20+</h2>
-                  <h4 className="text-[1.25rem] font-normal">
-                    Tech Enthusiast
-                  </h4>
-                </div>
-                <div className="col py-[2.1875rem] px-[3rem]">
-                  <h2 className="text-[2.25rem] font-bold">20+</h2>
-                  <h4 className="text-[1.25rem] font-normal">
-                    Product Delivered
-                  </h4>
-                </div>
-              </div>
-            </div>
+     <section
+  style={{
+    backgroundImage: `url(${bg1})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+  className="aboutLanding mb-[4.6875rem] w-full"
+>
+  <ToastContainer />
+  <div className="min-h-[90dvh] sm:min-h-[70vh]"></div>
+  <div className="sectionBottomContent">
+    <div className="bg-black/60">
+      <div className="main-container !max-w-full flex lg:flex-row flex-col justify-center lg:items-center items-stretch lg:text-start text-center !m-0 max-lg:!ps-0 !pe-0">
+        <div className="lg:w-[60%] py-[4.6875rem]">
+          <h4 className="md:text-[2rem] text-[1.6rem] text-white font-normal">
+            We Believe in the Power of
+          </h4>
+          <h1 className="2xl:text-[4rem] sm:text-5xl text-4xl text-white font-bold">
+            Ideas, Innovation, and People
+          </h1>
+        </div>
+        <div className="lg:w-[40%] relative text-white bg-gradient-to-r from-pine-700 to-pine-500 py-[2rem] grid grid-cols-2">
+          <img
+            src={plusBorder}
+            alt="plus border"
+            className="absolute top-1/2 left-1/2 -translate-1/2"
+          />
+          <div className="col py-[2.1875rem] px-[3rem]">
+            <h2 className="text-[2.25rem] font-bold">10</h2>
+            <h4 className="text-[1.25rem] font-normal">Years of Experience</h4>
+          </div>
+          <div className="col py-[2.1875rem] px-[3rem]">
+            <h2 className="text-[2.25rem] font-bold">20+</h2>
+            <h4 className="text-[1.25rem] font-normal">Countries Served</h4>
+          </div>
+          <div className="col py-[2.1875rem] px-[3rem]">
+            <h2 className="text-[2.25rem] font-bold">20+</h2>
+            <h4 className="text-[1.25rem] font-normal">Tech Enthusiast</h4>
+          </div>
+          <div className="col py-[2.1875rem] px-[3rem]">
+            <h2 className="text-[2.25rem] font-bold">20+</h2>
+            <h4 className="text-[1.25rem] font-normal">Product Delivered</h4>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* about landing area section end */}
 
       {/* Life @ Techdevise section start*/}

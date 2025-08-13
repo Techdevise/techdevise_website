@@ -48,7 +48,7 @@ app.set('view engine', 'ejs');
 // Allowed origins for CORS
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",") 
-  : ["https://website.techdevise.com", "https://techdevise.com"];
+  : ["https://www.techdevise.com", "https://techdevise.com"];
 // const allowedOrigins = process.env.ALLOWED_ORIGINS
 //   ? process.env.ALLOWED_ORIGINS.split(",") 
 //   : ["http://localhost:3003", "http://localhost:3003"];
@@ -105,7 +105,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Start the server
-const port = process.env.PORT || 8005;
+const port = process.env.PORT || 8015;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
