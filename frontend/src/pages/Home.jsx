@@ -59,8 +59,6 @@ import upwork from "/upwork.svg";
 import clutch from "/clutch.svg";
 import trustpilot from "/trustpilot.svg";
 
-// slider images
-import testimg1 from "/cardTen.jpg";
 
 // from image
 import vector13 from "/vector13.svg";
