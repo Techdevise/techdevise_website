@@ -81,7 +81,7 @@ const OurBlogs = () => {
   return (
     <>
       {/* Header */}
-      <div className="bg-[#00000066] h-[5.5rem]"></div>
+      <div className="bg-[#00000066] h-[4.5rem]"></div>
       <section className="pt-[2.1875rem] pb-[3.125rem]">
         <div className="w-full max-w-[74.3125rem] mx-auto text-center text-black">
           <h1 className="text-[4rem] font-bold leading-[1] ">Our Blogs</h1>

@@ -269,16 +269,16 @@ const filteredImages = () => {
             <h4 className="text-[1.25rem] font-normal">Years of Experience</h4>
           </div>
           <div className="col py-[2.1875rem] px-[3rem]">
-            <h2 className="text-[2.25rem] font-bold">20+</h2>
+            <h2 className="text-[2.25rem] font-bold">10+</h2>
             <h4 className="text-[1.25rem] font-normal">Countries Served</h4>
           </div>
           <div className="col py-[2.1875rem] px-[3rem]">
-            <h2 className="text-[2.25rem] font-bold">20+</h2>
-            <h4 className="text-[1.25rem] font-normal">Tech Enthusiast</h4>
+            <h2 className="text-[2.25rem] font-bold">50+</h2>
+            <h4 className="text-[1.25rem] font-normal">Employees</h4>
           </div>
           <div className="col py-[2.1875rem] px-[3rem]">
-            <h2 className="text-[2.25rem] font-bold">20+</h2>
-            <h4 className="text-[1.25rem] font-normal">Product Delivered</h4>
+            <h2 className="text-[2.25rem] font-bold">500+</h2>
+            <h4 className="text-[1.25rem] font-normal">Digital Marketing Solutions Delivered</h4>
           </div>
         </div>
       </div>
