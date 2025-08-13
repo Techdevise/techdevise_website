@@ -278,39 +278,43 @@ const Portfolio = () => {
             {/* tab buttons section end */}
 
             {/* portfolio section start */}
-            {filteredPortfolios.map((sect, index) => (
-                <section key={sect.id} className={`py-[4.6875rem] ${sect.bg} last:pb-[6.85rem]`}>
-                    <div className="main-container">
-                        <div className={`flex flex-col-reverse justify-center items-center gap-[3.3125rem] ${sect.rowPosition}`}>
-                            <div className="lg:w-[60%]">
-                                <img src={sect.siteImage} alt="portfolio image" className='h-full w-full object-contain' />
-                            </div>
-                            <div className="lg:w-[40%] max-lg:text-center">
-                                <img src={sect.logo} alt="Portfolio logo" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
+        {filteredPortfolios.map((sect, index) => (
+    <section key={sect.id} className={`py-[4.6875rem] ${sect.bg} last:pb-[6.85rem]`}>
+        <div className="main-container">
+            <div className={`flex flex-col-reverse justify-center items-center gap-[3.3125rem] ${sect.rowPosition}`}>
+                <div className="lg:w-[60%]">
+                    <img src={sect.siteImage} alt="portfolio image" className='h-full w-full object-contain' />
+                </div>
+                <div className="lg:w-[40%] max-lg:text-center">
+                    <img src={sect.logo} alt="Portfolio logo" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
 
-                                <p className="text-[1.375rem] leading-[2.3125rem] font-medium text-black mb-[2.375rem]">
-                                    {sect.dis}
-                                </p>
+                    <p className="text-[1.375rem] leading-[2.3125rem] font-medium text-black mb-[2.375rem]">
+                        {sect.dis}
+                    </p>
 
-                                <div className="flex flex-wrap justify-start items-center gap-5">
-                                    <div className="flex-1">
-                                        <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Website Link</h5>
-                                        <a href={sect.website} target='_blank' rel="noopener noreferrer" className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.website}</a>
-                                    </div>
-
-                                    <div className="flex-1">
-                                        <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Platform</h5>
-                                        <span className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.platform}</span>
-                                    </div>
-                                    <div className='flex'>
-                                         <img src={sect.rankingImage} alt="Portfolio logo" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="flex flex-wrap justify-start items-center gap-5">
+                        <div className="flex-1">
+                            <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Website Link</h5>
+                            <a href={sect.website} target='_blank' rel="noopener noreferrer" className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.website}</a>
                         </div>
+
+                        <div className="flex-1">
+                            <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Platform</h5>
+                            <span className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.platform}</span>
+                        </div>
+                        
+                        {/* Only show ranking image if category is SEO and rankingImage exists */}
+                        {sect.category === 'SEO' && sect.rankingImage && (
+                            <div className='flex'>
+                                <img src={sect.rankingImage} alt="Ranking" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
+                            </div>
+                        )}
                     </div>
-                </section>
-            ))}
+                </div>
+            </div>
+        </div>
+    </section>
+))}
             {/* portfolio section end */}
         </>
     )

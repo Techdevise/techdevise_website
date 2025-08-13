@@ -213,14 +213,21 @@ const ItStaff = () => {
       {/* IT Roles section start */}
       <section className="ItRoles py-[4.6875rem] pt-[4.6875rems]">
         <div className="main-container">
-          <div className="sectionHeader gap-5 md:flex-row flex-col flex justify-between items-start max-md:mb-8">
-                        <div className="text-start">
-                            <h3 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-3'>  We Staff IT Roles Across Any <span className='text-pine-700'>Industry</span></h3>
-                            <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>TechDevise is a staffing corporation in IT that has over 5 years of experience. We have staffed it, call it whatever you want, and we would love to staff it with great folks as well. Using a specialized team of tech recruiters with an array of proprietary, AI-powered recruiting tools, candidates can be identified within two days. Even those unicorns who are not seeking a new position, yet. And we recruit, retain and grow them using our one-of-a-kind consultant care concept Learn about some of our most popular positions.</p>
-                        </div>
+         <div className="sectionHeader gap-5 md:flex-row flex-col flex justify-between items-start max-md:mb-8">
+    <div className="text-start">
+        <h3 className='2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-3'>
+            We Staff IT Roles Across Any <span className='text-pine-700'>Industry</span>
+        </h3>
+        <p className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-black max-w-[85.1875rem] md:mb-[3.3125rem]'>
+            TechDevise is a staffing corporation in IT that has over 5 years of experience. We have staffed it, call it whatever you want, and we would love to staff it with great folks as well. Using a specialized team of tech recruiters with an array of proprietary, AI-powered recruiting tools, candidates can be identified within two days. Even those unicorns who are not seeking a new position, yet. And we recruit, retain and grow them using our one-of-a-kind consultant care concept Learn about some of our most popular positions.
+        </p>
+    </div>
 
-                        <img src={Itleftarrow}  className='upDown object-contain max-md:h-28' />
-                    </div>
+    <img
+        src={Itleftarrow}
+        className="upDown object-contain max-md:h-28 hidden md:block"
+    />
+</div>
 
           <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 min-[25rem]:grid-cols-2 gap-x-[.75rem] gap-y-[2.3125rem]">
             {roles.map((role) => (

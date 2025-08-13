@@ -182,7 +182,7 @@ const BlockchainSlider = ({ triggerRef }) => {
                     className="text-xl xl:text-2xl font-bold text-white mb-4"
                     dangerouslySetInnerHTML={{ __html: item.title }}
                   />
-                  <p className="text-white 2xl:text-[1rem] leading-[1.625rem] text-start font-normal">
+                  <p className="text-white 2xl:text-[1rem] leading-[1.625rem]  font-normal">
                     {item.para}
                   </p>
                 </div>

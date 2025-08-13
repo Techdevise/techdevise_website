@@ -1,6 +1,6 @@
 {
  "development": {
-  "username": "root2",
+     "username": "root2",
     "password": "root12345",
     "database": "techdeviseweb1",
     "host": "147.93.102.161",

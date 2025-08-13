@@ -39,8 +39,42 @@ const PrivacyPolicy = () => {
             ) : cmsData[1] ? (
               <div className="flex xl:flex-row flex-col 2xl:gap-[4.25rem] lg:gap-[3.125rem] gap-10 mb-10">
                 <div className="flex-1 lg:order-1 order-2">
-                  <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                    {cmsData[1].content}
+                  <p className="text-[1.125rem] leading-[2.125rem] font-normal ">
+                    {/* {cmsData[1].content} */}
+                   <span className="font-bold ">PRIVACY POLICY </span> <br /> At TechDevise, we value your privacy. We
+                    collect personal information, such as your name and email,
+                    only when you voluntarily provide it through forms or
+                    account registration. Your data is used to improve our
+                    services, process orders, and communicate updates. We never
+                    sell or rent your information to third parties. Cookies may
+                    be used to enhance your browsing experience and analyze
+                    website traffic. By using our website, you consent to this
+                    policy. You may access, update, or request deletion of your
+                    data anytime. For questions, please contact our support
+                    team. We are committed to protecting your information
+                    securely.
+                  </p>
+                  <p className="text-[1.125rem] leading-[2.125rem] font-normal mt-10">
+                    <span className="font-bold">COOKIE CONSENT </span> <br />    By continuing on this site or by clicking
+                    “accept,” you agree to our cookies being stored on your
+                    device for the purpose of enhancing your site visit and data
+                    analysis. You may find out more about how we use cookies on
+                    our cookie policy page. Cookies are used to enhance your
+                    online surfing experience on this site. They assist us to
+                    make the web page work better, exhibit you applicable
+                    advertising, and you can share content material with social
+                    media. You can pick out to be given all cookies or
+                    manipulate them individually.
+                  </p>
+                  <p className="text-[1.125rem] leading-[2.125rem] font-normal mt-10">
+                    <span className="font-bold">DISCLAIMER </span> <br />   This Website and the information, tools, and
+                    material contained within it (this “Site”) are not intended
+                    for distribution to or use by any person or entity who is a
+                    citizen or resident of, or located in, any jurisdiction
+                    where such distribution, publication, availability, or use
+                    would be contrary to law or regulation or would subject
+                    TechDevise to any registration or licensing requirement
+                    within such jurisdiction.
                   </p>
                 </div>
               </div>

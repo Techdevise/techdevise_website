@@ -240,4 +240,12 @@ select.inputControl {
   .home-time::-webkit-calendar-picker-indicator {
     filter: invert(1) brightness(100%);
   }
+
+  /* Force the style for mobile if needed */
+  @media (max-width: 768px) {
+    .home-date::-webkit-calendar-picker-indicator,
+    .home-time::-webkit-calendar-picker-indicator {
+      filter: invert(1) brightness(100%) !important;
+    }
+  }
 }

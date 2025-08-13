@@ -613,11 +613,11 @@ const Home = () => {
                           data-aos-delay="400"
                           className="heroButtons flex gap-[1.8125rem] lg:justify-start justify-center items-stretch"
                         >
-                          <button className="text-[1.25rem] px-5 py-4 rounded-xl border border-white/40 text-white font-semibold flex justify-center items-center gap-2.5 shine-effect">
+                          <button className="lg:text-[1.25rem] text-[.825rem] px-5 lg:py-4 py-2 rounded-xl border border-white/40 text-white font-semibold flex justify-center items-center gap-2.5 shine-effect">
                             <FcGoogle className="size-[1.375rem]" />
                             <span>Google Partner</span>
                           </button>
-                          <button className="text-[1.25rem] px-5 py-4 rounded-xl border border-white/40 text-white font-semibold flex justify-center items-center gap-2.5 shine-effect">
+                          <button className="lg:text-[1.25rem] text-[.825rem] px-5 lg:py-4 py-2 rounded-xl border border-white/40 text-white font-semibold flex justify-center items-center gap-2.5 shine-effect">
                             <img src={GoogleAnalytics} alt="google analytics" />
                             <span>Google Analytics</span>
                           </button>
