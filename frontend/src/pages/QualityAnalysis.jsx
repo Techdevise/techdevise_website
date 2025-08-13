@@ -320,8 +320,8 @@ const [showModal, setShowModal] = useState(false);
                   className='bg-center rounded-[1.625rem] bg-cover bg-no-repeat px-[1.375rem] py-4 w-full h-[23.875rem] flex justify-start items-end'
                 >
                   <div className="cardBody text-white">
-                    <h4 className='text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24'>{item.name}</h4>
-                    <p className="text-base leading-[1.8125rem] font-normal">{item.message}</p>
+                    <h4 className='text-[1.75rem] leading-[1.7375rem] font-semibold mb-3 pe-24'>{item.name}</h4>
+                    <p className="text-base leading-[1.4125rem] font-normal">{item.message}</p>
                   </div>
                 </div>
               </div>

@@ -824,7 +824,7 @@ const Home = () => {
                       speed={752}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Countries
+                      Countries Served
                     </h4>
                   </div>
                 </div>
@@ -850,7 +850,7 @@ const Home = () => {
                       speed={12}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                      Digital Solutions Provided
+                      Digital Solutions Delivered
                     </h4>
                   </div>
                 </div>
@@ -1678,7 +1678,7 @@ const Home = () => {
 
                   <p className="text-white 2xl:text-[1.20rem] lg:text-[14px] text-[1rem]  leading-[2.25rem] max-xl:text-center max-lg:mb-4">
                     Fuel Success in a Digital- First World with{" "}
-                    <span className="text-2xl">300+</span>
+                    <span className="text-xl">300+ </span>
                     Visionaries.
                   </p>
                   <Link
