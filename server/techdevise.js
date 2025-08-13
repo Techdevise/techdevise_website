@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const rateLimit = require('express-rate-limit');
 var cors = require('cors');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const session = require('express-session');
 var flash = require("express-flash");
 const fileUpload = require('express-fileupload');
@@ -61,8 +61,72 @@ app.use(cors({
 }));
 
 // Security middleware
-// app.use(helmet());
-
+app.use(helmet());
+// Security middleware with updated CSP
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'", // Needed for React and some libraries
+        "'unsafe-eval'", // Needed for some libraries like Summernote
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        "http://gc.kis.v2.scr.kaspersky-labs.com", // Kaspersky
+        "ws://gc.kis.v2.scr.kaspersky-labs.com" // Kaspersky WebSocket
+      ],
+      scriptSrcElem: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+      ],
+      styleSrc: [
+        "'self'",
+        "'unsafe-inline'", // Needed for inline styles
+        "https://fonts.googleapis.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+      ],
+      styleSrcElem: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://fonts.googleapis.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+      ],
+      imgSrc: ["'self'", "data:", "https:"],
+      fontSrc: [
+        "'self'",
+        "https://fonts.gstatic.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net"
+      ],
+      connectSrc: ["'self'"],
+      frameSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      baseUri: ["'self'"]
+    }
+  })
+);
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message: "Too many requests, please try again later.",
+  skip: (req) => {
+    // Allow your server IP and localhost
+    const allowedIPs = ['127.0.0.1', '::1', '147.93.102.161']; // Add your server IP
+    return allowedIPs.includes(req.ip);
+  }
+});
+app.use(limiter);
 // Serve public static files (if any)
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -73,7 +137,7 @@ const frontendBuildPath = path.join(__dirname, '../frontend/dist');
 app.use(express.static(frontendBuildPath));
 
 // API routes
-app.use('/api', apiRouter);
+app.use('/api',limiter, apiRouter);
 
 // Admin panel routes
 app.use('/admin', indexRouter);

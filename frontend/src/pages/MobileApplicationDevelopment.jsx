@@ -73,7 +73,6 @@ import langlogo31 from "/logoIcons3/lang1.svg";
 import langlogo32 from "/logoIcons3/lang2.svg";
 import langlogo33 from "/logoIcons3/lang3.svg";
 import langlogo34 from "/logoIcons3/lang4.svg";
-import langlogo35 from "/logoIcons3/lang5.svg";
 import langlogo36 from "/logoIcons3/lang6.svg";
 import langlogo37 from "/logoIcons3/lang7.svg";
 import langlogo38 from "/logoIcons3/lang8.svg";
@@ -271,7 +270,6 @@ const MobileApplicationDevelopment = () => {
     langlogo32,
     langlogo33,
     langlogo34,
-    langlogo35,
     langlogo36,
     langlogo37,
     langlogo38,
