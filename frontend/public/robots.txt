@@ -1,0 +1,11 @@
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Disallow sensitive or irrelevant paths (optional)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Provide your sitemap location
+Sitemap: https://www.techdevise.com/sitemap.xml

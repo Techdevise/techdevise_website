@@ -129,94 +129,131 @@ const GetInTouch = ({ showModal, setShowModal }) => {
         }`}
       >
         <div
-          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto max-w-[98.5625rem] w-full relative transition-all duration-500 rounded-[1.625rem] ${
+          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto 2xl:max-w-[95.5625rem] max-w-[85.5625rem] w-full relative transition-all duration-500 rounded-[1.625rem] ${
             showModal ? "scale-100" : "scale-90"
           }`}
         >
           <div
             onClick={() => setShowModal(false)}
-            className="absolute top-3 right-3 cursor-pointer rounded-full size-10 bg-pine-700 flex justify-center items-center text-white"
+            className="absolute  top-2  right-2 cursor-pointer rounded-full size-8 bg-pine-700 flex justify-center items-center text-white"
           >
             <IoClose />
           </div>
           <div className="flex justify-center items-center h-full lg:flex-row flex-col gap-5">
-             <div className="lg:w-[40%] w-full bg-pine-700 pt-6 pb-6 px-[1.625rem] text-white text-center rounded-[1.625rem]">
-                            <h2 className='lg:text-4xl text-3xl leading-10 font-bold'>Turn Your Idea into a <br /> Profit Making App</h2>
-                            <p className='text-[1.125rem] leading-6 font-medium mt-2 2xl:px-10'>Reach out to us and start your digital transformation journey today.</p>
-                            <div className="line w-full h-[.0625rem] bg-gradient-to-r from-transparent via-white to-transparent mt-4"></div>
+            <div className="lg:w-[40%] w-full bg-pine-700 pt-3 pb-3 px-[1.625rem] text-white text-center rounded-[1.625rem]">
+              <h2 className=" 2xl:text-3xl lg:text-2xl text-xl 2xl:leading-10 leading-8 font-bold">
+                Turn Your Idea into a <br /> Profit Making App
+              </h2>
+              <p className="text-[1.125rem] leading-6 font-medium mt-2 2xl:px-10">
+                Reach out to us and start your digital transformation journey
+                today.
+              </p>
+              <div className="line w-full h-[.0625rem] bg-gradient-to-r from-transparent via-white to-transparent mt-4"></div>
 
-                            <div className="card mt-6">
-                                <div className="cardHeader flex justify-between items-center  gap-5 mb-3">
-                                    <div className="image border border-white rounded-[1.125rem] p-[.875rem] size-[6.8125rem] aspect-square">
-                                        <img src={touch1} alt="Get in Touch Modal card Profile image" className='size-full object-cover' />
-                                    </div>
-                                    <div className="lg:text-start">
-                                        <h5 className='text-[1.125rem] leading-[1.625rem] font-bold'>Alex Johnson</h5>
-                                        <p className='text-sm leading-[1.375rem] font-normal lg:text-start'>Company Name: Seoproductief Designation: Head, Marketing</p>
-                                    </div>
-                                    <div className="qoutes w-[4.375rem] h-[3.5rem]">
-                                        <img src={qoutes} alt="Get in touch svg iamge" className='size-full' />
-                                    </div>
-                                </div>
-                                <p className='text-sm leading-5 font-medium lg:text-start'>We developed a great partnership with Techdevise. Their dedication to our website is evident in all aspects of the site. We appreciate their attention to detail and creative approach in bringing our new exhibit to life online.</p>
+              <div className="card mt-6">
+                <div className="cardHeader flex justify-between items-center  gap-5 mb-3">
+                  <div className="image border border-white rounded-[1.125rem] p-[.875rem] 2xl:size-[3.4125rem] size-[5.4125rem] aspect-square">
+                    <img
+                      src={touch1}
+                      alt="Get in Touch Modal card Profile image"
+                      className="size-full object-cover"
+                    />
+                  </div>
+                  <div className="lg:text-start">
+                    <h5 className="text-[1.125rem] leading-[1.625rem] font-bold">
+                      Alex Johnson
+                    </h5>
+                    <p className="text-sm leading-[1.375rem] font-normal lg:text-start">
+                      Company Name: Seoproductief Designation: Head, Marketing
+                    </p>
+                  </div>
+                  <div className="qoutes w-[4.375rem] h-[3.5rem]">
+                    <img
+                      src={qoutes}
+                      alt="Get in touch svg iamge"
+                      className="size-full"
+                    />
+                  </div>
+                </div>
+                <p className="text-sm leading-5 font-medium lg:text-start">
+                  We developed a great partnership with Techdevise. Their
+                  dedication to our website is evident in all aspects of the
+                  site. We appreciate their attention to detail and creative
+                  approach in bringing our new exhibit to life online.
+                </p>
 
-                                <div className="slider mt-7">
-                                    <Swiper
-                                        className="mySwiper max-w-full"
-                                        spaceBetween={0}
-                                        slidesPerView={1}
-                                        speed={1000}
-                                        loop={false}
-                                        grabCursor={true}
-                                        centeredSlides={true}
-                                        autoplay={{ delay: 1000, disableOnInteraction: false }}
-                                        modules={[Autoplay, Pagination, A11y]}
-                                        pagination={{
-                                            type: 'custom',
-                                            renderCustom: customPaginationRender,
-                                        }}
+                <div className="slider mt-5">
+                  <Swiper
+                    className="mySwiper max-w-full"
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    speed={1000}
+                    loop={false}
+                    grabCursor={true}
+                    centeredSlides={true}
+                    autoplay={{ delay: 1000, disableOnInteraction: false }}
+                    modules={[Autoplay, Pagination, A11y]}
+                    pagination={{
+                      type: "custom",
+                      renderCustom: customPaginationRender,
+                    }}
+                    onSwiper={(swiper) =>
+                      console.log("Swiper initialized:", swiper)
+                    }
+                    onSlideChange={(swiper) => {
+                      // This ensures our state is updated even if customPaginationRender isn't called immediately on slide change
+                      setCurrentSlide(swiper.realIndex + 1);
+                    }}
+                  >
+                    <SwiperSlide className="flex justify-center items-center">
+                      <img
+                        src={mobileViewSlide}
+                        alt="Mobile View image"
+                        className="size-full max-w-[31rem] mx-auto 2xl:max-h-[15.125rem] max-h-[12.125rem] object-contain"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide className="flex justify-center items-center">
+                      <img
+                        src={mobileViewSlide}
+                        alt="Mobile View image"
+                        className="size-full max-w-[31rem] mx-auto 2xl:max-h-[15.125rem] max-h-[12.125rem] object-contain"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide className="flex justify-center items-center">
+                      <img
+                        src={mobileViewSlide}
+                        alt="Mobile View image"
+                        className="size-full max-w-[31rem] mx-auto 2xl:max-h-[15.125rem] max-h-[12.125rem] object-contain"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide className="flex justify-center items-center">
+                      <img
+                        src={mobileViewSlide}
+                        alt="Mobile View image"
+                        className="size-full max-w-[31rem] mx-auto 2xl:max-h-[15.125rem] max-h-[12.125rem] object-contain"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                  <div
+                    className={` h-1 bg-white transition-all duration-1000 mt-[1.5rem] mb-2`}
+                    style={{ width: slideWidth }}
+                  ></div>
 
-                                        onSwiper={(swiper) => console.log('Swiper initialized:', swiper)}
-                                        onSlideChange={(swiper) => {
-                                            // This ensures our state is updated even if customPaginationRender isn't called immediately on slide change
-                                            setCurrentSlide(swiper.realIndex + 1);
-                                        }}
-                                    >
-                                        <SwiperSlide
-                                            className="flex justify-center items-center"
-                                        >
-                                            <img src={mobileViewSlide} alt="Mobile View image" className='size-full max-w-[31rem] mx-auto max-h-[17.125rem] object-contain' />
-                                        </SwiperSlide>
-                                        <SwiperSlide
-                                            className="flex justify-center items-center"
-                                        >
-                                            <img src={mobileViewSlide} alt="Mobile View image" className='size-full max-w-[31rem] mx-auto max-h-[17.125rem] object-contain' />
-                                        </SwiperSlide>
-                                        <SwiperSlide
-                                            className="flex justify-center items-center"
-                                        >
-                                            <img src={mobileViewSlide} alt="Mobile View image" className='size-full max-w-[31rem] mx-auto max-h-[17.125rem] object-contain' />
-                                        </SwiperSlide>
-                                        <SwiperSlide
-                                            className="flex justify-center items-center"
-                                        >
-                                            <img src={mobileViewSlide} alt="Mobile View image" className='size-full max-w-[31rem] mx-auto max-h-[17.125rem] object-contain' />
-                                        </SwiperSlide>
-                                    </Swiper>
-                                    <div className={` h-1 bg-white transition-all duration-1000 mt-[1.5rem] mb-2`} style={{ width: slideWidth }}></div>
-
-                                    <div className="text-base text-center font-bold">
-                                        <span className='text-[1.5rem]'>{currentSlide}</span> <span className='text-base'>/ {totalSlides === 0 ? '?' : totalSlides}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            <div className="lg:w-[60%] w-full">
+                  <div className="text-base text-center font-bold">
+                    <span className="text-[1.1rem]">{currentSlide}</span>{" "}
+                    <span className="text-base">
+                      / {totalSlides === 0 ? "?" : totalSlides}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-[60%] w-full mt-5">
               <form
                 onSubmit={handleSubmit}
                 className="sm:grid xl:grid-cols-2 lg:grid-cols-1 sm:grid-cols-2 flex flex-col gap-5"
               >
-                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.375rem]">
+                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem]">
                   <input
                     type="text"
                     name="fullname"
@@ -227,7 +264,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                     className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
-                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.375rem]">
+                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem]">
                   <input
                     type="email"
                     name="email"
@@ -238,7 +275,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                     className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
-                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.375rem]">
+                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem]">
                   <input
                     type="tel"
                     name="phone"
@@ -249,9 +286,8 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                     className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
                   />
                 </div>
-                
 
-                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[4.375rem] relative">
+                <div className="col bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem] relative">
                   <select
                     value={formData.job_title}
                     onChange={handleChange}
@@ -303,7 +339,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                         {budgets.map((budget, index) => (
                           <li key={index}>
                             <span
-                              className={`text-base leading-[1.625rem] font-semibold px-10 text-nowrap cursor-pointer ${
+                              className={`text-base leading-[1.625rem] font-semibold 2xl:px-10 px-8 text-nowrap cursor-pointer ${
                                 selectedBudget === budget.value
                                   ? "text-[#157B6C]"
                                   : ""
@@ -325,20 +361,20 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                   </div>
                 </div>
 
-              <div className="col-span-2 bg-gradient-to-b from-pine-700/0 to-pine-700/30 p-[1px] shadow-2xl shadow-black/10 rounded-[.625rem] overflow-hidden max-h-[500px] overflow-y-auto">
-  <h4 className="text-base leading-[1.625rem] font-semibold">
-    Description
-  </h4>
-  <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] min-h-[4.875rem]">
-    <textarea
-      name="message"
-      value={formData.message}
-      onChange={handleChange}
-      placeholder="Tell us about your project..."
-      className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none min-h-[150px] max-h-[150px] "
-    ></textarea>
-  </div>
-</div>
+                <div className="col-span-2 bg-gradient-to-b from-pine-700/0 to-pine-700/30 p-[1px] shadow-2xl shadow-black/10 rounded-[.625rem] overflow-hidden max-h-[500px] overflow-y-auto">
+                  <h4 className="text-base leading-[1.625rem] font-semibold">
+                    Description
+                  </h4>
+                  <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] min-h-[4.875rem]">
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about your project..."
+                      className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none min-h-[150px] max-h-[150px] "
+                    ></textarea>
+                  </div>
+                </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}

@@ -13,12 +13,28 @@ import vectorFour from "/vectorFour.svg";
 import vectorFive from "/vectorFive.svg";
 import vectorSix from "/vectorSix.svg";
 import vectorSeven from "/vectorSeven.svg";
-import vectorEight from "/vectorEight.svg";
+import blockchainGif from "/blockchain.gif";
 import vectorNine from "/vectorNine.svg";
 import vector12 from "/vector12.svg";
 import GoogleAnalytics from "/GoogleAnalytics.svg";
 import VisionSlider from "../components/VisionSlider";
 import cardOne from "/cardOne.webp";
+import card2 from "/card2.png";
+import card3 from "/card3.png";
+import card4 from "/card4.png";
+import card5 from "/card5.png";
+import card6 from "/card6.png";
+import card7 from "/card7.png";
+import card8 from "/card8.png";
+import card9 from "/card9.png";
+import card10 from "/card10.png";
+import card11 from "/card11.png";
+import card12 from "/card12.png";
+import card13 from "/card13.png";
+import card14 from "/card15.png";
+import card15 from "/card16.png";
+import card16 from "/card17.png";
+import card17 from "/card18.png";
 import layerOne from "/layerOne.webp";
 
 import icon1 from "/langicon/icon1.svg";
@@ -565,6 +581,29 @@ const Home = () => {
       alt: "company logo 15",
     },
   ];
+const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const nextSlide = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleTransitionEnd = () => {
+    setIsTransitioning(false);
+  };
   const countRef = useRef(null);
   return (
     <>
@@ -736,15 +775,36 @@ const Home = () => {
                   communication.{" "}
                 </p>
               </div>
-              <div className="flex-[1_1_18.75rem]">
-                <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem]  bg-pine-950">
-                  <img
-                    src={cardOne}
-                    alt="card image"
-                    className="h-full w-full object-cover rounded-[1.75rem]"
-                  />
-                </div>
+           <div className="flex-[1_1_18.75rem] overflow-hidden">
+      <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem] bg-pine-950">
+        <div 
+          ref={sliderRef}
+          className="relative h-full w-full rounded-[1.75rem] overflow-hidden"
+        >
+          <div
+            className={`flex transition-transform duration-500 ease-in-out`}
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+             
+            }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {images.map((image, index) => (
+              <div 
+                key={index}
+                className="w-full flex-shrink-0"
+              >
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
             </div>
           </div>
         </section>
@@ -1399,13 +1459,13 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="max-xl:hidden floatImage max-h-[33rem] max-w-[45.8125rem]  absolute -top-14 right-0 -z-[1] bg-pine-999 pe-[7.5rem]">
-            <img
-              src={vectorEight}
-              alt="vector eight"
-              className="h-full w-full object-contain filter mix-blend-luminosity"
-            />
-          </div>
+          <div className="max-xl:hidden floatImage max-h-[33rem] max-w-[45.8125rem] absolute -top-14 right-0 -z-[1] bg-pine-999 pe-[7.5rem]">
+  <img
+    src={blockchainGif}
+    alt="Blockchain animation"
+    className="h-full w-full object-contain filter mix-blend-luminosity"
+  />
+</div>
           {/* slider */}
 
           <BlockchainSlider triggerRef={sectionRef} />

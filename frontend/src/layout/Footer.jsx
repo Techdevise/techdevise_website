@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Logo from "../../public/Logo.svg";
 import { Link } from "react-router-dom";
@@ -10,7 +10,44 @@ import { IoCall } from "react-icons/io5";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { BiLogoInstagram } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
+import axios from "axios";
 const Footer = () => {
+ const [blogs, setBlogs] = useState([]);
+const [loading, setLoading] = useState(true);
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const BASE_URL = `${API_BASE_URL}/images`;
+
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(dateString).toLocaleDateString("en-US", options);
+    };
+  
+    // Fetch blogs from the API
+   useEffect(() => {
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/api/blogs`);
+      if (response.data.success) {
+        const sortedBlogs = [...response.data.data].sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        setBlogs(sortedBlogs.slice(0, 2));
+         console.log(response);
+         
+      } else {
+        console.error("Error fetching blogs:", response.data.message);
+      }
+    } catch (error) {
+      console.error("API Error:", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchBlogs();
+}, []);
+  
   return (
     <>
       <footer className="-mt-12 py-[1.375rem] bg-gradient-to-b from-pine-700 to-pine-999 sm:rounded-t-[3.25rem] rounded-t-[2.1875rem]">
@@ -211,42 +248,31 @@ const Footer = () => {
                 Recent Blogs
               </h5>
 
-              <div className="flex gap-4 mb-[1.9375rem]">
-                <div className="flex-1 max-w-[10.8125rem] bg-white p-1.5 rounded-[.625rem]">
-                  <img
-                    src={footerOne}
-                    alt="footer card Image"
-                    className="rounded-sm max-w-[10.125rem] h-[5.1875rem] object-cover"
-                  />
+             <div className="flex gap-4 mb-[1.9375rem]">
+  {blogs.map((blog) => (
+    <div
+      key={blog.id}
+      className="flex-1 max-w-[10.8125rem] bg-white p-1.5 rounded-[.625rem]"
+    >
+      <img
+        src={`${BASE_URL}/${blog.image}`} // Assuming blog.image is stored filename
+        alt={blog.title}
+        className="rounded-sm max-w-[10.125rem] h-[5.1875rem] object-cover"
+      />
+      <p className="text-[.8rem] text-black font-medium mt-[.5625rem]">
+        {blog.title.length > 35
+          ? blog.title.slice(0, 32) + "..."
+          : blog.title}
+      </p>
+      <p
+        className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
+      >
+        {formatDate(blog.date)}
+      </p>
+    </div>
+  ))}
+</div>
 
-                  <p className="text-[.8rem] text-black font-medium mt-[.5625rem]">
-                    Innovative Design: Crafting Seamless...
-                  </p>
-                  <Link
-                    to="/"
-                    className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
-                  >
-                    15 Feb
-                  </Link>
-                </div>
-                <div className="flex-1 max-w-[10.8125rem] bg-white p-1.5 rounded-[.625rem]">
-                  <img
-                    src={footerTwo}
-                    alt="footer card Image"
-                    className="rounded-sm max-w-[10.125rem] h-[5.1875rem] object-cover"
-                  />
-
-                  <p className="text-[.8rem] text-black font-medium mt-[.5625rem]">
-                    Effective Management Strategies...
-                  </p>
-                  <Link
-                    to="/"
-                    className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
-                  >
-                    20 Feb
-                  </Link>
-                </div>
-              </div>
               <Link
                 to="/our-blogs"
                 className="ms-auto block w-fit underline  text-white bg-transparent text-[.910rem] font-normal  px-1 shine-effect -mt-5"
