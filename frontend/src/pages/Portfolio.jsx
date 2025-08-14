@@ -267,7 +267,7 @@ const Portfolio = () => {
                             <button 
                                 key={index} 
                                 onClick={() => setActiveTab(tab)} 
-                                className={`block cursor-pointer hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 text-xl font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300 ${activeTab === tab ? 'text-white bg-gradient-to-r' : 'text-pine-700 bg-transparent'}`}
+                                className={`block cursor-pointer hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 2xl:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300 ${activeTab === tab ? 'text-white bg-gradient-to-r' : 'text-pine-700 bg-transparent'}`}
                             >
                                 {tab}
                             </button>

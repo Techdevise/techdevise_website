@@ -264,19 +264,19 @@ const filteredImages = () => {
             alt="plus border"
             className="absolute top-1/2 left-1/2 -translate-1/2"
           />
-          <div className="col py-[2.1875rem] px-[3rem]">
+          <div className="col py-[2.1875rem] px-[3rem] text-center">
             <h2 className="text-[2.25rem] font-bold">10</h2>
             <h4 className="text-[1.25rem] font-normal">Years of Experience</h4>
           </div>
-          <div className="col py-[2.1875rem] px-[3rem]">
+          <div className="col py-[2.1875rem] px-[3rem] text-center">
             <h2 className="text-[2.25rem] font-bold">10+</h2>
             <h4 className="text-[1.25rem] font-normal">Countries Served</h4>
           </div>
-          <div className="col py-[2.1875rem] px-[3rem]">
+          <div className="col py-[2.1875rem] px-[3rem] text-center">
             <h2 className="text-[2.25rem] font-bold">50+</h2>
             <h4 className="text-[1.25rem] font-normal">Employees</h4>
           </div>
-          <div className="col py-[2.1875rem] px-[3rem]">
+          <div className="col py-[2.1875rem] px-[3rem] text-center">
             <h2 className="text-[2.25rem] font-bold">500+</h2>
             <h4 className="text-[1.25rem] font-normal">Digital Marketing Solutions Delivered</h4>
           </div>
@@ -303,7 +303,7 @@ const filteredImages = () => {
                     filter === type
                       ? "bg-gradient-to-r from-pine-700 to-pine-500 text-white"
                       : "text-pine-700 bg-transparent"
-                  } hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 text-xl font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300`}
+                  } hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 md:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300`}
                 >
                   {type === "all"
                     ? "All"

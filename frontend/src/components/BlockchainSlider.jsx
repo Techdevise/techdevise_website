@@ -13,14 +13,14 @@ import "swiper/css/parallax";
 
 // Images
 import cardTwo from "../../public/cardTwo.webp";
-import cardThree from "../../public/cardThree.webp";
-import cardFour from "../../public/cardFour.webp";
-import cardFive from "../../public/cardFive.webp";
-import cardSix from "../../public/cardSix.webp";
-import cardSeven from "../../public/cardSeven.webp";
-import cardEight from "../../public/cardEight.webp";
-import cardNine from "../../public/cardNine.webp";
-import cardTen from "../../public/cardTen.webp";
+import cardThree from "../../public/cardThree.jpg";
+import cardFour from "../../public/cardFour.jpg";
+import cardFive from "../../public/cardFive.jpg";
+import cardSix from "../../public/cardSix.jpg";
+import cardSeven from "../../public/cardSeven.jpg";
+import cardEight from "../../public/cardEight.jpg";
+import cardNine from "../../public/cardNine.jpg";
+import cardTen from "../../public/cardTen.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 

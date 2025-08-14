@@ -21,12 +21,16 @@ const Footer = () => {
               Keep up with the latest
             </h3>
             <form className="lg:max-w-[35.625rem] max-w-[29.25rem] w-full h-[4.125rem] gap-4 flex justify-end items-center ">
-              <div className="inline-block border-b border-white">
+              <div className="inline-flex items-center border-b border-white">
+                {/* Left side icon */}
+                <TbMailFilled className="text-white size-6 mr-2" />
+
+                {/* Right side email input */}
                 <input
                   type="email"
                   id="emailInput"
-                  className="bg-transparent h-[50px] flex-1 py-[1.125rem] text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0 w-auto autofill:bg-transparent autofill:text-white"
-                  placeholder="Enter your email"
+                  className="bg-transparent h-[50px] flex-1 text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0 w-full autofill:bg-transparent autofill:text-white"
+                  placeholder="Email"
                   required
                   onChange={(e) => {
                     const button = document.getElementById("sendButton");

@@ -133,7 +133,7 @@ const WebApplicationDevelopment = () => {
                         <h4 className="texto max-lg:hidden absolute top-2 left-5 rotate-180 md:text-[50px] lg:text-[42px] xl:text-[52px] 2xl:text-[58px] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">Our Work Modules</h4>
                         <div className="lg:ps-[7.125rem] ">
                             <div className="section-header flex gap-10 lg:flex-row flex-col justify-between lg:items-center items-stretch main-container !ps-0 max-lg:!pe-10 !max-w-auto">
-                                <p className="text-[20px] leading-[2.6875rem] font-normal max-w-6xl "><strong>Content Management System</strong> -  A content management system allows the users to create, manage, and publish digital content without having to possess high-level technical expertise. It simplifies the maintenance of the sites, teamwork, and lets users come up with the design, SEO, and scheduling of the content.
+                                <p className="md:text-[20px] text-[12px] leading-[2.1875rem] font-normal max-w-6xl "><strong>Content Management System</strong> -  A content management system allows the users to create, manage, and publish digital content without having to possess high-level technical expertise. It simplifies the maintenance of the sites, teamwork, and lets users come up with the design, SEO, and scheduling of the content.
 </p>
                                 <div className="flex gap-2.5 justify-end items-stretch  order-1">
                                     <button ref={prevRef} className="cursor-pointer">
