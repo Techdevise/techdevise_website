@@ -13,7 +13,7 @@ import vectorFour from "/vectorFour.svg";
 import vectorFive from "/vectorFive.svg";
 import vectorSix from "/vectorSix.svg";
 import vectorSeven from "/vectorSeven.svg";
-import blockchainGif from "/blockchain.gif";
+import vectorEight from "/vectorEight.svg";
 import vectorNine from "/vectorNine.svg";
 import vector12 from "/vector12.svg";
 import GoogleAnalytics from "/GoogleAnalytics.svg";
@@ -1461,7 +1461,7 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
           </div>
           <div className="max-xl:hidden floatImage max-h-[33rem] max-w-[45.8125rem] absolute -top-14 right-0 -z-[1] bg-pine-999 pe-[7.5rem]">
   <img
-    src={blockchainGif}
+    src={vectorEight}
     alt="Blockchain animation"
     className="h-full w-full object-contain filter mix-blend-luminosity"
   />
