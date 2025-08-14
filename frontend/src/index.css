@@ -236,16 +236,31 @@ select.inputControl {
 }
 
 @layer utilities {
-  .home-date::-webkit-calendar-picker-indicator,
-  .home-time::-webkit-calendar-picker-indicator {
-    filter: invert(1) brightness(100%);
+  /* Hide the default browser picker icon */
+  .custom-icon::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
   }
 
-  /* Force the style for mobile if needed */
-  @media (max-width: 768px) {
-    .home-date::-webkit-calendar-picker-indicator,
-    .home-time::-webkit-calendar-picker-indicator {
-      filter: invert(1) brightness(100%) !important;
-    }
+  .custom-icon {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px 20px;
+    padding-right: 40px; /* make space for icon */
+  }
+
+  /* Custom icon for date input */
+  .home-date {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10m2 5a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v9a2 2 0 002 2h14z'/%3E%3C/svg%3E");
+  }
+
+  /* Custom icon for time input */
+  .home-time {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z'/%3E%3C/svg%3E");
   }
 }

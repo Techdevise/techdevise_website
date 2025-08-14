@@ -59,7 +59,6 @@ import upwork from "/upwork.svg";
 import clutch from "/clutch.svg";
 import trustpilot from "/trustpilot.svg";
 
-
 // from image
 import vector13 from "/vector13.svg";
 import formBlur from "/formBlur.svg";
@@ -837,7 +836,7 @@ const Home = () => {
                       speed={130}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                   Employees
+                      Employees
                     </h4>
                   </div>
                 </div>
@@ -850,7 +849,7 @@ const Home = () => {
                       speed={12}
                     />
                     <h4 className="rounded-[1.625rem] 2xl:text-[1.5rem] sm:text-[1.3rem] text-[1.2rem]  leading-[2.125rem] bg-white/60 w-full lg:h-[7.3125rem] h-[5.315rem] flex justify-center items-center text-center px-5">
-                     Digital Marketing Solutions Delivered
+                      Digital Marketing Solutions Delivered
                     </h4>
                   </div>
                 </div>
@@ -948,24 +947,23 @@ const Home = () => {
                         </p>
                       </div>
                     </div> */}
-                    
-           <div className="flex-[22rem] max-w-[22rem] aspect-square bg-[#158079] rounded-full p-3 shrink-0 self-center relative">
-  {/* Outer dashed circle (inset 2px) */}
-  <div className="absolute inset-[8px] rounded-full border-[2px] border-dashed border-white/80 pointer-events-none"></div>
 
-  {/* Inner content */}
-  <div className="relative h-full w-full text-white text-center flex justify-center items-center flex-col px-4">
-    <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
-      Staff Augmentation
-    </h4>
-    <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem] font-normal p-2">
-      Hire pre-vetted developers skilled in the latest
-      technologies, ready to work around the clock to meet
-      your project needs.
-    </p>
-  </div>
-</div>
+                    <div className="flex-[22rem] max-w-[22rem] aspect-square bg-[#158079] rounded-full p-3 shrink-0 self-center relative">
+                      {/* Outer dashed circle (inset 2px) */}
+                      <div className="absolute inset-[8px] rounded-full border-[2px] border-dashed border-white/80 pointer-events-none"></div>
 
+                      {/* Inner content */}
+                      <div className="relative h-full w-full text-white text-center flex justify-center items-center flex-col px-4">
+                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
+                          Staff Augmentation
+                        </h4>
+                        <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem] font-normal p-2">
+                          Hire pre-vetted developers skilled in the latest
+                          technologies, ready to work around the clock to meet
+                          your project needs.
+                        </p>
+                      </div>
+                    </div>
 
                     <div className="flex-[0_1_10rem] flex justify-end items-center flex-col">
                       <div className="clock1 w-[7.5rem]">
@@ -1047,10 +1045,12 @@ const Home = () => {
                 <SwiperSlide className="flex !w-auto !h-auto">
                   <div className="bg-pine-600 p-[2.1875rem] text-white rounded-[3.0625rem] w-full max-w-full min-w-full pb-[5.3125rem]">
                     <h4 className="text-[1.625rem] mb-2 font-bold">
-                     Build-To-Scale Agile Teams
+                      Build-To-Scale Agile Teams
                     </h4>
                     <p className="text-lg font-normal leading-[1.5625rem] max-w-[42.75rem]">
-                     Expand your team seamlessly by outsourcing the services of professional software developers and programmers to jump start your work.
+                      Expand your team seamlessly by outsourcing the services of
+                      professional software developers and programmers to jump
+                      start your work.
                     </p>
 
                     <div className="mt-[4.1875rem] flex justify-start items-center gap-[2.85rem]">
@@ -1862,21 +1862,22 @@ const Home = () => {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                    <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
                         type="date"
                         name="date"
-                        className="inputControl home-date"
+                        className="inputControl home-date custom-icon"
                         value={formData.date}
                         onChange={handleChange}
                         required
                       />
                     </div>
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full ">
+
+                    <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
                         type="time"
                         name="time"
-                        className="inputControl home-time"
+                        className="inputControl home-time custom-icon"
                         value={formData.time}
                         onChange={handleChange}
                       />
