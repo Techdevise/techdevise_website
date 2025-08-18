@@ -8,6 +8,10 @@ import girl4 from "/girl4.svg";
 import girl5 from "/girl5.svg";
 import girl6 from "/girl6.svg";
 import girl7 from "/girl7.svg";
+import Digi1 from "/Digi1.png";
+import Digi2 from "/Digi2.png";
+import Digi3 from "/Digi3.png";
+import Digi4 from "/Digi4.png";
 import arrowRightUp from "/arrowRightUp.svg";
 import SEO from "/SEO.svg";
 import facebookBlack from "/facebookBlack.svg";
@@ -224,9 +228,11 @@ const DigitalMarketingOne = () => {
       {/* landing area section start */}
       <section
         style={{ backgroundImage: `url(${seoBg})` }}
-        className="bg-no-repeat bg-cover pt-[5.5625rem] flex items-center justify-center overflow-hidden"
+        className="bg-no-repeat bg-cover pt-[5.5625rem] flex items-center justify-center h-full"
       >
-        <div className="main-container">
+        <div className="main-container relative ">
+          {" "}
+          {/* relative + padding bottom */}
           <div className="flex max-lg:flex-col items-stretch justify-between">
             <div className="w-full max-w-[51.1875rem] self-center py-14 lg:text-start text-center">
               <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-[linear-gradient(90deg,_#FFFFFF_0%,_#EDF5F3_7.5%,_#D4E7E4_17.5%,_#157B6C_95.5%)] mb-7">
@@ -311,12 +317,34 @@ const DigitalMarketingOne = () => {
               </div>
             </div>
           </div>
+          <div className="flex  justify-between gap-4 px-4 absolute 2xl:-bottom-35 -bottom-16  z-50">
+            <img
+              src={Digi1}
+              alt="Google Ads Certified"
+              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
+            />
+            <img
+              src={Digi2}
+              alt="LinkedIn Recruiter"
+              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
+            />
+            <img
+              src={Digi3}
+              alt="Meta Ads Manager"
+              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
+            />
+            <img
+              src={Digi4}
+              alt="Google Analytics Certified"
+              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
+            />
+          </div>
         </div>
       </section>
       {/* landing area section end */}
 
       {/* Ranking section start */}
-      <section className="pt-[4.3125rem] pb-28 overflow-hidden">
+      <section className="pt-[10.3125rem] pb-28 overflow-hidden">
         <div className="main-container">
           <div className="flex max-lg:flex-wrap items-center justify-between mb-10">
             <div className="w-full max-w-[61.5625rem] lg:text-start text-center">
@@ -422,55 +450,55 @@ const DigitalMarketingOne = () => {
 
               <div className="w-full lg:hidden gap-3 flex justify-center items-center">
                 <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                   <a
-                  href="https://www.facebook.com/Techdevise9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={facebookBlack}
-                    alt="facebookBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
+                  <a
+                    href="https://www.facebook.com/Techdevise9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={facebookBlack}
+                      alt="facebookBlack"
+                      className="lg:size-[3.5625rem] size-10"
+                    />
                   </a>
                 </div>
                 <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                   <a
-                  href="https://x.com/it_devise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={xBlack}
-                    alt="xBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
+                  <a
+                    href="https://x.com/it_devise"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={xBlack}
+                      alt="xBlack"
+                      className="lg:size-[3.5625rem] size-10"
+                    />
                   </a>
                 </div>
                 <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                   <a
-                 href="https://www.instagram.com/techdevise_it_services/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={instagramBlack}
-                    alt="instagramBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
+                  <a
+                    href="https://www.instagram.com/techdevise_it_services/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={instagramBlack}
+                      alt="instagramBlack"
+                      className="lg:size-[3.5625rem] size-10"
+                    />
                   </a>
                 </div>
                 <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                        <a
-                 href="https://www.linkedin.com/company/techdevise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={youtubeBlack}
-                    alt="youtubeBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
+                  <a
+                    href="https://www.linkedin.com/company/techdevise"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={youtubeBlack}
+                      alt="youtubeBlack"
+                      className="lg:size-[3.5625rem] size-10"
+                    />
                   </a>
                 </div>
               </div>
@@ -572,12 +600,10 @@ const DigitalMarketingOne = () => {
                     className="lg:size-[3.5625rem] size-10"
                   />
                 </a>
-             
               </div>
               <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-               
-                  <a
-                 href="https://www.instagram.com/techdevise_it_services/"
+                <a
+                  href="https://www.instagram.com/techdevise_it_services/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -589,16 +615,16 @@ const DigitalMarketingOne = () => {
                 </a>
               </div>
               <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                          <a
-                 href="https://www.linkedin.com/company/techdevise"
+                <a
+                  href="https://www.linkedin.com/company/techdevise"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                <img
-                  src={youtubeBlack}
-                  alt="youtubeBlack"
-                  className="lg:size-[3.5625rem] size-10"
-                />
+                  <img
+                    src={youtubeBlack}
+                    alt="youtubeBlack"
+                    className="lg:size-[3.5625rem] size-10"
+                  />
                 </a>
               </div>
             </div>
