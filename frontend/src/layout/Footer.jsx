@@ -257,7 +257,7 @@ const formatDate = (dateString) => {
       <img
         src={`${BASE_URL}/${blog.image}`} // Assuming blog.image is stored filename
         alt={blog.title}
-        className="rounded-sm max-w-[10.125rem] h-[5.1875rem] object-cover"
+        className="rounded-sm max-w-[10.125rem] h-[6.1875rem] object-cover"
       />
       <p className="text-[.8rem] text-black font-medium mt-[.5625rem]">
         {blog.title.length > 35

@@ -581,7 +581,25 @@ const Home = () => {
       alt: "company logo 15",
     },
   ];
-const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17];
+  const images = [
+    cardOne,
+    card2,
+    card3,
+    card4,
+    card5,
+    card6,
+    card7,
+    card8,
+    card9,
+    card10,
+    card11,
+    card12,
+    card13,
+    card14,
+    card15,
+    card16,
+    card17,
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -596,7 +614,7 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
 
   const nextSlide = () => {
     setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -775,36 +793,32 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                   communication.{" "}
                 </p>
               </div>
-           <div className="flex-[1_1_18.75rem] overflow-hidden">
-      <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem] bg-pine-950">
-        <div 
-          ref={sliderRef}
-          className="relative h-full w-full rounded-[1.75rem] overflow-hidden"
-        >
-          <div
-            className={`flex transition-transform duration-500 ease-in-out`}
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-             
-            }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-            {images.map((image, index) => (
-              <div 
-                key={index}
-                className="w-full flex-shrink-0"
-              >
-                <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex-[1_1_18.75rem] ">
+                <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem] bg-pine-950">
+                  <div
+                    ref={sliderRef}
+                    className="relative h-full w-full rounded-[1.75rem] overflow-hidden"
+                  >
+                    <div
+                      className={`flex transition-transform duration-500 ease-in-out`}
+                      style={{
+                        transform: `translateX(-${currentIndex * 100}%)`,
+                      }}
+                      onTransitionEnd={handleTransitionEnd}
+                    >
+                      {images.map((image, index) => (
+                        <div key={index} className="w-full flex-shrink-0">
+                          <img
+                            src={image}
+                            alt={`Slide ${index + 1}`}
+                            className="w-full object-contain "
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
             </div>
           </div>
         </section>
@@ -1460,12 +1474,12 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
             </div>
           </div>
           <div className="max-xl:hidden floatImage max-h-[33rem] max-w-[45.8125rem] absolute -top-14 right-0 -z-[1] bg-pine-999 pe-[7.5rem]">
-  <img
-    src={vectorEight}
-    alt="Blockchain animation"
-    className="h-full w-full object-contain filter mix-blend-luminosity"
-  />
-</div>
+            <img
+              src={vectorEight}
+              alt="Blockchain animation"
+              className="h-full w-full object-contain filter mix-blend-luminosity"
+            />
+          </div>
           {/* slider */}
 
           <BlockchainSlider triggerRef={sectionRef} />
