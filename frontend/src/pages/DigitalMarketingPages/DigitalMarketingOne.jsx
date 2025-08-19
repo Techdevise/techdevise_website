@@ -323,27 +323,27 @@ const DigitalMarketingOne = () => {
       <section className="pt-[4.3125rem] pb-28 ">
         <div className="main-container relative">
           {/* :white_check_mark: TOP IMAGE STRIP - moved above all other content and made responsive */}
-         <div className="grid justify-center gap-6 px-4 mb-10 2xl:-mt-40 xl:-mt-35 lg:-mt-30 -mt-10 w-full
+ <div className="grid justify-center gap-6 px-4 mb-10 2xl:-mt-40 xl:-mt-35 lg:-mt-30 -mt-10 w-full
                 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 xl:grid-cols-4">
   <img
     src={Digi1}
     alt="Google Ads Certified"
-    className="2xl:h-60  object-contain mx-auto"
+    className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
   />
   <img
     src={Digi2}
     alt="LinkedIn Recruiter"
-    className="2xl:h-60  object-contain mx-auto"
+    className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
   />
   <img
     src={Digi3}
     alt="Meta Ads Manager"
-    className="2xl:h-60  object-contain mx-auto"
+    className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
   />
   <img
     src={Digi4}
     alt="Google Analytics Certified"
-    className="2xl:h-60  object-contain mx-auto"
+    className="2xl:h-60 object-contain mx-auto transition-transform duration-800 hover:scale-105"
   />
 </div>
 
