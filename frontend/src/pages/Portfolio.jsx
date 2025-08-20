@@ -33,7 +33,7 @@ import portfolioLogo5 from '/portfolioLogo5.svg'
 import portfolioLogo6 from '/portfolioLogo6.svg'
 import portfolioLogo7 from '/portfolioLogo7.webp'
 import portfolioLogo8 from '/portfolioLogo8.png'
-import portfolioLogo9 from '/portfolioLogo9.png'
+import portfolioLogo9 from '/portfolioLogo9.webp'
 import portfolioLogo10 from '/portfolioLogo10.png'
 import portfolioLogo11 from '/portfolioLogo11.png'
 import portfolioLogo12 from '/portfolioLogo12.png'
@@ -149,7 +149,7 @@ const Portfolio = () => {
             id: 9,
             category: 'Website Development',
             siteImage: portfolio9,
-            logo: portfolioLogo13,
+            logo: portfolioLogo9,
            logoSize:'w-[25%]',
             dis: 'At Nourklusbedrijf, we believe that every project, big or small, deserves attention and care. Whether you want to have your wall painted, a complete kitchen installed.',
             website: 'https://www.nourklusbedrijf.nl/',
@@ -198,7 +198,7 @@ const Portfolio = () => {
             id: 13,
             category: 'SEO',
             siteImage: portfolio13,
-            logo: portfolioLogo13,
+            logo: portfolioLogo9,
                logoSize:'w-[25%]',
             dis: "Our services are tailor-made for you! You're in luck, because you're in safe hands. We offer a guarantee on all our services, and we're also known for our affordable prices.",
             website: 'https://nourloodgietersbedrijf.nl/',
