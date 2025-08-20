@@ -202,36 +202,42 @@ const MobileApplicationDevelopment = () => {
   const native = [
     {
       icon: native1,
+      hoverBg: "bg-[#FFCFD0]",
       title: "React Native App Development",
       para: "Under our React Native App Development service we offer cross-development apps that can be used to run on android, iOS, and other mobile platforms as well. React Native App Development costs less and also takes less time to develop.",
     },
 
     {
       icon: native2,
+      hoverBg: "bg-[#C5FDC9]",
       title: "React Native Customizations",
       para: "Our team specializes in React Native app Customizations. Hence, whatever feature you require in your app, our team will be able to offer the same. Also, our React Native Customizations are affordably priced. Contact us today for the best quote.",
     },
 
     {
       icon: native3,
+      hoverBg: "bg-[#DFCFFF]",
       title: "React Plugin Development",
       para: "At TechDevise we also offer React Plugin Development services. We not only create apps but also create React Plugin which can be used across various mobile platforms. All our services are priced at a pocket-friendly rate. Contact us today to know more.",
     },
 
     {
       icon: native4,
+      hoverBg: "bg-[#FDE7C5]",
       title: "React Interactive UI Development",
       para: "At TechDevise we offer React Interactive UI Development services. The experts in our team will be able to provide the right kind of React Interactive UI as per your needs. Hence, if you are looking for similar services at affordable rates, contact us today!",
     },
 
     {
       icon: native5,
+      hoverBg: "bg-[#C5CBFD]",
       title: "React Native Consulting",
       para: "At TechDevise, we not only offer development and design services, but we also offer to consult services as well. If you want to know more about React Native, opt for our React Native Consulting today. We ensure that you will be satisfied by consulting us.",
     },
 
     {
       icon: native6,
+      hoverBg: "bg-[#FDC5C6]",
       title: "React Native Support & Maintenance",
       para: "If you are looking for quality React Native Support & Maintenance, then we have the best engineers to look after your projects. Our team expertise in various React Native Support & Maintenance services and we assure you that all your projects will run smoothly with our maintenance and support services.",
     },
@@ -765,20 +771,30 @@ const MobileApplicationDevelopment = () => {
                   return (
                     <SwiperSlide
                       key={index}
-                      className="flex  justify-center items-center !h-auto"
+                      className="flex justify-center items-center !h-auto"
                     >
-                      <div className="2xl:max-w-[480px] h-full w-full bg-white rounded-10 py-5 px-6 rounded-[1.625rem]">
-                        <img
-                          src={item.icon}
-                          alt=""
-                          className="block size-[6.125rem] object-contain mb-[1.125rem]"
-                        />
-                        <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
-                          {item.title}
-                        </h4>
-                        <p className="text-[1.125rem] leading-[2.125rem] font-normal">
-                          {item.para}
-                        </p>
+                      <div
+                        className={`group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 2xl:max-w-[480px] h-full w-full bg-white rounded-[1.625rem] py-5 px-6 ${item.hoverBg}`}
+                      >
+                      
+                        <span
+                          className={`absolute  top-10 left-9 z-0 h-10 w-10 rounded-full  ${item.hoverBg} transition-all duration-900 group-hover:scale-[50] `}
+                        ></span>
+
+                        {/* content always on top */}
+                        <div className="relative z-10">
+                          <img
+                            src={item.icon}
+                            alt=""
+                            className="block size-[6.125rem] object-contain mb-[1.125rem]"
+                          />
+                          <h4 className="text-[1.75rem] leading-[2.4375rem] font-semibold mb-3 pe-24">
+                            {item.title}
+                          </h4>
+                          <p className="text-[1.125rem] leading-[2.125rem] font-normal">
+                            {item.para}
+                          </p>
+                        </div>
                       </div>
                     </SwiperSlide>
                   );
@@ -883,7 +899,12 @@ const MobileApplicationDevelopment = () => {
         </div>
       </section>
       {/* Tech Stack We Use section end */}
-      <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
+      <GetInTouch
+        showModal={showModal}
+        setShowModal={() => {
+          setShowModal(!showModal);
+        }}
+      />
     </>
   );
 };
