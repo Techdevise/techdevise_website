@@ -54,6 +54,7 @@ const Portfolio = () => {
             category: 'Development',
             siteImage: portfolio1,
             logo: portfolioLogo1,
+            logoSize:'w-[35%]',
             dis: 'AVB Marketing can help your business dominate the industry with marketing and technology solutions that secure independent retail success.',
             website: 'https://www.avbmarketing.com/',
             platform: 'Wordpress',
@@ -65,6 +66,7 @@ const Portfolio = () => {
             category: 'WebsiteDevelopment',
             siteImage: portfolio2,
             logo: portfolioLogo2,
+             logoSize:'w-[25%]',
             dis: 'Eureka Telecom was incorporated to bring innovation in the telecommunication industry by offering modernized telecom services.',
             website: 'https://www.bubbleswholesale.com/',
             platform: 'PHP, React.js',
@@ -76,6 +78,7 @@ const Portfolio = () => {
             category: 'WebsiteDevelopment',
             siteImage: portfolio3,
             logo: portfolioLogo3,
+               logoSize:'w-[25%]',
             dis: 'Dear Customers and Partners, We warmly welcome you to Mr-Refurb, your preferred destination for high-quality, professionally refurbished Mr-Refurb hardware.',
             website: 'https://mr-refurb.nl/',
             platform: 'Shopify',
@@ -87,6 +90,7 @@ const Portfolio = () => {
             category: 'WebsiteDevelopment',
             siteImage: portfolio4,
             logo: portfolioLogo4,
+            logoSize:'w-[35%]',
             dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
             website: 'https://www.sterlingforever.com/',
             platform: 'Shopify',
@@ -98,6 +102,7 @@ const Portfolio = () => {
             category: 'Design',
             siteImage: portfolio5,
             logo: portfolioLogo5,
+               logoSize:'w-[25%]',
             dis: 'Our expertise spans from initial concept development to detailed design, ensuring every aspect of your project is meticulously planned and executed.',
             website: 'https://iengco.com/',
             platform: 'Wordpress',
@@ -109,6 +114,7 @@ const Portfolio = () => {
             category: 'WebsiteDevelopment',
             siteImage: portfolio6,
             logo: portfolioLogo6,
+               logoSize:'w-[25%]',
             dis: 'Pediatric Therapy Associates is a kids focused therapy place. We are a multi-disciplinary group with the singular focus of developing your child to the fullest.',
             website: 'https://therapypediatric.com/',
             platform: 'Wordpress',
@@ -120,6 +126,7 @@ const Portfolio = () => {
             category: 'Website Development',
             siteImage: portfolio7,
             logo: portfolioLogo7,
+           logoSize:'w-[20%]',
             dis: "Welcome to NDN.LASER, your specialist in beauty and skin improvement in Almere. We're all about our clients' well-being. We're committed to giving you a boost in self-confidence. NDN.LASER offers a wide range of luxurious laser treatments, expertly performed by our experienced and knowledgeable team.",
             website: 'https://ndnlaser.nl/',
             platform: 'Wordpress',
@@ -131,6 +138,7 @@ const Portfolio = () => {
             category: 'Website Development',
             siteImage: portfolio8,
             logo: portfolioLogo8,
+             logoSize:'w-[15%]',
             dis: 'Welcome to SEO PRODUCTIEF – the leading digital marketing solutions company in the Netherlands. We help you achieve success with your online presence.',
             website: 'https://seoproductief.nl/',
             platform: 'Wordpress',
@@ -141,7 +149,8 @@ const Portfolio = () => {
             id: 9,
             category: 'Website Development',
             siteImage: portfolio9,
-            logo: portfolioLogo9,
+            logo: portfolioLogo13,
+           logoSize:'w-[25%]',
             dis: 'At Nourklusbedrijf, we believe that every project, big or small, deserves attention and care. Whether you want to have your wall painted, a complete kitchen installed.',
             website: 'https://www.nourklusbedrijf.nl/',
             platform: 'Wordpress',
@@ -153,6 +162,7 @@ const Portfolio = () => {
             category: 'Website Development',
             siteImage: portfolio10,
             logo: portfolioLogo10,
+            logoSize:'w-[25%]',
             dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
             website: 'https://www.sterlingforever.com/',
             platform: 'Shopify',
@@ -164,6 +174,7 @@ const Portfolio = () => {
             category: 'Website Development',
             siteImage: portfolio11,
             logo: portfolioLogo11,
+              logoSize:'w-[20%]',
             dis: 'A professional dishwasher installation is essential for preventing problems in the kitchen. Yet, not everyone realizes how important this installation actually is, until a leak develops or the appliance malfunctions. At Witgoed Reparatie Profix, we deal with a wide variety of appliances and their installations every day.',
             website: 'https://www.witgoedreparatieprofix.nl/',
             platform: 'Wordpress',
@@ -175,6 +186,7 @@ const Portfolio = () => {
             category: 'SEO',
             siteImage: portfolio12,
             logo: portfolioLogo12,
+               logoSize:'w-[30%]',
             dis: 'Bremafa: for the largest range of sleeping products in the Benelux.',
             website: 'https://bremafa.nl/',
             platform: 'Wordpress',
@@ -187,6 +199,7 @@ const Portfolio = () => {
             category: 'SEO',
             siteImage: portfolio13,
             logo: portfolioLogo13,
+               logoSize:'w-[25%]',
             dis: "Our services are tailor-made for you! You're in luck, because you're in safe hands. We offer a guarantee on all our services, and we're also known for our affordable prices.",
             website: 'https://nourloodgietersbedrijf.nl/',
             platform: 'Wordpress',
@@ -210,8 +223,9 @@ const Portfolio = () => {
             category: 'SEO',
             siteImage: portfolio15,
             logo: portfolioLogo15,
+              logoSize:'w-[25%]',
             dis: 'At Nourklusbedrijf, we believe that every project, big or small, deserves attention and care. Whether you want to have your wall painted, a complete kitchen installed.',
-            website: 'https://www.nourklusbedrijf.nl/',
+            website: 'https://www.hagatex.nl/',
             platform: 'Wordpress',
             bg: 'bg-transparent',
             rankingImage:ranking3,
@@ -222,6 +236,7 @@ const Portfolio = () => {
             category: 'SEO',
             siteImage: portfolio16,
             logo: portfolioLogo16,
+             logoSize:'w-[25%]',
             dis: 'Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.',
             website: 'https://blueapple.nl/',
             platform: 'Wordpress',
@@ -234,6 +249,7 @@ const Portfolio = () => {
             category: 'SEO',
             siteImage: portfolio17,
             logo: portfolioLogo17,
+               logoSize:'w-[25%]',
             dis: 'Steamy Details biedt een efficiënte, hoogwaardige reinigingsservice die volledig is afgestemd op jouw drukke leven.',
             website: 'https://steamydetails.nl/',
             platform: 'Wordpress',
@@ -251,8 +267,8 @@ const Portfolio = () => {
     return (
         <>
             {/* landing section start */}
-            <section style={{ backgroundImage: `url(${portfolioBanner})` }} className='h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
-                <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
+            <section style={{ backgroundImage: `url(${portfolioBanner})` }} className='h-[15.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
+                <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 -mb-[2.925rem]">
                     Portfolio
                 </h1>
             </section>
@@ -261,13 +277,13 @@ const Portfolio = () => {
             {/* designs cate tabs start */}
             {/* tab buttons section start */}
             <section>
-                <div className="main-container mt-[4.6875rem]">
+                <div className="main-container mt-[1.6875rem]">
                     <div className="flex sm:justify-center items-center gap-3 overflow-x-auto hide-scroll">
                         {tabButtons.map((tab, index) => (
                             <button 
                                 key={index} 
                                 onClick={() => setActiveTab(tab)} 
-                                className={`block cursor-pointer hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 2xl:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300 ${activeTab === tab ? 'text-white bg-gradient-to-r' : 'text-pine-700 bg-transparent'}`}
+                                className={`block cursor-pointer hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 2xl:text-lg text-sm font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300 ${activeTab === tab ? 'text-white bg-gradient-to-r' : 'text-pine-700 bg-transparent'}`}
                             >
                                 {tab}
                             </button>
@@ -279,34 +295,34 @@ const Portfolio = () => {
 
             {/* portfolio section start */}
         {filteredPortfolios.map((sect, index) => (
-    <section key={sect.id} className={`py-[4.6875rem] ${sect.bg} last:pb-[6.85rem]`}>
+    <section key={sect.id} className={`pt-[0.6875rem] pb-[2.6875rem] ${sect.bg} last:pb-[6.85rem]`}>
         <div className="main-container">
             <div className={`flex flex-col-reverse justify-center items-center gap-[3.3125rem] ${sect.rowPosition}`}>
-                <div className="lg:w-[60%]">
+                <div className="lg:w-[50%]">
                     <img src={sect.siteImage} alt="portfolio image" className='h-full w-full object-contain' />
                 </div>
                 <div className="lg:w-[40%] max-lg:text-center">
-                    <img src={sect.logo} alt="Portfolio logo" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
+                    <img src={sect.logo} alt="Portfolio logo" className={`h-auto  ${sect.logoSize} object-contain block mb-[.525rem] mt-4 max-lg:mx-auto`} />
 
-                    <p className="text-[1.375rem] leading-[2.3125rem] font-medium text-black mb-[2.375rem]">
+                    <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.725rem] font-normal text-black mb-[1.525rem]">
                         {sect.dis}
                     </p>
 
-                    <div className="flex flex-wrap justify-start items-center gap-5">
+                    <div className="flex flex-wrap justify-start items-center gap-2">
                         <div className="flex-1">
-                            <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Website Link</h5>
-                            <a href={sect.website} target='_blank' rel="noopener noreferrer" className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.website}</a>
+                            <h5 className='text-[1.25rem] leading-[1.725rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[0.525rem]'>Website Link</h5>
+                            <a href={sect.website} target='_blank' rel="noopener noreferrer" className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-black'>{sect.website}</a>
                         </div>
 
                         <div className="flex-1">
-                            <h5 className='text-[1.75rem] leading-[2.125rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[1.625rem]'>Platform</h5>
-                            <span className='text-[1.125rem] leading-[1.25rem] font-normal text-black'>{sect.platform}</span>
+                            <h5 className='text-[1.25rem] leading-[1.725rem] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-pine-700 to-pine-999 mb-[0.525rem]'>Platform</h5>
+                            <span className='2xl:text-[1.10rem] text-[1rem] leading-[2.125rem] font-normal text-black'>{sect.platform}</span>
                         </div>
                         
                         {/* Only show ranking image if category is SEO and rankingImage exists */}
                         {sect.category === 'SEO' && sect.rankingImage && (
                             <div className='flex'>
-                                <img src={sect.rankingImage} alt="Ranking" className='h-auto w-auto object-contain block mb-5 max-lg:mx-auto' />
+                                <img src={sect.rankingImage} alt="Ranking" className='h-auto w-[80%] object-contain block mb-2 max-lg:mx-auto' />
                             </div>
                         )}
                     </div>

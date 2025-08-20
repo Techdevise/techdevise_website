@@ -120,6 +120,7 @@ import clogo12 from "/clogo12.svg";
 import clogo13 from "/clogo13.svg";
 import clogo14 from "/clogo14.svg";
 import clogo15 from "/clogo15.svg";
+import clogo16 from "/clogo24.png";
 
 import Nour_Deen from "/Nour_Deen.png";
 import Harjit from "/Harjit.png";
@@ -579,6 +580,10 @@ const Home = () => {
     {
       image: clogo15,
       alt: "company logo 15",
+    },
+      {
+      image: clogo16,
+      alt: "company logo 16",
     },
   ];
   const images = [
