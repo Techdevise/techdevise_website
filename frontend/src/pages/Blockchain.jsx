@@ -8,6 +8,7 @@ import "swiper/css/effect-fade";
 import play from "/play.svg";
 import { Link } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
+import video from "/blockchainBg.mp4";
 // images
 import blockchainBg from "/blockchainBg.webp";
 import playVector from "/playVector.svg";
@@ -197,39 +198,50 @@ const Blockchain = () => {
   return (
     <>
       {/*landing area of BlockChain Development sections start  */}
-      <section
-        style={{ backgroundImage: `url(${blockchainBg})` }}
-        className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex justify-center items-center "
-      >
-        <div className="w-full max-w-[64.1875rem] m-auto text-center">
-          <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
-            <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
-            <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
-            <img
-              src={play}
-              alt="play icon"
-              className="mx-auto h-full w-full aspect-square "
-            />
-          </div>
-          <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
-            Blockchain Development Company
-          </h1>
-          <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
-            We help lead the transition to the web3 future with our cutting-edge
-            blockchain development services, having experience with more than 40
-            blockchain protocols.
-          </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-pine-700 text-white inline-flex shine-effect p-1.5 cursor-pointer rounded-full items-center group/link justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-          >
-            Consult Our Experts{" "}
-            <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
-              <FiArrowUpRight className="text-[18px]  text-pine-700" />{" "}
-            </span>
-          </button>
-        </div>
-      </section>
+     <section className="landing mb-[4.6875rem] min-h-svh relative flex justify-center items-center overflow-hidden">
+  {/* Background Video */}
+  <video
+    src={video}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay Color */}
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-70"></div>
+
+  {/* Content */}
+  <div className="relative w-full max-w-[64.1875rem] m-auto text-center z-10">
+    <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
+      <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+      <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+      <img
+        src={play}
+        alt="play icon"
+        className="mx-auto h-full w-full aspect-square"
+      />
+    </div>
+    <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+      Blockchain Development Company
+    </h1>
+    <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
+      We help lead the transition to the web3 future with our cutting-edge
+      blockchain development services, having experience with more than 40
+      blockchain protocols.
+    </p>
+    <button
+      onClick={() => setShowModal(true)}
+      className="bg-pine-700 text-white inline-flex shine-effect p-1.5 cursor-pointer rounded-full items-center group/link justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+    >
+      Consult Our Experts{" "}
+      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+        <FiArrowUpRight className="text-[18px] text-pine-700" />
+      </span>
+    </button>
+  </div>
+</section>
       {/*landing area of BlockChain Development sections end  */}
 
       {/* Re-Invent section Start */}

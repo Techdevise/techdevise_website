@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import axios from "axios";
 // images
-import serviceBgPhone from "/serviceBgPhone.webp";
+import serviceBgPhone from "/serviceBgPhone.mp4";
 import play from "/play.svg";
 import vector14 from "/vector14.svg";
 import mapWhite from "/mapWhite.svg";
@@ -15,7 +15,6 @@ import arrowRightUp from "/arrowRightUp.png";
 import ios from "/ios.svg";
 import android from "/android.svg";
 import reactNative from "/reactNative.svg";
-
 import quality1 from "/quality1.svg";
 import quality2 from "/quality2.svg";
 import quality3 from "/quality3.svg";
@@ -71,7 +70,7 @@ import langlogo29 from "/logoIcons2/lang9.svg";
 import langlogo31 from "/logoIcons3/lang1.svg";
 import langlogo32 from "/logoIcons3/lang2.svg";
 import langlogo33 from "/logoIcons3/lang3.svg";
-import langlogo34 from "/logoIcons3/lang4.svg";
+// import langlogo34 from "/logoIcons3/lang4.svg";
 import langlogo36 from "/logoIcons3/lang6.svg";
 import langlogo37 from "/logoIcons3/lang7.svg";
 import langlogo38 from "/logoIcons3/lang8.svg";
@@ -255,7 +254,11 @@ const MobileApplicationDevelopment = () => {
     langlogo12,
     langlogo13,
     langlogo15,
-    langlogo16,
+   
+  ];
+  // const logoSliders = [logoIcon1, logoIcon2, logoIcon3, logoIcon4, logoIcon5]
+  const logos2 = [
+     langlogo16,
     langlogo21,
     langlogo22,
     langlogo23,
@@ -268,8 +271,11 @@ const MobileApplicationDevelopment = () => {
     langlogo31,
     langlogo32,
     langlogo33,
-    langlogo34,
+    // langlogo34,
     langlogo36,
+  ]
+  const logos3 = [
+    
     langlogo37,
     langlogo38,
     langlogo39,
@@ -282,57 +288,62 @@ const MobileApplicationDevelopment = () => {
     langlogo52,
     langlogo53,
     langlogo54,
-  ];
-  // const logoSliders = [logoIcon1, logoIcon2, logoIcon3, logoIcon4, logoIcon5]
-  const stackTab = [
-    "Programming Languages",
-    "Frameworks",
-    "Databases",
-    "Devops",
-    "Payment Gateways",
-    "Clouds",
-  ];
+  ]
 
   return (
     <>
       {/*landing area of Mobile Application Development start  */}
-      <section
-        style={{ backgroundImage: `url(${serviceBgPhone})` }}
-        className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex justify-center items-center relative z-0 before:absolute before:inset-0 before:bg-pine-999/70 before:-z-10"
-      >
-        <div className="w-full max-w-[64.1875rem] m-auto text-center">
-          <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
-            <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
-            <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
-            <img
-              src={play}
-              alt="play icon"
-              className="mx-auto h-full w-full aspect-square "
-            />
-          </div>
-          <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
-            Custom Mobile App <br />
-            Development Services
-          </h1>
-          <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal text-white mb-[1.375rem]">
-            Use our blockchain-secured and Al-driven mobile app development
-            services to transform your designs into modern mobile experiences.
-            We create unique mobile applications for iOS and Android that
-            include the newest, most advanced technologies.
-          </p>
-          {/* <Link to="/" className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-            Mobile App Development <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link> */}
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-pine-700 inline-flex group/link p-1.5 rounded-full items-center justify-center shine-effect pl-[1.0625rem] gap-[2.0625rem] font-medium text-base text-white cursor-pointer"
-          >
-            Consult Our Experts{" "}
-            <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
-              <FiArrowUpRight className="size-6" />
-            </span>
-          </button>
-        </div>
-      </section>
+   
+
+<section className="landing mb-[4.6875rem] min-h-svh relative flex justify-center items-center overflow-hidden">
+  {/* Background Video */}
+  <video
+    src={serviceBgPhone}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay Color */}
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-70"></div>
+
+  {/* Content */}
+  <div className="relative w-full max-w-[64.1875rem] m-auto text-center z-10">
+    <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
+      <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+      <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+      <img
+        src={play}
+        alt="play icon"
+        className="mx-auto h-full w-full aspect-square"
+      />
+    </div>
+
+    <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+      Custom Mobile App <br />
+      Development Services
+    </h1>
+
+    <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal text-white mb-[1.375rem]">
+      Use our blockchain-secured and AI-driven mobile app development
+      services to transform your designs into modern mobile experiences.
+      We create unique mobile applications for iOS and Android that
+      include the newest, most advanced technologies.
+    </p>
+
+    <button
+      onClick={() => setShowModal(true)}
+      className="bg-pine-700 inline-flex group/link p-1.5 rounded-full items-center justify-center shine-effect pl-[1.0625rem] gap-[2.0625rem] font-medium text-base text-white cursor-pointer"
+    >
+      Consult Our Experts{" "}
+      <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
+        <FiArrowUpRight className="size-6" />
+      </span>
+    </button>
+  </div>
+</section>
       {/*landing area of Mobile Application Development end  */}
 
       {/* Solutions section start */}
@@ -788,106 +799,63 @@ const MobileApplicationDevelopment = () => {
       {/* React Native section end */}
 
       {/* Tech Stack We Use section start */}
-      <section
-        className="py-20 "
-      >
-        <div className="px-5">
-          <h3 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-black mb-10 text-center">
-            Tech Stack We Use
-          </h3>
+  <section className="py-20 bg-white">
+  <div className="px-5">
+  
+        <div className="w-full max-w-6xl m-auto text-center 2xl:mb-[5.3125rem] mb-[1.3125rem]">
+                        <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-8">
+                          Tech Stack We Use
+                        </h3>
+                        <p className="2xl:text-[1.250rem] text-[1rem] font-normal text-black mb-[4.375rem]">Our AI app developers excel in a diverse and advanced tech stack. From backend frameworks to development
+                            tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.</p>
+                    </div>
 
-          {/* Double Scrolling Logo Carousel */}
-          <div className="overflow-hidden">
-            {/* First row: scroll left */}
-            <Swiper
-              className="flex items-center"
-              slidesPerView="auto"
-              spaceBetween={30}
-              loop={true}
-              speed={3000}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-                reverseDirection: false,
-              }}
-              modules={[Autoplay]}
-            >
-              {logos.concat(logos).map((logo, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="!w-auto flex justify-center items-center"
-                >
-                  <img
-                    src={logo}
-                    alt={`logo-${index}`}
-                    className="h-24 md:h-32 lg:h-36 object-contain "
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+    {/* Row 1 - medium speed, left */}
+    <div className="overflow-hidden relative">
+      <div className="flex gap-10 animate-scroll-slow">
+        {[...logos, ...logos].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`logo-${i}`}
+            className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+    </div>
 
-          <div className="overflow-hidden 2xl:mt-10 mt-5">
-            {/* Second row: scroll right */}
-            <Swiper
-              className="flex items-center"
-              slidesPerView="auto"
-              spaceBetween={30}
-              loop={true}
-              speed={4000}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-                reverseDirection: true,
-              }}
-              modules={[Autoplay]}
-            >
-              {logos.concat(logos).map((logo, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="!w-auto flex justify-center items-center"
-                >
-                  <img
-                    src={logo}
-                    alt={`logo-${index}`}
-                    className="h-24 md:h-32 lg:h-36 object-contain "
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <div className="overflow-hidden  2xl:mt-10 mt-5 mb-5">
-            {/* First row: scroll left */}
-            <Swiper
-              className="flex items-center"
-              slidesPerView="auto"
-              spaceBetween={30}
-              loop={true}
-              speed={5000}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-                reverseDirection: false,
-              }}
-              modules={[Autoplay]}
-            >
-              {logos.concat(logos).map((logo, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="!w-auto flex justify-center items-center"
-                >
-                  <img
-                    src={logo}
-                    alt={`logo-${index}`}
-                    className="h-24 md:h-32 lg:h-36 object-contain "
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-        
-      </section>
+    {/* Row 2 - faster, right */}
+    <div className="overflow-hidden relative mt-6 2xl:mt-10">
+      <div className="flex gap-10 animate-scroll-fast-reverse">
+        {[...logos2, ...logos2].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`logo-${i}`}
+            className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* Row 3 - slowest, left */}
+    <div className="overflow-hidden relative mt-6 2xl:mt-10 mb-5">
+      <div className="flex gap-10 animate-scroll-slowest">
+        {[...logos3, ...logos3].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`logo-${i}`}
+            className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
       
       {/* Tech Stack We Use section end */}
       <GetInTouch

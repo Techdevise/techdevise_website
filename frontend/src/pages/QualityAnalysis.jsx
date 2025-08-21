@@ -419,7 +419,7 @@ const QualityAnalysis = () => {
               >
                 <div className="flex flex-col lg:flex-row items-center bg-balance rounded-[1.625rem] overflow-hidden w-full min-h-[28rem]">
                   {/* Image Left */}
-                  <div className="w-full lg:w-[40%] h-64 lg:h-[28rem] flex-shrink-0">
+                  <div className="w-full lg:w-[40%] h-auto flex-shrink-0">
                     <img
                       src={item.image}
                       alt={item.title}

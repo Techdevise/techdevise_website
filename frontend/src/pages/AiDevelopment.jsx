@@ -8,7 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
-import AiBg from "/AiBg.webp";
+// import AiBg from "/AiBg.webp";
+import AiBg from "/AiBg.mp4";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import CompanyLogoSlider from "../components/CompanyLogoSlider";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -221,7 +222,7 @@ const AiDevelopment = () => {
   if (loading) return <div>Loading AI services...</div>;
   // if (error) return <div>{error}</div>;
   // if (!services.length) return <div>No AI services available</div>;
-  const logos = [
+ const logos = [
     langlogo1,
     langlogo2,
     langlogo3,
@@ -234,7 +235,11 @@ const AiDevelopment = () => {
     langlogo12,
     langlogo13,
     langlogo15,
-    langlogo16,
+   
+  ];
+  // const logoSliders = [logoIcon1, logoIcon2, logoIcon3, logoIcon4, logoIcon5]
+  const logos2 = [
+     langlogo16,
     langlogo21,
     langlogo22,
     langlogo23,
@@ -247,8 +252,11 @@ const AiDevelopment = () => {
     langlogo31,
     langlogo32,
     langlogo33,
-    langlogo34,
+    // langlogo34,
     langlogo36,
+  ]
+  const logos3 = [
+    
     langlogo37,
     langlogo38,
     langlogo39,
@@ -261,55 +269,68 @@ const AiDevelopment = () => {
     langlogo52,
     langlogo53,
     langlogo54,
-  ];
+  ]
     const modalTabContent = [1, 2, 3, 4, 5, 6];
   return (
     <>
-      {/*landing area of Ai Development sections start  */}
-      <section className="landing mb-[4.6875rem] min-h-svh flex flex-col justify-center items-center ">
-        <div
-          style={{ backgroundImage: `url(${AiBg})` }}
-          className="landing flex-1 w-full bg-bottom bg-cover bg-no-repeat flex justify-center items-center "
-        >
-          <div className="w-full max-w-[64.1875rem] m-auto text-center">
-            <h5 className="text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8">
-              AI solutions that deliver real ROI
-            </h5>
-            <h1 className=" 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
-              Best AI Development Company
-            </h1>
-            <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
-              We create flexible, smart AI applications that are tailored to the goals of your company.Creativity, accuracy, and effective results-oriented development are what our clients trust us with.
 
-            </p>
-            
-            <button onClick={() => setShowModal(true)}
-              className="bg-[#22D5E4] text-black cursor-pointer shine-effect inline-flex p-1.5 rounded-full items-center group/link justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-            >
-              Consult Our Experts{" "}
-              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
-                <FiArrowUpRight className="text-[18px]  text-pine-700" />{" "}
-              </span>
-            </button>
-          </div>
-        </div>
+<section className="landing mb-[4.6875rem] min-h-svh flex flex-col justify-center items-center relative overflow-hidden">
+  {/* Background Video */}
+  <video
+    src={AiBg}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  />
 
-        <div className="flex-[0_1_0%] w-full bg-gradient-to-r from-[#005163] via-[#01313B] to-[#01090A] shadow-[0px_4px_4px_0px_#00000040]">
-          <div className="main-container !pe-0 py-[1.25rem] flex justify-start items-center">
-            <div className="flex-[0_1_0%] py-5 pe-8  border-r-2 border-white max-lg:hidden">
-              <h4 className="text-xl font-bold text-white text-nowrap">
-                Trusted By
-              </h4>
-              <h4 className="text-[0.95rem] font-medium text-white text-nowrap mt-1.5">
-                Our global clients Network
-              </h4>
-            </div>
-            <div className="flex-1 overflow-hidden">
-              <CompanyLogoSlider logos={coLogos} />
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Overlay Color */}
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-70"></div>
+
+  {/* Content Section */}
+  <div className="relative flex-1 w-full flex justify-center items-center z-10">
+    <div className="w-full max-w-[64.1875rem] m-auto text-center">
+      <h5 className="text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8">
+        AI solutions that deliver real ROI
+      </h5>
+      <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+        Best AI Development Company
+      </h1>
+      <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
+        We create flexible, smart AI applications that are tailored to the goals
+        of your company. Creativity, accuracy, and effective results-oriented
+        development are what our clients trust us with.
+      </p>
+
+      <button
+        onClick={() => setShowModal(true)}
+        className="bg-[#22D5E4] text-black cursor-pointer shine-effect inline-flex p-1.5 rounded-full items-center group/link justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+      >
+        Consult Our Experts{" "}
+        <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+          <FiArrowUpRight className="text-[18px] text-pine-700" />
+        </span>
+      </button>
+    </div>
+  </div>
+
+  {/* Trusted By Section */}
+  <div className="relative z-10 flex-[0_1_0%] w-full bg-gradient-to-r from-[#005163] via-[#01313B] to-[#01090A] shadow-[0px_4px_4px_0px_#00000040]">
+    <div className="main-container !pe-0 py-[1.25rem] flex justify-start items-center">
+      <div className="flex-[0_1_0%] py-5 pe-8 border-r-2 border-white max-lg:hidden">
+        <h4 className="text-xl font-bold text-white text-nowrap">Trusted By</h4>
+        <h4 className="text-[0.95rem] font-medium text-white text-nowrap mt-1.5">
+          Our global clients Network
+        </h4>
+      </div>
+      <div className="flex-1 overflow-hidden">
+        <CompanyLogoSlider logos={coLogos} />
+      </div>
+    </div>
+  </div>
+</section>
+
       {/*landing area of Ai Development sections end  */}
 
       {/* Why Choose AI section start */}
@@ -656,94 +677,46 @@ const AiDevelopment = () => {
                             tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.</p>
                     </div>
 
-                      <div className="overflow-hidden">
-                                {/* First row: scroll left */}
-                                <Swiper
-                                  className="flex items-center"
-                                  slidesPerView="auto"
-                                  spaceBetween={30}
-                                  loop={true}
-                                  speed={3000}
-                                  autoplay={{
-                                    delay: 0,
-                                    disableOnInteraction: false,
-                                    reverseDirection: false,
-                                  }}
-                                  modules={[Autoplay]}
-                                >
-                                  {logos.concat(logos).map((logo, index) => (
-                                    <SwiperSlide
-                                      key={index}
-                                      className="!w-auto flex justify-center items-center"
-                                    >
-                                      <img
-                                        src={logo}
-                                        alt={`logo-${index}`}
-                                        className="h-24 md:h-32 lg:h-36 object-contain "
-                                      />
-                                    </SwiperSlide>
-                                  ))}
-                                </Swiper>
-                              </div>
-                    
-                              <div className="overflow-hidden 2xl:mt-10 mt-5">
-                                {/* Second row: scroll right */}
-                                <Swiper
-                                  className="flex items-center"
-                                  slidesPerView="auto"
-                                  spaceBetween={30}
-                                  loop={true}
-                                  speed={4000}
-                                  autoplay={{
-                                    delay: 0,
-                                    disableOnInteraction: false,
-                                    reverseDirection: true,
-                                  }}
-                                  modules={[Autoplay]}
-                                >
-                                  {logos.concat(logos).map((logo, index) => (
-                                    <SwiperSlide
-                                      key={index}
-                                      className="!w-auto flex justify-center items-center"
-                                    >
-                                      <img
-                                        src={logo}
-                                        alt={`logo-${index}`}
-                                        className="h-24 md:h-32 lg:h-36 object-contain "
-                                      />
-                                    </SwiperSlide>
-                                  ))}
-                                </Swiper>
-                              </div>
-                              <div className="overflow-hidden  2xl:mt-10 mt-5 mb-5">
-                                {/* First row: scroll left */}
-                                <Swiper
-                                  className="flex items-center"
-                                  slidesPerView="auto"
-                                  spaceBetween={30}
-                                  loop={true}
-                                  speed={5000}
-                                  autoplay={{
-                                    delay: 0,
-                                    disableOnInteraction: false,
-                                    reverseDirection: false,
-                                  }}
-                                  modules={[Autoplay]}
-                                >
-                                  {logos.concat(logos).map((logo, index) => (
-                                    <SwiperSlide
-                                      key={index}
-                                      className="!w-auto flex justify-center items-center"
-                                    >
-                                      <img
-                                        src={logo}
-                                        alt={`logo-${index}`}
-                                        className="h-24 md:h-32 lg:h-36 object-contain "
-                                      />
-                                    </SwiperSlide>
-                                  ))}
-                                </Swiper>
-                              </div>
+                    <div className="overflow-hidden relative">
+      <div className="flex gap-10 animate-scroll-slow">
+        {[...logos, ...logos].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`logo-${i}`}
+            className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* Row 2 - faster, right */}
+    <div className="overflow-hidden relative mt-6 2xl:mt-10">
+      <div className="flex gap-10 animate-scroll-fast-reverse">
+        {[...logos2, ...logos2].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`logo-${i}`}
+            className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* Row 3 - slowest, left */}
+    <div className="overflow-hidden relative mt-6 2xl:mt-10 mb-5">
+      <div className="flex gap-10 animate-scroll-slowest">
+        {[...logos3, ...logos3].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`logo-${i}`}
+            className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+    </div>
                 </div>
             </section>
       {/* AI tech section end */}
