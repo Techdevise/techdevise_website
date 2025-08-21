@@ -8,7 +8,7 @@ import girl4 from "/girl4.svg";
 import girl5 from "/girl5.svg";
 import girl6 from "/girl6.svg";
 import girl7 from "/girl7.svg";
-import arrowRightUp from "/arrowRightUp.svg";
+import { FiArrowUpRight } from "react-icons/fi";
 import SEO from "/SEO.svg";
 import facebookBlack from "/facebookBlack.svg";
 import xBlack from "/xBlack.svg";
@@ -252,16 +252,12 @@ const DigitalMarketingOne = () => {
 
               <button
                 onClick={() => setShowModal(true)}
-                className="bg-pine-300 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+                className="bg-pine-300 inline-flex group/link p-1.5 rounded-full items-center text-white justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer shine-effect"
               >
                 Consult Our Experts{" "}
-                <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                  <img
-                    src={arrowRightUp}
-                    alt="arrow right up"
-                    className="w-[1.125rem]"
-                  />
-                </span>
+                <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-[#67C792] flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
+                                      <FiArrowUpRight className="size-6" />
+                                    </span>
               </button>
               <h2 className="text-[clamp(9rem,_13vw,_15.75rem)] max-lg:hidden text-white font-extrabold opacity-5 leading-none mt-9 mb-4">
                 SEO
@@ -799,8 +795,8 @@ const DigitalMarketingOne = () => {
           <div className="bg-white shadow-xl shadow-gray-600/5 rounded-[.625rem] lg:py-[3.4375rem] lg:px-[2.375rem] p-3">
             <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-stretch">
               <div className="lg:w-[25.625rem] lg:border-r border-black/20  lg:pe-[3.3125rem]">
-                <ul className="lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll">
-                  <li onClick={() => setActiveTab(1)} className="mb-3.5">
+                <ul className="lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll ">
+                  <li onClick={() => setActiveTab(1)} className="mb-3.5 cursor-pointer group/link shine-effect">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 1
@@ -808,22 +804,23 @@ const DigitalMarketingOne = () => {
                           : "bg-white"
                       }`}
                     >
-                      <span className="text-base font-semibold ps-5 text-nowrap">
+                      <span className="text-base font-semibold ps-5 text-nowrap  ">
                         Certified Agency
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center group-hover/link:rotate-45 transition-all duration-300 ${
                           isActiveTab == 1 ? "bg-white" : "bg-[#5CEA90]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                     
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(2)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(2)} className="mb-3.5 cursor-pointer group/link shine-effect">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 2
@@ -835,18 +832,18 @@ const DigitalMarketingOne = () => {
                         24 x 7 Support
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 2 ? "bg-white" : "bg-[#EA9C99]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(3)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(3)} className="mb-3.5 cursor-pointer group/link shine-effect">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 3
@@ -858,18 +855,18 @@ const DigitalMarketingOne = () => {
                         Affordable
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 3 ? "bg-white" : "bg-[#67C792]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(4)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(4)} className="mb-3.5 cursor-pointer group/link shine-effect">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 4
@@ -881,18 +878,18 @@ const DigitalMarketingOne = () => {
                         Experience
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 4 ? "bg-white" : "bg-[#FFE74E]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(5)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(5)} className="mb-3.5 cursor-pointer group/link shine-effect">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 5
@@ -904,12 +901,12 @@ const DigitalMarketingOne = () => {
                         Flexible Plans
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 5 ? "bg-white" : "bg-[#C897EB]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>

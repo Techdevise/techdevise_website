@@ -501,22 +501,22 @@ const Home = () => {
     {
       image: dashGreen,
       title: "Share your Requirements",
-      discription: "Define your project needs and skills required",
+      discription: " Describe your business goals and the technical skills you require.",
     },
     {
       image: dashWhite,
       title: "Get Vetted Profile",
-      discription: "Define your project needs and skills required",
+      discription: "Connect with qualified professionals who meet your exact requirements quickly.",
     },
     {
       image: dashGreen,
       title: "Conduct Interview",
-      discription: "Define your project needs and skills required",
+      discription: "Engage with shortlisted professionals through interviews for better hiring decisions.",
     },
     {
       image: dashWhite,
       title: "Hire & Get Started",
-      discription: "Define your project needs and skills required",
+      discription: "Hire the right expert and start your project quickly with confidence.",
     },
   ];
 
@@ -1762,7 +1762,7 @@ const Home = () => {
                   </p>
                   <Link
                     to="/contact-us"
-                    className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center"
+                    className="text-lg font-bold leading-none px-5 py-5  rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center  "
                   >
                     Let's Innovate Together{" "}
                     <BsArrowRight className="size-[1.875rem]" />
@@ -2025,7 +2025,7 @@ const Home = () => {
                     <div className="w-full">
                       <button
                         type="submit"
-                        className="bg-white rounded-[.625rem] py-2.5 px-5 border-0 outline-0 text-xl font-bold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
+                        className="bg-white shine-effect rounded-[.625rem] py-2.5 px-5 border-0 outline-0 text-xl font-bold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? "Submitting..." : "Submit"}

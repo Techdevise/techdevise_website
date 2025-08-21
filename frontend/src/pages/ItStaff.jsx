@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 // images
 import staff1 from "/staff1.webp";
 import { Link } from "react-router-dom";
-import { GoArrowRight } from "react-icons/go";
+import { FiArrowUpRight } from "react-icons/fi";
 import CompanyLogoSlider from "../components/CompanyLogoSlider";
 import stafflogo from "/stafflogo.svg";
 
@@ -183,8 +183,8 @@ const ItStaff = () => {
                                             Talk with one of our experts about your IT staffing and tech solutions needs.
                                         </p>
 
-                                        <button onClick={() => setShowModal(true)} className="bg-[#BCFFCE] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                                            Let's Connect <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><LuMoveUpRight className='text-[18px] -rotate-12 text-black' strokeWidth={1} /> </span></button>
+                                        <button onClick={() => setShowModal(true)} className="bg-[#BCFFCE] shine-effect text-black inline-flex p-1.5 cursor-pointer group/link rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                                            Let's Connect <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400"><FiArrowUpRight className='text-[25px]  text-black' strokeWidth={1} /> </span></button>
 
                                     </div>
                                     <div className="border border-white bg-black/50 rounded-[1.625rem] p-[1.875rem] text-center flex justify-center items-center flex-col">
@@ -193,8 +193,8 @@ const ItStaff = () => {
                                             Talk with one of our experts about your IT staffing and tech solutions needs.
                                         </p>
 
-                                        <button onClick={() => setShowModal(true)} className="bg-[#FFBCBE] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                                            Get Started<span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><LuMoveUpRight className='text-[18px] -rotate-12 text-black' strokeWidth={1} /> </span></button>
+                                        <button onClick={() => setShowModal(true)} className="bg-[#FFBCBE] shine-effect text-black cursor-pointer inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] group/link font-medium text-base">
+                                            Get Started<span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400"><FiArrowUpRight className='text-[25px]  text-black' strokeWidth={1} /> </span></button>
 
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@ const ItStaff = () => {
                 className="border-2 border-black flex justify-between items-center rounded-full p-2 cursor-pointer hover:bg-gray-100 transition-colors"
               >
                 <span className='px-[1.375rem]'>{role.name}</span>
-                <div className="size-[3.3125rem] rounded-full bg-[#E8E8E8] flex justify-center items-center">
+                <div className="size-[3.3125rem] rounded-full bg-[#E8E8E8] flex justify-center items-center shine-effect">
                   <img src={arrowRightUp} alt="arrow Right Up" />
                 </div>
               </div>

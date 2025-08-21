@@ -313,7 +313,7 @@ const ContactUs = () => {
                 <div className="col">
                   <button
                     type="submit"
-                    className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block  text-white rounded-[.625rem]"
+                    className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block  text-white rounded-[.625rem] shine-effect"
                   >
                     Submit
                   </button>

@@ -294,7 +294,7 @@ const filteredImages = () => {
           {/* Header + Filter Buttons */}
           <div className="sectionHeader flex md:flex-row flex-col gap-4 md:justify-between justify-center items-center pb-12">
             <h3 className="text-[2.5rem] font-bold">Life@Techdevise</h3>
-            <div className="flex gap-[.8125rem] max-md:pt-5">
+            <div className="flex gap-[.8125rem] max-md:pt-5 ">
               {["all", "team", "office"].map((type) => (
                 <button
                   key={type}
@@ -303,7 +303,7 @@ const filteredImages = () => {
                     filter === type
                       ? "bg-gradient-to-r from-pine-700 to-pine-500 text-white"
                       : "text-pine-700 bg-transparent"
-                  } hover:text-white hover:bg-gradient-to-r from-pine-700 to-pine-500 md:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300`}
+                  } hover:text-white shine-effect cursor-pointer hover:bg-gradient-to-r from-pine-700 to-pine-500 md:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300`}
                 >
                   {type === "all"
                     ? "All"

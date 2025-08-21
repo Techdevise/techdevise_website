@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-
+import { FiArrowUpRight } from "react-icons/fi";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,7 +11,7 @@ import serviceBgPhone from "/serviceBgPhone.webp";
 import play from "/play.svg";
 import vector14 from "/vector14.svg";
 import mapWhite from "/mapWhite.svg";
-import arrowRightUp from "/arrowRightUp.svg";
+import arrowRightUp from "/arrowRightUp.png";
 import ios from "/ios.svg";
 import android from "/android.svg";
 import reactNative from "/reactNative.svg";
@@ -32,7 +32,7 @@ import MaintenanceImg from "/MaintenanceImg.jpg";
 import react from "/react.svg";
 
 import native0 from "/native0.svg";
-import native1 from "/native1.svg";
+import native1 from "/native1.png";
 import native2 from "/native2.svg";
 import native3 from "/native3.svg";
 import native4 from "/native4.svg";
@@ -53,7 +53,6 @@ import langlogo8 from "/logoIcons0/lang8.svg";
 import langlogo11 from "/logoIcons1/lang1.svg";
 import langlogo12 from "/logoIcons1/lang2.svg";
 import langlogo13 from "/logoIcons1/lang3.svg";
-import langlogo14 from "/logoIcons1/lang4.svg";
 import langlogo15 from "/logoIcons1/lang5.svg";
 import langlogo16 from "/logoIcons1/lang6.svg";
 //  1 end
@@ -202,7 +201,7 @@ const MobileApplicationDevelopment = () => {
   const native = [
     {
       icon: native1,
-      hoverBg: "bg-[#FFCFD0]",
+      hoverBg: "bg-[#CFF8FF]",
       title: "React Native App Development",
       para: "Under our React Native App Development service we offer cross-development apps that can be used to run on android, iOS, and other mobile platforms as well. React Native App Development costs less and also takes less time to develop.",
     },
@@ -242,7 +241,8 @@ const MobileApplicationDevelopment = () => {
       para: "If you are looking for quality React Native Support & Maintenance, then we have the best engineers to look after your projects. Our team expertise in various React Native Support & Maintenance services and we assure you that all your projects will run smoothly with our maintenance and support services.",
     },
   ];
-  const logoIcon0 = [
+
+  const logos = [
     langlogo1,
     langlogo2,
     langlogo3,
@@ -251,16 +251,11 @@ const MobileApplicationDevelopment = () => {
     langlogo6,
     langlogo7,
     langlogo8,
-  ];
-  const logoIcon1 = [
     langlogo11,
     langlogo12,
     langlogo13,
-    langlogo14,
     langlogo15,
     langlogo16,
-  ];
-  const logoIcon2 = [
     langlogo21,
     langlogo22,
     langlogo23,
@@ -270,8 +265,6 @@ const MobileApplicationDevelopment = () => {
     langlogo27,
     langlogo28,
     langlogo29,
-  ];
-  const logoIcon3 = [
     langlogo31,
     langlogo32,
     langlogo33,
@@ -280,22 +273,15 @@ const MobileApplicationDevelopment = () => {
     langlogo37,
     langlogo38,
     langlogo39,
-  ];
-  const logoIcon4 = [
     langlogo41,
     langlogo42,
     langlogo43,
     langlogo44,
     langlogo45,
-  ];
-  const logoIcon5 = [langlogo51, langlogo52, langlogo53, langlogo54];
-  const slide1 = [
-    { item: logoIcon0 },
-    { item: logoIcon1 },
-    { item: logoIcon2 },
-    { item: logoIcon3 },
-    { item: logoIcon4 },
-    { item: logoIcon5 },
+    langlogo51,
+    langlogo52,
+    langlogo53,
+    langlogo54,
   ];
   // const logoSliders = [logoIcon1, logoIcon2, logoIcon3, logoIcon4, logoIcon5]
   const stackTab = [
@@ -338,15 +324,11 @@ const MobileApplicationDevelopment = () => {
             Mobile App Development <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></Link> */}
           <button
             onClick={() => setShowModal(true)}
-            className="bg-pine-700 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base text-white"
+            className="bg-pine-700 inline-flex group/link p-1.5 rounded-full items-center justify-center shine-effect pl-[1.0625rem] gap-[2.0625rem] font-medium text-base text-white cursor-pointer"
           >
             Consult Our Experts{" "}
-            <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-              <img
-                src={arrowRightUp}
-                alt="arrow right up"
-                className="w-[1.125rem]"
-              />
+            <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
+              <FiArrowUpRight className="size-6" />
             </span>
           </button>
         </div>
@@ -361,7 +343,7 @@ const MobileApplicationDevelopment = () => {
               Solutions to Explore
             </h4>
             <div className="flex-1 lg:ps-[7.125rem]">
-              <ul className="tabs flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-3 mb-9">
+              <ul className="tabs flex justify-start flex-nowrap overflow-x-scroll hide-scroll gap-3 mb-9 ">
                 {tab.map((tbs, index) => (
                   <li
                     key={index}
@@ -370,17 +352,17 @@ const MobileApplicationDevelopment = () => {
                       isTab == index + 1
                         ? "border-pine-300 bg-pine-300 text-white"
                         : "border-black bg-transparent text-black"
-                    } text-base text-nowrap font-semibold border py-3 px-3 rounded-[.625rem] flex justify-center items-center gap-3`}
+                    } text-base text-nowrap font-semibold border py-3 px-3 rounded-[.625rem] flex justify-center items-center gap-3 cursor-pointer shine-effect`}
                   >
                     {tbs.tabTitle}{" "}
-                    <HiOutlineArrowLongRight className="size-5" />
+                    <HiOutlineArrowLongRight className="size-5 " />
                   </li>
                 ))}
               </ul>
               {tabPanel.map((panel, i) => (
                 <div
                   key={i}
-                  className={` lg:justify-between lg:flex-row flex-col items-center 2xl:gap-[9.375rem] gap-10 ${
+                  className={` lg:justify-between lg:flex-row flex-col items-center 2xl:gap-[9.375rem] gap-10  ${
                     isTab == i + 1 ? "flex" : "hidden"
                   }`}
                 >
@@ -567,7 +549,7 @@ const MobileApplicationDevelopment = () => {
             <ul className="flex flex-wrap justify-center items-center gap-5 mb-[3.4375rem] ">
               <li
                 onClick={() => setQualityActive(1)}
-                className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300  cursor-pointer ${
+                className={`w-fit p-3 rounded-full shine-effect text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300  cursor-pointer ${
                   isQualityActive == 1
                     ? "bg-gradient-to-r from-[#F4D8D8] to-[#EE94B8]"
                     : "bg-white"
@@ -584,7 +566,7 @@ const MobileApplicationDevelopment = () => {
               </li>
               <li
                 onClick={() => setQualityActive(2)}
-                className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
+                className={`w-fit p-3 rounded-full text-base shine-effect font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
                   isQualityActive == 2
                     ? "bg-gradient-to-r from-[#FFEEED] to-[#EA9C99]"
                     : "bg-white"
@@ -602,7 +584,7 @@ const MobileApplicationDevelopment = () => {
               </li>
               <li
                 onClick={() => setQualityActive(3)}
-                className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
+                className={`w-fit p-3 rounded-full text-base shine-effect font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
                   isQualityActive == 3
                     ? "bg-gradient-to-r from-[#F1FFF7] to-[#67C792]"
                     : "bg-white"
@@ -619,7 +601,7 @@ const MobileApplicationDevelopment = () => {
               </li>
               <li
                 onClick={() => setQualityActive(4)}
-                className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
+                className={`w-fit p-3 rounded-full text-base shine-effect font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
                   isQualityActive == 4
                     ? "bg-gradient-to-r from-[#FDF9DF] to-[#FFE74E]"
                     : "bg-white"
@@ -636,7 +618,7 @@ const MobileApplicationDevelopment = () => {
               </li>
               <li
                 onClick={() => setQualityActive(5)}
-                className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
+                className={`w-fit p-3 rounded-full text-base shine-effect font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
                   isQualityActive == 5
                     ? "bg-gradient-to-r from-[#F0DCFF] to-[#C897EB]"
                     : "bg-white"
@@ -653,7 +635,7 @@ const MobileApplicationDevelopment = () => {
               </li>
               <li
                 onClick={() => setQualityActive(6)}
-                className={`w-fit p-3 rounded-full text-base font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
+                className={`w-fit p-3 rounded-full text-base shine-effect font-semibold flex justify-center items-center gap-3 border border-black transition-all duration-300 cursor-pointer ${
                   isQualityActive == 6
                     ? "bg-gradient-to-r from-[#FFFCDD] to-[#DAD07A]"
                     : "bg-white"
@@ -776,7 +758,6 @@ const MobileApplicationDevelopment = () => {
                       <div
                         className={`group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 2xl:max-w-[480px] h-full w-full bg-white rounded-[1.625rem] py-5 px-6 ${item.hoverBg}`}
                       >
-                      
                         <span
                           className={`absolute  top-10 left-9 z-0 h-10 w-10 rounded-full  ${item.hoverBg} transition-all duration-900 group-hover:scale-[50] `}
                         ></span>
@@ -808,96 +789,106 @@ const MobileApplicationDevelopment = () => {
 
       {/* Tech Stack We Use section start */}
       <section
-        style={{ backgroundImage: `url(${bglayerdevices})` }}
-        className="py-[4.687rem] mb-[3rem] bg-bottom bg-cover bg-no-repeat"
+        className="py-20 "
       >
-        <div className="main-container">
-          <h3 className="2xl:text-5xl sm:text-4xl text-3xl font-bold text-black mb-[2.5625rem]">
+        <div className="px-5">
+          <h3 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-black mb-10 text-center">
             Tech Stack We Use
           </h3>
-          <div className="lg:pe-[4.8125rem] relative">
-            <h4 className="texto absolute top-0 right-5 max-lg:hidden rotate-180 text-nowrap sm:text-[1.6813rem] leading-[2.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#f2f2f2] to-pine-700">
-              Solutions to Explore
-            </h4>
 
-            <div className="bg-white lg:py-[2.1875rem] lg:px-[3.125rem] p-5  rounded-[1.625rem] ">
-              <ul className="flex justify-start flex-nowrap overflow-x-scroll hide-scroll md:gap-[4.5rem] gap-8 mb-4">
-                {stackTab.map((item, index) => (
-                  <li
-                    onClick={() => setActiveSlide(index + 1)}
-                    key={index}
-                    className={`md:text-[1.5rem] text-lg cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-black before:bottom-0 before:left-0 before:transition-all before:duration-300 ${
-                      isActiveSlide == index + 1
-                        ? " before:w-full"
-                        : " before:w-0"
-                    }`}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {/* Double Scrolling Logo Carousel */}
+          <div className="overflow-hidden">
+            {/* First row: scroll left */}
+            <Swiper
+              className="flex items-center"
+              slidesPerView="auto"
+              spaceBetween={30}
+              loop={true}
+              speed={3000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {logos.concat(logos).map((logo, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="!w-auto flex justify-center items-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`logo-${index}`}
+                    className="h-24 md:h-32 lg:h-36 object-contain "
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-              <div className="flex flex-col">
-                <div className=" gap-2.5 hidden justify-end items-stretch lg:mt-[3.25rem] mt-4 order-2">
-                  <button ref={prevRefLang} className="cursor-pointer order-1">
-                    <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowLeft className="size-7" />
-                    </div>
-                  </button>
-
-                  <button ref={nextRefLang} className="cursor-pointer order-2">
-                    <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowRight className="size-7" />
-                    </div>
-                  </button>
-                </div>
-
-                {slide1.map((slide, index) => (
-                  <Swiper
-                    key={index}
-                    className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1 ${
-                      isActiveSlide == index + 1 ? "flex" : "!hidden"
-                    }`}
-                    slidesPerView={"auto"}
-                    spaceBetween={30}
-                    speed={3000}
-                    loop={true}
-                    autoplay={{ delay: 1, disableOnInteraction: false }}
-                    grabCursor={true}
-                    modules={[Navigation, Autoplay]}
-                    onInit={(swiper) => {
-                      // Re-assign custom buttons after swiper is initialized
-                      swiper.params.navigation.prevEl = prevRefLang.current;
-                      swiper.params.navigation.nextEl = nextRefLang.current;
-                      swiper.navigation.init();
-                      swiper.navigation.update();
-                    }}
-                    navigation={{
-                      prevEl: prevRefLang.current,
-                      nextEl: nextRefLang.current,
-                    }}
-                  >
-                    {slide.item.map((itm, index) => {
-                      return (
-                        <SwiperSlide
-                          key={index}
-                          className="flex justify-center items-center lg:!w-[10rem] !w-[6rem]"
-                        >
-                          <img
-                            src={itm}
-                            alt="logo"
-                            className="block object-contain lg:h-[9.375rem] lg:w-[10.5rem]  mx-auto"
-                          />
-                        </SwiperSlide>
-                      );
-                    })}
-                  </Swiper>
-                ))}
-              </div>
-            </div>
+          <div className="overflow-hidden 2xl:mt-10 mt-5">
+            {/* Second row: scroll right */}
+            <Swiper
+              className="flex items-center"
+              slidesPerView="auto"
+              spaceBetween={30}
+              loop={true}
+              speed={4000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: true,
+              }}
+              modules={[Autoplay]}
+            >
+              {logos.concat(logos).map((logo, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="!w-auto flex justify-center items-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`logo-${index}`}
+                    className="h-24 md:h-32 lg:h-36 object-contain "
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div className="overflow-hidden  2xl:mt-10 mt-5 mb-5">
+            {/* First row: scroll left */}
+            <Swiper
+              className="flex items-center"
+              slidesPerView="auto"
+              spaceBetween={30}
+              loop={true}
+              speed={5000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {logos.concat(logos).map((logo, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="!w-auto flex justify-center items-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`logo-${index}`}
+                    className="h-24 md:h-32 lg:h-36 object-contain "
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
+        
       </section>
+      
       {/* Tech Stack We Use section end */}
       <GetInTouch
         showModal={showModal}

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import AiBg from "/AiBg.webp";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import CompanyLogoSlider from "../components/CompanyLogoSlider";
-
+import { FiArrowUpRight } from "react-icons/fi";
 // images
 import AiCoLogo from "/AiCoLogo.svg";
 
@@ -34,7 +34,6 @@ import langlogo8 from '/logoIcons0/lang8.svg'
 import langlogo11 from "/logoIcons1/lang1.svg";
 import langlogo12 from "/logoIcons1/lang2.svg";
 import langlogo13 from "/logoIcons1/lang3.svg";
-import langlogo14 from "/logoIcons1/lang4.svg";
 import langlogo15 from "/logoIcons1/lang5.svg";
 import langlogo16 from "/logoIcons1/lang6.svg";
 //  1 end
@@ -222,30 +221,48 @@ const AiDevelopment = () => {
   if (loading) return <div>Loading AI services...</div>;
   // if (error) return <div>{error}</div>;
   // if (!services.length) return <div>No AI services available</div>;
- const logoIcon0 = [langlogo1, langlogo2, langlogo3, langlogo4, langlogo5, langlogo6, langlogo7, langlogo8]
-    const logoIcon1 = [langlogo11, langlogo12, langlogo13, langlogo14, langlogo15, langlogo16]
-    const logoIcon2 = [langlogo21, langlogo22, langlogo23, langlogo24, langlogo25, langlogo26, langlogo27, langlogo28, langlogo29]
-    const logoIcon3 = [langlogo31, langlogo32, langlogo33, langlogo34, langlogo36, langlogo37, langlogo38, langlogo39]
-    const logoIcon4 = [langlogo41, langlogo42, langlogo43, langlogo44, langlogo45]
-    const logoIcon5 = [langlogo51, langlogo52, langlogo53, langlogo54]
-   const slides = [
-        { item: logoIcon0 },
-        { item: logoIcon1 },
-        { item: logoIcon2 },
-        { item: logoIcon3 },
-        { item: logoIcon4 },
-        { item: logoIcon5 },
-    ]
-
-  const modalTabContent = [1, 2, 3, 4, 5, 6];
-  const stackTab = [
-    "Programming Languages",
-    "Frameworks",
-    "Databases",
-    "Devops",
-    "Payment Gateways",
-    "Clouds",
+  const logos = [
+    langlogo1,
+    langlogo2,
+    langlogo3,
+    langlogo4,
+    langlogo5,
+    langlogo6,
+    langlogo7,
+    langlogo8,
+    langlogo11,
+    langlogo12,
+    langlogo13,
+    langlogo15,
+    langlogo16,
+    langlogo21,
+    langlogo22,
+    langlogo23,
+    langlogo24,
+    langlogo25,
+    langlogo26,
+    langlogo27,
+    langlogo28,
+    langlogo29,
+    langlogo31,
+    langlogo32,
+    langlogo33,
+    langlogo34,
+    langlogo36,
+    langlogo37,
+    langlogo38,
+    langlogo39,
+    langlogo41,
+    langlogo42,
+    langlogo43,
+    langlogo44,
+    langlogo45,
+    langlogo51,
+    langlogo52,
+    langlogo53,
+    langlogo54,
   ];
+    const modalTabContent = [1, 2, 3, 4, 5, 6];
   return (
     <>
       {/*landing area of Ai Development sections start  */}
@@ -267,11 +284,11 @@ const AiDevelopment = () => {
             </p>
             
             <button onClick={() => setShowModal(true)}
-              className="bg-[#22D5E4] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+              className="bg-[#22D5E4] text-black cursor-pointer shine-effect inline-flex p-1.5 rounded-full items-center group/link justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
             >
               Consult Our Experts{" "}
-              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
+              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+                <FiArrowUpRight className="text-[18px]  text-pine-700" />{" "}
               </span>
             </button>
           </div>
@@ -535,8 +552,8 @@ const AiDevelopment = () => {
             </div>
           </div>
           <div className="flex justify-center items-center mt-[4.625rem]">
-             <button onClick={() => setShowModal(true)} className="bg-[#22D5E4] text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                            Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
+             <button onClick={() => setShowModal(true)} className="bg-[#22D5E4] shine-effect cursor-pointer group/link text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                            Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400"><FiArrowUpRight className='text-[18px]  text-pine-700' /> </span></button>
            
           </div>
         </div>
@@ -555,7 +572,7 @@ const AiDevelopment = () => {
         </div>
 
         <div className="tabsForModels bg-white border border-[#d3d3d3] rounded-[1.625rem] shadow-2xl shadow-black/10 py-10 md:px-[2.6875rem] p-4">
-            <ul className=' flex justify-start items-center md:gap-[4.9375rem] sm:gap-7 gap-4 overflow-x-auto hide-scroll md:mb-14 mb-8'>
+            <ul className=' flex justify-start items-center md:gap-[4.9375rem] sm:gap-7 gap-4 overflow-x-auto hide-scroll md:mb-14 mb-8 cursor-pointer'>
                 <li onClick={() => setActiveModalStep(1)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 1 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Computer Vision Models</li>
                 <li onClick={() => setActiveModalStep(2)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 2 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>Machine Learning Models</li>
                 <li onClick={() => setActiveModalStep(3)} className={`sm:text-xl text-base leading-[2.4375rem] text-nowrap sm:pb-3 pb-1 border-b-2 ${isactiveModalStep == 3 ? 'border-[#342674] text-[#342674]' : 'border-transparent text-black'}`}>NLP Models</li>
@@ -578,8 +595,8 @@ const AiDevelopment = () => {
                             {index === 4 && "We create a mixed AI model that engages the advantages of several methods together, such as machine learning, deep learning, and rule-based systems, to improve their accuracy and versatility. These models best fit into perceptively tackling real-world complex problems more productively."}
                             {index === 5 && "We build generative AI that can create entirely new content, like text, images and music, by learning from existing data. They give rise to novel and innovative creative opportunities, along with content generation possibilities across industries."}
                         </p>
-                        <button onClick={() => setShowModal(true)} className="bg-[#342674] text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
-                            Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button>
+                        <button onClick={() => setShowModal(true)} className="bg-[#342674] shine-effect text-white cursor-pointer inline-flex p-1.5 rounded-full items-center justify-center group/link pl-[2.0625rem] gap-[2.0625rem] font-medium text-base">
+                            Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400"><FiArrowUpRight className='text-[18px]  text-pine-700' /> </span></button>
                     </div>
                 </div>
             ))}
@@ -629,8 +646,8 @@ const AiDevelopment = () => {
 
       {/* AI tech section start */}
     <section className="aiTech my-[4.6875rem]">
-                <div className="main-container">
-                 <div className="w-full max-w-6xl m-auto text-center mb-[5.3125rem]">
+                <div className="px-5">
+                 <div className="w-full max-w-6xl m-auto text-center 2xl:mb-[5.3125rem] mb-[1.3125rem]">
                         <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-8">
                             Tech Stack, We Use As an Artificial
                             Intelligence Development Company!
@@ -639,76 +656,94 @@ const AiDevelopment = () => {
                             tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.</p>
                     </div>
 
-                    <div className="">
-                        <div style={{ backgroundImage: `url(${AiTech})` }} className=" bg-no-repeat bg-center lg:py-[2.1875rem] lg:px-[3.125rem] p-5 rounded-[.625rem] ">
-                            <ul className='flex justify-between flex-nowrap text-white overflow-x-scroll hide-scroll md:gap-[4.5rem] gap-8 lg:mb-10 mb-4'>
-                                {stackTab.map((item, index) => (
-                                    <li onClick={() => setActiveSlide(index + 1)} key={index} className={`2xl:text-[1.25rem] text-[1rem] cursor-pointer lg:leading-[2.4375rem] font-semibold text-nowrap relative w-fit mb-3 before:absolute before:h-[.125rem] before:bg-white before:bottom-0 before:left-0 before:transition-all before:duration-300 ${isActiveSlide == index + 1 ? ' before:w-full' : ' before:w-0'}`}>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="flex flex-col">
-
-                                <div className="hidden gap-2.5 justify-end items-stretch lg:mt-[3.25rem] mt-4 order-2">
-                                    <button ref={prevRefLang} className="cursor-pointer order-1">
-                                        <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
-                                            <GoArrowLeft className="size-7" />
-                                        </div>
-                                    </button>
-
-                                    <button ref={nextRefLang} className="cursor-pointer order-2">
-                                        <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
-                                            <GoArrowRight className="size-7" />
-                                        </div>
-                                    </button>
-                                </div>
-
-                                {slides.map((slide, index) => (
-
-                                    <Swiper
-                                        className={`mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:!ease-linear order-1  ${isActiveSlide == index + 1 ? 'flex' : '!hidden'}`}
-                                        slidesPerView={'auto'}
-                                        spaceBetween={30}
-                                        speed={3000}
-                                        loop={true}
-                                        autoplay={{ delay: 1, disableOnInteraction: false }}
-                                        grabCursor={true}
-                                        modules={[Navigation, Autoplay]}
-                                        onInit={(swiper) => {
-                                            // Re-assign custom buttons after swiper is initialized
-                                            swiper.params.navigation.prevEl = prevRefLang.current;
-                                            swiper.params.navigation.nextEl = nextRefLang.current;
-                                            swiper.navigation.init();
-                                            swiper.navigation.update();
-                                        }}
-                                        navigation={{
-                                            prevEl: prevRefLang.current,
-                                            nextEl: nextRefLang.current
-                                        }}
+                      <div className="overflow-hidden">
+                                {/* First row: scroll left */}
+                                <Swiper
+                                  className="flex items-center"
+                                  slidesPerView="auto"
+                                  spaceBetween={30}
+                                  loop={true}
+                                  speed={3000}
+                                  autoplay={{
+                                    delay: 0,
+                                    disableOnInteraction: false,
+                                    reverseDirection: false,
+                                  }}
+                                  modules={[Autoplay]}
+                                >
+                                  {logos.concat(logos).map((logo, index) => (
+                                    <SwiperSlide
+                                      key={index}
+                                      className="!w-auto flex justify-center items-center"
                                     >
-
-                                        {slide.item.map((itm, index) => {
-                                            return (
-                                                <SwiperSlide
-                                                    key={index}
-                                                    className="flex justify-center items-center lg:!w-[10rem] !w-[6rem]"
-                                                >
-                                                    <img
-                                                        src={itm}
-                                                        alt='logo'
-                                                        className="block object-contain lg:h-[9.375rem] lg:w-[10.5rem] mx-auto"
-                                                    />
-                                                </SwiperSlide>
-                                            );
-                                        })}
-                                    </Swiper>
-
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                                      <img
+                                        src={logo}
+                                        alt={`logo-${index}`}
+                                        className="h-24 md:h-32 lg:h-36 object-contain "
+                                      />
+                                    </SwiperSlide>
+                                  ))}
+                                </Swiper>
+                              </div>
+                    
+                              <div className="overflow-hidden 2xl:mt-10 mt-5">
+                                {/* Second row: scroll right */}
+                                <Swiper
+                                  className="flex items-center"
+                                  slidesPerView="auto"
+                                  spaceBetween={30}
+                                  loop={true}
+                                  speed={4000}
+                                  autoplay={{
+                                    delay: 0,
+                                    disableOnInteraction: false,
+                                    reverseDirection: true,
+                                  }}
+                                  modules={[Autoplay]}
+                                >
+                                  {logos.concat(logos).map((logo, index) => (
+                                    <SwiperSlide
+                                      key={index}
+                                      className="!w-auto flex justify-center items-center"
+                                    >
+                                      <img
+                                        src={logo}
+                                        alt={`logo-${index}`}
+                                        className="h-24 md:h-32 lg:h-36 object-contain "
+                                      />
+                                    </SwiperSlide>
+                                  ))}
+                                </Swiper>
+                              </div>
+                              <div className="overflow-hidden  2xl:mt-10 mt-5 mb-5">
+                                {/* First row: scroll left */}
+                                <Swiper
+                                  className="flex items-center"
+                                  slidesPerView="auto"
+                                  spaceBetween={30}
+                                  loop={true}
+                                  speed={5000}
+                                  autoplay={{
+                                    delay: 0,
+                                    disableOnInteraction: false,
+                                    reverseDirection: false,
+                                  }}
+                                  modules={[Autoplay]}
+                                >
+                                  {logos.concat(logos).map((logo, index) => (
+                                    <SwiperSlide
+                                      key={index}
+                                      className="!w-auto flex justify-center items-center"
+                                    >
+                                      <img
+                                        src={logo}
+                                        alt={`logo-${index}`}
+                                        className="h-24 md:h-32 lg:h-36 object-contain "
+                                      />
+                                    </SwiperSlide>
+                                  ))}
+                                </Swiper>
+                              </div>
                 </div>
             </section>
       {/* AI tech section end */}
