@@ -286,7 +286,7 @@ const AiDevelopment = () => {
   />
 
   {/* Overlay Color */}
-  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-70"></div>
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-80"></div>
 
   {/* Content Section */}
   <div className="relative flex-1 w-full flex justify-center items-center z-10">

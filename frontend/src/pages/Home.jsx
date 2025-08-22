@@ -641,7 +641,7 @@ const Home = () => {
             autoPlay
             className="h-full  w-[100dvw] object-cover absolute top-0 left-0 z-[-1]"
           ></video>
-          <div className="cover bg-pine-999/50 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
+          <div className="cover bg-pine-999/150 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
             <div className=" flex justify-between items-stretch flex-col h-full">
               <div className="flex-1">
                 <div className="main-container relative  flex justify-center items-stretch flex-col lg:flex-row h-full">
@@ -1769,16 +1769,16 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
-              <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden">
+              <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden ">
                 {industries.map((industry, index) => (
                   <div
                     key={index}
-                    className="relative rounded-[1.625rem] overflow-hidden"
+                    className="relative rounded-[1.625rem] overflow-hidden "
                   >
                     <img
                       src={`${API_BASE_URL}/images${industry.image}`}
                       alt={industry.title}
-                      className="w-full aspect-square object-cover"
+                      className="w-full aspect-square object-cover "
                     />
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85  p-3 text-sm text-white font-semibold">
                       {" "}

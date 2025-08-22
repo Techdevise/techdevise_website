@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import qualityBg from "/qualityBg.mp4";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -12,7 +13,6 @@ import CompanyLogoSlider from "../components/CompanyLogoSlider";
 import { GoArrowRight } from "react-icons/go";
 
 import quailtySlideLogo1 from "/quailtySlideLogo1.svg";
-import qualityBg from "/qualityBg.webp";
 
 import cloudCard1 from "/cloudCard1.webp";
 import cloudCard2 from "/cloudCard2.webp";
@@ -263,56 +263,63 @@ const QualityAnalysis = () => {
   return (
     <>
       {/*landing area of Ai Development sections start  */}
-      <section
-        style={{ backgroundImage: `url(${qualityBg})` }}
-        className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex flex-col justify-center items-center "
-      >
-        <div className="landing flex-1 w-full flex justify-center items-center ">
-          <div className="w-full max-w-[64.1875rem] m-auto text-center">
-            <h5 className="text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8">
-              Quality Analysis
-            </h5>
-            <h1 className=" 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#9A9A14] mb-5">
-              Redefining Software Quality using AI Engineering Excellence,
-              Assuring Accuracy
-            </h1>
-            <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal text-white mb-[1.375rem]">
-              Enhance the performance of your business by up to 20 times using
-              our advanced AI development solutions.Automate repetitive tasks,
-              make data-driven decisions, and drive operational efficiency.Work
-              half as much, with more time on your hands and better use of your
-              resources.
-            </p>
-            {/* <button onClick={() => setShowModal(true)} className="bg-[#9EDF84] text-black inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer">
-                            Consult Our Experts <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center"><GoArrowRight className='text-[18px] -rotate-12 text-pine-700' /> </span></button> */}
-            <button
-              onClick={() => setShowModal(true)}
-              className="bg-[#9EDF84] text-black shine-effect inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer group/link"
-            >
-              Consult Our Experts{" "}
-              <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-black flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
-                <FiArrowUpRight className="size-6" />
-              </span>
-            </button>
-          </div>
-        </div>
+    <section className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex flex-col justify-center items-center relative overflow-hidden">
+  {/* Background Video */}
+  <video
+    src={qualityBg}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  />
 
-        <div className="flex-[0_1_0%] w-full bg-transparent">
-          <div className="main-container !pe-0 py-[1.25rem] flex justify-start items-center">
-            <div className="flex-[0_1_0%] py-5 pe-8  border-r-2 border-white max-lg:hidden">
-              <h4 className="text-xl font-bold text-white text-nowrap">
-                Our Esteemed
-              </h4>
-              <h4 className="text-xl font-normal text-white text-nowrap mt-1.5">
-                Clients
-              </h4>
-            </div>
-            <div className="flex-1 overflow-hidden">
-              <CompanyLogoSlider opacity={"!opacity-100"} logos={coLogos} />
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Overlay (dark layer for readability) */}
+  {/* <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div> */}
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-70"></div>
+  {/* Content */}
+  <div className="landing flex-1 w-full flex justify-center items-center relative z-10">
+    <div className="w-full max-w-[64.1875rem] m-auto text-center">
+      <h5 className="text-base font-medium rounded-full bg-white/15 text-white px-8 py-[1.125rem] w-fit mx-auto mb-8">
+        Quality Analysis
+      </h5>
+      <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#9A9A14] mb-5">
+        Redefining Software Quality using AI Engineering Excellence,
+        Assuring Accuracy
+      </h1>
+      <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.625rem] font-normal text-white mb-[1.375rem]">
+        Enhance the performance of your business by up to 20 times using
+        our advanced AI development solutions. Automate repetitive tasks,
+        make data-driven decisions, and drive operational efficiency.
+        Work half as much, with more time on your hands and better use of your
+        resources.
+      </p>
+
+      <button
+        onClick={() => setShowModal(true)}
+        className="bg-[#9EDF84] text-black shine-effect inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer group/link"
+      >
+        Consult Our Experts{" "}
+        <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-black flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
+          <FiArrowUpRight className="size-6" />
+        </span>
+      </button>
+    </div>
+  </div>
+
+  {/* Bottom Logos Section */}
+  <div className="flex-[0_1_0%] w-full bg-transparent relative z-10">
+    <div className="main-container !pe-0 py-[1.25rem] flex justify-start items-center">
+      <div className="flex-[0_1_0%] py-5 pe-8 border-r-2 border-white max-lg:hidden">
+        <h4 className="text-xl font-bold text-white text-nowrap">Our Esteemed</h4>
+        <h4 className="text-xl font-normal text-white text-nowrap mt-1.5">Clients</h4>
+      </div>
+      <div className="flex-1 overflow-hidden">
+        <CompanyLogoSlider opacity={"!opacity-100"} logos={coLogos} />
+      </div>
+    </div>
+  </div>
+</section>
       {/*landing area of Ai Development sections end  */}
 
       {/* Business section start */}

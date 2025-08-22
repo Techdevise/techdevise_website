@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import serviceBg from "/serviceBg.webp";
+import serviceBg from "/serviceBg.mp4";
 import arrowRightUp from "/arrowRightUp.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 // images
-import { FiArrowRight ,FiArrowUpRight } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import ourWork1 from "/ourWork1.svg";
 import ourWork2 from "/ourWork2.svg";
 import ourWork3 from "/ourWork3.svg";
@@ -118,11 +118,23 @@ const WebApplicationDevelopment = () => {
   return (
     <>
       {/* web landing area section start */}
-      <section
-        style={{ backgroundImage: `url(${serviceBg})` }}
-        className="min-h-screen bg-no-repeat bg-cover bg-center flex justify-center items-center"
-      >
-        <div className="main-container  text-center ">
+
+      <section className="min-h-screen relative flex justify-center items-center overflow-hidden">
+        {/* Background Video */}
+        <video
+          src={serviceBg}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+
+        {/* Overlay Color (optional, readability ke liye) */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-80"></div>
+
+        {/* Foreground Content */}
+        <div className="relative main-container text-center z-10">
           <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#BEC033] mb-5">
             Website Development <br />
             Services
@@ -134,17 +146,16 @@ const WebApplicationDevelopment = () => {
             clients after the delivery period makes it our strength to offer
             good services.
           </p>
-        
-              <button
-                      onClick={() => setShowModal(true)}
-                      className="bg-[#CACB87] inline-flex group/link shine-effect p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer"
-                    >
-                      Consult Our Experts{" "}
-                     
-                       <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-black flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
-                                                <FiArrowUpRight className="size-6" />
-                                              </span>
-                    </button>
+
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-[#CACB87] inline-flex group/link shine-effect p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer"
+          >
+            Consult Our Experts{" "}
+            <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-black flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
+              <FiArrowUpRight className="size-6" />
+            </span>
+          </button>
         </div>
       </section>
       {/* web landing area section end */}

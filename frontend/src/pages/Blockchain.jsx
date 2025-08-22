@@ -210,7 +210,7 @@ const Blockchain = () => {
   />
 
   {/* Overlay Color */}
-  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-70"></div>
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-80"></div>
 
   {/* Content */}
   <div className="relative w-full max-w-[64.1875rem] m-auto text-center z-10">

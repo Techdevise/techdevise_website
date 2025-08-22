@@ -174,7 +174,7 @@ const BlockchainSlider = ({ triggerRef }) => {
                   <img
                     src={item.image}
                     alt={`slide-${index + 1}`}
-                    className="object-cover rounded-[1.625rem] h-full w-full block"
+                    className="object-cover rounded-[1.625rem] h-full w-full block "
                   />
                 </div>
                 <div className="lg:flex-[1.3_1_0%] lg:text-start text-center">
