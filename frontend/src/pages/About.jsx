@@ -324,7 +324,7 @@ const filteredImages = () => {
         key={index}
         className={`${layout} hover:scale-105 transition-all duration-300`}
       >
-        <div className="w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-[1.625rem] overflow-hidden">
+        <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden">
           <img
             src={`${API_BASE_URL}/images${img.image || img.image}`}
             alt="gallery"
@@ -335,6 +335,23 @@ const filteredImages = () => {
     );
   })}
 </div>
+     {/* <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
+            {filteredImages().map((img, index) => {
+              const layout = layoutStructure[index] || "col-span-1"; // fallback
+              return (
+                <div
+                  key={index}
+                  className={`${layout} hover:scale-105 transition-all duration-300`}
+                >
+                  <img
+                    src={`${API_BASE_URL}/images${img.image || img.image}`} // 👈 adjust based on your API image key
+                    alt="gallery"
+                    className="block h-full w-full object-cover rounded-[1.625rem]"
+                  />
+                </div>
+              );
+            })}
+          </div> */}
         </div>
       </section>
       {/* Life @ Techdevise section end*/}
