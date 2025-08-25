@@ -341,24 +341,26 @@ useEffect(() => {
   <AnimatePresence mode="sync">
     {filteredImages().map((img, index) => {
       const layout = layoutStructure[index] || "col-span-1";
+
       return (
         <motion.div
           key={img._id || index}
           layout
-          initial={{ opacity: 0, scale: 1.1, y: 30 }}   // 👈 start thoda neeche & zoomed
-          animate={{ opacity: 1, scale: 1, y: 0 }}       // 👈 smooth zoom-in + slide-up
-          exit={{ opacity: 0, scale: 0.95, y: -30 }}     // 👈 jaate waqt halka zoom-out + slide-up
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className={`${layout} hover:scale-105 transition-all duration-300`}
+          initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          exit={{ opacity: 0, scale: 0.9, rotateY: -15 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className={`${layout} hover:scale-105 transition-all duration-500`}
         >
-          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden">
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden shadow-xl">
             <motion.img
               src={`${API_BASE_URL}/images${img.image}`}
               alt="gallery"
               className="w-full h-full object-cover"
               initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }} // 👈 zoom-in effect on load
+              exit={{ scale: 1.05 }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
             />
           </div>
         </motion.div>
