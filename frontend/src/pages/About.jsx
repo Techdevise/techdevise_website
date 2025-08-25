@@ -339,36 +339,32 @@ const About = () => {
 
         {/* Gallery */}
         <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
-          <AnimatePresence mode="wait">
-            {filteredImages().map((img, index) => {
-              const layout = layoutStructure[index] || "col-span-1";
+  <AnimatePresence mode="wait">
+    {filteredImages().map((img, index) => {
+      const layout = layoutStructure[index] || "col-span-1";
 
-              return (
-                <motion.div
-                  key={`${startIndex}-${index}`} // 👈 important: unique key for animation
-                  layout
-                  initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, rotateY: -20 }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                  className={`${layout} hover:scale-105 transition-all duration-500`}
-                >
-                  <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden shadow-xl">
-                    <motion.img
-                      src={`${API_BASE_URL}/images${img.image}`}
-                      alt="gallery"
-                      className="w-full h-full object-cover"
-                      initial={{ scale: 1.1 }}
-                      animate={{ scale: 1 }}
-                      exit={{ scale: 1.05 }}
-                      transition={{ duration: 1.8, ease: "easeInOut" }}
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+      return (
+        <div
+          key={`${startIndex}-${index}`}
+          className={`${layout} hover:scale-105 transition-all duration-500`}
+        >
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden shadow-xl">
+            <motion.img
+              key={img.image} // important for AnimatePresence
+              src={`${API_BASE_URL}/images${img.image}`}
+              alt="gallery"
+              className="w-full h-full object-cover"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+          </div>
         </div>
+      );
+    })}
+  </AnimatePresence>
+</div>
       </div>
     </section>
       {/* Life @ Techdevise section end*/}
