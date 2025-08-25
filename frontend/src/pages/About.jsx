@@ -337,25 +337,28 @@ useEffect(() => {
         </div>
 
         {/* Grid with API images and layout */}
-        <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
-  <AnimatePresence>
+<div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
+  <AnimatePresence mode="sync">
     {filteredImages().map((img, index) => {
       const layout = layoutStructure[index] || "col-span-1";
       return (
         <motion.div
           key={img._id || index}
           layout
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 1.1, y: 30 }}   // 👈 start thoda neeche & zoomed
+          animate={{ opacity: 1, scale: 1, y: 0 }}       // 👈 smooth zoom-in + slide-up
+          exit={{ opacity: 0, scale: 0.95, y: -30 }}     // 👈 jaate waqt halka zoom-out + slide-up
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className={`${layout} hover:scale-105 transition-all duration-300`}
         >
           <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden">
-            <img
+            <motion.img
               src={`${API_BASE_URL}/images${img.image}`}
               alt="gallery"
               className="w-full h-full object-cover"
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }} // 👈 zoom-in effect on load
             />
           </div>
         </motion.div>
