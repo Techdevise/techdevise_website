@@ -148,7 +148,8 @@ const About = () => {
     fetchImages();
   }, []);
 
-useEffect(() => {
+  // auto rotate for "all"
+  useEffect(() => {
     if (filter === "all" && teamImages.length > 8) {
       const interval = setInterval(() => {
         setStartIndex((prev) => (prev + 1) % teamImages.length);
@@ -157,6 +158,7 @@ useEffect(() => {
     }
   }, [filter, teamImages]);
 
+  // filter logic
   const filteredImages = () => {
     switch (filter) {
       case "team":
@@ -166,7 +168,6 @@ useEffect(() => {
       case "all":
       default:
         if (teamImages.length <= 8) return teamImages;
-        // 🔥 circular slice logic
         return [
           ...teamImages.slice(startIndex, startIndex + 8),
           ...(startIndex + 8 > teamImages.length
@@ -310,7 +311,7 @@ useEffect(() => {
       {/* about landing area section end */}
 
       {/* Life @ Techdevise section start*/}
-      <section className="life my-[4.6875rem]">
+    <section className="life my-[4.6875rem]">
       <div className="main-container">
         {/* Header + Filter Buttons */}
         <div className="sectionHeader flex md:flex-row flex-col gap-4 md:justify-between justify-center items-center pb-12">
@@ -336,38 +337,38 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Grid with API images and layout */}
-<div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
-  <AnimatePresence mode="sync">
-    {filteredImages().map((img, index) => {
-      const layout = layoutStructure[index] || "col-span-1";
+        {/* Gallery */}
+        <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
+          <AnimatePresence mode="wait">
+            {filteredImages().map((img, index) => {
+              const layout = layoutStructure[index] || "col-span-1";
 
-      return (
-        <motion.div
-          key={img._id || index}
-          layout
-          initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-          exit={{ opacity: 0, scale: 0.9, rotateY: -15 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className={`${layout} hover:scale-105 transition-all duration-500`}
-        >
-          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden shadow-xl">
-            <motion.img
-              src={`${API_BASE_URL}/images${img.image}`}
-              alt="gallery"
-              className="w-full h-full object-cover"
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 1.05 }}
-              transition={{ duration: 1.8, ease: "easeInOut" }}
-            />
-          </div>
-        </motion.div>
-      );
-    })}
-  </AnimatePresence>
-</div>
+              return (
+                <motion.div
+                  key={`${startIndex}-${index}`} // 👈 important: unique key for animation
+                  layout
+                  initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
+                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, rotateY: -20 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className={`${layout} hover:scale-105 transition-all duration-500`}
+                >
+                  <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden shadow-xl">
+                    <motion.img
+                      src={`${API_BASE_URL}/images${img.image}`}
+                      alt="gallery"
+                      className="w-full h-full object-cover"
+                      initial={{ scale: 1.1 }}
+                      animate={{ scale: 1 }}
+                      exit={{ scale: 1.05 }}
+                      transition={{ duration: 1.8, ease: "easeInOut" }}
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
       {/* Life @ Techdevise section end*/}
