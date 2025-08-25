@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 // Import Swiper styles
 import "swiper/css";
@@ -42,7 +43,7 @@ const About = () => {
   const [subJobs, setSubJobs] = useState([]);
   const [selectedFunction, setSelectedFunction] = useState(null);
   const [selectedJobDetails, setSelectedJobDetails] = useState(null);
-
+  const [startIndex, setStartIndex] = useState(0); // 🔥 new state
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -135,8 +136,7 @@ const About = () => {
         ]);
 
         if (teamRes.data.success) setTeamWorkImages(teamRes.data.data);
-        if (officeRes.data.success)
-          setOfficeActivityImages(officeRes.data.data);
+        if (officeRes.data.success) setOfficeActivityImages(officeRes.data.data);
 
         const allImages = [...teamRes.data.data, ...officeRes.data.data];
         setTeamImages(allImages);
@@ -148,18 +148,33 @@ const About = () => {
     fetchImages();
   }, []);
 
+useEffect(() => {
+    if (filter === "all" && teamImages.length > 8) {
+      const interval = setInterval(() => {
+        setStartIndex((prev) => (prev + 1) % teamImages.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [filter, teamImages]);
 
-const filteredImages = () => {
-  switch (filter) {
-    case "team":
-      return teamWorkImages;
-    case "office":
-      return officeActivityImages;
-    case "all":
-    default:
-      return teamImages.slice(0, 8);
-  }
-};
+  const filteredImages = () => {
+    switch (filter) {
+      case "team":
+        return teamWorkImages;
+      case "office":
+        return officeActivityImages;
+      case "all":
+      default:
+        if (teamImages.length <= 8) return teamImages;
+        // 🔥 circular slice logic
+        return [
+          ...teamImages.slice(startIndex, startIndex + 8),
+          ...(startIndex + 8 > teamImages.length
+            ? teamImages.slice(0, (startIndex + 8) % teamImages.length)
+            : []),
+        ];
+    }
+  };
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -236,124 +251,120 @@ const filteredImages = () => {
   return (
     <>
       {/* about landing area section start */}
-     <section
-  style={{
-    backgroundImage: `url(${bg1})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}
-  className="aboutLanding mb-[4.6875rem] w-full"
->
-  <ToastContainer />
-  <div className="min-h-[90dvh] sm:min-h-[70vh]"></div>
-  <div className="sectionBottomContent">
-    <div className="bg-black/60">
-      <div className="main-container !max-w-full flex lg:flex-row flex-col justify-center lg:items-center items-stretch lg:text-start text-center !m-0 max-lg:!ps-0 !pe-0">
-        <div className="lg:w-[60%] py-[4.6875rem]">
-          <h4 className="md:text-[2rem] text-[1.6rem] text-white font-normal">
-            We Believe in the Power of
-          </h4>
-          <h1 className="2xl:text-[4rem] sm:text-5xl text-4xl text-white font-bold">
-            Ideas, Innovation, and People
-          </h1>
+      <section
+        style={{
+          backgroundImage: `url(${bg1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="aboutLanding mb-[4.6875rem] w-full"
+      >
+        <ToastContainer />
+        <div className="min-h-[90dvh] sm:min-h-[70vh]"></div>
+        <div className="sectionBottomContent">
+          <div className="bg-black/60">
+            <div className="main-container !max-w-full flex lg:flex-row flex-col justify-center lg:items-center items-stretch lg:text-start text-center !m-0 max-lg:!ps-0 !pe-0">
+              <div className="lg:w-[60%] py-[4.6875rem]">
+                <h4 className="md:text-[2rem] text-[1.6rem] text-white font-normal">
+                  We Believe in the Power of
+                </h4>
+                <h1 className="2xl:text-[4rem] sm:text-5xl text-4xl text-white font-bold">
+                  Ideas, Innovation, and People
+                </h1>
+              </div>
+              <div className="lg:w-[40%] relative text-white bg-gradient-to-r from-pine-700 to-pine-500 py-[2rem] grid grid-cols-2">
+                <img
+                  src={plusBorder}
+                  alt="plus border"
+                  className="absolute top-1/2 left-1/2 -translate-1/2"
+                />
+                <div className="col py-[2.1875rem] px-[3rem] text-center">
+                  <h2 className="text-[2.25rem] font-bold">10</h2>
+                  <h4 className="text-[1.25rem] font-normal">
+                    Years of Experience
+                  </h4>
+                </div>
+                <div className="col py-[2.1875rem] px-[3rem] text-center">
+                  <h2 className="text-[2.25rem] font-bold">10+</h2>
+                  <h4 className="text-[1.25rem] font-normal">
+                    Countries Served
+                  </h4>
+                </div>
+                <div className="col py-[2.1875rem] px-[3rem] text-center">
+                  <h2 className="text-[2.25rem] font-bold">50+</h2>
+                  <h4 className="text-[1.25rem] font-normal">Employees</h4>
+                </div>
+                <div className="col py-[2.1875rem] px-[3rem] text-center">
+                  <h2 className="text-[2.25rem] font-bold">500+</h2>
+                  <h4 className="text-[1.25rem] font-normal">
+                    Digital Marketing Solutions Delivered
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="lg:w-[40%] relative text-white bg-gradient-to-r from-pine-700 to-pine-500 py-[2rem] grid grid-cols-2">
-          <img
-            src={plusBorder}
-            alt="plus border"
-            className="absolute top-1/2 left-1/2 -translate-1/2"
-          />
-          <div className="col py-[2.1875rem] px-[3rem] text-center">
-            <h2 className="text-[2.25rem] font-bold">10</h2>
-            <h4 className="text-[1.25rem] font-normal">Years of Experience</h4>
-          </div>
-          <div className="col py-[2.1875rem] px-[3rem] text-center">
-            <h2 className="text-[2.25rem] font-bold">10+</h2>
-            <h4 className="text-[1.25rem] font-normal">Countries Served</h4>
-          </div>
-          <div className="col py-[2.1875rem] px-[3rem] text-center">
-            <h2 className="text-[2.25rem] font-bold">50+</h2>
-            <h4 className="text-[1.25rem] font-normal">Employees</h4>
-          </div>
-          <div className="col py-[2.1875rem] px-[3rem] text-center">
-            <h2 className="text-[2.25rem] font-bold">500+</h2>
-            <h4 className="text-[1.25rem] font-normal">Digital Marketing Solutions Delivered</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* about landing area section end */}
 
       {/* Life @ Techdevise section start*/}
       <section className="life my-[4.6875rem]">
-        <div className="main-container">
-          {/* Header + Filter Buttons */}
-          <div className="sectionHeader flex md:flex-row flex-col gap-4 md:justify-between justify-center items-center pb-12">
-            <h3 className="text-[2.5rem] font-bold">Life@Techdevise</h3>
-            <div className="flex gap-[.8125rem] max-md:pt-5 ">
-              {["all", "team", "office"].map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setFilter(type)}
-                  className={`block ${
-                    filter === type
-                      ? "bg-gradient-to-r from-pine-700 to-pine-500 text-white"
-                      : "text-pine-700 bg-transparent"
-                  } hover:text-white shine-effect cursor-pointer hover:bg-gradient-to-r from-pine-700 to-pine-500 md:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300`}
-                >
-                  {type === "all"
-                    ? "All"
-                    : type === "team"
-                    ? "Team Work"
-                    : "Office Activity Time"}
-                </button>
-              ))}
-            </div>
+      <div className="main-container">
+        {/* Header + Filter Buttons */}
+        <div className="sectionHeader flex md:flex-row flex-col gap-4 md:justify-between justify-center items-center pb-12">
+          <h3 className="text-[2.5rem] font-bold">Life@Techdevise</h3>
+          <div className="flex gap-[.8125rem] max-md:pt-5">
+            {["all", "team", "office"].map((type) => (
+              <button
+                key={type}
+                onClick={() => setFilter(type)}
+                className={`block ${
+                  filter === type
+                    ? "bg-gradient-to-r from-pine-700 to-pine-500 text-white"
+                    : "text-pine-700 bg-transparent"
+                } hover:text-white shine-effect cursor-pointer hover:bg-gradient-to-r from-pine-700 to-pine-500 md:text-xl text-md font-bold px-5 py-4 rounded-lg border-[.0625rem] border-pine-900 transition-all duration-300`}
+              >
+                {type === "all"
+                  ? "All"
+                  : type === "team"
+                  ? "Team Work"
+                  : "Office Activity Time"}
+              </button>
+            ))}
           </div>
+        </div>
 
-          {/* Grid with API images and layout */}
-     <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
-  {filteredImages().map((img, index) => {
-    const layout = layoutStructure[index] || "col-span-1"; // fallback
-    return (
-      <div
-        key={index}
-        className={`${layout} hover:scale-105 transition-all duration-300`}
-      >
-        <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden">
-          <img
-            src={`${API_BASE_URL}/images${img.image || img.image}`}
-            alt="gallery"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    );
-  })}
+        {/* Grid with API images and layout */}
+        <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
+  <AnimatePresence>
+    {filteredImages().map((img, index) => {
+      const layout = layoutStructure[index] || "col-span-1";
+      return (
+        <motion.div
+          key={img._id || index}
+          layout
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.8 }}
+          className={`${layout} hover:scale-105 transition-all duration-300`}
+        >
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-[1.625rem] overflow-hidden">
+            <img
+              src={`${API_BASE_URL}/images${img.image}`}
+              alt="gallery"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      );
+    })}
+  </AnimatePresence>
 </div>
-     {/* <div className="gallery grid md:grid-cols-5 grid-cols-2 gap-[1.875rem]">
-            {filteredImages().map((img, index) => {
-              const layout = layoutStructure[index] || "col-span-1"; // fallback
-              return (
-                <div
-                  key={index}
-                  className={`${layout} hover:scale-105 transition-all duration-300`}
-                >
-                  <img
-                    src={`${API_BASE_URL}/images${img.image || img.image}`} // 👈 adjust based on your API image key
-                    alt="gallery"
-                    className="block h-full w-full object-cover rounded-[1.625rem]"
-                  />
-                </div>
-              );
-            })}
-          </div> */}
-        </div>
-      </section>
+      </div>
+    </section>
       {/* Life @ Techdevise section end*/}
 
       {/* Open Positions section start */}
