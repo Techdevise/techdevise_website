@@ -460,7 +460,7 @@ const Header = () => {
 
               <button
                 onClick={() => setShowModal1(true)}
-                className="h-[2.91rem] ms-[1.35rem] rounded-[22px] font-normal text-[0.875rem] uppercase text-white group/link text-nowrap py-2 px-4 bg-transparent border border-white transition-colors duration-300 max-lg:hidden flex items-center gap-2"
+                className="h-[2.91rem] ms-[1.35rem] rounded-[22px] font-normal text-[0.875rem] uppercase text-white group/link text-nowrap py-2 px-4 bg-transparent border border-white transition-colors duration-300 max-lg:hidden flex items-center gap-2 cursor-pointer"
               >
                 Get a call back
                 <span className="size-[1.625rem] rounded-full aspect-square border border-white flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">

@@ -16,7 +16,7 @@ const Location = () => {
     const addressList = [
         { bgimage: state1, flag: flag1, countryName: "India", address: "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071" },
         { bgimage: state2, flag: flag2, countryName: "United States", address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA" },
-        { bgimage: state3, flag: flag3, countryName: "Netherland", address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands" },
+        { bgimage: state3, flag: flag3, countryName: "Netherlands", address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands" },
     ]
     return (
         <>

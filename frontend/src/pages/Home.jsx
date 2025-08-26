@@ -493,7 +493,7 @@ const Home = () => {
     {
       bgimage: state3,
       flag: flag3,
-      countryName: "Netherland",
+      countryName: "Netherlands",
       address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
     },
   ];
@@ -712,7 +712,7 @@ const Home = () => {
                   </div>
 
                   <div className="flex-[1_1_0%] flex flex-col justify-between items-stretch">
-                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-[18px]">
+                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-[22px]">
                       <div className="h-[170px] overflow-hidden">
                         <img
                           src={lightOne}

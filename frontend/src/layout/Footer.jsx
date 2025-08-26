@@ -79,7 +79,7 @@ const Footer = () => {
                 id="sendButton"
                 type="submit"
                 disabled
-                className="lg:px-[2rem] 2xl:px-[4.1125rem] px-[1.125rem] 2xl:h-[50px] lg:h-[40px] md:h-[30px] rounded-full text-[0.95rem] font-normal text-pine-700 bg-white shine-effect disabled:bg-white disabled:cursor-not-allowed relative group"
+                className="lg:px-[2rem] 2xl:px-[2.5125rem] px-[1.125rem] 2xl:h-[50px] lg:h-[40px] md:h-[30px] rounded-full text-[0.95rem] font-normal text-pine-700 bg-white shine-effect disabled:bg-white disabled:cursor-not-allowed relative group"
                 title="Please enter email"
               >
                 Send
@@ -108,7 +108,7 @@ const Footer = () => {
               <div className="flex justify-start items-center gap-[.9375rem] mt-[2.125rem]">
                 <Link
                   to="/contact-us"
-                  className="w-fit block max-md:mx-auto py-[0.51rem] px-4 rounded-full bg-white 2xl:text-[1.05rem] text-[0.85rem] leading-[1.8125rem] font-normal text-pine-700 shine-effect"
+                  className="w-fit block max-md:mx-auto py-[0.51rem] px-4 rounded-full bg-white 2xl:text-[0.95rem] text-[0.85rem]  leading-[1.8125rem] font-normal text-pine-700 shine-effect"
                 >
                   Contact Now!
                 </Link>
