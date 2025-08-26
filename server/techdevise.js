@@ -67,15 +67,24 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
+
       scriptSrc: [
         "'self'",
-        "'unsafe-inline'", // Needed for React and some libraries
-        "'unsafe-eval'", // Needed for some libraries like Summernote
+        "'unsafe-inline'", 
+        "'unsafe-eval'",   
+        "'unsafe-hashes'", 
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com", // Kaspersky
-        "ws://gc.kis.v2.scr.kaspersky-labs.com" // Kaspersky WebSocket
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
+      scriptSrcAttr: [
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-hashes'", 
+      ],
+
       scriptSrcElem: [
         "'self'",
         "'unsafe-inline'",
@@ -84,15 +93,17 @@ app.use(
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
       styleSrc: [
         "'self'",
-        "'unsafe-inline'", // Needed for inline styles
+        "'unsafe-inline'", // allow inline styles
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
       styleSrcElem: [
         "'self'",
         "'unsafe-inline'",
@@ -102,13 +113,16 @@ app.use(
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
       imgSrc: ["'self'", "data:", "https:"],
+
       fontSrc: [
         "'self'",
         "https://fonts.gstatic.com",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net"
       ],
+
       connectSrc: ["'self'"],
       frameSrc: ["'self'"],
       objectSrc: ["'none'"],
