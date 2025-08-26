@@ -363,7 +363,7 @@ const MobileApplicationDevelopment = () => {
                       isTab == index + 1
                         ? "border-pine-300 bg-pine-300 text-white"
                         : "border-black bg-transparent text-black"
-                    } text-base text-nowrap font-semibold border py-3 px-3 rounded-[.625rem] flex justify-center items-center gap-3 cursor-pointer shine-effect`}
+                    } text-base text-nowrap font-semibold border py-3 px-3 rounded-[.625rem] flex justify-center items-center gap-3 cursor-pointer `}
                   >
                     {tbs.tabTitle}{" "}
                     <HiOutlineArrowLongRight className="size-5 " />

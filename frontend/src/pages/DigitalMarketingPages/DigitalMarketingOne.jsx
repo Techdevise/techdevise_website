@@ -796,7 +796,7 @@ const DigitalMarketingOne = () => {
             <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-stretch">
               <div className="lg:w-[25.625rem] lg:border-r border-black/20  lg:pe-[3.3125rem]">
                 <ul className="lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll ">
-                  <li onClick={() => setActiveTab(1)} className="mb-3.5 cursor-pointer group/link shine-effect">
+                  <li onClick={() => setActiveTab(1)} className="mb-3.5 cursor-pointer group/link">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 1
@@ -820,7 +820,7 @@ const DigitalMarketingOne = () => {
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(2)} className="mb-3.5 cursor-pointer group/link shine-effect">
+                  <li onClick={() => setActiveTab(2)} className="mb-3.5 cursor-pointer group/link">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 2
@@ -843,7 +843,7 @@ const DigitalMarketingOne = () => {
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(3)} className="mb-3.5 cursor-pointer group/link shine-effect">
+                  <li onClick={() => setActiveTab(3)} className="mb-3.5 cursor-pointer group/link ">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 3
@@ -866,7 +866,7 @@ const DigitalMarketingOne = () => {
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(4)} className="mb-3.5 cursor-pointer group/link shine-effect">
+                  <li onClick={() => setActiveTab(4)} className="mb-3.5 cursor-pointer group/link ">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 4
@@ -889,7 +889,7 @@ const DigitalMarketingOne = () => {
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(5)} className="mb-3.5 cursor-pointer group/link shine-effect">
+                  <li onClick={() => setActiveTab(5)} className="mb-3.5 cursor-pointer group/link ">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 5

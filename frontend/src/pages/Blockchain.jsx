@@ -661,11 +661,11 @@ const Blockchain = () => {
             </p>
           </div>
 
-          <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 gap-[2.5625rem]">
+          <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 lg:gap-[2.5625rem] gap-[1.5625rem]">
             {platforms.map((image, index) => (
               <div
                 key={index}
-                className="col border border-[#D3D3D3] shadow-2xl shadow-black/10 rounded-[1.625rem] lg:w-[18rem] lg:h-[15.4375rem] max-lg:size-[10.375rem] max-lg:aspect-square flex justify-center items-center"
+                className="col border border-[#D3D3D3] shadow-2xl shadow-black/10 rounded-[1.625rem] lg:w-[18rem] lg:h-[15.4375rem] max-lg:size-[10.375rem] max-sm:size-[8.375rem] max-lg:aspect-square flex justify-center items-center"
               >
                 <img
                   src={image}

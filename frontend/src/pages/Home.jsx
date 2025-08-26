@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Images
-import video from "/Homevideo1-BHIh2a86.mp4";
+import video from "/BannerImage1.mp4";
 import lightOne from "/lightOne.svg";
 import lightTwo from "/lightTwo.svg";
 import vectorOne from "/vectorOne.svg";
@@ -103,7 +103,6 @@ import flag1 from "/flag1.svg";
 import flag2 from "/flag2.svg";
 import flag3 from "/flag3.svg";
 import map from "/map.svg";
-import CustomRangeSlider from "../components/CustomRangeSlider";
 
 import clogo1 from "/clogo1.svg";
 import clogo2 from "/clogo2.svg";
@@ -484,6 +483,7 @@ const Home = () => {
       address:
         "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071",
     },
+
     {
       bgimage: state2,
       flag: flag2,
@@ -501,22 +501,26 @@ const Home = () => {
     {
       image: dashGreen,
       title: "Share your Requirements",
-      discription: " Describe your business goals and the technical skills you require.",
+      discription:
+        " Describe your business goals and the technical skills you require.",
     },
     {
       image: dashWhite,
       title: "Get Vetted Profile",
-      discription: "Connect with qualified professionals who meet your exact requirements quickly.",
+      discription:
+        "Connect with qualified professionals who meet your exact requirements quickly.",
     },
     {
       image: dashGreen,
       title: "Conduct Interview",
-      discription: "Engage with shortlisted professionals through interviews for better hiring decisions.",
+      discription:
+        "Engage with shortlisted professionals through interviews for better hiring decisions.",
     },
     {
       image: dashWhite,
       title: "Hire & Get Started",
-      discription: "Hire the right expert and start your project quickly with confidence.",
+      discription:
+        "Hire the right expert and start your project quickly with confidence.",
     },
   ];
 
@@ -581,7 +585,7 @@ const Home = () => {
       image: clogo15,
       alt: "company logo 15",
     },
-      {
+    {
       image: clogo16,
       alt: "company logo 16",
     },
@@ -632,21 +636,22 @@ const Home = () => {
     <>
       <main className="bg-pine-999 pb-12">
         {/* Landing area section start */}
-        <section className="landing-area relative z-0">
+        <section className="landing-area relative z-0 w-full h-screen overflow-hidden">
           <video
             src={video}
             playsInline
             loop
             muted
             autoPlay
-            className="h-full  w-[100dvw] object-cover absolute top-0 left-0 z-[-1]"
+            className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           ></video>
-          <div className="cover bg-pine-999/150 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
-            <div className=" flex justify-between items-stretch flex-col h-full">
+
+          <div className="cover bg-gradient-to-b from-[#024a40cc] to-[#024a40cc]/50 z-0 h-full w-full lg:pt-[5.5rem] pt-20">
+            <div className="flex justify-between items-stretch flex-col h-full">
               <div className="flex-1">
-                <div className="main-container relative  flex justify-center items-stretch flex-col lg:flex-row h-full">
-                  <div className="flex-[2_1_0%] flex flex-col justify-center items-stretch  pb-[1.375rem] ">
-                    <div className="lights  justify-end items-start gap-[3.1781rem] hidden -mt-20 pr-14">
+                <div className="main-container relative flex justify-center items-stretch flex-col lg:flex-row h-full">
+                  <div className="flex-[2_1_0%] flex flex-col justify-center items-stretch pb-[1.375rem]">
+                    <div className="lights justify-end items-start gap-[3.1781rem] hidden -mt-20 pr-14">
                       <img
                         src={lightOne}
                         alt="light one"
@@ -660,7 +665,8 @@ const Home = () => {
                         data-aos-delay="200"
                       />
                     </div>
-                    <div className="mb-5  flex lg:justify-start justify-center items-start max-lg:text-center">
+
+                    <div className="mb-5 flex lg:justify-start justify-center items-start max-lg:text-center">
                       <div className="heroContent max-lg:pt-[4.875rem] max-lg:pb-[3.25rem] h-fit">
                         <div
                           data-aos="fade-up"
@@ -672,7 +678,11 @@ const Home = () => {
                             <span>Google Partner</span>
                           </button>
                           <button className="lg:text-[1.25rem] text-[.825rem] px-5 lg:py-4 py-2 rounded-xl border border-white/40 text-white font-semibold flex justify-center items-center gap-2.5 shine-effect">
-                            <img src={GoogleAnalytics} alt="google analytics" />
+                            <img
+                              src={GoogleAnalytics}
+                              alt=""
+                              aria-hidden="true"
+                            />
                             <span>Google Analytics</span>
                           </button>
                         </div>
@@ -685,15 +695,9 @@ const Home = () => {
                           Expert Development Services for you
                         </h3>
                         <TextShuffling />
-                        {/* <h1
-                          data-aos="fade-up"
-                          data-aos-delay="800"
-                          className="2xl:text-[6rem] xl:text-[5rem] lg:text-[4.375rem] md:text-[3.125rem] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mt-3"
-                        >
-                          Digital marketing
-                        </h1> */}
                       </div>
                     </div>
+
                     <div className="flex-[0_1_0%]">
                       <button
                         onClick={() => setShowModal(true)}
@@ -706,6 +710,7 @@ const Home = () => {
                       </button>
                     </div>
                   </div>
+
                   <div className="flex-[1_1_0%] flex flex-col justify-between items-stretch">
                     <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-[18px]">
                       <div className="h-[170px] overflow-hidden">
@@ -738,12 +743,13 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+
               <div className="flex-[0_1_0%] bg-pine-999 shadow-[0px_4px_4px_0px_#00000040]">
                 <div className="main-container !pe-0 py-[1.25rem] flex justify-start items-center">
-                  <div className="flex-[0_1_0%] py-5 pe-8  border-r-2 border-white max-lg:hidden">
-                    <h4 className="text-[1.15rem] font-bold text-white text-nowrap">
-                      Trusted By
-                    </h4>
+                  <div className="flex-[0_1_0%] py-5 pe-8 border-r-2 border-white max-lg:hidden">
+                 <p className="text-[1.15rem] font-bold text-white text-nowrap">
+  Trusted By
+</p>
                     <h4 className="text-[0.95rem] font-medium text-white text-nowrap mt-1.5">
                       Our global clients Network
                     </h4>
@@ -756,6 +762,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+
         {/* Landing area section end */}
 
         {/* About section start */}
@@ -816,8 +823,9 @@ const Home = () => {
                           <img
                             src={image}
                             alt={`Slide ${index + 1}`}
-                            className="w-full object-contain "
+                            className="w-full h-[30.75rem] object-cover rounded-[1.75rem]"
                           />
+                          {/* className="w-full object-contain " */}
                         </div>
                       ))}
                     </div>
@@ -962,17 +970,21 @@ const Home = () => {
                 <div className="flex gap-3 mb-2">
                   <button
                     ref={prevRef}
+                    aria-label="Previous slide"
                     className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
                   >
-                    <GoArrowLeft className="size-6" />
+                    <GoArrowLeft className="size-6" aria-hidden="true" />
                   </button>
+
                   <button
                     ref={nextRef}
+                    aria-label="Next slide"
                     className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
                   >
-                    <GoArrowRight className="size-6" />
+                    <GoArrowRight className="size-6" aria-hidden="true" />
                   </button>
                 </div>
+
                 <div className="text-base text-center font-bold text-white">
                   <span className="text-[1.5rem]">{currentSlide}</span>{" "}
                   <span className="text-base">
@@ -1033,9 +1045,9 @@ const Home = () => {
 
                       {/* Inner content */}
                       <div className="relative h-full w-full text-white text-center flex justify-center items-center flex-col px-4">
-                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
+                        <p className="text-[1.625rem] leading-[2.4375rem] font-bold">
                           Staff Augmentation
-                        </h4>
+                        </p>
                         <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem] font-normal p-2">
                           Hire pre-vetted developers skilled in the latest
                           technologies, ready to work around the clock to meet
@@ -1228,9 +1240,9 @@ const Home = () => {
                 <div className="max-xl:hidden xl:w-full w-full">
                   <div className="card h-full bg-[#99eae0] overflow-hidden rounded-[1.625rem] flex justify-between items-stretch xl:gap-5 max-xl:flex-row-reverse">
                     <div className="p-[1.4375rem] xl:w-[65%] flex-[2_1_0%]">
-                      <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      <p className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
                         E-commerce Website
-                      </h4>
+                      </p>
                       <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
                         We all know that the eCommerce sector is booming like
                         anything. Hence, if you want to sell your products
@@ -1678,7 +1690,7 @@ const Home = () => {
         {/* Innovative Technology Solutions section end */}
 
         {/* socialLink section start */}
-        <section className="find  my-[6.0625rem]">
+        <section className="find my-[6.0625rem]">
           <div className="main-container">
             <div className="flex justify-center items-center gap-5 lg:flex-row flex-col rounded-[1.625rem] p-6 bg-pine-600">
               <div className="flex-1 flex justify-start items-center gap-x-16">
@@ -1687,52 +1699,80 @@ const Home = () => {
                 </h4>
                 <img
                   src={vectorNine}
-                  alt="vector nine"
+                  alt="decorative vector"
                   className="max-lg:hidden min-xl:h-[5.525rem]"
                 />
               </div>
+
               <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[1.625rem] overflow-hidden">
                 <a
                   href="https://www.linkedin.com/company/techdevise"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit TechDevise on LinkedIn"
                   className="sm:h-[8.25rem] bg-[#0077b5] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={linkedin} alt="linkedin" className="h-[2rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img
+                    src={linkedin}
+                    alt="LinkedIn logo"
+                    className="h-[2rem]"
+                  />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
+
                 <a
                   href="https://www.upwork.com/agencies/techdevise/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Hire TechDevise on Upwork"
                   className="sm:h-[8.25rem] bg-[#14a800] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={upwork} alt="upwork" className="h-[2rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img src={upwork} alt="Upwork logo" className="h-[2rem]" />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
+
                 <a
                   href="https://clutch.co/profile/tech-devise"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="See TechDevise profile on Clutch"
                   className="sm:h-[8.25rem] bg-[#17313b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={clutch} alt="clutch" className="h-[1.59rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img src={clutch} alt="Clutch logo" className="h-[1.59rem]" />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
 
                 <a
                   href="https://www.trustpilot.com/review/techdevise.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Read TechDevise reviews on Trustpilot"
                   className="sm:h-[8.25rem] bg-[#0ab67b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={trustpilot} alt="trustpilot" className="h-[2rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img
+                    src={trustpilot}
+                    alt="Trustpilot logo"
+                    className="h-[2rem]"
+                  />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
               </div>
             </div>
           </div>
         </section>
+
         {/* socialLink section end */}
 
         {/* Seamless Vision start */}
@@ -1803,15 +1843,18 @@ const Home = () => {
               <div className="flex gap-3">
                 <button
                   ref={prev2Ref}
+                  aria-label="Previous slide"
                   className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
                 >
-                  <GoArrowLeft className="size-6" />
+                  <GoArrowLeft className="size-6" aria-hidden="true" />
                 </button>
+
                 <button
                   ref={next2Ref}
+                  aria-label="Next slide"
                   className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
                 >
-                  <GoArrowRight className="size-6" />
+                  <GoArrowRight className="size-6" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -1899,7 +1942,11 @@ const Home = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap justify-between">
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      {/* <label htmlFor="fullname" className="block mb-1 text-sm font-medium text-gray-700">
+        Full Name
+      </label> */}
                       <input
+                        id="fullname"
                         type="text"
                         name="fullname"
                         className="inputControl"
@@ -1909,8 +1956,13 @@ const Home = () => {
                         required
                       />
                     </div>
+
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      {/* <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700">
+        Business Email
+      </label> */}
                       <input
+                        id="email"
                         type="email"
                         name="email"
                         className="inputControl"
@@ -1920,8 +1972,13 @@ const Home = () => {
                         required
                       />
                     </div>
+
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      {/* <label htmlFor="phone" className="block mb-1 text-sm font-medium text-gray-700">
+        Mobile Number
+      </label> */}
                       <input
+                        id="phone"
                         type="number"
                         name="phone"
                         className="inputControl"
@@ -1931,18 +1988,28 @@ const Home = () => {
                         required
                       />
                     </div>
+
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+                      {/* <label htmlFor="company_name" className="block mb-1 text-sm font-medium text-gray-700">
+        Company Name
+      </label> */}
                       <input
+                        id="company_name"
                         type="text"
                         name="company_name"
                         className="inputControl"
-                        placeholder="Company name"
+                        placeholder="Company Name"
                         value={formData.company_name}
                         onChange={handleChange}
                       />
                     </div>
+
                     <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
+                      {/* <label htmlFor="date" className="block mb-1 text-sm font-medium text-gray-700">
+        Preferred Date
+      </label> */}
                       <input
+                        id="date"
                         type="date"
                         name="date"
                         className="inputControl home-date custom-icon"
@@ -1953,7 +2020,11 @@ const Home = () => {
                     </div>
 
                     <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
+                      {/* <label htmlFor="time" className="block mb-1 text-sm font-medium text-gray-700">
+        Preferred Time
+      </label> */}
                       <input
+                        id="time"
                         type="time"
                         name="time"
                         className="inputControl home-time custom-icon"
@@ -1963,57 +2034,72 @@ const Home = () => {
                     </div>
 
                     {/* <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <select
-                        className="inputControl"
-                        name="job_title"
-                        value={formData.job_title}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="">Job Title</option>
-                        <option value="1">Entrepreneur</option>
-                        <option value="2">Manager</option>
-                        <option value="3">Director</option>
-                        <option value="4">C-Level</option>
-                        <option value="5">Student</option>
-                        <option value="6">Other</option>
-                      </select>
-                    </div>
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <select
-                        className="inputControl"
-                        name="launch_timeline"
-                        value={formData.launch_timeline}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="">Launch timeline?</option>
-                        <option value="1">Immediately</option>
-                        <option value="2">1-3 months</option>
-                        <option value="3">3-6 months</option>
-                        <option value="4">6+ months</option>
-                      </select>
-                    </div>
+      <label htmlFor="job_title" className="block mb-1 text-sm font-medium text-gray-700">
+        Job Title
+      </label>
+      <select
+        id="job_title"
+        className="inputControl"
+        name="job_title"
+        value={formData.job_title}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Job Title</option>
+        <option value="1">Entrepreneur</option>
+        <option value="2">Manager</option>
+        <option value="3">Director</option>
+        <option value="4">C-Level</option>
+        <option value="5">Student</option>
+        <option value="6">Other</option>
+      </select>
+    </div>
+
+    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+      <label htmlFor="launch_timeline" className="block mb-1 text-sm font-medium text-gray-700">
+        Launch Timeline
+      </label>
+      <select
+        id="launch_timeline"
+        className="inputControl"
+        name="launch_timeline"
+        value={formData.launch_timeline}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Launch timeline?</option>
+        <option value="1">Immediately</option>
+        <option value="2">1-3 months</option>
+        <option value="3">3-6 months</option>
+        <option value="4">6+ months</option>
+      </select>
+    </div>
+
+    <div className="w-full">
+      <CustomRangeSlider
+        min={0}
+        max={20000}
+        step={100}
+        value={budget}
+        onChange={(value) => {
+          setBudget(value);
+          setFormData((prev) => ({
+            ...prev,
+            budget: value.toString(),
+          }));
+        }}
+        label="Budget"
+        formatValue={formatCurrency}
+        formatCurrency={formatCurrency(budget)}
+      />
+    </div> */}
+
                     <div className="w-full">
-                      <CustomRangeSlider
-                        min={0}
-                        max={20000}
-                        step={100}
-                        value={budget}
-                        onChange={(value) => {
-                          setBudget(value);
-                          setFormData((prev) => ({
-                            ...prev,
-                            budget: value.toString(),
-                          }));
-                        }}
-                        label="Budget"
-                        formatValue={formatCurrency}
-                        formatCurrency={formatCurrency(budget)}
-                      />
-                    </div> */}
-                    <div className="w-full">
+                      {/* <label htmlFor="message" className="block mb-1 text-sm font-medium text-gray-700">
+        About Project
+      </label> */}
                       <textarea
+                        id="message"
                         name="message"
                         className="inputControl resize-none"
                         rows={6}
@@ -2022,6 +2108,7 @@ const Home = () => {
                         onChange={handleChange}
                       ></textarea>
                     </div>
+
                     <div className="w-full">
                       <button
                         type="submit"
@@ -2037,6 +2124,66 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {/* <section className="pb-[1.0625rem]">
+  <div className="main-container text-white">
+    <div className="text-center mb-[3.9375rem]">
+      <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
+        Location
+      </h4>
+      <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
+        We&apos;d love to here from you
+      </h3>
+      <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
+        We have offices and teams all around the world.{" "}
+        <img
+          src={vector12}
+          alt="vector12"
+          className="w-[5.6875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v"
+        />
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.375rem]">
+        {addressList.map((listitem, index) => (
+          <div
+            key={index}
+            className="border border-[#0a2a20] py-[1.0625rem] px-4 rounded-[1.625rem] flex gap-[1.9375rem] items-center bg-[#071712]"
+          >
+            <img
+              src={listitem.bgimage}
+              alt="country bg"
+              className="2xl:w-[7.0625rem] 2xl:h-[7.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.625rem] object-cover"
+            />
+            <div className="grow">
+              <div className="flex gap-[.9375rem] items-center mb-[1.375rem]">
+                <img
+                  src={listitem.flag}
+                  alt="flag"
+                  className="w-[2.1875rem] h-[2.125rem]"
+                />
+                <span className="font-bold capitalize">
+                  {listitem.countryName}
+                </span>
+              </div>
+              <p className="2xl:text-md text-base font-medium leading-[1.8125rem]">
+                {listitem.address}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center">
+        <img
+          src={map}
+          alt="map"
+          className="w-full h-full max-w-[600px] object-contain"
+        />
+      </div>
+    </div>
+  </div>
+</section> */}
         {/* Let’s Talk end */}
 
         {/* Location start */}

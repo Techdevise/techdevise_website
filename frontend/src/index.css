@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); */
 @import "tailwindcss";
 
 html {
@@ -95,7 +95,22 @@ input[type="number"] {
     --chart-5: 340 75% 55%;
   }
 }
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Regular.woff2') format('woff2'),
+       url('/fonts/ProductSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
+:root {
+  --font_ProductSans: 'Product Sans', sans-serif;
+}
+
+
+.font-product {
+  font-family: var(--font_ProductSans);
+}
 @layer utilities {
   .hide-scroll::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
@@ -342,3 +357,10 @@ select.inputControl {
     animation: scroll 35s linear infinite;
   }
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
