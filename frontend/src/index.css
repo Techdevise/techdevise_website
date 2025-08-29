@@ -153,7 +153,14 @@ select.inputControl {
   }
 }
 
-
+ @keyframes pingOnce {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.6); opacity: 0.5; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .animate-pingOnce {
+        animation: pingOnce 1s ease-in-out infinite;
+      }
 
 .dashed-lg {
   border-style: dashed;

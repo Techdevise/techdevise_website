@@ -1957,14 +1957,12 @@ const Home = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap justify-between">
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      {/* <label htmlFor="fullname" className="block mb-1 text-sm font-medium text-gray-700">
-        Full Name
-      </label> */}
+     
                       <input
                         id="fullname"
                         type="text"
                         name="fullname"
-                        className="inputControl"
+                      className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         placeholder="Full Name"
                         value={formData.fullname}
                         onChange={handleChange}
@@ -1973,14 +1971,12 @@ const Home = () => {
                     </div>
 
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      {/* <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700">
-        Business Email
-      </label> */}
+            
                       <input
                         id="email"
                         type="email"
                         name="email"
-                        className="inputControl"
+                     className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         placeholder="Business Email"
                         value={formData.email}
                         onChange={handleChange}
@@ -1989,64 +1985,58 @@ const Home = () => {
                     </div>
 
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      {/* <label htmlFor="phone" className="block mb-1 text-sm font-medium text-gray-700">
-        Mobile Number
-      </label> */}
+           
                       <input
                         id="phone"
                         type="number"
                         name="phone"
-                        className="inputControl"
+                      className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+                        
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
                         required
+                        
                       />
                     </div>
 
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      {/* <label htmlFor="company_name" className="block mb-1 text-sm font-medium text-gray-700">
-        Company Name
-      </label> */}
-                      <input
-                        id="company_name"
-                        type="text"
-                        name="company_name"
-                        className="inputControl"
-                        placeholder="Company Name"
-                        value={formData.company_name}
-                        onChange={handleChange}
-                      />
-                    </div>
+                 <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+  <input
+    id="company_name"
+    type="text"
+    name="company_name"
+    value={formData.company_name}
+    onChange={handleChange}
+    className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+    placeholder="Company Name"
+  />
+</div>
 
-                    <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
-                      {/* <label htmlFor="date" className="block mb-1 text-sm font-medium text-gray-700">
-        Preferred Date
-      </label> */}
-                      <input
-                        id="date"
-                        type="date"
-                        name="date"
-                        className="inputControl home-date custom-icon"
-                        value={formData.date}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
+                <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
+  <input
+    id="date"
+    type="date"
+    name="date"
+    value={formData.date}
+    onChange={handleChange}
+    required
+    className="inputControl home-date custom-icon placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+    placeholder="Select Date"
+  />
+</div>
 
-                    <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
-                      {/* <label htmlFor="time" className="block mb-1 text-sm font-medium text-gray-700">
-        Preferred Time
-      </label> */}
-                      <input
-                        id="time"
-                        type="time"
-                        name="time"
-                        className="inputControl home-time custom-icon"
-                        value={formData.time}
-                        onChange={handleChange}
-                      />
-                    </div>
+<div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
+  <input
+    id="time"
+    type="time"
+    name="time"
+    value={formData.time}
+    onChange={handleChange}
+    className="inputControl home-time custom-icon placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+    placeholder="Select Time"
+  />
+</div>
+
 
                     {/* <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
       <label htmlFor="job_title" className="block mb-1 text-sm font-medium text-gray-700">
@@ -2110,13 +2100,11 @@ const Home = () => {
     </div> */}
 
                     <div className="w-full">
-                      {/* <label htmlFor="message" className="block mb-1 text-sm font-medium text-gray-700">
-        About Project
-      </label> */}
+           
                       <textarea
                         id="message"
                         name="message"
-                        className="inputControl resize-none"
+                        className="inputControl resize-none placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         rows={6}
                         placeholder="About Project"
                         value={formData.message}
@@ -2237,18 +2225,7 @@ const Home = () => {
           </div>
 
           {/* Tailwind Custom Animation */}
-          <style>
-            {`
-      @keyframes pingOnce {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.6); opacity: 0.5; }
-        100% { transform: scale(1); opacity: 1; }
-      }
-      .animate-pingOnce {
-        animation: pingOnce 1s ease-in-out infinite;
-      }
-    `}
-          </style>
+    
         </section>
 
         {/* Let’s Talk end */}
