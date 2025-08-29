@@ -438,27 +438,27 @@ const Header = () => {
               >
                 Get in Touch
               </button>
-              <button
+              {/* <button
                 onClick={() => setShowModal1(true)}
                 className="lg:hidden h-[3.5rem] block text-start w-full rounded-lg font-normal text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect"
               >
                 Get a call back
-              </button>
+              </button> */}
             </div>
 
             {/* Nav Button */}
             <div className="flex justify-center items-center">
               <button
                 onClick={() => setShowModal(true)}
-                className="h-[2.91rem] ms-[1.75rem] rounded-[22px] font-normal text-[0.875rem] uppercase group/link text-pine-700 text-nowrap py-2 px-4 bg-white shine-effect max-lg:hidden flex items-center gap-2"
+                className="h-[2.91rem] ms-[1.35rem] rounded-[22px] font-normal text-[0.875rem] uppercase text-white group/link text-nowrap py-2 px-4 bg-transparent border border-white transition-colors duration-300 max-lg:hidden flex items-center gap-2 cursor-pointer"
               >
                 Get in Touch
-                <span className="size-[1.625rem] rounded-full aspect-square bg-transparent text-pine-700 flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                <span className="size-[1.625rem] rounded-full aspect-square border border-white flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
                   <FiArrowUpRight className="size-4" />
                 </span>
               </button>
 
-              <button
+              {/* <button
                 onClick={() => setShowModal1(true)}
                 className="h-[2.91rem] ms-[1.35rem] rounded-[22px] font-normal text-[0.875rem] uppercase text-white group/link text-nowrap py-2 px-4 bg-transparent border border-white transition-colors duration-300 max-lg:hidden flex items-center gap-2 cursor-pointer"
               >
@@ -466,7 +466,7 @@ const Header = () => {
                 <span className="size-[1.625rem] rounded-full aspect-square border border-white flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
                   <FiArrowUpRight className="size-4" />
                 </span>
-              </button>
+              </button> */}
             </div>
 
             {/* Menu button */}

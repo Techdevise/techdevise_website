@@ -384,7 +384,7 @@ const CareerThree = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-pine-700 w-fit shine-effect cursor-pointer py-2.5 px-5 text-center block text-white rounded-[.625rem] hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                className="bg-pine-700 w-fit shine-effect cursor-pointer py-2.5 px-5 text-center block text-white rounded-full hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>

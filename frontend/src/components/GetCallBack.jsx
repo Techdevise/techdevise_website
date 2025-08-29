@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 // images
 import touch1 from "/touch1.webp";
 import qoutes from "/qoutes.svg";
-import mobileViewSlide from "/mobileViewSlide.webp";
+import mobileViewSlide from "/OBJECTS.svg";
 import { IoCheckmark, IoClose } from "react-icons/io5";
 import { ImImage } from "react-icons/im";
 import FlagInput from "./FlagInput";
@@ -35,9 +35,9 @@ const GetCallBack = ({ showModal1, setShowModal1 }) => {
     fullname: "",
     email: "",
     phone: "",
-    // job_title: "",
-    // launch_timeline: "",
-    // budget: selectedBudget || "",
+    job_title: "",
+    launch_timeline: "",
+    budget: selectedBudget || "",
     message: "",
   });
 
@@ -96,9 +96,9 @@ const GetCallBack = ({ showModal1, setShowModal1 }) => {
           fullname: "",
           email: "",
           phone: "",
-        //   job_title: "",
-        //   launch_timeline: "",
-        //   budget: "",
+          job_title: "",
+          launch_timeline: "",
+          budget: "",
           message: "",
         });
         setSelectedBudget(null);
@@ -129,9 +129,11 @@ const GetCallBack = ({ showModal1, setShowModal1 }) => {
         }`}
       >
         <div
-          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto 2xl:max-w-[45.5625rem] max-w-[35.5625rem] w-full relative transition-all duration-500 rounded-[1.625rem] ${
-            showModal1 ? "scale-100" : "scale-90"
-          }`}
+          className={`modal py-5 px-3 max-lg:pt-16 
+  bg-gradient-to-br from-[#E4FFFB] via-[#FFFFFF] to-[#C0E6E1] 
+  max-h-[90dvh] overflow-y-auto 2xl:max-w-[60.5625rem] 
+  max-w-[45.5625rem] w-full relative transition-all duration-500 
+  rounded-[1.625rem] ${showModal1 ? "scale-100" : "scale-90"}`}
         >
           <div
             onClick={() => setShowModal1(false)}
@@ -140,67 +142,105 @@ const GetCallBack = ({ showModal1, setShowModal1 }) => {
             <IoClose />
           </div>
           <div className="flex justify-center items-center h-full lg:flex-row flex-col gap-5">
-            <div className="lg:w-[90%] w-full mt-5">
-          <h1 className="font-bold mb-5 text-[1.50rem]">Discuss your Idea with a <span className="text-pine-400">CTO!</span> </h1>
+            <div className="lg:w-[40%] w-full h-[500px] bg-pine-700  pt-4  pb-4 px-[0.625rem] text-white text-center rounded-[1.625rem] 2xl:ml-2 ">
+              <h2 className=" 2xl:text-[2rem] lg:text-[1.5rem] text-[1.5rem] 2xl:leading-10 leading-8 font-bold text-start font-montserrat">
+                Discuss your Idea <br /> with a{" "}
+                <span className=" text-[#8EFCA1]"> CTO!</span>
+              </h2>
+
+              <div className="card mt-4">
+                <div className="slider mt-5">
+                  <div className="flex justify-center items-center">
+                    <img
+                      src={mobileViewSlide}
+                      alt="Mobile View image"
+                      className="size-full max-w-full mx-auto 2xl:max-h-[50.125rem] max-h-[25.125rem] object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-[60%] w-full mt-7  2xl:px-5">
               <form
                 onSubmit={handleSubmit}
                 className="sm:grid xl:grid-cols-2 lg:grid-cols-1 sm:grid-cols-2 flex flex-col gap-5"
               >
-                <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem]">
-                  <input
-                    type="text"
-                    name="fullname"
-                    value={formData.fullname}
-                    onChange={handleChange}
-                    placeholder="Full Name"
-                    required
-                    className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
-                  />
+                <div className="col-span-2">
+                  <div className="bg-gradient-to-b from-pine-700/10 to-pine-700/50 rounded-lg p-[1px] flex flex-col">
+                    <label className="text-[0.999rem] font-semibold text-black bg-white rounded-t-[.4375rem] px-5 py-2">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="fullname"
+                      value={formData.fullname}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      required
+                      className="h-[2rem] bg-white w-full rounded-b-[.4375rem] text-[1.125rem] leading-[1.875rem] px-5 placeholder:text-black/30 placeholder:text-[1.10rem] placeholder:font-normal focus-visible:outline-0 focus-visible:shadow-none"
+                    />
+                  </div>
                 </div>
-               
-                <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem]">
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Phone No"
-                    required
-                    className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
-                  />
+
+                {/* Business Email */}
+                <div className="col-span-2">
+                  <div className="bg-gradient-to-b from-pine-700/10 to-pine-700/50 rounded-lg p-[1px] flex flex-col">
+                    <label className="text-[0.999rem] font-semibold text-black bg-white rounded-t-[.4375rem] px-5 py-2">
+                      Business Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="example@company.com"
+                      required
+                      className="h-[2rem] bg-white w-full rounded-b-[.4375rem] text-[1.125rem] leading-[1.875rem] px-5 placeholder:text-black/30 placeholder:text-[1.10rem] placeholder:font-normal focus-visible:outline-0 focus-visible:shadow-none"
+                    />
+                  </div>
                 </div>
- <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] h-[3.975rem]">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Business Email"
-                    required
-                    className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none"
-                  />
+
+                {/* Mobile Number */}
+                <div className="col-span-2">
+                  <div className="bg-gradient-to-b from-pine-700/10 to-pine-700/50 rounded-lg p-[1px] flex flex-col">
+                    <label className="text-[0.999rem] font-semibold text-black bg-white rounded-t-[.4375rem] px-5 py-2">
+                      Mobile Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Enter mobile number"
+                      required
+                      className="h-[2rem] bg-white w-full rounded-b-[.4375rem] text-[1.125rem] leading-[1.875rem] px-5 placeholder:text-black/30 placeholder:text-[1.10rem] placeholder:font-normal focus-visible:outline-0 focus-visible:shadow-none"
+                    />
+                  </div>
                 </div>
-             
-                <div className="col-span-2 bg-gradient-to-b from-pine-700/0 to-pine-700/30 p-[1px] shadow-2xl shadow-black/10 rounded-[.625rem] overflow-hidden max-h-[500px] overflow-y-auto">
-                  {/* <h4 className="text-base leading-[1.625rem] font-semibold">
-                    Description
-                  </h4> */}
-                  <div className="col-span-2 bg-gradient-to-b from-pine-700/10 to-pine-700/30 rounded-lg p-[1px] min-h-[4.875rem]">
+
+                {/* Business Requirements */}
+                <div className="col-span-2">
+                  <div className="bg-gradient-to-b from-pine-700/10 to-pine-700/50 rounded-lg p-[1px] flex flex-col">
+                    <label className="text-[0.999rem] font-semibold text-black bg-white rounded-t-[.4375rem] px-5 py-2">
+                      Please Share Your Business Requirements
+                    </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Please Share Your Business Requirements"
-                      className="h-full bg-white w-full rounded-[.4375rem] text-[1.125rem] leading-[1.875rem] flex justify-start items-center p-5 placeholder:text-black/30 focus-visible:outline-0 focus-visible:shadow-none min-h-[150px] max-h-[150px] "
+                      placeholder="Write here..."
+                      className="bg-white w-full rounded-b-[.4375rem] text-[1.125rem] leading-[1.875rem] px-5 py-3 placeholder:text-black/30 placeholder:text-[1.10rem] placeholder:font-normal focus-visible:outline-0 focus-visible:shadow-none min-h-[100px] max-h-[100px]"
                     ></textarea>
                   </div>
                 </div>
+
+                {/* Submit */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block text-white rounded-[.625rem] hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="bg-pine-700 w-fit cursor-pointer shine-effect py-2.5 px-5 text-center block text-white rounded-full hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Submitting..." : "Call Me Now!"}
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </form>
             </div>

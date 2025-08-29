@@ -276,15 +276,15 @@ const Blockchain = () => {
 
                 <div className="flex flex-col">
                   <div className="flex gap-2.5 justify-start mt-[1.9375rem] items-stretch order-2">
-                    <button ref={prevRef} className="cursor-pointer">
+                    <button ref={prevRef} className="cursor-pointer"  aria-label="Previous slide">
                       <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                        <GoArrowLeft className="size-7" />
+                        <GoArrowLeft className="size-7" aria-hidden="true" />
                       </div>
                     </button>
 
-                    <button ref={nextRef} className="cursor-pointer">
+                    <button ref={nextRef} className="cursor-pointer"   aria-label="Next slide">
                       <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-pine-700">
-                        <GoArrowRight className="size-7" />
+                        <GoArrowRight className="size-7" aria-hidden="true"/>
                       </div>
                     </button>
                   </div>
@@ -387,15 +387,15 @@ const Blockchain = () => {
           </div>
           <div className="flex flex-col lg:ps-[16.75rem] relative">
             <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
-              <button ref={prevRef2} className="cursor-pointer order-1">
+              <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowLeft className="size-7" />
+                  <GoArrowLeft className="size-7" aria-hidden="true"/>
                 </div>
               </button>
 
-              <button ref={nextRef2} className="cursor-pointer order-2">
+              <button ref={nextRef2} className="cursor-pointer order-2" aria-label="Next slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowRight className="size-7" />
+                  <GoArrowRight className="size-7" aria-hidden="true"/>
                 </div>
               </button>
             </div>
@@ -474,15 +474,15 @@ const Blockchain = () => {
             className="flex flex-col  bg-center bg-cover bg-no-repeat py-[4.6875rem] px-[3.75rem] rounded-[1.625rem] overflow-hidden relative"
           >
             <div className="flex gap-2.5 justify-center items-stretch mt-[3.25rem] order-2">
-              <button ref={prevRef2} className="cursor-pointer order-1">
+              <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowLeft className="size-7" />
+                  <GoArrowLeft className="size-7" aria-hidden="true"/>
                 </div>
               </button>
 
-              <button ref={nextRef2} className="cursor-pointer order-2">
+              <button ref={nextRef2} className="cursor-pointer order-2"   aria-label="Next slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowRight className="size-7" />
+                  <GoArrowRight className="size-7" aria-hidden="true"/>
                 </div>
               </button>
             </div>

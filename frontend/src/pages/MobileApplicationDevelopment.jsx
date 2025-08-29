@@ -418,15 +418,15 @@ const MobileApplicationDevelopment = () => {
               </Link> */}
 
                 <div className="flex gap-2.5 justify-between items-stretch order-1">
-                  <button ref={prevRef} className="cursor-pointer">
+                  <button ref={prevRef} className="cursor-pointer "aria-label="Previous slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowLeft className="size-7" />
+                      <GoArrowLeft className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
 
-                  <button ref={nextRef} className="cursor-pointer order-2">
+                  <button ref={nextRef} className="cursor-pointer order-2" aria-label="Next slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowRight className="size-7" />
+                      <GoArrowRight className="size-7" aria-hidden="true" />
                     </div>
                   </button>
                 </div>
@@ -715,15 +715,15 @@ const MobileApplicationDevelopment = () => {
             />
             <div className="col-span-2 flex flex-col">
               <div className="flex gap-2.5 justify-start items-stretch mt-[3.25rem] order-2">
-                <button ref={prevRef2} className="cursor-pointer order-1">
+                <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                   <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                    <GoArrowLeft className="size-7" />
+                    <GoArrowLeft className="size-7" aria-hidden="true" />
                   </div>
                 </button>
 
-                <button ref={nextRef2} className="cursor-pointer order-2">
+                <button ref={nextRef2} className="cursor-pointer order-2 " aria-label="Next slide">
                   <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                    <GoArrowRight className="size-7" />
+                    <GoArrowRight className="size-7" aria-hidden="true"/>
                   </div>
                 </button>
               </div>

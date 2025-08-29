@@ -99,9 +99,11 @@ import AutoCounter from "../components/counter";
 import state1 from "/state1.webp";
 import state2 from "/state2.webp";
 import state3 from "/state3.webp";
-import flag1 from "/flag1.svg";
-import flag2 from "/flag2.svg";
-import flag3 from "/flag3.svg";
+import state4 from "/state4.png";
+import flag1 from "/flag1.png";
+import flag2 from "/flag2.png";
+import flag3 from "/flag3.png";
+import flag4 from "/flag4.png";
 import map from "/map.svg";
 
 import clogo1 from "/clogo1.svg";
@@ -118,7 +120,6 @@ import clogo11 from "/clogo11.svg";
 import clogo12 from "/clogo12.svg";
 import clogo13 from "/clogo13.svg";
 import clogo14 from "/clogo14.svg";
-import clogo15 from "/clogo15.svg";
 import clogo16 from "/clogo24.png";
 
 import Nour_Deen from "/Nour_Deen.png";
@@ -141,6 +142,7 @@ const Home = () => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [currentSlide, setCurrentSlide] = useState(1);
   const prevRef = useRef(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const nextRef = useRef(null);
   const [totalSlides, setTotalSlides] = useState(0);
   const prev2Ref = useRef(null);
@@ -482,19 +484,28 @@ const Home = () => {
       countryName: "India",
       address:
         "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071",
+      position: { top: "68%", left: "54%" },
     },
-
     {
       bgimage: state2,
       flag: flag2,
       countryName: "United States",
       address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
+      position: { top: "19%", left: "51%" },
     },
     {
       bgimage: state3,
       flag: flag3,
       countryName: "Netherlands",
       address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
+      position: { top: "38%", left: "13%" },
+    },
+    {
+      bgimage: state4,
+      flag: flag4,
+      countryName: "New Zealand",
+      address: "76A Wai-Iti Road, Timaru, Canterbury 7910",
+      position: { top: "87%", left: "93%" },
     },
   ];
   const offshore = [
@@ -582,8 +593,12 @@ const Home = () => {
       alt: "company logo 14",
     },
     {
-      image: clogo15,
-      alt: "company logo 15",
+      image: clogo1,
+      alt: "company logo 1",
+    },
+    {
+      image: clogo2,
+      alt: "company logo 2",
     },
     {
       image: clogo16,
@@ -636,22 +651,21 @@ const Home = () => {
     <>
       <main className="bg-pine-999 pb-12">
         {/* Landing area section start */}
-        <section className="landing-area relative z-0 w-full h-screen overflow-hidden">
+        <section className="landing-area relative z-0">
           <video
             src={video}
             playsInline
             loop
             muted
             autoPlay
-            className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+            className="h-full  w-[100dvw] object-cover absolute top-0 left-0 z-[-1]"
           ></video>
-
           <div className="cover bg-gradient-to-b from-[#024a40cc] to-[#024a40cc]/50 z-0 h-full w-full lg:pt-[5.5rem] pt-20">
-            <div className="flex justify-between items-stretch flex-col h-full">
+            <div className=" flex justify-between items-stretch flex-col h-full">
               <div className="flex-1">
-                <div className="main-container relative flex justify-center items-stretch flex-col lg:flex-row h-full">
-                  <div className="flex-[2_1_0%] flex flex-col justify-center items-stretch pb-[1.375rem]">
-                    <div className="lights justify-end items-start gap-[3.1781rem] hidden -mt-20 pr-14">
+                <div className="main-container relative  flex justify-center items-stretch flex-col lg:flex-row h-full">
+                  <div className="flex-[2_1_0%] flex flex-col justify-center items-stretch  pt-[5.375rem] ">
+                    <div className="lights  justify-end items-start gap-[3.1781rem] hidden -mt-20 pr-14">
                       <img
                         src={lightOne}
                         alt="light one"
@@ -665,8 +679,7 @@ const Home = () => {
                         data-aos-delay="200"
                       />
                     </div>
-
-                    <div className="mb-5 flex lg:justify-start justify-center items-start max-lg:text-center">
+                    <div className="mb-5  flex lg:justify-start justify-center items-start max-lg:text-center">
                       <div className="heroContent max-lg:pt-[4.875rem] max-lg:pb-[3.25rem] h-fit">
                         <div
                           data-aos="fade-up"
@@ -678,11 +691,7 @@ const Home = () => {
                             <span>Google Partner</span>
                           </button>
                           <button className="lg:text-[1.25rem] text-[.825rem] px-5 lg:py-4 py-2 rounded-xl border border-white/40 text-white font-semibold flex justify-center items-center gap-2.5 shine-effect">
-                            <img
-                              src={GoogleAnalytics}
-                              alt=""
-                              aria-hidden="true"
-                            />
+                            <img src={GoogleAnalytics} alt="google analytics" />
                             <span>Google Analytics</span>
                           </button>
                         </div>
@@ -695,9 +704,15 @@ const Home = () => {
                           Expert Development Services for you
                         </h3>
                         <TextShuffling />
+                        {/* <h1
+                          data-aos="fade-up"
+                          data-aos-delay="800"
+                          className="2xl:text-[6rem] xl:text-[5rem] lg:text-[4.375rem] md:text-[3.125rem] sm:text-[2.625rem] text-[2.55rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mt-3"
+                        >
+                          Digital marketing
+                        </h1> */}
                       </div>
                     </div>
-
                     <div className="flex-[0_1_0%]">
                       <button
                         onClick={() => setShowModal(true)}
@@ -710,9 +725,8 @@ const Home = () => {
                       </button>
                     </div>
                   </div>
-
                   <div className="flex-[1_1_0%] flex flex-col justify-between items-stretch">
-                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-[22px]">
+                    <div className="lights flex justify-end items-start gap-[3.1781rem] pe-[4.4781rem] max-lg:hidden -m-[18px]">
                       <div className="h-[170px] overflow-hidden">
                         <img
                           src={lightOne}
@@ -743,13 +757,12 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-
               <div className="flex-[0_1_0%] bg-pine-999 shadow-[0px_4px_4px_0px_#00000040]">
                 <div className="main-container !pe-0 py-[1.25rem] flex justify-start items-center">
-                  <div className="flex-[0_1_0%] py-5 pe-8 border-r-2 border-white max-lg:hidden">
-                 <p className="text-[1.15rem] font-bold text-white text-nowrap">
-  Trusted By
-</p>
+                  <div className="flex-[0_1_0%] py-5 pe-8  border-r-2 border-white max-lg:hidden">
+                    <h4 className="text-[1.15rem] font-bold text-white text-nowrap">
+                      Trusted By
+                    </h4>
                     <h4 className="text-[0.95rem] font-medium text-white text-nowrap mt-1.5">
                       Our global clients Network
                     </h4>
@@ -999,12 +1012,14 @@ const Home = () => {
                 spaceBetween={30}
                 slidesPerView={1}
                 speed={1000}
-                autoplay={{ delay: 1000000 }}
                 grabCursor={true}
                 loop={true}
+                autoplay={{
+                  delay: 3000, // 3 sec
+                  disableOnInteraction: false, // click/drag ke baad bhi auto chale
+                }}
                 modules={[Autoplay, Navigation, Pagination]}
                 onInit={(swiper) => {
-                  // Re-assign custom buttons after swiper is initialized
                   swiper.params.navigation.prevEl = prevRef.current;
                   swiper.params.navigation.nextEl = nextRef.current;
                   swiper.navigation.init();
@@ -2112,7 +2127,7 @@ const Home = () => {
                     <div className="w-full">
                       <button
                         type="submit"
-                        className="bg-white shine-effect rounded-[.625rem] py-2.5 px-5 border-0 outline-0 text-xl font-bold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
+                        className="bg-white shine-effect rounded-full py-2.5 px-5 border-0 outline-0 text-xl font-semibold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? "Submitting..." : "Submit"}
@@ -2124,70 +2139,122 @@ const Home = () => {
             </div>
           </div>
         </section>
-        {/* <section className="pb-[1.0625rem]">
-  <div className="main-container text-white">
-    <div className="text-center mb-[3.9375rem]">
-      <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
-        Location
-      </h4>
-      <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
-        We&apos;d love to here from you
-      </h3>
-      <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
-        We have offices and teams all around the world.{" "}
-        <img
-          src={vector12}
-          alt="vector12"
-          className="w-[5.6875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v"
-        />
-      </p>
-    </div>
 
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.375rem]">
-        {addressList.map((listitem, index) => (
-          <div
-            key={index}
-            className="border border-[#0a2a20] py-[1.0625rem] px-4 rounded-[1.625rem] flex gap-[1.9375rem] items-center bg-[#071712]"
-          >
-            <img
-              src={listitem.bgimage}
-              alt="country bg"
-              className="2xl:w-[7.0625rem] 2xl:h-[7.8125rem] w-[9.375rem] h-[11.875rem] rounded-[1.625rem] object-cover"
-            />
-            <div className="grow">
-              <div className="flex gap-[.9375rem] items-center mb-[1.375rem]">
+        <section className="pb-[1.0625rem]">
+          <div className="main-container text-white">
+            {/* Heading */}
+            <div className="text-center mb-[3.9375rem]">
+              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
+                Location
+              </h4>
+              <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
+                We&apos;d love to hear from you
+              </h3>
+              <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
+                We have offices and teams all around the world.
                 <img
-                  src={listitem.flag}
-                  alt="flag"
-                  className="w-[2.1875rem] h-[2.125rem]"
+                  src={vector12}
+                  alt="vector12"
+                  className="w-[4.2875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v hidden md:block"
                 />
-                <span className="font-bold capitalize">
-                  {listitem.countryName}
-                </span>
-              </div>
-              <p className="2xl:text-md text-base font-medium leading-[1.8125rem]">
-                {listitem.address}
               </p>
             </div>
-          </div>
-        ))}
-      </div>
 
-      <div className="flex justify-center">
-        <img
-          src={map}
-          alt="map"
-          className="w-full h-full max-w-[600px] object-contain"
-        />
-      </div>
-    </div>
-  </div>
-</section> */}
+            {/* Content */}
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
+              {/* Address List */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.375rem] order-2 md:order-2 lg:order-1">
+                {addressList.map((listitem, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedCountry(listitem.countryName)}
+                    className={`cursor-pointer border rounded-[1.625rem] flex gap-[1.9375rem] items-center px-4 py-[1.0625rem] transition-all
+    text-white
+    border-[#157B6C]
+    ${
+      selectedCountry === listitem.countryName
+        ? "bg-[#091D17] ring-1 ring-[#157B6C]"
+        : "bg-[#071712]"
+    }
+  `}
+                  >
+                    <img
+                      src={listitem.bgimage}
+                      alt="country bg"
+                      className="2xl:w-[6.0625rem] 2xl:h-[6.8125rem] w-[5.375rem] h-[5.875rem] rounded-[1.625rem] object-cover"
+                    />
+                    <div className="grow">
+                      <div className="flex gap-[.9375rem] items-center mb-[0.375rem]">
+                        <img
+                          src={listitem.flag}
+                          alt="flag"
+                          className="w-[2.1875rem] h-[2.125rem]"
+                        />
+                        <span className="font-bold capitalize 2xl:text-[1.2rem] xl:text-[1.1rem] text-[1.0rem]">
+                          {listitem.countryName}
+                        </span>
+                      </div>
+                      <p className="2xl:text-md text-base font-normal 2xl:leading-[1.8125rem] leading-[1.4125rem]">
+                        {listitem.address}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Map with Dots */}
+              <div className="flex justify-center order-1 md:order-1 lg:order-2">
+                <div className="relative w-full h-full max-w-[600px]">
+                  <img
+                    src={map}
+                    alt="map"
+                    className="w-full h-full object-contain"
+                  />
+                  {addressList.map((item, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        top: item.position.top,
+                        left: item.position.left,
+                      }}
+                      className={`absolute w-4 h-4 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2
+                ${
+                  selectedCountry === item.countryName
+                    ? "bg-[#157B6C] animate-pingOnce"
+                    : "bg-[#D4D4D48A]"
+                }`}
+                    >
+                      {selectedCountry === item.countryName && (
+                        <span className="absolute top-[-1.5rem] left-1/2 -translate-x-1/2 bg-[#157B6C] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
+                          {item.countryName}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tailwind Custom Animation */}
+          <style>
+            {`
+      @keyframes pingOnce {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.6); opacity: 0.5; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .animate-pingOnce {
+        animation: pingOnce 1s ease-in-out infinite;
+      }
+    `}
+          </style>
+        </section>
+
         {/* Let’s Talk end */}
 
         {/* Location start */}
-        <section className="pb-[1.0625rem]">
+        {/* <section className="pb-[1.0625rem]">
           <div className="main-container text-white">
             <div className="text-center mb-[3.9375rem]">
               <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
@@ -2240,7 +2307,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         {/* Location end */}
         <GetInTouch
           showModal={showModal}

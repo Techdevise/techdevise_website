@@ -76,7 +76,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
               {/* <button className='bg-pine-700 cursor-pointer w-[15.3125rem] py-2.5 px-5 text-center block text-white rounded-[.625rem]'>
                 Apply
               </button> */}
-              <Link className='bg-pine-700 shine-effect cursor-pointer w-[8.3125rem] py-2.5 px-5 text-center block text-white rounded-[.625rem]' to={`/career-three/${jobDetails.id}`}>Apply</Link>
+              <Link className='bg-pine-700 shine-effect cursor-pointer w-[8.3125rem] py-2.5 px-5 text-center block text-white rounded-full' to={`/career-three/${jobDetails.id}`}>Apply</Link>
             </div>
           </div>
         </div>

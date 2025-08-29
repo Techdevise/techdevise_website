@@ -644,7 +644,7 @@ const About = () => {
                     showFormModal();
                     showModal();
                   }}
-                  className="bg-pine-700 w-[15.3125rem] py-2.5 px-5 text-center text-white rounded-[.625rem]"
+                  className="bg-pine-700 w-[8.3125rem] py-2.5 px-5 text-center text-white rounded-full"
                 >
                   Apply
                 </button>
@@ -818,7 +818,7 @@ const About = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block  text-white rounded-[.625rem]"
+              className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block  text-white rounded-full"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>

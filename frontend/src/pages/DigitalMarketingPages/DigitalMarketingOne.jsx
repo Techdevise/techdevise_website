@@ -364,14 +364,14 @@ const DigitalMarketingOne = () => {
           {/* Swiper and buttons */}
           <div className="col-span-2 flex flex-col">
             <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
-              <button ref={prevRef} className="cursor-pointer order-1">
+              <button ref={prevRef} className="cursor-pointer order-1"aria-label="Previous slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                  <GoArrowLeft className="size-7" />
+                  <GoArrowLeft className="size-7" aria-hidden="true"/>
                 </div>
               </button>
-              <button ref={nextRef} className="cursor-pointer order-2">
+              <button ref={nextRef} className="cursor-pointer order-2" aria-label="Next slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                  <GoArrowRight className="size-7" />
+                  <GoArrowRight className="size-7" aria-hidden="true" />
                 </div>
               </button>
             </div>
@@ -441,71 +441,76 @@ const DigitalMarketingOne = () => {
                 online customer base as well.   
               </p>
 
-              <div className="w-full lg:hidden gap-3 flex justify-center items-center">
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://www.facebook.com/Techdevise9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={facebookBlack}
-                      alt="facebookBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://x.com/it_devise"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={xBlack}
-                      alt="xBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://www.instagram.com/techdevise_it_services/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={instagramBlack}
-                      alt="instagramBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://www.linkedin.com/company/techdevise"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={youtubeBlack}
-                      alt="youtubeBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-              </div>
+             <div className="w-full lg:hidden gap-3 flex justify-center items-center">
+  {/* Repeat the same with updated alt and aria-label */}
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.facebook.com/Techdevise9"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Facebook"
+    >
+      <img
+        src={facebookBlack}
+        alt="TechDevise Facebook"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://x.com/it_devise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on X (Twitter)"
+    >
+      <img
+        src={xBlack}
+        alt="TechDevise X"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.instagram.com/techdevise_it_services/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Instagram"
+    >
+      <img
+        src={instagramBlack}
+        alt="TechDevise Instagram"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.linkedin.com/company/techdevise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on LinkedIn"
+    >
+      <img
+        src={youtubeBlack}
+        alt="TechDevise LinkedIn"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+</div>
               <div className="col-span-2 flex flex-col">
                 <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
-                  <button ref={prevRef2} className="cursor-pointer order-1">
+                  <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowLeft className="size-7" />
+                      <GoArrowLeft className="size-7" aria-hidden="true" />
                     </div>
                   </button>
 
-                  <button ref={nextRef2} className="cursor-pointer order-2">
+                  <button ref={nextRef2} className="cursor-pointer order-2"   aria-label="Next slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowRight className="size-7" />
+                      <GoArrowRight className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
                 </div>
@@ -568,59 +573,63 @@ const DigitalMarketingOne = () => {
               </div>
             </div>
             <div className="lg:w-fit w-full lg:block gap-3 hidden justify-center items-center">
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://www.facebook.com/Techdevise9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={facebookBlack}
-                    alt="Facebook"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://x.com/it_devise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={xBlack}
-                    alt="xBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://www.instagram.com/techdevise_it_services/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={instagramBlack}
-                    alt="instagramBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://www.linkedin.com/company/techdevise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={youtubeBlack}
-                    alt="youtubeBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-            </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.facebook.com/Techdevise9"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Facebook"
+    >
+      <img
+        src={facebookBlack}
+        alt="TechDevise Facebook"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://x.com/it_devise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on X (Twitter)"
+    >
+      <img
+        src={xBlack}
+        alt="TechDevise X"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.instagram.com/techdevise_it_services/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Instagram"
+    >
+      <img
+        src={instagramBlack}
+        alt="TechDevise Instagram"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.linkedin.com/company/techdevise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on LinkedIn"
+    >
+      <img
+        src={youtubeBlack}
+        alt="TechDevise LinkedIn"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+</div>
           </div>
         </div>
       </section>
@@ -661,15 +670,15 @@ const DigitalMarketingOne = () => {
             <div className="lg:w-3/5 w-full xl:pl-10">
               <div className="col-span-2 flex flex-col">
                 <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
-                  <button ref={prevRef2} className="cursor-pointer order-1">
+                  <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
-                      <GoArrowLeft className="size-7" />
+                      <GoArrowLeft className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
 
-                  <button ref={nextRef2} className="cursor-pointer order-2">
+                  <button ref={nextRef2} className="cursor-pointer order-2" aria-label="Next slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-pine-700">
-                      <GoArrowRight className="size-7" />
+                      <GoArrowRight className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
                 </div>
