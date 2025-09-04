@@ -46,12 +46,12 @@ app.set('view engine', 'ejs');
 
 // CORS config
 // Allowed origins for CORS
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(",") 
-  : ["https://www.techdevise.com", "https://techdevise.com"];
 // const allowedOrigins = process.env.ALLOWED_ORIGINS
 //   ? process.env.ALLOWED_ORIGINS.split(",") 
-//   : ["http://localhost:3003", "http://localhost:3003"];
+//   : ["https://www.techdevise.com", "https://techdevise.com"];
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",")
+  : ["http://localhost:3003", "http://localhost:3003"];
 
 app.use(cors({
   origin: allowedOrigins,
@@ -70,9 +70,9 @@ app.use(
 
       scriptSrc: [
         "'self'",
-        "'unsafe-inline'", 
-        "'unsafe-eval'",   
-        "'unsafe-hashes'", 
+        "'unsafe-inline'",
+        "'unsafe-eval'",
+        "'unsafe-hashes'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
         "http://gc.kis.v2.scr.kaspersky-labs.com",
@@ -82,7 +82,7 @@ app.use(
       scriptSrcAttr: [
         "'self'",
         "'unsafe-inline'",
-        "'unsafe-hashes'", 
+        "'unsafe-hashes'",
       ],
 
       scriptSrcElem: [
@@ -157,7 +157,7 @@ app.use('/api', apiRouter);
 app.use('/admin', indexRouter);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
+  res.sendFile(path.join(frontendBuildPath, 'index.html'), function (err) {
     if (err) {
       console.error('Error sending React index.html:', err);
       res.status(err.status).end();
@@ -166,12 +166,12 @@ app.get('*', (req, res) => {
 });
 
 // 404 handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // Error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // Set locals, only providing error details in development mode
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
