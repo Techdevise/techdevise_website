@@ -8,10 +8,10 @@ import girl4 from "/girl4.svg";
 import girl5 from "/girl5.svg";
 import girl6 from "/girl6.svg";
 import girl7 from "/girl7.svg";
-import Digi1 from "/Digi1.png";
+import Digi4 from "/Digi1.png";
 import Digi2 from "/Digi2.png";
 import Digi3 from "/Digi3.png";
-import Digi4 from "/Digi4.png";
+import Digi1 from "/Digi4.png";
 import arrowRightUp from "/arrowRightUp.svg";
 import SEO from "/SEO.svg";
 import facebookBlack from "/facebookBlack.svg";
@@ -230,7 +230,7 @@ const DigitalMarketingOne = () => {
         style={{ backgroundImage: `url(${seoBg})` }}
         className="bg-no-repeat bg-cover pt-[5.5625rem] flex items-center justify-center h-full"
       >
-        <div className="main-container relative ">
+        <div className="main-container ">
           {" "}
           {/* relative + padding bottom */}
           <div className="flex max-lg:flex-col items-stretch justify-between">
@@ -317,35 +317,38 @@ const DigitalMarketingOne = () => {
               </div>
             </div>
           </div>
-          <div className="flex  justify-between gap-4 px-4 absolute 2xl:-bottom-35 -bottom-16  z-50">
-            <img
-              src={Digi1}
-              alt="Google Ads Certified"
-              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
-            />
-            <img
-              src={Digi2}
-              alt="LinkedIn Recruiter"
-              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
-            />
-            <img
-              src={Digi3}
-              alt="Meta Ads Manager"
-              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
-            />
-            <img
-              src={Digi4}
-              alt="Google Analytics Certified"
-              className="h-24 sm:h-28 md:h-36 lg:h-48 xl:h-60 2xl:h-60 object-contain inline-block"
-            />
-          </div>
         </div>
       </section>
       {/* landing area section end */}
 
       {/* Ranking section start */}
-      <section className="pt-[10.3125rem] pb-28 overflow-hidden">
-        <div className="main-container">
+      <section className="pt-[4.3125rem] pb-28 ">
+        <div className="main-container relative">
+          {/* ✅ TOP IMAGE STRIP - moved above all other content and made responsive */}
+          <div className="flex flex-wrap justify-center gap-4 px-4 mb-10 -mt-40">
+            <img
+              src={Digi1}
+              alt="Google Ads Certified"
+              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+            />
+            <img
+              src={Digi2}
+              alt="LinkedIn Recruiter"
+              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+            />
+            <img
+              src={Digi3}
+              alt="Meta Ads Manager"
+              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+            />
+            <img
+              src={Digi4}
+              alt="Google Analytics Certified"
+              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+            />
+          </div>
+
+          {/* Rest of your section content */}
           <div className="flex max-lg:flex-wrap items-center justify-between mb-10">
             <div className="w-full max-w-[61.5625rem] lg:text-start text-center">
               <h2 className="md:text-[3rem] lg:text-[2.4rem] text-[2.5rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#B8CEC1] to-[#157B6C] mb-7">
@@ -361,6 +364,8 @@ const DigitalMarketingOne = () => {
             </div>
             <img src={SEO} alt="seo" className="w-full max-w-[35.4162rem]" />
           </div>
+
+          {/* Swiper and buttons */}
           <div className="col-span-2 flex flex-col">
             <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
               <button ref={prevRef} className="cursor-pointer order-1">
@@ -375,28 +380,22 @@ const DigitalMarketingOne = () => {
                 </div>
               </button>
             </div>
+
             <Swiper
               className="mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:items-stretch !overflow-visible"
               slidesPerView={1}
               spaceBetween={25}
               speed={1000}
               breakpoints={{
-                1024: {
-                  slidesPerView: 1.5,
-                },
-                1200: {
-                  slidesPerView: 2,
-                },
-                1536: {
-                  slidesPerView: 3,
-                },
+                1024: { slidesPerView: 1.5 },
+                1200: { slidesPerView: 2 },
+                1536: { slidesPerView: 3 },
               }}
               grabCursor={true}
               loop={true}
               autoplay={{ delay: 1000 }}
               modules={[Autoplay, Navigation]}
               onInit={(swiper) => {
-                // Re-assign custom buttons after swiper is initialized
                 swiper.params.navigation.prevEl = prevRef.current;
                 swiper.params.navigation.nextEl = nextRef.current;
                 swiper.navigation.init();
@@ -430,6 +429,7 @@ const DigitalMarketingOne = () => {
           </div>
         </div>
       </section>
+
       {/* Ranking section end */}
 
       {/* Social Media section start */}
