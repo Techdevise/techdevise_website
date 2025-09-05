@@ -12,48 +12,47 @@ import { BiLogoInstagram } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import axios from "axios";
 const Footer = () => {
- const [blogs, setBlogs] = useState([]);
-const [loading, setLoading] = useState(true);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-const BASE_URL = `${API_BASE_URL}/images`;
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const BASE_URL = `${API_BASE_URL}/images`;
 
-const formatDate = (dateString) => {
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  return new Date(dateString).toLocaleDateString("en-US", options);
-    };
-  
-    // Fetch blogs from the API
-   useEffect(() => {
-  const fetchBlogs = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/api/blogs`);
-      if (response.data.success) {
-        const sortedBlogs = [...response.data.data].sort(
-          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-        );
-        setBlogs(sortedBlogs.slice(0, 2));
-         console.log(response);
-         
-      } else {
-        console.error("Error fetching blogs:", response.data.message);
-      }
-    } catch (error) {
-      console.error("API Error:", error.message);
-    } finally {
-      setLoading(false);
-    }
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("en-US", options);
   };
 
-  fetchBlogs();
-}, []);
-  
+  // Fetch blogs from the API
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/api/blogs`);
+        if (response.data.success) {
+          const sortedBlogs = [...response.data.data].sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+          setBlogs(sortedBlogs.slice(0, 2));
+          console.log(response);
+        } else {
+          console.error("Error fetching blogs:", response.data.message);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <>
       <footer className="-mt-12 py-[1.375rem] bg-gradient-to-b from-pine-700 to-pine-999 sm:rounded-t-[3.25rem] rounded-t-[2.1875rem]">
         <div className="main-container">
           {/* Send mail */}
-          <div className="mail md:flex hidden justify-between items-center pb-[1.125rem]">
+          <div className="mail md:flex hidden justify-between items-center pb-[0.525rem]">
             <h3 className="2xl:text-[2.25rem] lg:text-[1.25rem] text-[1.5rem] lg:leading-[2.875rem] leading-[2.25rem] font-semibold text-white">
               Keep up with the latest
             </h3>
@@ -66,7 +65,7 @@ const formatDate = (dateString) => {
                 <input
                   type="email"
                   id="emailInput"
-                  className="bg-transparent h-[50px] flex-1 text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0 w-full autofill:bg-transparent autofill:text-white"
+                  className="bg-transparent 2xl:h-[50px] lg:h-[40px] flex-1 text-[1.125rem] leading-[1.875rem] text-white placeholder:text-white appearance-none focus-visible:ring-0 focus-visible:outline-0 w-full autofill:bg-transparent autofill:text-white"
                   placeholder="Email"
                   required
                   onChange={(e) => {
@@ -80,7 +79,7 @@ const formatDate = (dateString) => {
                 id="sendButton"
                 type="submit"
                 disabled
-                className="lg:px-[4.1125rem] px-[1.125rem] h-[50px] rounded-[.4375rem] text-[1.25rem] font-bold text-pine-700 bg-white shine-effect disabled:bg-white disabled:cursor-not-allowed relative group"
+                className="lg:px-[2rem] 2xl:px-[2.5125rem] px-[1.125rem] 2xl:h-[50px] lg:h-[40px] md:h-[30px] rounded-full text-[0.95rem] font-normal text-pine-700 bg-white shine-effect disabled:bg-white disabled:cursor-not-allowed relative group"
                 title="Please enter email"
               >
                 Send
@@ -94,12 +93,12 @@ const formatDate = (dateString) => {
           <div className="line max-md:hidden w-full h-[1px] bg-white/35"></div>
 
           {/* Intro / menus / cards */}
-          <div className="flex md:justify-between justify-center items-stretch gap-5 md:pt-[1.625rem] pt-[.75rem] md:mb-[1.125rem]">
+          <div className="flex md:justify-between justify-center items-stretch gap-6 md:pt-[1.625rem] pt-[.75rem] md:mb-[1.125rem]">
             <div className="flex-[1_1_31.25rem] max-w-fit">
               <Link to="/" className="mb-4 block w-fit max-md:mx-auto">
                 <img src={Logo} alt="logo" className="h-[2.5rem] w-auto" />
               </Link>
-              <p className="text-[.910rem] leading-[1.6875rem] text-white font-medium w-full max-w-xl max-md:text-center">
+              <p className="text-[.910rem]  leading-[1.6875rem] text-white font-medium w-full 2xl:max-w-md xl:max-w-md lg:max-w-sm max-w-lg max-md:text-center">
                 Tech Devise is a digital solution provider which offers various
                 digital services that will help your online business to
                 flourish. We expertise in providing services like digital
@@ -109,7 +108,7 @@ const formatDate = (dateString) => {
               <div className="flex justify-start items-center gap-[.9375rem] mt-[2.125rem]">
                 <Link
                   to="/contact-us"
-                  className="w-fit block max-md:mx-auto py-2.5 px-5 rounded-[.625rem] bg-white text-[1.05rem] leading-[1.8125rem] font-bold text-pine-700 shine-effect"
+                  className="w-fit block max-md:mx-auto py-[0.51rem] px-4 rounded-full bg-white 2xl:text-[0.95rem] text-[0.85rem]  leading-[1.8125rem] font-normal text-pine-700 shine-effect"
                 >
                   Contact Now!
                 </Link>
@@ -149,7 +148,7 @@ const formatDate = (dateString) => {
               </div>
             </div>
             <div className="flex-[1_1_12.6rem] max-w-fit max-md:hidden">
-              <h5 className="font-bold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
+              <h5 className="font-semibold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
                 Services
               </h5>
               <ul>
@@ -205,7 +204,7 @@ const formatDate = (dateString) => {
               </ul>
             </div>
             <div className="flex-[1_1_12.6rem] max-w-fit max-md:hidden">
-              <h5 className="font-bold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
+              <h5 className="font-semibold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
                 Quick Link
               </h5>
               <ul>
@@ -244,34 +243,32 @@ const formatDate = (dateString) => {
               </ul>
             </div>
             <div className="flex-[1_1_21.874rem] max-w-fit max-lg:hidden">
-              <h5 className="font-bold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
+              <h5 className="font-semibold text-[1.325rem] leading-[1.6875rem] text-white mb-[.9375rem]">
                 Recent Blogs
               </h5>
 
-             <div className="flex gap-4 mb-[1.9375rem]">
-  {blogs.map((blog) => (
-    <div
-      key={blog.id}
-      className="flex-1 max-w-[10.8125rem] bg-white p-1.5 rounded-[.625rem]"
-    >
-      <img
-        src={`${BASE_URL}/${blog.image}`} // Assuming blog.image is stored filename
-        alt={blog.title}
-        className="rounded-sm max-w-[10.125rem] h-[5.1875rem] object-cover"
-      />
-      <p className="text-[.8rem] text-black font-medium mt-[.5625rem]">
-        {blog.title.length > 35
-          ? blog.title.slice(0, 32) + "..."
-          : blog.title}
-      </p>
-      <p
-        className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4"
-      >
-        {formatDate(blog.date)}
-      </p>
-    </div>
-  ))}
-</div>
+              <div className="flex gap-4 mb-[1.9375rem]">
+                {blogs.map((blog) => (
+                  <div
+                    key={blog.id}
+                    className="flex-1 max-w-[10.8125rem] bg-white p-1.5 rounded-[.625rem]"
+                  >
+                    <img
+                      src={`${BASE_URL}/${blog.image}`} // Assuming blog.image is stored filename
+                      alt={blog.title}
+                      className="rounded-sm max-w-[10.925rem] h-[6.2975rem] object-cover"
+                    />
+                    <p className="text-[.8rem] text-black font-medium mt-[.5625rem]">
+                      {blog.title.length > 35
+                        ? blog.title.slice(0, 32) + "..."
+                        : blog.title}
+                    </p>
+                    <p className="bg-pine-700 rounded-[.625rem] text-[.825rem] leading-[1.875rem] font-semibold text-white px-5 block w-fit mt-4">
+                      {formatDate(blog.date)}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <Link
                 to="/our-blogs"

@@ -7,12 +7,14 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import play from "/play.svg";
 import { Link } from "react-router-dom";
-
+import { FiArrowUpRight } from "react-icons/fi";
+import video from "/blockchainBg.mp4";
 // images
 import blockchainBg from "/blockchainBg.webp";
 import playVector from "/playVector.svg";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 // Fist slider
+import axios from "axios";
 
 import sliderIconF from "/sliderIconF.svg";
 
@@ -49,6 +51,8 @@ import GetInTouch from "../components/GetInTouch";
 const Blockchain = () => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const BASE_URL = `${API_BASE_URL}/images`;
+      const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -156,42 +160,88 @@ const Blockchain = () => {
     platform9,
     platform10,
   ];
+
+
+
+
+
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("en-US", options);
+  };
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/api/blogs`);
+        if (response.data.success) {
+          const sortedBlogs = [...response.data.data].sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+          setBlogs(sortedBlogs.slice(0, 3)); // Show latest 3 blogs
+        } else {
+          console.error("Error fetching blogs:", response.data.message);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) {
+    return <p className="text-center py-10">Loading blogs...</p>;
+  }
   return (
     <>
       {/*landing area of BlockChain Development sections start  */}
-      <section
-        style={{ backgroundImage: `url(${blockchainBg})` }}
-        className="landing mb-[4.6875rem] min-h-svh bg-bottom bg-cover bg-no-repeat flex justify-center items-center "
-      >
-        <div className="w-full max-w-[64.1875rem] m-auto text-center">
-          <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
-            <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
-            <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
-            <img
-              src={play}
-              alt="play icon"
-              className="mx-auto h-full w-full aspect-square "
-            />
-          </div>
-          <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
-            Blockchain Development Company
-          </h1>
-          <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
-            We help lead the transition to the web3 future with our cutting-edge
-            blockchain development services, having experience with more than 40
-            blockchain protocols.
-          </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-          >
-            Consult Our Experts{" "}
-            <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-              <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
-            </span>
-          </button>
-        </div>
-      </section>
+     <section className="landing mb-[4.6875rem] min-h-svh relative flex justify-center items-center overflow-hidden">
+  {/* Background Video */}
+  <video
+    src={video}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay Color */}
+  <div className="absolute top-0 left-0 w-full h-full bg-[#061611] opacity-80"></div>
+
+  {/* Content */}
+  <div className="relative w-full max-w-[64.1875rem] m-auto text-center z-10">
+    <div className="relative size-[65px] mx-auto aspect-square mb-7 rounded-full flex justify-center items-center">
+      <div className="circle absolute top-0 left-0 rounded-full border-2 border-white h-full w-full animate-ping"></div>
+      <div className="circle absolute top-[30%] left-[30%] -translate-[25%] rounded-full border-2 border-white size-[70%] animate-ping"></div>
+      <img
+        src={play}
+        alt="play icon"
+        className="mx-auto h-full w-full aspect-square"
+      />
+    </div>
+    <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-5">
+      Blockchain Development Company
+    </h1>
+    <p className="2xl:text-[1.10rem] text-[1rem] font-normal text-white mb-[1.375rem]">
+      We help lead the transition to the web3 future with our cutting-edge
+      blockchain development services, having experience with more than 40
+      blockchain protocols.
+    </p>
+    <button
+      onClick={() => setShowModal(true)}
+      className="bg-pine-700 text-white inline-flex shine-effect p-1.5 cursor-pointer rounded-full items-center group/link justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+    >
+      Consult Our Experts{" "}
+      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+        <FiArrowUpRight className="text-[18px] text-pine-700" />
+      </span>
+    </button>
+  </div>
+</section>
       {/*landing area of BlockChain Development sections end  */}
 
       {/* Re-Invent section Start */}
@@ -226,15 +276,15 @@ const Blockchain = () => {
 
                 <div className="flex flex-col">
                   <div className="flex gap-2.5 justify-start mt-[1.9375rem] items-stretch order-2">
-                    <button ref={prevRef} className="cursor-pointer">
+                    <button ref={prevRef} className="cursor-pointer"  aria-label="Previous slide">
                       <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                        <GoArrowLeft className="size-7" />
+                        <GoArrowLeft className="size-7" aria-hidden="true" />
                       </div>
                     </button>
 
-                    <button ref={nextRef} className="cursor-pointer">
+                    <button ref={nextRef} className="cursor-pointer"   aria-label="Next slide">
                       <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-pine-700">
-                        <GoArrowRight className="size-7" />
+                        <GoArrowRight className="size-7" aria-hidden="true"/>
                       </div>
                     </button>
                   </div>
@@ -337,15 +387,15 @@ const Blockchain = () => {
           </div>
           <div className="flex flex-col lg:ps-[16.75rem] relative">
             <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
-              <button ref={prevRef2} className="cursor-pointer order-1">
+              <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowLeft className="size-7" />
+                  <GoArrowLeft className="size-7" aria-hidden="true"/>
                 </div>
               </button>
 
-              <button ref={nextRef2} className="cursor-pointer order-2">
+              <button ref={nextRef2} className="cursor-pointer order-2" aria-label="Next slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowRight className="size-7" />
+                  <GoArrowRight className="size-7" aria-hidden="true"/>
                 </div>
               </button>
             </div>
@@ -424,15 +474,15 @@ const Blockchain = () => {
             className="flex flex-col  bg-center bg-cover bg-no-repeat py-[4.6875rem] px-[3.75rem] rounded-[1.625rem] overflow-hidden relative"
           >
             <div className="flex gap-2.5 justify-center items-stretch mt-[3.25rem] order-2">
-              <button ref={prevRef2} className="cursor-pointer order-1">
+              <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowLeft className="size-7" />
+                  <GoArrowLeft className="size-7" aria-hidden="true"/>
                 </div>
               </button>
 
-              <button ref={nextRef2} className="cursor-pointer order-2">
+              <button ref={nextRef2} className="cursor-pointer order-2"   aria-label="Next slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-pine-700 bg-white">
-                  <GoArrowRight className="size-7" />
+                  <GoArrowRight className="size-7" aria-hidden="true"/>
                 </div>
               </button>
             </div>
@@ -580,11 +630,11 @@ const Blockchain = () => {
           <div className="flex justify-center items-center mt-[4.625rem]">
             <button
               onClick={() => setShowModal(true)}
-              className="bg-pine-999 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+              className="bg-pine-999 text-white shine-effect inline-flex p-1.5 cursor-pointer rounded-full group/link items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
             >
               Consult Our Experts{" "}
-              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
+              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+                <FiArrowUpRight className="text-[18px]  text-pine-700" />{" "}
               </span>
             </button>
           </div>
@@ -611,11 +661,11 @@ const Blockchain = () => {
             </p>
           </div>
 
-          <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 gap-[2.5625rem]">
+          <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 lg:gap-[2.5625rem] gap-[1.5625rem]">
             {platforms.map((image, index) => (
               <div
                 key={index}
-                className="col border border-[#D3D3D3] shadow-2xl shadow-black/10 rounded-[1.625rem] lg:w-[18rem] lg:h-[15.4375rem] max-lg:size-[10.375rem] max-lg:aspect-square flex justify-center items-center"
+                className="col border border-[#D3D3D3] shadow-2xl shadow-black/10 rounded-[1.625rem] lg:w-[18rem] lg:h-[15.4375rem] max-lg:size-[10.375rem] max-sm:size-[8.375rem] max-lg:aspect-square flex justify-center items-center"
               >
                 <img
                   src={image}
@@ -628,11 +678,11 @@ const Blockchain = () => {
           <div className="flex justify-center items-center mt-[4.625rem]">
             <button
               onClick={() => setShowModal(true)}
-              className="bg-pine-999 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+              className="bg-pine-999 text-white shine-effect inline-flex cursor-pointer p-1.5 group/link rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
             >
               Consult Our Experts{" "}
-              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
+              <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+                <FiArrowUpRight className="text-[18px] text-pine-700" />{" "}
               </span>
             </button>
           </div>
@@ -642,119 +692,95 @@ const Blockchain = () => {
 
       {/* Expertise section Start */}
       <section className="expertise my-[4.6875rem] lg:py-[8.1875rem] py-[4.6875rem] bg-gradient-to-r from-[#FDFDFD] to-[#F1F4E5]">
-        <div className="main-container">
-          <div className="sectionHeader text-center  max-w-7xl mx-auto mb-[3.8125rem]">
-            <h2
-              data-aos-delay="200"
-              className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-7  text-center text-balance"
-            >
-           Featured Blog
-            </h2>
+      <div className="main-container">
+        <div className="sectionHeader text-center max-w-7xl mx-auto mb-[3.8125rem]">
+          <h2
+            data-aos-delay="200"
+            className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-black mb-7 text-center text-balance"
+          >
+            Featured Blog
+          </h2>
+          <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] font-medium">
+            As a leading Blockchain development company, TechDevise only hires Blockchain developers with a proven track record. That’s why we can handle any task or project, even the most complicated ones.
+          </p>
+        </div>
 
-            <p className="2xl:text-[1.10rem] text-[1rem] leading-[2.1875rem] font-medium ">
-              As a leading Blockchain development company, TechDevise only hires
-              Blockchain developers with a proven track record. That’s why we
-              can handle any task or project, even the most complicated ones.
-            </p>
-          </div>
-
-          <div className="flex xl:flex-row flex-col justify-center items-stretch gap-[2.4375rem]">
-            <div className="xl:flex-1 flex flex-col gap-[2.4375rem] justify-start items-stretch">
-              <div className="bg-white rounded-[1.625rem] shadow-2xl shadow-black/5 border border-[#D3D3D3] px-7 py-[1.875rem] gap-[1.8125rem] flex justify-start min-[540px]:items-center min-[540px]:flex-row flex-col">
+        <div className="flex xl:flex-row flex-col justify-center items-stretch gap-[2.4375rem]">
+          {/* Left column: two stacked blogs */}
+          <div className="xl:flex-1 flex flex-col gap-[2.4375rem] justify-start items-stretch">
+            {blogs.slice(0, 2).map((blog) => (
+              <div
+                key={blog._id}
+                className="bg-white rounded-[1.625rem] shadow-2xl shadow-black/5 border border-[#D3D3D3] px-7 py-[1.875rem] gap-[1.8125rem] flex justify-start min-[540px]:items-center min-[540px]:flex-row flex-col"
+              >
                 <div className="flex-[1_1_17.125rem] min-[540px]:max-w-[17.125rem] h-[18.9375rem] rounded-[1.625rem] overflow-hidden">
                   <img
-                    src={expertise1}
-                    alt="first card image"
+                    src={`${BASE_URL}/${blog.image}`}
+                    alt={blog.title}
                     className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="cardBody flex-1">
                   <h6 className="text-xl font-semibold text-pine-700">Blog</h6>
                   <h5 className="text-xl font-bold text-black mt-4 mb-7">
-                    How to Implement Blockchain in Business? A Complete Guide
+                    {blog.title}
                   </h5>
                   <h6 className="text-xl text-[#9F9F9F] mb-[2.25rem]">
-                    June 30, 2020
+                    {formatDate(blog.date)}
                   </h6>
                   <div className="flex justify-start items-center">
                     <Link
-                      to="/"
-                      className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+                      to={`/our-blogs`}
+                      className="bg-pine-700 shine-effect text-white inline-flex p-1.5 rounded-full items-center justify-center group/link pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
                     >
-                      Read More{" "}
-                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                        <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
+                      Read More
+                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+                        <FiArrowUpRight className="text-[18px] text-pine-700" />
                       </span>
                     </Link>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
 
-              <div className="bg-white rounded-[.9375rem] shadow-2xl shadow-black/5 border border-[#D3D3D3] px-7 py-[1.875rem] gap-[1.8125rem] flex justify-start min-[540px]:items-center min-[540px]:flex-row flex-col">
-                <div className="flex-[1_1_17.125rem] min-[540px]:max-w-[17.125rem] h-[18.9375rem] rounded-[1.25rem] overflow-hidden">
-                  <img
-                    src={expertise2}
-                    alt="first card image"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="cardBody flex-1">
-                  <h6 className="text-xl font-semibold text-pine-700">Blog</h6>
-                  <h5 className="text-xl font-bold text-black mt-4 mb-7">
-                    How to Implement Blockchain in Business? A Complete Guide
-                  </h5>
-                  <h6 className="text-xl text-[#9F9F9F] mb-[2.25rem]">
-                    June 30, 2020
-                  </h6>
-                  <div className="flex justify-start items-center">
-                    <Link
-                      to="/"
-                      className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
-                    >
-                      Read More{" "}
-                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                        <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Right column: big blog card */}
+          {blogs[2] && (
             <div className="xl:flex-1">
               <div className="h-full max-xl:gap-[1.8125rem] flex xl:flex-col min-[540px]:flex-row flex-col justify-start items-stretch bg-white rounded-[.9375rem] shadow-2xl shadow-black/5 border border-[#D3D3D3] px-7 py-7">
                 <div className="rounded-[1.25rem] overflow-hidden w-full xl:max-h-[27.9375rem] min-[540px]:mb-[2.375rem] max-xl:flex-[1_1_17.125rem] max-xl:min-[540px]:max-w-[17.125rem] max-xl:h-[18.9375rem]">
                   <img
-                    src={expertise3}
-                    alt="big card image"
+                    src={`${BASE_URL}/${blogs[2].image}`}
+                    alt={blogs[2].title}
                     className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="cardBody max-xl:flex-1">
                   <h6 className="text-xl font-semibold text-pine-700">Blog</h6>
                   <h5 className="text-xl font-bold text-black mt-4 mb-7">
-                    Telemedicine 2.0 - A Comprehensive Guide On What Healthcare
-                    Providers Need To Know?
+                    {blogs[2].title}
                   </h5>
                   <h6 className="text-xl text-[#9F9F9F] mb-[2.25rem]">
-                    June 30, 2020
+                    {formatDate(blogs[2].date)}
                   </h6>
                   <div className="flex justify-start items-center">
                     <Link
-                      to="/"
-                      className="bg-pine-700 text-white inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+                      to={`/our-blogs`}
+                      className="bg-pine-700 shine-effect text-white inline-flex p-1.5 rounded-full items-center justify-center group/link pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
                     >
-                      Read More{" "}
-                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                        <GoArrowRight className="text-[18px] -rotate-12 text-pine-700" />{" "}
+                      Read More
+                      <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center group-hover/link:rotate-45 transition-all duration-400">
+                        <FiArrowUpRight className="text-[18px] text-pine-700" />
                       </span>
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
-      </section>
+      </div>
+    </section>
       {/* Expertise section end */}
         <GetInTouch showModal={showModal} setShowModal={() => { setShowModal(!showModal) }} />
     </>

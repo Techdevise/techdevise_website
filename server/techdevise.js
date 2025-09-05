@@ -46,12 +46,12 @@ app.set('view engine', 'ejs');
 
 // CORS config
 // Allowed origins for CORS
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(",") 
-  : ["https://www.techdevise.com", "https://techdevise.com"];
 // const allowedOrigins = process.env.ALLOWED_ORIGINS
 //   ? process.env.ALLOWED_ORIGINS.split(",") 
-//   : ["http://localhost:3003", "http://localhost:3003"];
+//   : ["https://www.techdevise.com", "https://techdevise.com"];
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",")
+  : ["http://localhost:3003", "http://localhost:3003"];
 
 app.use(cors({
   origin: allowedOrigins,
@@ -67,15 +67,24 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
+
       scriptSrc: [
         "'self'",
-        "'unsafe-inline'", // Needed for React and some libraries
-        "'unsafe-eval'", // Needed for some libraries like Summernote
+        "'unsafe-inline'",
+        "'unsafe-eval'",
+        "'unsafe-hashes'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com", // Kaspersky
-        "ws://gc.kis.v2.scr.kaspersky-labs.com" // Kaspersky WebSocket
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
+      scriptSrcAttr: [
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-hashes'",
+      ],
+
       scriptSrcElem: [
         "'self'",
         "'unsafe-inline'",
@@ -84,15 +93,17 @@ app.use(
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
       styleSrc: [
         "'self'",
-        "'unsafe-inline'", // Needed for inline styles
+        "'unsafe-inline'", // allow inline styles
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
       styleSrcElem: [
         "'self'",
         "'unsafe-inline'",
@@ -102,13 +113,16 @@ app.use(
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
+
       imgSrc: ["'self'", "data:", "https:"],
+
       fontSrc: [
         "'self'",
         "https://fonts.gstatic.com",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net"
       ],
+
       connectSrc: ["'self'"],
       frameSrc: ["'self'"],
       objectSrc: ["'none'"],
@@ -143,7 +157,7 @@ app.use('/api', apiRouter);
 app.use('/admin', indexRouter);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendBuildPath, 'index.html'), function(err) {
+  res.sendFile(path.join(frontendBuildPath, 'index.html'), function (err) {
     if (err) {
       console.error('Error sending React index.html:', err);
       res.status(err.status).end();
@@ -152,12 +166,12 @@ app.get('*', (req, res) => {
 });
 
 // 404 handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // Error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // Set locals, only providing error details in development mode
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

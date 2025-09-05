@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Images
-import video from "/Homevideo1-BHIh2a86.mp4";
+import video from "/BannerImage1.mp4";
 import lightOne from "/lightOne.svg";
 import lightTwo from "/lightTwo.svg";
 import vectorOne from "/vectorOne.svg";
@@ -99,11 +99,12 @@ import AutoCounter from "../components/counter";
 import state1 from "/state1.webp";
 import state2 from "/state2.webp";
 import state3 from "/state3.webp";
-import flag1 from "/flag1.svg";
-import flag2 from "/flag2.svg";
-import flag3 from "/flag3.svg";
+import state4 from "/state4.png";
+import flag1 from "/flag1.png";
+import flag2 from "/flag2.png";
+import flag3 from "/flag3.png";
+import flag4 from "/flag4.png";
 import map from "/map.svg";
-import CustomRangeSlider from "../components/CustomRangeSlider";
 
 import clogo1 from "/clogo1.svg";
 import clogo2 from "/clogo2.svg";
@@ -119,7 +120,7 @@ import clogo11 from "/clogo11.svg";
 import clogo12 from "/clogo12.svg";
 import clogo13 from "/clogo13.svg";
 import clogo14 from "/clogo14.svg";
-import clogo15 from "/clogo15.svg";
+import clogo16 from "/clogo24.png";
 
 import Nour_Deen from "/Nour_Deen.png";
 import Harjit from "/Harjit.png";
@@ -141,6 +142,7 @@ const Home = () => {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [currentSlide, setCurrentSlide] = useState(1);
   const prevRef = useRef(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const nextRef = useRef(null);
   const [totalSlides, setTotalSlides] = useState(0);
   const prev2Ref = useRef(null);
@@ -482,40 +484,54 @@ const Home = () => {
       countryName: "India",
       address:
         "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071",
+      position: { top: "68%", left: "54%" },
     },
     {
       bgimage: state2,
       flag: flag2,
       countryName: "United States",
       address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
+      position: { top: "19%", left: "51%" },
     },
     {
       bgimage: state3,
       flag: flag3,
-      countryName: "Netherland",
+      countryName: "Netherlands",
       address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
+      position: { top: "38%", left: "13%" },
+    },
+    {
+      bgimage: state4,
+      flag: flag4,
+      countryName: "New Zealand",
+      address: "76A Wai-Iti Road, Timaru, Canterbury 7910",
+      position: { top: "87%", left: "93%" },
     },
   ];
   const offshore = [
     {
       image: dashGreen,
       title: "Share your Requirements",
-      discription: "Define your project needs and skills required",
+      discription:
+        " Describe your business goals and the technical skills you require.",
     },
     {
       image: dashWhite,
       title: "Get Vetted Profile",
-      discription: "Define your project needs and skills required",
+      discription:
+        "Connect with qualified professionals who meet your exact requirements quickly.",
     },
     {
       image: dashGreen,
       title: "Conduct Interview",
-      discription: "Define your project needs and skills required",
+      discription:
+        "Engage with shortlisted professionals through interviews for better hiring decisions.",
     },
     {
       image: dashWhite,
       title: "Hire & Get Started",
-      discription: "Define your project needs and skills required",
+      discription:
+        "Hire the right expert and start your project quickly with confidence.",
     },
   ];
 
@@ -577,11 +593,37 @@ const Home = () => {
       alt: "company logo 14",
     },
     {
-      image: clogo15,
-      alt: "company logo 15",
+      image: clogo1,
+      alt: "company logo 1",
+    },
+    {
+      image: clogo2,
+      alt: "company logo 2",
+    },
+    {
+      image: clogo16,
+      alt: "company logo 16",
     },
   ];
-const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17];
+  const images = [
+    cardOne,
+    card2,
+    card3,
+    card4,
+    card5,
+    card6,
+    card7,
+    card8,
+    card9,
+    card10,
+    card11,
+    card12,
+    card13,
+    card14,
+    card15,
+    card16,
+    card17,
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -596,7 +638,7 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
 
   const nextSlide = () => {
     setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -618,11 +660,11 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
             autoPlay
             className="h-full  w-[100dvw] object-cover absolute top-0 left-0 z-[-1]"
           ></video>
-          <div className="cover bg-pine-999/50 backdrop-blur-sm h-full w-full lg:pt-[5.5rem] pt-20">
+          <div className="cover bg-gradient-to-b from-[#024a40cc] to-[#024a40cc]/50 z-0 h-full w-full lg:pt-[5.5rem] pt-20">
             <div className=" flex justify-between items-stretch flex-col h-full">
               <div className="flex-1">
                 <div className="main-container relative  flex justify-center items-stretch flex-col lg:flex-row h-full">
-                  <div className="flex-[2_1_0%] flex flex-col justify-center items-stretch  pb-[1.375rem] ">
+                  <div className="flex-[2_1_0%] flex flex-col justify-center items-stretch  pt-[5.375rem] ">
                     <div className="lights  justify-end items-start gap-[3.1781rem] hidden -mt-20 pr-14">
                       <img
                         src={lightOne}
@@ -733,6 +775,7 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
             </div>
           </div>
         </section>
+
         {/* Landing area section end */}
 
         {/* About section start */}
@@ -775,36 +818,33 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                   communication.{" "}
                 </p>
               </div>
-           <div className="flex-[1_1_18.75rem] overflow-hidden">
-      <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem] bg-pine-950">
-        <div 
-          ref={sliderRef}
-          className="relative h-full w-full rounded-[1.75rem] overflow-hidden"
-        >
-          <div
-            className={`flex transition-transform duration-500 ease-in-out`}
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-             
-            }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-            {images.map((image, index) => (
-              <div 
-                key={index}
-                className="w-full flex-shrink-0"
-              >
-                <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex-[1_1_18.75rem] ">
+                <div className="xl:p-[2.125rem] p-[.8125rem] xl:rounded-[3.875rem] rounded-[2.5rem] bg-pine-950">
+                  <div
+                    ref={sliderRef}
+                    className="relative h-full w-full rounded-[1.75rem] overflow-hidden"
+                  >
+                    <div
+                      className={`flex transition-transform duration-500 ease-in-out`}
+                      style={{
+                        transform: `translateX(-${currentIndex * 100}%)`,
+                      }}
+                      onTransitionEnd={handleTransitionEnd}
+                    >
+                      {images.map((image, index) => (
+                        <div key={index} className="w-full flex-shrink-0">
+                          <img
+                            src={image}
+                            alt={`Slide ${index + 1}`}
+                            className="w-full h-[30.75rem] object-cover rounded-[1.75rem]"
+                          />
+                          {/* className="w-full object-contain " */}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
             </div>
           </div>
         </section>
@@ -943,17 +983,21 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                 <div className="flex gap-3 mb-2">
                   <button
                     ref={prevRef}
+                    aria-label="Previous slide"
                     className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
                   >
-                    <GoArrowLeft className="size-6" />
+                    <GoArrowLeft className="size-6" aria-hidden="true" />
                   </button>
+
                   <button
                     ref={nextRef}
+                    aria-label="Next slide"
                     className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
                   >
-                    <GoArrowRight className="size-6" />
+                    <GoArrowRight className="size-6" aria-hidden="true" />
                   </button>
                 </div>
+
                 <div className="text-base text-center font-bold text-white">
                   <span className="text-[1.5rem]">{currentSlide}</span>{" "}
                   <span className="text-base">
@@ -968,12 +1012,14 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                 spaceBetween={30}
                 slidesPerView={1}
                 speed={1000}
-                autoplay={{ delay: 1000000 }}
                 grabCursor={true}
                 loop={true}
+                autoplay={{
+                  delay: 3000, // 3 sec
+                  disableOnInteraction: false, // click/drag ke baad bhi auto chale
+                }}
                 modules={[Autoplay, Navigation, Pagination]}
                 onInit={(swiper) => {
-                  // Re-assign custom buttons after swiper is initialized
                   swiper.params.navigation.prevEl = prevRef.current;
                   swiper.params.navigation.nextEl = nextRef.current;
                   swiper.navigation.init();
@@ -1014,9 +1060,9 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
 
                       {/* Inner content */}
                       <div className="relative h-full w-full text-white text-center flex justify-center items-center flex-col px-4">
-                        <h4 className="text-[1.625rem] leading-[2.4375rem] font-bold">
+                        <p className="text-[1.625rem] leading-[2.4375rem] font-bold">
                           Staff Augmentation
-                        </h4>
+                        </p>
                         <p className="2xl:text-[1.10rem] text-[1rem] leading-[1.75rem] font-normal p-2">
                           Hire pre-vetted developers skilled in the latest
                           technologies, ready to work around the clock to meet
@@ -1209,9 +1255,9 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                 <div className="max-xl:hidden xl:w-full w-full">
                   <div className="card h-full bg-[#99eae0] overflow-hidden rounded-[1.625rem] flex justify-between items-stretch xl:gap-5 max-xl:flex-row-reverse">
                     <div className="p-[1.4375rem] xl:w-[65%] flex-[2_1_0%]">
-                      <h4 className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
+                      <p className="2xl:text-[1.5rem] text-[1.3rem] xl:leading-[1.875rem] leading-[1.4rem] font-bold text-wrap">
                         E-commerce Website
-                      </h4>
+                      </p>
                       <p className="text-[1rem] leading-[1.625rem] mt-1.5 mb-[2.3125rem] font-normal">
                         We all know that the eCommerce sector is booming like
                         anything. Hence, if you want to sell your products
@@ -1460,12 +1506,12 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
             </div>
           </div>
           <div className="max-xl:hidden floatImage max-h-[33rem] max-w-[45.8125rem] absolute -top-14 right-0 -z-[1] bg-pine-999 pe-[7.5rem]">
-  <img
-    src={vectorEight}
-    alt="Blockchain animation"
-    className="h-full w-full object-contain filter mix-blend-luminosity"
-  />
-</div>
+            <img
+              src={vectorEight}
+              alt="Blockchain animation"
+              className="h-full w-full object-contain filter mix-blend-luminosity"
+            />
+          </div>
           {/* slider */}
 
           <BlockchainSlider triggerRef={sectionRef} />
@@ -1659,7 +1705,7 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
         {/* Innovative Technology Solutions section end */}
 
         {/* socialLink section start */}
-        <section className="find  my-[6.0625rem]">
+        <section className="find my-[6.0625rem]">
           <div className="main-container">
             <div className="flex justify-center items-center gap-5 lg:flex-row flex-col rounded-[1.625rem] p-6 bg-pine-600">
               <div className="flex-1 flex justify-start items-center gap-x-16">
@@ -1668,52 +1714,80 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                 </h4>
                 <img
                   src={vectorNine}
-                  alt="vector nine"
+                  alt="decorative vector"
                   className="max-lg:hidden min-xl:h-[5.525rem]"
                 />
               </div>
+
               <div className="flex-1 max-lg:w-full grid lg:grid-cols-2 grid-cols-4 rounded-[1.625rem] overflow-hidden">
                 <a
                   href="https://www.linkedin.com/company/techdevise"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit TechDevise on LinkedIn"
                   className="sm:h-[8.25rem] bg-[#0077b5] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={linkedin} alt="linkedin" className="h-[2rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img
+                    src={linkedin}
+                    alt="LinkedIn logo"
+                    className="h-[2rem]"
+                  />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
+
                 <a
                   href="https://www.upwork.com/agencies/techdevise/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Hire TechDevise on Upwork"
                   className="sm:h-[8.25rem] bg-[#14a800] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={upwork} alt="upwork" className="h-[2rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img src={upwork} alt="Upwork logo" className="h-[2rem]" />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
+
                 <a
                   href="https://clutch.co/profile/tech-devise"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="See TechDevise profile on Clutch"
                   className="sm:h-[8.25rem] bg-[#17313b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={clutch} alt="clutch" className="h-[1.59rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img src={clutch} alt="Clutch logo" className="h-[1.59rem]" />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
 
                 <a
                   href="https://www.trustpilot.com/review/techdevise.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Read TechDevise reviews on Trustpilot"
                   className="sm:h-[8.25rem] bg-[#0ab67b] flex justify-between items-center gap-2 lg:px-12 px-3 group/link"
                 >
-                  <img src={trustpilot} alt="trustpilot" className="h-[2rem]" />
-                  <PiArrowCircleUpRightLight className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500" />
+                  <img
+                    src={trustpilot}
+                    alt="Trustpilot logo"
+                    className="h-[2rem]"
+                  />
+                  <PiArrowCircleUpRightLight
+                    aria-hidden="true"
+                    className="size-12 text-white/80 group-hover/link:visible group-hover/link:opacity-100 group-hover/link:rotate-0 group-hover/link:scale-100 scale-90 opacity-0 rotate-45 invisible transition-all duration-500"
+                  />
                 </a>
               </div>
             </div>
           </div>
         </section>
+
         {/* socialLink section end */}
 
         {/* Seamless Vision start */}
@@ -1743,23 +1817,23 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                   </p>
                   <Link
                     to="/contact-us"
-                    className="text-lg font-bold leading-none px-5 py-5 rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center"
+                    className="text-lg font-bold leading-none px-5 py-5  rounded-[.8125rem] max-lg:mx-auto flex gap-5 whitespace-nowrap bg-white text-(--color-pine-700) items-center  "
                   >
                     Let's Innovate Together{" "}
                     <BsArrowRight className="size-[1.875rem]" />
                   </Link>
                 </div>
               </div>
-              <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden">
+              <div className="lg:w-1/2 w-full  grid grid-cols-4 gap-[.625rem] max-md:hidden ">
                 {industries.map((industry, index) => (
                   <div
                     key={index}
-                    className="relative rounded-[1.625rem] overflow-hidden"
+                    className="relative rounded-[1.625rem] overflow-hidden "
                   >
                     <img
                       src={`${API_BASE_URL}/images${industry.image}`}
                       alt={industry.title}
-                      className="w-full aspect-square object-cover"
+                      className="w-full aspect-square object-cover "
                     />
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-black/0 via-black/40 to-black/85  p-3 text-sm text-white font-semibold">
                       {" "}
@@ -1784,15 +1858,18 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
               <div className="flex gap-3">
                 <button
                   ref={prev2Ref}
+                  aria-label="Previous slide"
                   className="h-[44px] w-[44px] aspect-square rounded-full bg-white text-pine-700 flex justify-center items-center cursor-pointer"
                 >
-                  <GoArrowLeft className="size-6" />
+                  <GoArrowLeft className="size-6" aria-hidden="true" />
                 </button>
+
                 <button
                   ref={next2Ref}
+                  aria-label="Next slide"
                   className="h-[44px] w-[44px] aspect-square rounded-full bg-pine-700 text-white flex justify-center items-center cursor-pointer"
                 >
-                  <GoArrowRight className="size-6" />
+                  <GoArrowRight className="size-6" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -1881,132 +1958,157 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
                   <div className="flex flex-wrap justify-between">
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
+                        id="fullname"
                         type="text"
                         name="fullname"
-                        className="inputControl"
+                        className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         placeholder="Full Name"
                         value={formData.fullname}
                         onChange={handleChange}
                         required
                       />
                     </div>
+
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
+                        id="email"
                         type="email"
                         name="email"
-                        className="inputControl"
+                        className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         placeholder="Business Email"
                         value={formData.email}
                         onChange={handleChange}
                         required
                       />
                     </div>
+
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
+                        id="phone"
                         type="number"
                         name="phone"
-                        className="inputControl"
+                        className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
                         required
                       />
                     </div>
+
                     <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
+                        id="company_name"
                         type="text"
                         name="company_name"
-                        className="inputControl"
-                        placeholder="Company name"
                         value={formData.company_name}
                         onChange={handleChange}
-                      />
-                    </div>
-                    <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <input
-                        type="date"
-                        name="date"
-                        className="inputControl home-date custom-icon"
-                        value={formData.date}
-                        onChange={handleChange}
-                        required
+                        className="inputControl placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+                        placeholder="Company Name"
                       />
                     </div>
 
                     <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
                       <input
+                        id="date"
+                        type="date"
+                        name="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                        className="inputControl home-date custom-icon placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+                        placeholder="Select Date"
+                      />
+                    </div>
+
+                    <div className="relative md:w-[calc(100%/_2-_12.5px)] w-full">
+                      <input
+                        id="time"
                         type="time"
                         name="time"
-                        className="inputControl home-time custom-icon"
                         value={formData.time}
                         onChange={handleChange}
+                        className="inputControl home-time custom-icon placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
+                        placeholder="Select Time"
                       />
                     </div>
 
                     {/* <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <select
-                        className="inputControl"
-                        name="job_title"
-                        value={formData.job_title}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="">Job Title</option>
-                        <option value="1">Entrepreneur</option>
-                        <option value="2">Manager</option>
-                        <option value="3">Director</option>
-                        <option value="4">C-Level</option>
-                        <option value="5">Student</option>
-                        <option value="6">Other</option>
-                      </select>
-                    </div>
-                    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
-                      <select
-                        className="inputControl"
-                        name="launch_timeline"
-                        value={formData.launch_timeline}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="">Launch timeline?</option>
-                        <option value="1">Immediately</option>
-                        <option value="2">1-3 months</option>
-                        <option value="3">3-6 months</option>
-                        <option value="4">6+ months</option>
-                      </select>
-                    </div>
-                    <div className="w-full">
-                      <CustomRangeSlider
-                        min={0}
-                        max={20000}
-                        step={100}
-                        value={budget}
-                        onChange={(value) => {
-                          setBudget(value);
-                          setFormData((prev) => ({
-                            ...prev,
-                            budget: value.toString(),
-                          }));
-                        }}
-                        label="Budget"
-                        formatValue={formatCurrency}
-                        formatCurrency={formatCurrency(budget)}
-                      />
-                    </div> */}
+      <label htmlFor="job_title" className="block mb-1 text-sm font-medium text-gray-700">
+        Job Title
+      </label>
+      <select
+        id="job_title"
+        className="inputControl"
+        name="job_title"
+        value={formData.job_title}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Job Title</option>
+        <option value="1">Entrepreneur</option>
+        <option value="2">Manager</option>
+        <option value="3">Director</option>
+        <option value="4">C-Level</option>
+        <option value="5">Student</option>
+        <option value="6">Other</option>
+      </select>
+    </div>
+
+    <div className="md:w-[calc(100%/_2-_12.5px)] w-full">
+      <label htmlFor="launch_timeline" className="block mb-1 text-sm font-medium text-gray-700">
+        Launch Timeline
+      </label>
+      <select
+        id="launch_timeline"
+        className="inputControl"
+        name="launch_timeline"
+        value={formData.launch_timeline}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Launch timeline?</option>
+        <option value="1">Immediately</option>
+        <option value="2">1-3 months</option>
+        <option value="3">3-6 months</option>
+        <option value="4">6+ months</option>
+      </select>
+    </div>
+
+    <div className="w-full">
+      <CustomRangeSlider
+        min={0}
+        max={20000}
+        step={100}
+        value={budget}
+        onChange={(value) => {
+          setBudget(value);
+          setFormData((prev) => ({
+            ...prev,
+            budget: value.toString(),
+          }));
+        }}
+        label="Budget"
+        formatValue={formatCurrency}
+        formatCurrency={formatCurrency(budget)}
+      />
+    </div> */}
+
                     <div className="w-full">
                       <textarea
+                        id="message"
                         name="message"
-                        className="inputControl resize-none"
+                        className="inputControl resize-none placeholder:text-gray-400 placeholder:text-[0.875rem] placeholder:font-normal"
                         rows={6}
                         placeholder="About Project"
                         value={formData.message}
                         onChange={handleChange}
                       ></textarea>
                     </div>
+
                     <div className="w-full">
                       <button
                         type="submit"
-                        className="bg-white rounded-[.625rem] py-2.5 px-5 border-0 outline-0 text-xl font-bold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
+                        className="bg-white shine-effect rounded-full py-2.5 px-5 border-0 outline-0 text-xl font-semibold leading-[1.8125rem] text-[#137365] max-sm:block max-sm:w-full max-sm:py-4"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? "Submitting..." : "Submit"}
@@ -2018,10 +2120,110 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
             </div>
           </div>
         </section>
+
+        <section className="pb-[1.0625rem]">
+          <div className="main-container text-white">
+            {/* Heading */}
+            <div className="text-center mb-[3.9375rem]">
+              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
+                Location
+              </h4>
+              <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
+                We&apos;d love to hear from you
+              </h3>
+              <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
+                We have offices and teams all around the world.
+                <img
+                  src={vector12}
+                  alt="vector12"
+                  className="w-[4.2875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v hidden md:block"
+                />
+              </p>
+            </div>
+
+            {/* Content */}
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
+              {/* Address List */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.375rem] order-2 md:order-2 lg:order-1">
+                {addressList.map((listitem, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedCountry(listitem.countryName)}
+                    className={`cursor-pointer border rounded-[1.625rem] flex gap-[1.9375rem] items-center px-4 py-[1.0625rem] transition-all
+    text-white
+    border-[#157B6C]
+    ${
+      selectedCountry === listitem.countryName
+        ? "bg-[#091D17] ring-1 ring-[#157B6C]"
+        : "bg-[#071712]"
+    }
+  `}
+                  >
+                    <img
+                      src={listitem.bgimage}
+                      alt="country bg"
+                      className="2xl:w-[6.0625rem] 2xl:h-[6.8125rem] w-[5.375rem] h-[5.875rem] rounded-[1.625rem] object-cover"
+                    />
+                    <div className="grow">
+                      <div className="flex gap-[.9375rem] items-center mb-[0.375rem]">
+                        <img
+                          src={listitem.flag}
+                          alt="flag"
+                          className="w-[2.1875rem] h-[2.125rem]"
+                        />
+                        <span className="font-bold capitalize 2xl:text-[1.2rem] xl:text-[1.0rem] text-[0.9rem]">
+                          {listitem.countryName}
+                        </span>
+                      </div>
+                      <p className="2xl:text-md text-[0.800rem] font-normal 2xl:leading-[1.8125rem] leading-[1.2125rem]">
+                        {listitem.address}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Map with Dots */}
+              <div className="flex justify-center order-1 md:order-1 lg:order-2">
+                <div className="relative w-full h-full max-w-[600px]">
+                  <img
+                    src={map}
+                    alt="map"
+                    className="w-full h-full object-contain"
+                  />
+                  {addressList.map((item, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        top: item.position.top,
+                        left: item.position.left,
+                      }}
+                      className={`absolute w-4 h-4 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2
+                ${
+                  selectedCountry === item.countryName
+                    ? "bg-[#157B6C] animate-pingOnce"
+                    : "bg-[#D4D4D48A]"
+                }`}
+                    >
+                      {selectedCountry === item.countryName && (
+                        <span className="absolute top-[-1.5rem] left-1/2 -translate-x-1/2 bg-[#157B6C] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
+                          {item.countryName}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tailwind Custom Animation */}
+        </section>
+
         {/* Let’s Talk end */}
 
         {/* Location start */}
-        <section className="pb-[1.0625rem]">
+        {/* <section className="pb-[1.0625rem]">
           <div className="main-container text-white">
             <div className="text-center mb-[3.9375rem]">
               <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
@@ -2074,7 +2276,7 @@ const images = [cardOne,card2,card3,card4,card5,card6,card7,card8,card9,card10,c
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         {/* Location end */}
         <GetInTouch
           showModal={showModal}

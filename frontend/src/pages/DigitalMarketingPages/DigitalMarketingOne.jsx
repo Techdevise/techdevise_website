@@ -8,11 +8,15 @@ import girl4 from "/girl4.svg";
 import girl5 from "/girl5.svg";
 import girl6 from "/girl6.svg";
 import girl7 from "/girl7.svg";
+<<<<<<< HEAD
 import Digi4 from "/Digi1.png";
 import Digi2 from "/Digi2.png";
 import Digi3 from "/Digi3.png";
 import Digi1 from "/Digi4.png";
 import arrowRightUp from "/arrowRightUp.svg";
+=======
+import { FiArrowUpRight } from "react-icons/fi";
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
 import SEO from "/SEO.svg";
 import facebookBlack from "/facebookBlack.svg";
 import xBlack from "/xBlack.svg";
@@ -23,6 +27,10 @@ import add1 from "/add1.svg";
 import add2 from "/add2.svg";
 import add3 from "/add5.svg";
 import add4 from "/add4.svg";
+import Digi1 from "/Digi4.png";
+import Digi2 from "/Digi2.png";
+import Digi3 from "/Digi3.png";
+import Digi4 from "/Digi1.png";
 import keywordBlack from "/keywordBlack.svg";
 import contentBlack from "/contentBlack.svg";
 import AdwordsIcon1 from "/AdwordsIcon1.svg";
@@ -254,16 +262,12 @@ const DigitalMarketingOne = () => {
 
               <button
                 onClick={() => setShowModal(true)}
-                className="bg-pine-300 inline-flex p-1.5 rounded-full items-center justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base"
+                className="bg-pine-300 inline-flex group/link p-1.5 rounded-full items-center text-white justify-center pl-[2.0625rem] gap-[2.0625rem] font-medium text-base cursor-pointer shine-effect"
               >
                 Consult Our Experts{" "}
-                <span className="ms-auto w-11 h-11 rounded-full bg-white flex items-center justify-center">
-                  <img
-                    src={arrowRightUp}
-                    alt="arrow right up"
-                    className="w-[1.125rem]"
-                  />
-                </span>
+                <span className="ms-auto w-11 h-11 rounded-full aspect-square bg-white text-[#67C792] flex justify-center items-center group-hover/link:rotate-45 transition-all duration-400">
+                                      <FiArrowUpRight className="size-6" />
+                                    </span>
               </button>
               <h2 className="text-[clamp(9rem,_13vw,_15.75rem)] max-lg:hidden text-white font-extrabold opacity-5 leading-none mt-9 mb-4">
                 SEO
@@ -324,27 +328,51 @@ const DigitalMarketingOne = () => {
       {/* Ranking section start */}
       <section className="pt-[4.3125rem] pb-28 ">
         <div className="main-container relative">
+<<<<<<< HEAD
           {/* ✅ TOP IMAGE STRIP - moved above all other content and made responsive */}
           <div className="flex flex-wrap justify-center gap-4 px-4 mb-10 -mt-40">
             <img
               src={Digi1}
               alt="Google Ads Certified"
               className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+=======
+          {/* :white_check_mark: TOP IMAGE STRIP - moved above all other content and made responsive */}
+          <div
+            className="grid justify-center gap-6 px-4 mb-10 2xl:-mt-40 xl:-mt-35 lg:-mt-30 -mt-10 w-full
+                grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 xl:grid-cols-4"
+          >
+            <img
+              src={Digi1}
+              alt="Google Ads Certified"
+              className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
             <img
               src={Digi2}
               alt="LinkedIn Recruiter"
+<<<<<<< HEAD
               className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+=======
+              className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
             <img
               src={Digi3}
               alt="Meta Ads Manager"
+<<<<<<< HEAD
               className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+=======
+              className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
             <img
               src={Digi4}
               alt="Google Analytics Certified"
+<<<<<<< HEAD
               className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
+=======
+              className="2xl:h-60 object-contain mx-auto transition-transform duration-800 hover:scale-105"
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
           </div>
 
@@ -364,19 +392,21 @@ const DigitalMarketingOne = () => {
             </div>
             <img src={SEO} alt="seo" className="w-full max-w-[35.4162rem]" />
           </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
           {/* Swiper and buttons */}
           <div className="col-span-2 flex flex-col">
             <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
-              <button ref={prevRef} className="cursor-pointer order-1">
+              <button ref={prevRef} className="cursor-pointer order-1"aria-label="Previous slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                  <GoArrowLeft className="size-7" />
+                  <GoArrowLeft className="size-7" aria-hidden="true"/>
                 </div>
               </button>
-
-              <button ref={nextRef} className="cursor-pointer order-2">
+              <button ref={nextRef} className="cursor-pointer order-2" aria-label="Next slide">
                 <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                  <GoArrowRight className="size-7" />
+                  <GoArrowRight className="size-7" aria-hidden="true" />
                 </div>
               </button>
             </div>
@@ -448,6 +478,7 @@ const DigitalMarketingOne = () => {
                 online customer base as well.   
               </p>
 
+<<<<<<< HEAD
               <div className="w-full lg:hidden gap-3 flex justify-center items-center">
                 <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
                   <a
@@ -502,17 +533,78 @@ const DigitalMarketingOne = () => {
                   </a>
                 </div>
               </div>
+=======
+             <div className="w-full lg:hidden gap-3 flex justify-center items-center">
+  {/* Repeat the same with updated alt and aria-label */}
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.facebook.com/Techdevise9"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Facebook"
+    >
+      <img
+        src={facebookBlack}
+        alt="TechDevise Facebook"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://x.com/it_devise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on X (Twitter)"
+    >
+      <img
+        src={xBlack}
+        alt="TechDevise X"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.instagram.com/techdevise_it_services/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Instagram"
+    >
+      <img
+        src={instagramBlack}
+        alt="TechDevise Instagram"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.linkedin.com/company/techdevise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on LinkedIn"
+    >
+      <img
+        src={youtubeBlack}
+        alt="TechDevise LinkedIn"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+</div>
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
               <div className="col-span-2 flex flex-col">
                 <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
-                  <button ref={prevRef2} className="cursor-pointer order-1">
+                  <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowLeft className="size-7" />
+                      <GoArrowLeft className="size-7" aria-hidden="true" />
                     </div>
                   </button>
 
-                  <button ref={nextRef2} className="cursor-pointer order-2">
+                  <button ref={nextRef2} className="cursor-pointer order-2"   aria-label="Next slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-black">
-                      <GoArrowRight className="size-7" />
+                      <GoArrowRight className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
                 </div>
@@ -575,6 +667,7 @@ const DigitalMarketingOne = () => {
               </div>
             </div>
             <div className="lg:w-fit w-full lg:block gap-3 hidden justify-center items-center">
+<<<<<<< HEAD
               <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
                 <a
                   href="https://www.facebook.com/Techdevise9"
@@ -628,6 +721,65 @@ const DigitalMarketingOne = () => {
                 </a>
               </div>
             </div>
+=======
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.facebook.com/Techdevise9"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Facebook"
+    >
+      <img
+        src={facebookBlack}
+        alt="TechDevise Facebook"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://x.com/it_devise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on X (Twitter)"
+    >
+      <img
+        src={xBlack}
+        alt="TechDevise X"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.instagram.com/techdevise_it_services/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on Instagram"
+    >
+      <img
+        src={instagramBlack}
+        alt="TechDevise Instagram"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+  <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
+    <a
+      href="https://www.linkedin.com/company/techdevise"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit TechDevise on LinkedIn"
+    >
+      <img
+        src={youtubeBlack}
+        alt="TechDevise LinkedIn"
+        className="lg:size-[3.5625rem] size-10"
+      />
+    </a>
+  </div>
+</div>
+>>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
           </div>
         </div>
       </section>
@@ -668,15 +820,15 @@ const DigitalMarketingOne = () => {
             <div className="lg:w-3/5 w-full xl:pl-10">
               <div className="col-span-2 flex flex-col">
                 <div className="flex gap-2.5 justify-end items-stretch mt-[3.25rem] order-2">
-                  <button ref={prevRef2} className="cursor-pointer order-1">
+                  <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-black bg-white">
-                      <GoArrowLeft className="size-7" />
+                      <GoArrowLeft className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
 
-                  <button ref={nextRef2} className="cursor-pointer order-2">
+                  <button ref={nextRef2} className="cursor-pointer order-2" aria-label="Next slide">
                     <div className="size-12 rounded-full aspect-square flex justify-center items-center text-white bg-pine-700">
-                      <GoArrowRight className="size-7" />
+                      <GoArrowRight className="size-7" aria-hidden="true"/>
                     </div>
                   </button>
                 </div>
@@ -802,8 +954,8 @@ const DigitalMarketingOne = () => {
           <div className="bg-white shadow-xl shadow-gray-600/5 rounded-[.625rem] lg:py-[3.4375rem] lg:px-[2.375rem] p-3">
             <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-stretch">
               <div className="lg:w-[25.625rem] lg:border-r border-black/20  lg:pe-[3.3125rem]">
-                <ul className="lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll">
-                  <li onClick={() => setActiveTab(1)} className="mb-3.5">
+                <ul className="lg:block flex justify-start items-center gap-5 max-lg:mb-5 overflow-x-auto hide-scroll ">
+                  <li onClick={() => setActiveTab(1)} className="mb-3.5 cursor-pointer group/link">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 1
@@ -811,22 +963,23 @@ const DigitalMarketingOne = () => {
                           : "bg-white"
                       }`}
                     >
-                      <span className="text-base font-semibold ps-5 text-nowrap">
+                      <span className="text-base font-semibold ps-5 text-nowrap  ">
                         Certified Agency
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center group-hover/link:rotate-45 transition-all duration-300 ${
                           isActiveTab == 1 ? "bg-white" : "bg-[#5CEA90]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                     
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(2)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(2)} className="mb-3.5 cursor-pointer group/link">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 2
@@ -838,18 +991,18 @@ const DigitalMarketingOne = () => {
                         24 x 7 Support
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 2 ? "bg-white" : "bg-[#EA9C99]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(3)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(3)} className="mb-3.5 cursor-pointer group/link ">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 3
@@ -861,18 +1014,18 @@ const DigitalMarketingOne = () => {
                         Affordable
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 3 ? "bg-white" : "bg-[#67C792]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(4)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(4)} className="mb-3.5 cursor-pointer group/link ">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 4
@@ -884,18 +1037,18 @@ const DigitalMarketingOne = () => {
                         Experience
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 4 ? "bg-white" : "bg-[#FFE74E]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </li>
-                  <li onClick={() => setActiveTab(5)} className="mb-3.5">
+                  <li onClick={() => setActiveTab(5)} className="mb-3.5 cursor-pointer group/link ">
                     <div
                       className={`text-black lg:min-h-[4.8125rem] min-h-[3.4375rem] border border-black flex rounded-full items-center justify-between lg:p-3 p-1 gap-[2.0625rem] font-medium text-base transition-all duration-300 ${
                         isActiveTab == 5
@@ -907,12 +1060,12 @@ const DigitalMarketingOne = () => {
                         Flexible Plans
                       </span>
                       <span
-                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`ms-auto size-[3.3125rem] aspect-square rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:rotate-45 ${
                           isActiveTab == 5 ? "bg-white" : "bg-[#C897EB]"
                         }`}
                       >
-                        <PiArrowUpRightBold
-                          className="text-[18px] text-black"
+                        <FiArrowUpRight
+                          className="text-[22px] text-black"
                           strokeWidth={2}
                         />
                       </span>

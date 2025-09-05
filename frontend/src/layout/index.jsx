@@ -30,12 +30,18 @@ const index = () => {
   target="_blank"
   rel="noopener noreferrer"
 >
-  <div className="whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] right-[2.5rem] aspect-square rounded-full bg-white">
+  <div className="whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] left-[2.5rem] aspect-square rounded-full bg-white">
     <div className="h-full w-full rounded-full flex justify-center items-center relative">
       <MdOutlineWhatsapp className="text-green-500 size-[2rem] animate-ping absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" />
       <MdOutlineWhatsapp className="text-green-500 size-[2rem]" />
     </div>
   </div>
+    {/* <div className="whatsappLogo size-[4.0056rem] fixed z-[999] bottom-[2.5rem] right-[2.5rem] aspect-square rounded-full bg-white">
+    <div className="h-full w-full rounded-full flex justify-center items-center relative">
+      <MdOutlineWhatsapp className="text-green-500 size-[2rem] animate-ping absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" />
+      <MdOutlineWhatsapp className="text-green-500 size-[2rem]" />
+    </div>
+  </div> */}
 </a>
 
    

@@ -246,7 +246,7 @@ const CareerThree = () => {
                     onClick={addQuestion}
                     className="plusTextarea flex justify-end items-center gap-3"
                   >
-                    <div className="size-[2.8125rem] rounded-full flex justify-center items-center bg-pine-400 hover:bg-pine-600 transition-colors">
+                    <div className="size-[2.8125rem] rounded-full flex justify-center items-center bg-pine-400 hover:bg-pine-600 transition-colors shine-effect">
                       <PiPlus className="text-base text-white" />
                     </div>
                     <span className="text-[1.125rem] leading-[1.625rem] font-bold">
@@ -384,7 +384,7 @@ const CareerThree = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block text-white rounded-[.625rem] hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                className="bg-pine-700 w-fit shine-effect cursor-pointer py-2.5 px-5 text-center block text-white rounded-full hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>

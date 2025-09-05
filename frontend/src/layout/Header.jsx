@@ -22,6 +22,8 @@ import dropService6 from "/dropService6.svg";
 import dropService7 from "/dropService7.svg";
 import { LuMoveRight } from "react-icons/lu";
 import GetInTouch from "../components/GetInTouch";
+import { FiArrowUpRight } from "react-icons/fi";
+import GetCallBack from "../components/GetCallBack";
 
 const navMenu = [
   {
@@ -40,8 +42,6 @@ const navMenu = [
     name: "Career",
     link: "/career-one",
   },
-
-
 ];
 const mobileOnlyMenu = [
   {
@@ -114,6 +114,7 @@ const Header = () => {
   const [scrolledPast, setScrolledPast] = useState(false);
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
   const [isActiveMenu, setActiveMenu] = useState(1);
   const dropdownRef = useRef(null);
   const servicesRef = useRef(null);
@@ -298,40 +299,40 @@ const Header = () => {
                 isCollapsed ? "max-lg:left-0" : "max-lg:left-[-400px]"
               }`}
             >
-             <ul className=" flex lg:h-full lg:justify-end lg:items-center xl:gap-[3.25rem] lg:gap-10 gap-3 justify-start items-stretch max-lg:flex-col ">
-            <li
-              onClick={show}
-              className="lg:hidden pb-3 flex justify-between items-start"
-            >
-              <NavLink to="/">
-                <img
-                  src={Logo}
-                  alt="logo"
-                  className="h-[1rem] object-contain block"
-                />
-              </NavLink>
-              <button
-                onClick={show}
-                className="cursor-pointer px-3 py-2 -mt-3"
-              >
-                <IoClose className="text-white size-7" strokeWidth={1.5} />
-              </button>
-            </li>
+              <ul className=" flex lg:h-full lg:justify-end lg:items-center xl:gap-[2.25rem] lg:gap-10 gap-3 justify-start items-stretch max-lg:flex-col ">
+                <li
+                  onClick={show}
+                  className="lg:hidden pb-3 flex justify-between items-start"
+                >
+                  <NavLink to="/">
+                    <img
+                      src={Logo}
+                      alt="logo"
+                      className="h-[2rem] object-contain block"
+                    />
+                  </NavLink>
+                  <button
+                    onClick={show}
+                    className="cursor-pointer px-3 py-2 -mt-3"
+                  >
+                    <IoClose className="text-white size-7" strokeWidth={1.5} />
+                  </button>
+                </li>
 
-            <li
-              ref={servicesRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white lg:hover:opacity-65 transition-all duration-300 relative group"
-            >
-              <button
-                type="button"
-                className={`text-[1.15rem] max-lg:w-full max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 flex gap-1 lg:justify-center justify-between items-center focus:outline-0 focus:ring-0 relative group`}
-              >
-                <span>Services</span>
-                <FaCaretDown className="text-base" />
-                <span
-                  className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 
+                <li
+                  ref={servicesRef}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white lg:hover:opacity-65 transition-all duration-300 relative group"
+                >
+                  <button
+                    type="button"
+                    className={`text-[0.875rem] uppercase max-lg:w-full max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 flex gap-1 lg:justify-center justify-between items-center focus:outline-0 focus:ring-0 relative group`}
+                  >
+                    <span>Services</span>
+                    <FaCaretDown className="text-base" />
+                    <span
+                      className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 
                   ${
                     [
                       "/mobile-app-development",
@@ -345,108 +346,127 @@ const Header = () => {
                       ? "w-full"
                       : "w-0 group-hover:w-full"
                   }`}
-                ></span>
-              </button>
-            </li>
+                    ></span>
+                  </button>
+                </li>
 
-            <div
-              className={`lg:hidden grid transition-all duration-300 ${
-                isShowMenu ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-              }`}
-            >
-              <div className="overflow-hidden transition-all duration-300">
-                <div className="servideDropMenu text-white transition-all duration-300">
-                  {menuTabs.map((link, index) => (
-                    <NavLink
+                <div
+                  className={`lg:hidden grid transition-all duration-300 ${
+                    isShowMenu ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden transition-all duration-300">
+                    <div className="servideDropMenu text-white transition-all duration-300">
+                      {menuTabs.map((link, index) => (
+                        <NavLink
+                          onClick={show}
+                          key={index}
+                          to={link.link}
+                          className={`text-[1.15rem] max-lg:block max-lg:font-bold max-lg:py-4 max-lg:px-4  max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300  focus:outline-0 focus:ring-0`}
+                        >
+                          {link.name}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Regular menu items (visible on all devices) */}
+                {navMenu.map((item, index) => {
+                  return (
+                    <li
                       onClick={show}
                       key={index}
-                      to={link.link}
-                      className={`text-[1.15rem] max-lg:block max-lg:font-bold max-lg:py-4 max-lg:px-4  max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300  focus:outline-0 focus:ring-0`}
+                      className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white transition-all duration-300 relative group "
                     >
-                      {link.name}
-                    </NavLink>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Regular menu items (visible on all devices) */}
-            {navMenu.map((item, index) => {
-              return (
-                <li
-                  onClick={show}
-                  key={index}
-                  className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white transition-all duration-300 relative group"
-                >
-                  <NavLink
-                    to={item.link}
-                    className={({ isActive }) =>
-                      `text-[1.15rem] relative max-lg:block max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 focus:outline-0 focus:ring-0
+                      <NavLink
+                        to={item.link}
+                        className={({ isActive }) =>
+                          ` text-[0.875rem] uppercase relative max-lg:block max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 focus:outline-0 focus:ring-0
                       ${isActive ? "text-white font-semibold" : ""}`
-                    }
-                  >
-                    {item.name}
-                    <span
-                      className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 
+                        }
+                      >
+                        {item.name}
+                        <span
+                          className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 
                       ${
                         window.location.pathname === item.link
                           ? "w-full"
                           : "w-0 group-hover:w-full"
                       }`}
-                    ></span>
-                  </NavLink>
-                </li>
-              );
-            })}
+                        ></span>
+                      </NavLink>
+                    </li>
+                  );
+                })}
 
-            {/* Mobile-only menu items */}
-            <div className="lg:hidden">
-              {mobileOnlyMenu.map((item, index) => {
-                return (
-                  <li
-                    onClick={show}
-                    key={`mobile-${index}`}
-                    className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white transition-all duration-300 relative group"
-                  >
-                    <NavLink
-                      to={item.link}
-                      className={({ isActive }) =>
-                        `text-[1.15rem] relative max-lg:block max-lg:font-bold max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 focus:outline-0 focus:ring-0
+                {/* Mobile-only menu items */}
+                <div className="lg:hidden">
+                  {mobileOnlyMenu.map((item, index) => {
+                    return (
+                      <li
+                        onClick={show}
+                        key={`mobile-${index}`}
+                        className="lg:h-full py-[1rem] cursor-pointer lg:flex justify-center items-center text-white transition-all duration-300 relative group"
+                      >
+                        <NavLink
+                          to={item.link}
+                          className={({ isActive }) =>
+                            `text-[1.15rem] relative max-lg:block max-lg:font-normal max-lg:py-4 max-lg:px-4 max-lg:border max-lg:border-white/40 max-lg:rounded-lg max-lg:hover:bg-white max-lg:hover:text-pine-700 transition-all duration-300 focus:outline-0 focus:ring-0
                         ${isActive ? "text-white font-semibold" : ""}`
-                      }
-                    >
-                      {item.name}
-                      <span
-                        className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 
+                          }
+                        >
+                          {item.name}
+                          <span
+                            className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 
                         ${
                           window.location.pathname === item.link
                             ? "w-full"
                             : "w-0 group-hover:w-full"
                         }`}
-                      ></span>
-                    </NavLink>
-                  </li>
-                );
-              })}
-            </div>
-          </ul>
+                          ></span>
+                        </NavLink>
+                      </li>
+                    );
+                  })}
+                </div>
+              </ul>
 
               <button
                 onClick={() => setShowModal(true)}
-                className="lg:hidden h-[3.5rem] block text-start w-full rounded-lg font-bold text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect"
+                className="lg:hidden h-[3.5rem] block text-start w-full rounded-lg font-normal text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect"
               >
                 Get in Touch
               </button>
+              {/* <button
+                onClick={() => setShowModal1(true)}
+                className="lg:hidden h-[3.5rem] block text-start w-full rounded-lg font-normal text-[1.25rem] text-pine-700 text-nowrap py-4 px-5 bg-white shine-effect"
+              >
+                Get a call back
+              </button> */}
             </div>
 
             {/* Nav Button */}
             <div className="flex justify-center items-center">
               <button
                 onClick={() => setShowModal(true)}
-                className="h-[2.91rem] block ms-[2.75rem] rounded-lg font-bold text-[1.15rem] text-pine-700 text-nowrap py-2 px-6 bg-white shine-effect max-lg:hidden"
+                className="h-[2.91rem] ms-[1.35rem] rounded-[22px] font-normal text-[0.875rem] uppercase text-white group/link text-nowrap py-2 px-4 bg-transparent border border-white transition-colors duration-300 max-lg:hidden flex items-center gap-2 cursor-pointer"
               >
                 Get in Touch
+                <span className="size-[1.625rem] rounded-full aspect-square border border-white flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                  <FiArrowUpRight className="size-4" />
+                </span>
               </button>
+
+              {/* <button
+                onClick={() => setShowModal1(true)}
+                className="h-[2.91rem] ms-[1.35rem] rounded-[22px] font-normal text-[0.875rem] uppercase text-white group/link text-nowrap py-2 px-4 bg-transparent border border-white transition-colors duration-300 max-lg:hidden flex items-center gap-2 cursor-pointer"
+              >
+                Get a call back
+                <span className="size-[1.625rem] rounded-full aspect-square border border-white flex justify-center items-center group-hover/link:rotate-45 transition-all duration-200">
+                  <FiArrowUpRight className="size-4" />
+                </span>
+              </button> */}
             </div>
 
             {/* Menu button */}
@@ -481,6 +501,12 @@ const Header = () => {
         showModal={showModal}
         setShowModal={() => {
           setShowModal(!showModal);
+        }}
+      />
+       <GetCallBack
+        showModal1={showModal1}
+        setShowModal1={() => {
+          setShowModal1(!showModal1);
         }}
       />
     </>

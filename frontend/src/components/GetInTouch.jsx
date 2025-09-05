@@ -129,7 +129,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
         }`}
       >
         <div
-          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto 2xl:max-w-[95.5625rem] max-w-[85.5625rem] w-full relative transition-all duration-500 rounded-[1.625rem] ${
+          className={`modal py-5 px-7 max-lg:pt-16 bg-white max-h-[90dvh] overflow-y-auto 2xl:max-w-[90.5625rem] max-w-[80.5625rem] w-full relative transition-all duration-500 rounded-[1.625rem] ${
             showModal ? "scale-100" : "scale-90"
           }`}
         >
@@ -378,7 +378,7 @@ const GetInTouch = ({ showModal, setShowModal }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block text-white rounded-[.625rem] hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="bg-pine-700 w-fit cursor-pointer py-2.5 px-5 text-center block text-white rounded-full hover:bg-pine-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>

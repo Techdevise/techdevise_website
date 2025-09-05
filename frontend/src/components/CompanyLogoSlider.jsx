@@ -32,7 +32,7 @@ const CompanyLogoSlider = ({logos}) => {
               <img
                 src={item.image}
                 alt={item.alt}
-                className="block object-contain mx-auto opacity-65"
+                className="block object-contain mx-auto "
               />
             </SwiperSlide>
           );

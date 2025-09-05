@@ -39,15 +39,18 @@ const Fqa = () => {
   return (
     <>
       {/* Hero Section */}
-     
-      <section style={{ backgroundImage: `url(${map})` }} className='h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center'>
-               <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
-                FAQ's
-              </h1>
-            </section>
+
+      <section
+        style={{ backgroundImage: `url(${map})` }}
+        className="h-[25.125rem] bg-center bg-cover bg-no-repeat flex justify-center items-center"
+      >
+        <h1 className="text-[3rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pine-700 mb-[1.125rem]">
+          FAQ's
+        </h1>
+      </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#F7F7F7]">
+      <section className="faq bg-[#F7F7F7] 2xl:mb-0 mb-15">
         <div className="main-container">
           <div className="relative font-inter antialiased min-h-full flex flex-col justify-center overflow-hidden md:pb-24 py-4 md:px-4">
             <div className="w-full   ">
@@ -58,12 +61,12 @@ const Fqa = () => {
                   return (
                     <div
                       key={index}
-                      className="bg-white rounded-md shadow transition duration-300"
+                      className="bg-white rounded-md shadow transition duration-300 "
                     >
                       <div className="px-4">
                         <button
                           type="button"
-                          className="flex items-center font-montserrat justify-between w-full py-4 text-left font-semibold md:text-[24px] text-[16px]"
+                          className="flex items-center font-montserrat justify-between w-full py-4 text-left font-semibold md:text-[24px] text-[16px] cursor-pointer"
                           onClick={() => toggle(index)}
                           aria-expanded={isOpen}
                           aria-controls={`faq-content-${index}`}
@@ -80,7 +83,7 @@ const Fqa = () => {
                               width="16"
                               height="2"
                               rx="1"
-                              className={`transform origin-center transition duration-200 ease-out ${
+                              className={`transform origin-center transition duration-500 ease-out ${
                                 isOpen ? "rotate-180" : ""
                               }`}
                             />
@@ -89,7 +92,7 @@ const Fqa = () => {
                               width="16"
                               height="2"
                               rx="1"
-                              className={`transform origin-center rotate-90 transition duration-200 ease-out ${
+                              className={`transform origin-center rotate-90 transition duration-500 ease-out ${
                                 isOpen ? "rotate-180" : ""
                               }`}
                             />
@@ -98,7 +101,7 @@ const Fqa = () => {
 
                         <div
                           id={`faq-content-${index}`}
-                          className={`overflow-hidden transition-all duration-300 ease-in-out text-slate-600 md:text-[16px] text-[12px] ${
+                          className={`overflow-hidden transition-all duration-800 ease-in-out text-slate-600 md:text-[16px] text-[12px] ${
                             isOpen
                               ? "max-h-[500px] opacity-100 pb-4"
                               : "max-h-0 opacity-0"
