@@ -1140,7 +1140,7 @@ const Home = () => {
                             <h5 className="2xl:text-lg font-semibold leading-[1.5rem] mb-1.5">
                               {item.title}
                             </h5>
-                            <p className="2xl:text-[12px] leading-[1.5rem]">
+                            <p className="2xl:text-[16px] xl:text-[14px] leading-[1.5rem]">
                               {item.discription}
                             </p>
                           </div>
