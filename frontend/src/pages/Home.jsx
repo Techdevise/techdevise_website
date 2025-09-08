@@ -509,7 +509,7 @@ const Home = () => {
     },
   ];
 
-  const offshore = [
+  const   offshore = [
     {
       image: dashGreen,
       title: "Share your Requirements",
@@ -1137,10 +1137,10 @@ const Home = () => {
                             className="w-full absolute bottom-0 left-0 group-even:top-0"
                           />
                           <div className="bg-pine-700 h-[13.125rem] rounded-[.8125rem] pb-[1.0625rem] pl-[1.5625rem] pr-3 flex flex-col justify-end group-even:bg-white group-even:text-pine-700">
-                            <h5 className="text-lg font-semibold leading-[1.5rem] mb-1.5">
+                            <h5 className="2xl:text-lg font-semibold leading-[1.5rem] mb-1.5">
                               {item.title}
                             </h5>
-                            <p className="text-[16px] leading-[1.5rem]">
+                            <p className="2xl:text-[12px] leading-[1.5rem]">
                               {item.discription}
                             </p>
                           </div>
