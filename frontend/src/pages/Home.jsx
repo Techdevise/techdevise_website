@@ -477,7 +477,7 @@ const Home = () => {
     fetchIndustries();
   }, []);
 
-  const addressList = [
+ const addressList = [
     {
       bgimage: state1,
       flag: flag1,
@@ -491,23 +491,24 @@ const Home = () => {
       flag: flag2,
       countryName: "United States",
       address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
-      position: { top: "19%", left: "51%" },
+      position: { top: "20%", left: "52%" },
     },
     {
       bgimage: state3,
       flag: flag3,
       countryName: "Netherlands",
       address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
-      position: { top: "38%", left: "13%" },
+      position: { top: "40%", left: "15%" },
     },
     {
       bgimage: state4,
       flag: flag4,
       countryName: "New Zealand",
       address: "76A Wai-Iti Road, Timaru, Canterbury 7910",
-      position: { top: "87%", left: "93%" },
+      position: { top: "90%", left: "94%" },
     },
   ];
+
   const offshore = [
     {
       image: dashGreen,
@@ -2121,10 +2122,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="pb-[1.0625rem]">
+     <section className="pb-[1.0625rem]">
           <div className="main-container text-white">
             {/* Heading */}
-            <div className="text-center mb-[3.9375rem]">
+            <div className="text-center 2xl:mb-[5.9375rem] mb-[1.9375rem]">
               <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
                 Location
               </h4>
@@ -2140,7 +2141,6 @@ const Home = () => {
                 />
               </p>
             </div>
-
             {/* Content */}
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
               {/* Address List */}
@@ -2182,10 +2182,9 @@ const Home = () => {
                   </div>
                 ))}
               </div>
-
               {/* Map with Dots */}
               <div className="flex justify-center order-1 md:order-1 lg:order-2">
-                <div className="relative w-full h-full max-w-[600px]">
+                <div className="relative w-full h-full max-w-[750px]">
                   <img
                     src={map}
                     alt="map"
@@ -2198,7 +2197,7 @@ const Home = () => {
                         top: item.position.top,
                         left: item.position.left,
                       }}
-                      className={`absolute w-4 h-4 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2
+                      className={`absolute w-3 h-3 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2
                 ${
                   selectedCountry === item.countryName
                     ? "bg-[#157B6C] animate-pingOnce"
@@ -2216,7 +2215,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
           {/* Tailwind Custom Animation */}
         </section>
 

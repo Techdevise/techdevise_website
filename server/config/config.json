@@ -1,9 +1,9 @@
 {
  "development": {
-     "username": "root",
-    "password": "root1234",
+          "username": "techdevise",
+    "password": "root12345",
     "database": "techdevise",
-    "host": "127.0.0.1",
+    "host": "147.93.102.161",
     "dialect": "mysql"
   },
   "test": {

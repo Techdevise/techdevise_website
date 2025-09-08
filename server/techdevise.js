@@ -46,12 +46,12 @@ app.set('view engine', 'ejs');
 
 // CORS config
 // Allowed origins for CORS
-// const allowedOrigins = process.env.ALLOWED_ORIGINS
-//   ? process.env.ALLOWED_ORIGINS.split(",") 
-//   : ["https://www.techdevise.com", "https://techdevise.com"];
 const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(",")
-  : ["http://localhost:3003", "http://localhost:3003"];
+  ? process.env.ALLOWED_ORIGINS.split(",") 
+  : ["https://www.techdevise.com", "https://techdevise.com"];
+// const allowedOrigins = process.env.ALLOWED_ORIGINS
+//   ? process.env.ALLOWED_ORIGINS.split(",")
+//   : ["http://localhost:3003", "http://localhost:3003"];
 
 app.use(cors({
   origin: allowedOrigins,

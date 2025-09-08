@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from "react";
 import seoBg from "/seoBg.webp";
 import girl from "/girl.webp";
@@ -8,15 +9,7 @@ import girl4 from "/girl4.svg";
 import girl5 from "/girl5.svg";
 import girl6 from "/girl6.svg";
 import girl7 from "/girl7.svg";
-<<<<<<< HEAD
-import Digi4 from "/Digi1.png";
-import Digi2 from "/Digi2.png";
-import Digi3 from "/Digi3.png";
-import Digi1 from "/Digi4.png";
-import arrowRightUp from "/arrowRightUp.svg";
-=======
 import { FiArrowUpRight } from "react-icons/fi";
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
 import SEO from "/SEO.svg";
 import facebookBlack from "/facebookBlack.svg";
 import xBlack from "/xBlack.svg";
@@ -236,11 +229,9 @@ const DigitalMarketingOne = () => {
       {/* landing area section start */}
       <section
         style={{ backgroundImage: `url(${seoBg})` }}
-        className="bg-no-repeat bg-cover pt-[5.5625rem] flex items-center justify-center h-full"
+        className="bg-no-repeat bg-cover pt-[5.5625rem] flex items-center justify-center overflow-hidden"
       >
-        <div className="main-container ">
-          {" "}
-          {/* relative + padding bottom */}
+        <div className="main-container">
           <div className="flex max-lg:flex-col items-stretch justify-between">
             <div className="w-full max-w-[51.1875rem] self-center py-14 lg:text-start text-center">
               <h1 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold text-transparent bg-clip-text bg-[linear-gradient(90deg,_#FFFFFF_0%,_#EDF5F3_7.5%,_#D4E7E4_17.5%,_#157B6C_95.5%)] mb-7">
@@ -328,14 +319,6 @@ const DigitalMarketingOne = () => {
       {/* Ranking section start */}
       <section className="pt-[4.3125rem] pb-28 ">
         <div className="main-container relative">
-<<<<<<< HEAD
-          {/* ✅ TOP IMAGE STRIP - moved above all other content and made responsive */}
-          <div className="flex flex-wrap justify-center gap-4 px-4 mb-10 -mt-40">
-            <img
-              src={Digi1}
-              alt="Google Ads Certified"
-              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
-=======
           {/* :white_check_mark: TOP IMAGE STRIP - moved above all other content and made responsive */}
           <div
             className="grid justify-center gap-6 px-4 mb-10 2xl:-mt-40 xl:-mt-35 lg:-mt-30 -mt-10 w-full
@@ -345,34 +328,21 @@ const DigitalMarketingOne = () => {
               src={Digi1}
               alt="Google Ads Certified"
               className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
             <img
               src={Digi2}
               alt="LinkedIn Recruiter"
-<<<<<<< HEAD
-              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
-=======
               className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
             <img
               src={Digi3}
               alt="Meta Ads Manager"
-<<<<<<< HEAD
-              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
-=======
               className="2xl:h-60 object-contain mx-auto transition-transform duration-300 hover:scale-105"
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
             <img
               src={Digi4}
               alt="Google Analytics Certified"
-<<<<<<< HEAD
-              className="h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 2xl:h-60 object-contain"
-=======
               className="2xl:h-60 object-contain mx-auto transition-transform duration-800 hover:scale-105"
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
             />
           </div>
 
@@ -392,10 +362,6 @@ const DigitalMarketingOne = () => {
             </div>
             <img src={SEO} alt="seo" className="w-full max-w-[35.4162rem]" />
           </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
           {/* Swiper and buttons */}
           <div className="col-span-2 flex flex-col">
             <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
@@ -410,7 +376,6 @@ const DigitalMarketingOne = () => {
                 </div>
               </button>
             </div>
-
             <Swiper
               className="mySwiper h-full w-full justify-between select-none [&>.swiper-wrapper]:items-stretch !overflow-visible"
               slidesPerView={1}
@@ -459,7 +424,6 @@ const DigitalMarketingOne = () => {
           </div>
         </div>
       </section>
-
       {/* Ranking section end */}
 
       {/* Social Media section start */}
@@ -475,65 +439,9 @@ const DigitalMarketingOne = () => {
                 provide our clients with the best social media marketing
                 solutions that will surely improve your business's online
                 visibility. With the help of your experts, you can increase your
-                online customer base as well.   
+                online customer base as well.   
               </p>
 
-<<<<<<< HEAD
-              <div className="w-full lg:hidden gap-3 flex justify-center items-center">
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://www.facebook.com/Techdevise9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={facebookBlack}
-                      alt="facebookBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://x.com/it_devise"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={xBlack}
-                      alt="xBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://www.instagram.com/techdevise_it_services/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={instagramBlack}
-                      alt="instagramBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-                <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                  <a
-                    href="https://www.linkedin.com/company/techdevise"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={youtubeBlack}
-                      alt="youtubeBlack"
-                      className="lg:size-[3.5625rem] size-10"
-                    />
-                  </a>
-                </div>
-              </div>
-=======
              <div className="w-full lg:hidden gap-3 flex justify-center items-center">
   {/* Repeat the same with updated alt and aria-label */}
   <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
@@ -593,7 +501,6 @@ const DigitalMarketingOne = () => {
     </a>
   </div>
 </div>
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
               <div className="col-span-2 flex flex-col">
                 <div className="flex gap-2.5 lg:justify-start justify-center items-stretch mt-[3.25rem] order-2">
                   <button ref={prevRef2} className="cursor-pointer order-1"  aria-label="Previous slide">
@@ -667,61 +574,6 @@ const DigitalMarketingOne = () => {
               </div>
             </div>
             <div className="lg:w-fit w-full lg:block gap-3 hidden justify-center items-center">
-<<<<<<< HEAD
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://www.facebook.com/Techdevise9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={facebookBlack}
-                    alt="Facebook"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://x.com/it_devise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={xBlack}
-                    alt="xBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://www.instagram.com/techdevise_it_services/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={instagramBlack}
-                    alt="instagramBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-              <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
-                <a
-                  href="https://www.linkedin.com/company/techdevise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={youtubeBlack}
-                    alt="youtubeBlack"
-                    className="lg:size-[3.5625rem] size-10"
-                  />
-                </a>
-              </div>
-            </div>
-=======
   <div className="border border-dashed border-black lg:size-[9rem] size-20 rounded-full flex items-center mb-[1.8125rem] justify-center">
     <a
       href="https://www.facebook.com/Techdevise9"
@@ -779,7 +631,6 @@ const DigitalMarketingOne = () => {
     </a>
   </div>
 </div>
->>>>>>> ae8cadc5b49b8bf5ebb1cf13f2603116e688ebf3
           </div>
         </div>
       </section>
@@ -805,7 +656,7 @@ const DigitalMarketingOne = () => {
             />
             <div className="lg:w-2/5 w-full xl:pr-10 lg:text-start text-center">
               <h3 className="2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold leading-none mb-[1.9375rem]">
-                The Services we offer under Google Adwords
+                The Services we offer under Google Adwords
               </h3>
               <p className="mb-[3.8125rem] max-w-[67.0625rem] mx-auto 2xl:text-[1.10rem] text-[1rem] leading-[2.125rem]">
                 As everyone knows, there are millions of websites on the
@@ -938,7 +789,7 @@ const DigitalMarketingOne = () => {
       </section>
       {/* Google Ads  section start*/}
 
-      {/*Our PPC Expert section start*/}
+      {/*Our PPC Expert section start*/}
       <section className="pt-[4.375rem] pb-[7.5625rem] bg-gradient-to-r from-[#E3FFEB] to-[#C2EAF2]">
         <div className="main-container">
           <h2 className="text-center 2xl:text-[3rem] lg:text-[2.4rem] text-[2rem] font-bold">
@@ -1189,7 +1040,7 @@ const DigitalMarketingOne = () => {
           </div>
         </div>
       </section>
-      {/*Our PPC Expert section end*/}
+      {/*Our PPC Expert section end*/}
       <GetInTouch
         showModal={showModal}
         setShowModal={() => {
