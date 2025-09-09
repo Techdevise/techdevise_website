@@ -1140,7 +1140,7 @@ const Home = () => {
                             <h5 className="2xl:text-lg font-semibold leading-[1.5rem] mb-1.5">
                               {item.title}
                             </h5>
-                            <p className="2xl:text-[16px] xl:text-[14px] leading-[1.5rem]">
+                            <p className="2xl:text-[16px] xl:text-[12px] 2xl:leading-[1.5rem] xl:leading-[1.3rem]">
                               {item.discription}
                             </p>
                           </div>
@@ -1813,7 +1813,7 @@ const Home = () => {
 
                   <p className="text-white 2xl:text-[1.20rem] lg:text-[14px] text-[1rem]  leading-[2.25rem] max-xl:text-center max-lg:mb-4">
                     Fuel Success in a Digital- First World with{" "}
-                    <span className="text-xl">300+ </span>
+                    <span className="text-xl font-bold">300+ </span>
                     Visionaries.
                   </p>
                   <Link

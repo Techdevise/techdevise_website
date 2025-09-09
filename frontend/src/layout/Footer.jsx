@@ -113,7 +113,7 @@ const Footer = () => {
                   Contact Now!
                 </Link>
                 <a
-                  href="https://www.facebook.com/Techdevise9"
+                  href="https://www.facebook.com/TechDevise"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center items-center size-10 rounded-full aspect-square bg-[#3B5998]"
