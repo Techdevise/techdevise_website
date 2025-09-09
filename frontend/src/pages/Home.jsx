@@ -2123,100 +2123,102 @@ const Home = () => {
         </section>
 
      <section className="pb-[1.0625rem]">
-          <div className="main-container text-white">
-            {/* Heading */}
-            <div className="text-center 2xl:mb-[5.9375rem] mb-[1.9375rem]">
-              <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
-                Location
-              </h4>
-              <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
-                We&apos;d love to hear from you
-              </h3>
-              <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
-                We have offices and teams all around the world.
+  <div className="main-container text-white">
+    {/* Heading */}
+    <div className="text-center 2xl:mb-[5.9375rem] mb-[1.9375rem]">
+      <h4 className="font-bold text-[#157B6C] leading-[3.625rem] text-[2rem] mb-1.5">
+        Location
+      </h4>
+      <h3 className="lg:text-[3.4375rem] md:text-[3rem] sm:text-[2.5rem] text-[2rem] font-bold leading-none mb-5">
+        We&apos;d love to hear from you
+      </h3>
+      <p className="text-lg font-medium leading-[1.8125rem] inline-block relative">
+        We have offices and teams all around the world.
+        <img
+          src={vector12}
+          alt="vector12"
+          className="w-[4.2875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v hidden md:block"
+        />
+      </p>
+    </div>
+
+    {/* Content */}
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
+      {/* Address List */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.375rem] order-2 md:order-2 lg:order-1">
+        {addressList.map((listitem, index) => (
+          <div
+            key={index}
+            onMouseEnter={() => setSelectedCountry(listitem.countryName)}
+            onMouseLeave={() => setSelectedCountry(null)}
+            className={`cursor-pointer border rounded-[1.625rem] flex gap-[1.9375rem] items-center px-4 py-[1.0625rem] transition-all
+              text-white border-[#157B6C]
+              ${
+                selectedCountry === listitem.countryName
+                  ? "bg-[#091D17] ring-1 ring-[#157B6C]"
+                  : "bg-[#071712]"
+              }
+            `}
+          >
+            <img
+              src={listitem.bgimage}
+              alt="country bg"
+              className="2xl:w-[6.0625rem] 2xl:h-[6.8125rem] w-[5.375rem] h-[5.875rem] rounded-[1.625rem] object-cover"
+            />
+            <div className="grow">
+              <div className="flex gap-[.9375rem] items-center mb-[0.375rem]">
                 <img
-                  src={vector12}
-                  alt="vector12"
-                  className="w-[4.2875rem] z-10 absolute top-full lg:left-full left-1/2 -translate-x-1/2 shake-v hidden md:block"
+                  src={listitem.flag}
+                  alt="flag"
+                  className="w-[2.1875rem] h-[2.125rem]"
                 />
+                <span className="font-bold capitalize 2xl:text-[1.2rem] xl:text-[1.0rem] text-[0.9rem]">
+                  {listitem.countryName}
+                </span>
+              </div>
+              <p className="2xl:text-md text-[0.800rem] font-normal 2xl:leading-[1.8125rem] leading-[1.2125rem]">
+                {listitem.address}
               </p>
             </div>
-            {/* Content */}
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center pb-[7rem]">
-              {/* Address List */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.375rem] order-2 md:order-2 lg:order-1">
-                {addressList.map((listitem, index) => (
-                  <div
-                    key={index}
-                    onClick={() => setSelectedCountry(listitem.countryName)}
-                    className={`cursor-pointer border rounded-[1.625rem] flex gap-[1.9375rem] items-center px-4 py-[1.0625rem] transition-all
-    text-white
-    border-[#157B6C]
-    ${
-      selectedCountry === listitem.countryName
-        ? "bg-[#091D17] ring-1 ring-[#157B6C]"
-        : "bg-[#071712]"
-    }
-  `}
-                  >
-                    <img
-                      src={listitem.bgimage}
-                      alt="country bg"
-                      className="2xl:w-[6.0625rem] 2xl:h-[6.8125rem] w-[5.375rem] h-[5.875rem] rounded-[1.625rem] object-cover"
-                    />
-                    <div className="grow">
-                      <div className="flex gap-[.9375rem] items-center mb-[0.375rem]">
-                        <img
-                          src={listitem.flag}
-                          alt="flag"
-                          className="w-[2.1875rem] h-[2.125rem]"
-                        />
-                        <span className="font-bold capitalize 2xl:text-[1.2rem] xl:text-[1.0rem] text-[0.9rem]">
-                          {listitem.countryName}
-                        </span>
-                      </div>
-                      <p className="2xl:text-md text-[0.800rem] font-normal 2xl:leading-[1.8125rem] leading-[1.2125rem]">
-                        {listitem.address}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {/* Map with Dots */}
-              <div className="flex justify-center order-1 md:order-1 lg:order-2">
-                <div className="relative w-full h-full max-w-[750px]">
-                  <img
-                    src={map}
-                    alt="map"
-                    className="w-full h-full object-contain"
-                  />
-                  {addressList.map((item, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        top: item.position.top,
-                        left: item.position.left,
-                      }}
-                      className={`absolute w-3 h-3 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2
+          </div>
+        ))}
+      </div>
+
+      {/* Map with Dots */}
+      <div className="flex justify-center order-1 md:order-1 lg:order-2">
+        <div className="relative w-full h-full max-w-[750px]">
+          <img
+            src={map}
+            alt="map"
+            className="w-full h-full object-contain"
+          />
+          {addressList.map((item, idx) => (
+            <div
+              key={idx}
+              style={{
+                top: item.position.top,
+                left: item.position.left,
+              }}
+              className={`absolute w-3 h-3 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2
                 ${
                   selectedCountry === item.countryName
                     ? "bg-[#157B6C] animate-pingOnce"
                     : "bg-[#D4D4D48A]"
                 }`}
-                    >
-                      {selectedCountry === item.countryName && (
-                        <span className="absolute top-[-1.5rem] left-1/2 -translate-x-1/2 bg-[#157B6C] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
-                          {item.countryName}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+            >
+              {selectedCountry === item.countryName && (
+                <span className="absolute top-[-1.5rem] left-1/2 -translate-x-1/2 bg-[#157B6C] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap shadow-md">
+                  {item.countryName}
+                </span>
+              )}
             </div>
-          </div>
-          {/* Tailwind Custom Animation */}
-        </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Let’s Talk end */}
 
