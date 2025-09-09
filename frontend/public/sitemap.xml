@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Homepage -->
@@ -9,13 +9,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Example: Services page -->
-  <url>
-    <loc>https://www.techdevise.com/services</loc>
-    <lastmod>2025-09-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- Example: About page -->
   <url>
@@ -107,4 +100,4 @@
   </url>
 
 
-</urlset>
+</urlset> -->
