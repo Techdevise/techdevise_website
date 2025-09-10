@@ -72,36 +72,33 @@ app.use(
         "'self'",
         "'unsafe-inline'",
         "'unsafe-eval'",
-        "'unsafe-hashes'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://connect.facebook.net"
       ],
 
-      scriptSrcAttr: [
-        "'self'",
-        "'unsafe-inline'",
-        "'unsafe-hashes'",
-      ],
+      scriptSrcAttr: ["'self'", "'unsafe-inline'"],
 
       scriptSrcElem: [
         "'self'",
         "'unsafe-inline'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
+        "https://www.clarity.ms",          // ✅ Clarity allow
+        "https://connect.facebook.net"    // ✅ FB Pixel allow
       ],
 
       styleSrc: [
         "'self'",
-        "'unsafe-inline'", // allow inline styles
+        "'unsafe-inline'",
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+        "https://cdn.jsdelivr.net"
       ],
 
       styleSrcElem: [
@@ -109,20 +106,27 @@ app.use(
         "'unsafe-inline'",
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+        "https://cdn.jsdelivr.net"
       ],
 
-      imgSrc: ["'self'", "data:", "https:"],
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https:",
+        "https://www.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://connect.facebook.net"
+      ],
 
       fontSrc: [
         "'self'",
+        "data:",                         // ✅ base64 fonts allow
         "https://fonts.gstatic.com",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net"
       ],
-   connectSrc: [
+
+      connectSrc: [
         "'self'",
         "https://www.google-analytics.com",
         "https://region1.google-analytics.com",
@@ -135,11 +139,13 @@ app.use(
         "https://www.googletagmanager.com",
         "https://connect.facebook.net"
       ],
+
       objectSrc: ["'none'"],
       baseUri: ["'self'"]
     }
   })
 );
+
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000,
 //   max: 10,
