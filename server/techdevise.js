@@ -61,86 +61,86 @@ app.use(cors({
 }));
 
 // Security middleware
-app.use(helmet());
+// app.use(helmet());
 // Security middleware with updated CSP
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
 
-      scriptSrc: [
-        "'self'",
-        "'unsafe-inline'",
-        "'unsafe-eval'",
-        "'unsafe-hashes'",
-        "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
-      ],
+//       scriptSrc: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         "'unsafe-eval'",
+//         "'unsafe-hashes'",
+//         "https://cdnjs.cloudflare.com",
+//         "https://cdn.jsdelivr.net",
+//         "http://gc.kis.v2.scr.kaspersky-labs.com",
+//         "ws://gc.kis.v2.scr.kaspersky-labs.com"
+//       ],
 
-      scriptSrcAttr: [
-        "'self'",
-        "'unsafe-inline'",
-        "'unsafe-hashes'",
-      ],
+//       scriptSrcAttr: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         "'unsafe-hashes'",
+//       ],
 
-      scriptSrcElem: [
-        "'self'",
-        "'unsafe-inline'",
-        "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
-      ],
+//       scriptSrcElem: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         "https://cdnjs.cloudflare.com",
+//         "https://cdn.jsdelivr.net",
+//         "http://gc.kis.v2.scr.kaspersky-labs.com",
+//         "ws://gc.kis.v2.scr.kaspersky-labs.com"
+//       ],
 
-      styleSrc: [
-        "'self'",
-        "'unsafe-inline'", // allow inline styles
-        "https://fonts.googleapis.com",
-        "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
-      ],
+//       styleSrc: [
+//         "'self'",
+//         "'unsafe-inline'", // allow inline styles
+//         "https://fonts.googleapis.com",
+//         "https://cdnjs.cloudflare.com",
+//         "https://cdn.jsdelivr.net",
+//         "http://gc.kis.v2.scr.kaspersky-labs.com",
+//         "ws://gc.kis.v2.scr.kaspersky-labs.com"
+//       ],
 
-      styleSrcElem: [
-        "'self'",
-        "'unsafe-inline'",
-        "https://fonts.googleapis.com",
-        "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
-      ],
+//       styleSrcElem: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         "https://fonts.googleapis.com",
+//         "https://cdnjs.cloudflare.com",
+//         "https://cdn.jsdelivr.net",
+//         "http://gc.kis.v2.scr.kaspersky-labs.com",
+//         "ws://gc.kis.v2.scr.kaspersky-labs.com"
+//       ],
 
-      imgSrc: ["'self'", "data:", "https:"],
+//       imgSrc: ["'self'", "data:", "https:"],
 
-      fontSrc: [
-        "'self'",
-        "https://fonts.gstatic.com",
-        "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net"
-      ],
+//       fontSrc: [
+//         "'self'",
+//         "https://fonts.gstatic.com",
+//         "https://cdnjs.cloudflare.com",
+//         "https://cdn.jsdelivr.net"
+//       ],
 
-       connectSrc: [
-        "'self'",
-        "https://www.google-analytics.com",
-        "https://region1.google-analytics.com",
-        "https://www.clarity.ms",
-        "https://connect.facebook.net"
-      ],
+//        connectSrc: [
+//         "'self'",
+//         "https://www.google-analytics.com",
+//         "https://region1.google-analytics.com",
+//         "https://www.clarity.ms",
+//         "https://connect.facebook.net"
+//       ],
 
-      frameSrc: [
-        "'self'",
-        "https://www.googletagmanager.com",
-        "https://connect.facebook.net"
-      ],
-      objectSrc: ["'none'"],
-      baseUri: ["'self'"]
-    }
-  })
-);
+//       frameSrc: [
+//         "'self'",
+//         "https://www.googletagmanager.com",
+//         "https://connect.facebook.net"
+//       ],
+//       objectSrc: ["'none'"],
+//       baseUri: ["'self'"]
+//     }
+//   })
+// );
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000,
 //   max: 10,
