@@ -122,15 +122,18 @@ app.use(
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net"
       ],
-  connectSrc: [
+   connectSrc: [
         "'self'",
         "https://www.google-analytics.com",
-        "https://region1.google-analytics.com"
+        "https://region1.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://connect.facebook.net"
       ],
 
       frameSrc: [
         "'self'",
-        "https://www.googletagmanager.com"
+        "https://www.googletagmanager.com",
+        "https://connect.facebook.net"
       ],
       objectSrc: ["'none'"],
       baseUri: ["'self'"]
