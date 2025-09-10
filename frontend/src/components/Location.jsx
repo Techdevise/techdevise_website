@@ -26,14 +26,15 @@ const Location = () => {
       flag: flag2,
       countryName: "United States",
       address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
-      position: { top: "28%", left: "52%" },
+      position: { top: "43%", left: "15%" },
     },
     {
       bgimage: state3,
       flag: flag3,
       countryName: "Netherlands",
       address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
-      position: { top: "43%", left: "15%" },
+     
+       position: { top: "28%", left: "52%" },
     },
     {
       bgimage: state4,
