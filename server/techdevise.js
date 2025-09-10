@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const rateLimit = require('express-rate-limit');
 var cors = require('cors');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const session = require('express-session');
 var flash = require("express-flash");
 const fileUpload = require('express-fileupload');
@@ -61,90 +61,90 @@ app.use(cors({
 }));
 
 // Security middleware
-// app.use(helmet());
+app.use(helmet());
 // Security middleware with updated CSP
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'"],
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
 
-//       scriptSrc: [
-//         "'self'",
-//         "'unsafe-inline'",
-//         "'unsafe-eval'",
-//         "https://cdnjs.cloudflare.com",
-//         "https://cdn.jsdelivr.net",
-//         "https://www.googletagmanager.com",
-//         "https://www.google-analytics.com",
-//         "https://www.clarity.ms",
-//         "https://connect.facebook.net"
-//       ],
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-eval'",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://connect.facebook.net"
+      ],
 
-//       scriptSrcAttr: ["'self'", "'unsafe-inline'"],
+      scriptSrcAttr: ["'self'", "'unsafe-inline'"],
 
-//       scriptSrcElem: [
-//         "'self'",
-//         "'unsafe-inline'",
-//         "https://cdnjs.cloudflare.com",
-//         "https://cdn.jsdelivr.net",
-//         "https://www.googletagmanager.com",
-//         "https://www.google-analytics.com",
-//         "https://www.clarity.ms",          // ✅ Clarity allow
-//         "https://connect.facebook.net"    // ✅ FB Pixel allow
-//       ],
+      scriptSrcElem: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net",
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
+        "https://www.clarity.ms",          // ✅ Clarity allow
+        "https://connect.facebook.net"    // ✅ FB Pixel allow
+      ],
 
-//       styleSrc: [
-//         "'self'",
-//         "'unsafe-inline'",
-//         "https://fonts.googleapis.com",
-//         "https://cdnjs.cloudflare.com",
-//         "https://cdn.jsdelivr.net"
-//       ],
+      styleSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://fonts.googleapis.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net"
+      ],
 
-//       styleSrcElem: [
-//         "'self'",
-//         "'unsafe-inline'",
-//         "https://fonts.googleapis.com",
-//         "https://cdnjs.cloudflare.com",
-//         "https://cdn.jsdelivr.net"
-//       ],
+      styleSrcElem: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://fonts.googleapis.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net"
+      ],
 
-//       imgSrc: [
-//         "'self'",
-//         "data:",
-//         "https:",
-//         "https://www.google-analytics.com",
-//         "https://www.clarity.ms",
-//         "https://connect.facebook.net"
-//       ],
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https:",
+        "https://www.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://connect.facebook.net"
+      ],
 
-//       fontSrc: [
-//         "'self'",
-//         "data:",                         // ✅ base64 fonts allow
-//         "https://fonts.gstatic.com",
-//         "https://cdnjs.cloudflare.com",
-//         "https://cdn.jsdelivr.net"
-//       ],
+      fontSrc: [
+        "'self'",
+        "data:",                         // ✅ base64 fonts allow
+        "https://fonts.gstatic.com",
+        "https://cdnjs.cloudflare.com",
+        "https://cdn.jsdelivr.net"
+      ],
 
-//       connectSrc: [
-//         "'self'",
-//         "https://www.google-analytics.com",
-//         "https://region1.google-analytics.com",
-//         "https://www.clarity.ms",
-//         "https://connect.facebook.net"
-//       ],
+      connectSrc: [
+        "'self'",
+        "https://www.google-analytics.com",
+        "https://region1.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://connect.facebook.net"
+      ],
 
-//       frameSrc: [
-//         "'self'",
-//         "https://www.googletagmanager.com",
-//         "https://connect.facebook.net"
-//       ],
+      frameSrc: [
+        "'self'",
+        "https://www.googletagmanager.com",
+        "https://connect.facebook.net"
+      ],
 
-//       objectSrc: ["'none'"],
-//       baseUri: ["'self'"]
-//     }
-//   })
-// );
+      objectSrc: ["'none'"],
+      baseUri: ["'self'"]
+    }
+  })
+);
 
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000,
