@@ -72,17 +72,17 @@ app.use(
         "'self'",
         "'unsafe-inline'",
         "'unsafe-eval'",
-        "'unsafe-hashes'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
 
       scriptSrcAttr: [
         "'self'",
-        "'unsafe-inline'",
-        "'unsafe-hashes'",
+        "'unsafe-inline'"
       ],
 
       scriptSrcElem: [
@@ -90,18 +90,18 @@ app.use(
         "'unsafe-inline'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
         "http://gc.kis.v2.scr.kaspersky-labs.com",
         "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
 
       styleSrc: [
         "'self'",
-        "'unsafe-inline'", // allow inline styles
+        "'unsafe-inline'",
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+        "https://cdn.jsdelivr.net"
       ],
 
       styleSrcElem: [
@@ -109,12 +109,15 @@ app.use(
         "'unsafe-inline'",
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net",
-        "http://gc.kis.v2.scr.kaspersky-labs.com",
-        "ws://gc.kis.v2.scr.kaspersky-labs.com"
+        "https://cdn.jsdelivr.net"
       ],
 
-      imgSrc: ["'self'", "data:", "https:"],
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https:",
+        "https://www.google-analytics.com"
+      ],
 
       fontSrc: [
         "'self'",
@@ -123,13 +126,23 @@ app.use(
         "https://cdn.jsdelivr.net"
       ],
 
-      connectSrc: ["'self'"],
-      frameSrc: ["'self'"],
+      connectSrc: [
+        "'self'",
+        "https://www.google-analytics.com",
+        "https://region1.google-analytics.com"
+      ],
+
+      frameSrc: [
+        "'self'",
+        "https://www.googletagmanager.com"
+      ],
+
       objectSrc: ["'none'"],
       baseUri: ["'self'"]
     }
   })
 );
+
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000,
 //   max: 10,
