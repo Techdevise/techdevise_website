@@ -72,33 +72,36 @@ app.use(
         "'self'",
         "'unsafe-inline'",
         "'unsafe-eval'",
+        "'unsafe-hashes'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
-        "https://www.googletagmanager.com",
-        "https://www.google-analytics.com",
-        "https://www.clarity.ms",
-        "https://connect.facebook.net"
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
 
-      scriptSrcAttr: ["'self'", "'unsafe-inline'"],
+      scriptSrcAttr: [
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-hashes'",
+      ],
 
       scriptSrcElem: [
         "'self'",
         "'unsafe-inline'",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net",
-        "https://www.googletagmanager.com",
-        "https://www.google-analytics.com",
-        "https://www.clarity.ms",          // ✅ Clarity allow
-        "https://connect.facebook.net"    // ✅ FB Pixel allow
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
 
       styleSrc: [
         "'self'",
-        "'unsafe-inline'",
+        "'unsafe-inline'", // allow inline styles
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net"
+        "https://cdn.jsdelivr.net",
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
 
       styleSrcElem: [
@@ -106,27 +109,21 @@ app.use(
         "'unsafe-inline'",
         "https://fonts.googleapis.com",
         "https://cdnjs.cloudflare.com",
-        "https://cdn.jsdelivr.net"
+        "https://cdn.jsdelivr.net",
+        "http://gc.kis.v2.scr.kaspersky-labs.com",
+        "ws://gc.kis.v2.scr.kaspersky-labs.com"
       ],
 
-      imgSrc: [
-        "'self'",
-        "data:",
-        "https:",
-        "https://www.google-analytics.com",
-        "https://www.clarity.ms",
-        "https://connect.facebook.net"
-      ],
+      imgSrc: ["'self'", "data:", "https:"],
 
       fontSrc: [
         "'self'",
-        "data:",                         // ✅ base64 fonts allow
         "https://fonts.gstatic.com",
         "https://cdnjs.cloudflare.com",
         "https://cdn.jsdelivr.net"
       ],
 
-      connectSrc: [
+       connectSrc: [
         "'self'",
         "https://www.google-analytics.com",
         "https://region1.google-analytics.com",
@@ -139,13 +136,11 @@ app.use(
         "https://www.googletagmanager.com",
         "https://connect.facebook.net"
       ],
-
       objectSrc: ["'none'"],
       baseUri: ["'self'"]
     }
   })
 );
-
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000,
 //   max: 10,
