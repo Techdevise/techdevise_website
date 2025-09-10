@@ -484,7 +484,7 @@ const Home = () => {
       countryName: "India",
       address:
         "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071",
-      position: { top: "68%", left: "54%" },
+      position: { top: "54%", left: "68%" },
     },
     {
       bgimage: state2,
