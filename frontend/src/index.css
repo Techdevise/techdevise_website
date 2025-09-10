@@ -340,7 +340,11 @@ select.inputControl {
     opacity: 0;
   }
 }
-
+.gtm-modal-class {
+    background-color: white !important;
+    color: black !important; /* make text readable */
+    z-index: 9999 !important;
+}
 @layer utilities {
   @keyframes scroll {
     0% { transform: translateX(0); }
@@ -363,4 +367,5 @@ select.inputControl {
   .animate-scroll-slowest {
     animation: scroll 35s linear infinite;
   }
+
 }
